@@ -474,7 +474,7 @@ Remember — a happy jobOrder is an authenticated Recruitment!
 
 ### Get JobVacancies specific JobOrder
 ```bash
-curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies?contains/=JobOrder:b74c6a8277b77079df061fc1da98f0cd"
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies?contains=JobOrder:b74c6a8277b77079df061fc1da98f0cd"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
 ```
 
@@ -614,7 +614,7 @@ This endpoint retrieves all jobVacancies under jobOrder.
 
 #### HTTP Request
 
-`GET https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies?contains/=JobOrder:b74c6a8277b77079df061fc1da98f0cd`
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies?contains=JobOrder:b74c6a8277b77079df061fc1da98f0cd`
 
 <aside class="success">
 Remember — a happy jobOrder is an authenticated Recruitment!
@@ -867,105 +867,60 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/clients"
 > The above command when submit JSON structured like this:
 
 ```json
+
 {
 
-    "clientName": "testing update",
+    "ClientEntityName": "Phic Thida",
     "ClientEntityShortName": "internal",
     "ClientType": "Internal", 
-    "DepartmentName": "Rose Thida", 
-    "CompositeAccessPatterns": "JobOrder#Client:931cc0bd784645abaa12df07bb6390c8#JobOrderCreatedByName:Nara#ReceiveDateTime:2020-11-30 16:25:33"
+    "CompositeAccessPatterns": "Client#ClientEntityName:Phic Thida#ClientEntityShortName:Thida"
 }
 ```
 
-This endpoint create a specific jobOrder.
+This endpoint create a specific Client Profile.
 
-<aside class="warning">If you're not using an administrator API key, note that some JobOrders will return 403 Forbidden if they are hidden for admins only.</aside>
+<aside class="warning">If you're not using an administrator API key, note that some Clients will return 403 Forbidden if they are hidden for admins only.</aside>
 
 #### HTTP Request
 
 `POST https://dev.aimlapps.com/recruitment-svc/api/v1/clients`
 
 ### Retrive Client Profile
-#### Retrive Internal Clients
 ```bash
-curl "https://dev.aimlapps.com/recruitment-svc/api/v1/clients?contains=internal"
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/clients"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
 ```
 
 > The above command when submit JSON structured like this:
 
 ```json
-{
+[
+    {
     
-    "EntityItemId": "Client:931cc0bd784645abaa12df07bb6390c4",
-    "ClientName": "Rose Thida", 
-    "ClientEntityShortName": "Nara",
-    "ClientType": "Internal", 
-    "CompositeAccessPatterns": ""
-}
+        "EntityItemId": "Client:931cc0bd784645abaa12df07bb6390c4",
+        "ClientEntityName": "Phic Thida",
+        "ClientEntityShortName": "internal",
+        "ClientType": "Internal", 
+        "CompositeAccessPatterns": "Client#ClientEntityName:Phic Thida#ClientEntityShortName:Thida"
+    },
+    {
+        "EntityItemId": "Client:931cc0bd784645abaa12df07bb6390c5",
+        "ClientEntityName": "Phen Davy",
+        "ClientEntityShortName": "internal",
+        "ClientType": "External", 
+        "CompositeAccessPatterns": "Client#ClientEntityName:Phen Davy#ClientEntityShortName:Davy"
+    }
+]
 ```
 
 This endpoint retrive a specific Client Profile.
 
 <aside class="warning">If you're not using an administrator API key, note that some JobOrders will return 403 Forbidden if they are hidden for admins only.</aside>
 
-##### HTTP Request
+#### HTTP Request
 
-`GET https://dev.aimlapps.com/recruitment-svc/api/v1/clients?contains=internal`
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/clients`
 
-#### Retrive External Clients
-```bash
-curl "https://dev.aimlapps.com/recruitment-svc/api/v1/clients?contains=internal"
-  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
-```
-
-> The above command when submit JSON structured like this:
-
-```json
-{
-    
-    "EntityItemId": "Client:931cc0bd784645abaa12df07bb6390c4",
-    "ClientEntityShortName": "Nara",
-    "ClientType": "Internal", 
-    "DepartmentName": "Rose Thida", 
-    "CompositeAccessPatterns": ""
-}
-```
-
-This endpoint retrive a specific Internal Client.
-
-<aside class="warning">If you're not using an administrator API key, note that some JobOrders will return 403 Forbidden if they are hidden for admins only.</aside>
-
-##### HTTP Request
-
-`GET https://dev.aimlapps.com/recruitment-svc/api/v1/clients?contains=external`
-
-#### Retrive External Clients
-```bash
-curl "https://dev.aimlapps.com/recruitment-svc/api/v1/clients?contains=internal"
-  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
-```
-
-> The above command when submit JSON structured like this:
-
-```json
-{
-    
-    "EntityItemId": "Client:931cc0bd784645abaa12df07bb6390c4",
-    "ClientEntityShortName": "Nara",
-    "ClientType": "Internal", 
-    "DepartmentName": "Rose Thida", 
-    "CompositeAccessPatterns": ""
-}
-```
-
-This endpoint retrive a specific External Client.
-
-<aside class="warning">If you're not using an administrator API key, note that some JobOrders will return 403 Forbidden if they are hidden for admins only.</aside>
-
-##### HTTP Request
-
-`GET https://dev.aimlapps.com/recruitment-svc/api/v1/clients?contains=external`
 
 ### View Detaile Client Profile
 ```bash
@@ -979,10 +934,10 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/clients/Client:931cc0bd784
 {
     
     "EntityItemId": "Client:931cc0bd784645abaa12df07bb6390c4",
-    "ClientEntityShortName": "Nara",
+    "ClientEntityName": "Phic Thida",
+    "ClientEntityShortName": "internal",
     "ClientType": "Internal", 
-    "DepartmentName": "Rose Thida", 
-    "CompositeAccessPatterns": ""
+    "CompositeAccessPatterns": "Client#ClientEntityName:Phic Thida#ClientEntityShortName:Thida"
 }
 ```
 
@@ -1011,11 +966,10 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/clients/Client:931cc0bd784
 ```json
 {
     "EntityItemId": "Client:931cc0bd784645abaa12df07bb6390c4",
-    "ClientName": "Noun Nara",
-    "ClientEntityShortName": "Nara",
+    "ClientEntityName": "Phic Thida",
+    "ClientEntityShortName": "internal",
     "ClientType": "Internal", 
-    "DepartmentName": "Rose Thida", 
-    "CompositeAccessPatterns": ""
+    "CompositeAccessPatterns": "Client#ClientEntityName:Phic Thida#ClientEntityShortName:Thida"
 }
 ```
 
