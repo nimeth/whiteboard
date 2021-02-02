@@ -265,22 +265,74 @@ TripRequestRequesterName    | Is the name of creator trip request.
 ### Body Request
 
 ```json
-{
-    "TripRequest": {
-        "TripRequestLocalTrip":"Local",
-        "TripRequestDepartureDateTime":"2021-01-28 10:03:00",
-        "TripRequestReturnDateTime":"2021-01-30 10:03:00",
-        "TripRequestStatus":"DRAFTED",
-        "TripRequestRequesterId":"4",
-        "TripRequestRequesterName":"Sreyta",
-        "TripRequestPurpose":"Test",
-        "TripRequestTravelMode":"CompanyCar",
-        "TripRequestCoveredByOther":"CoveredByPartner",
-        "TripRequestDestination":"Battambang",
-        "TripRequestJoinTraveler":"Son",
-        "Children":[]
+[
+    {
+        "TripRequest": {
+            "TripRequestLocalTrip": "Local",
+            "TripRequestDepartureDateTime": "2021-01-31 8:03:00",
+            "TripRequestReturnDateTime": "2021-02-03 10:30:00",
+            "TripRequestStatus": "DRAFTED",
+            "TripRequestRequesterId": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8",
+            "TripRequestRequesterName": "Nana",
+            "TripRequestPurpose": "Test Trip Request",
+            "TripRequestTravelMode": "RentalCar",
+            "TripRequestCoveredByOther": "CoveredByOwnCompany",
+            "Children": {
+                "TripRoute": [
+                    {
+                        "Date": "2021-01-31",
+                        "Route": [
+                            { 
+                                "From": {
+                                    "LocationLevel1": {
+                                        "LocationLevel1Id": "b2d5cda7-5943-4b28-bf45-c41aaa7839b1",
+                                        "LocationLevel1Name": "Takeo",
+                                        "LocationLevel2": {
+                                            "LocationLevel2Id": "2108",
+                                            "LocationLevel2Name": "Krong Doun Kaev",
+                                            "LocationLevel3": {
+                                                "LocationLevel3Id": "210802",
+                                                "LocationLevel3Name": "Sangkat Roka Knong",
+                                                "LocationLevel4": {
+                                                    "LocationLevel4Id": "21080212",
+                                                    "LocationLevel4Name": "Snaor"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "To": {
+                                    "LocationLevel1": {
+                                        "LocationLevel1Id": "ca2bc9a4-b6a3-4870-99e2-c038179d2068",
+                                        "LocationLevel1Name": "Phnom Penh",
+                                        "LocationLevel2": {
+                                            "LocationLevel2Id": "1206",
+                                            "LocationLevel2Name": "Khan Mean Chey",
+                                            "LocationLevel3": {
+                                                "LocationLevel3Id": "120611",
+                                                "LocationLevel3Name": "Boeng Tompun 1",
+                                                "LocationLevel4": {
+                                                    "LocationLevel4Id": "12061106",
+                                                    "LocationLevel4Name": "Sansam Kosal I"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "JointTraveler": [
+                    {
+                        "JointTravelerEmployeePersonId": "d8d6f92d-c683-4480-bc45-8324599f550d",
+                        "JointTravelerPersonName": "Lily"
+                    }
+                ]
+            }
+        }
     }
-}
+]
 ```
 
 ### HTTP Response
@@ -354,6 +406,9 @@ trip-request-id | The ID of the trip request to delte information
 
 ### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
+
+# Trip Expense
+
 
 # AdministrativeDivision1stLevel
 ## Get All AdLevel1
