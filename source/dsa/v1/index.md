@@ -402,13 +402,281 @@ trip-request-id | The ID of the trip request to update information
 ### Query Paramaeters
 Parameter       | Description
 ---------       | -----------
-trip-request-id | The ID of the trip request to delte information
+trip-request-id | The ID of the trip request to delete information
 
 ### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
 
 # Trip Expense
+## View Detail of Trip Expense
 
+### HTTP Request
+`GET v1/trip-requests/{trip_request_id}/tripExpense/{id}`
+
+### Query Paramaeters
+Parameter                           | Description
+---------                           | -----------
+trip_request_id                     | The ID of the trip request to retrieve information
+id                                  | The ID of the trip expense to get info detail
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "data": [
+        {
+            "id": 41,
+            "trip_request_id": 2,
+            "date": "2021-01-26",
+            "type": "Meal",
+            "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
+            "amount": "10.00",
+            "notes": null,
+            "created_at": "2021-01-26T07:40:58.000000Z",
+            "updated_at": "2021-01-26T07:40:58.000000Z"
+        }
+    ],
+    "message": "Trip Expense retrieved Successfully"
+}
+```
+## Record detail of Trip Expense
+
+### HTTP Request
+`GET v1/trip-requests/{trip_request_id}/tripExpense/{id}`
+
+### Query Paramaeters
+Parameter                           | Description
+---------                           | -----------
+trip_request_id                     | The ID of the trip request to retrieve information
+
+### Body Request
+```json
+{
+    "aiml:TripAllowance/TripGeoScope": "LocalTrip",
+    "departureDate": "2020-12-31",
+    "departureTime": "15:00:00",
+    "returnDate": "2021-01-03",
+    "returnTime": "11:30:00",
+    "aiml:TripAllowance/CoveringAgent": "CoveredByOwnCompany",
+    "travelSegment": "PhnomPenh-Takeo",
+    "date":[
+        {
+            "aiml:TripAllowance/DepartureFrom": "PhnomPenh",
+            "aiml:TripAllowance/DepartureDateTime": "2020-12-31 8:00",
+            "aiml:TripAllowance/StayDate":"",
+            "aiml:TripAllowance/ReturnFrom": "Takeo",
+            "aiml:TripAllowance/ReturnDateTime": "2021-01-03 17:00",
+            "aiml:TripAllowance/TravelDistance": "PhnomPenh-Takeo",
+            "aiml:TripAllowance/InAreaTravelMode":"PublicTransport",
+            "aiml:TripAllowance/NumberOfPeople": "1"
+        }
+    ],
+    "param":"TripAllowance/Trip"
+}
+```
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "data": [
+        {
+            "id": 78,
+            "trip_request_id": 2,
+            "date": "2020-12-31",
+            "type": "Travel Fee (Departure)",
+            "description": "From Phnom Penh at 3:00 PM to Takeo",
+            "amount": "5.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 79,
+            "trip_request_id": 2,
+            "date": "2020-12-31",
+            "type": "Meal",
+            "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
+            "amount": "12.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 80,
+            "trip_request_id": 2,
+            "date": "2020-12-31",
+            "type": "In-area Travel",
+            "description": "Travels in Takeo",
+            "amount": "3.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 81,
+            "trip_request_id": 2,
+            "date": "2020-12-31",
+            "type": "Accommodation",
+            "description": "Alone stay per night",
+            "amount": "15.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 82,
+            "trip_request_id": 2,
+            "date": "2021-01-01",
+            "type": "Meal",
+            "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
+            "amount": "12.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 83,
+            "trip_request_id": 2,
+            "date": "2021-01-01",
+            "type": "In-area Travel",
+            "description": "Travels in Takeo",
+            "amount": "3.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 84,
+            "trip_request_id": 2,
+            "date": "2021-01-01",
+            "type": "Accommodation",
+            "description": "Alone stay per night",
+            "amount": "15.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 85,
+            "trip_request_id": 2,
+            "date": "2021-01-02",
+            "type": "Meal",
+            "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
+            "amount": "12.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 86,
+            "trip_request_id": 2,
+            "date": "2021-01-02",
+            "type": "In-area Travel",
+            "description": "Travels in Takeo",
+            "amount": "3.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 87,
+            "trip_request_id": 2,
+            "date": "2021-01-02",
+            "type": "Accommodation",
+            "description": "Alone stay per night",
+            "amount": "15.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 88,
+            "trip_request_id": 2,
+            "date": "2021-01-03",
+            "type": "Meal",
+            "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
+            "amount": "2.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 89,
+            "trip_request_id": 2,
+            "date": "2021-01-03",
+            "type": "In-area Travel",
+            "description": "Travels in Takeo",
+            "amount": "3.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 90,
+            "trip_request_id": 2,
+            "date": "2021-01-03",
+            "type": "Accommodation",
+            "description": "Alone stay per night",
+            "amount": "0.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        },
+        {
+            "id": 91,
+            "trip_request_id": 2,
+            "date": "2021-01-03",
+            "type": "Travel Fee (Return)",
+            "description": "From Takeo at 11:30 AM to Phnom Penh",
+            "amount": "5.00",
+            "notes": null,
+            "created_at": "2021-02-02T11:28:06.000000Z",
+            "updated_at": "2021-02-02T11:28:06.000000Z"
+        }
+    ],
+    "message": "Trip Adlevel1 Created Successfully"
+}
+```
+
+## Update the Trip Expense by id
+
+### HTTP Request
+`PUT v1/trip-requests/{trip_request_id}/tripExpense/{id}`
+
+### Query Paramaeters
+Parameter                           | Description
+---------                           | -----------
+trip_request_id                     | The ID of the trip request to retrieve information
+id                                  | The ID of the trip expense to update information
+
+### Body Request
+```json
+{
+    "amount": "10.00",
+    "notes": "Test amount"
+}
+```
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "data": {
+        "id": 88,
+        "trip_request_id": 2,
+        "date": "2021-01-03",
+        "type": "Meal",
+        "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
+        "amount": "10.00",
+        "notes": "Test amount",
+        "created_at": "2021-02-02T11:28:06.000000Z",
+        "updated_at": "2021-02-03T01:34:36.000000Z"
+    },
+    "message": "Trip Expense Updated Successfully"
+}
+```
 
 # AdministrativeDivision1stLevel
 ## Get All AdLevel1
