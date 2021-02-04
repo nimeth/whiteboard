@@ -631,14 +631,14 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/init"
 
 ```json
 { 
-    "clients":{
-        "internal": {
-            "entitlies":[
+    "Client":{
+        "Iternal": {
+            "Entity":[
                 {
                     "EntityItemId": {
-                        "S":"InternalClient:931cc0bd784645abaa12df07bb6390c1"
+                        "S":"Client:931cc0bd784645abaa12df07bb6390c1"
                     },
-                    "clientName":{
+                    "ClientEntityName":{
                         "S":"Van Dara"
                     },
                     "ClientEntityShortName":{
@@ -647,16 +647,19 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/init"
 
                 }, {
                     "EntityItemId": {
-                        "S":"InternalClient:931cc0bd784645abaa12df07bb6390c2"
+                        "S":"Client:931cc0bd784645abaa12df07bb6390c2"
                     },
-                    "clientName":{
-                        "S":"Chan Rathana"
+                    "ClientEntityName":{
+                        "S":"Nita Bunna"
+                    },
+                    "ClientEntityShortName":{
+                        "S":"Nita"
                     }
                 }, {
                     "EntityItemId": {
                         "S":"InternalClient:931cc0bd784645abaa12df07bb6390c3"
                     },
-                    "clientName":{
+                    "ClientEntityName":{
                         "S":"Phorn Nary"
                     },
                     "ClientEntityShortName":{
@@ -666,7 +669,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/init"
                     "EntityItemId": {
                         "S":"InternalClient:931cc0bd784645abaa12df07bb6390c4"
                     },
-                    "clientName":{
+                    "ClientEntityName":{
                         "S":"Kao Pisy"
                     },
                     "ClientEntityShortName":{
@@ -674,10 +677,10 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/init"
                     }
                 }
             ],
-            "jobProfiles":[
+            "JobProfile":[
                 {
                     "EntityItemId": {
-                        "S":"JobProfileInternalClient:931cc0bd784645abaa12df07bb6390c1"
+                        "S":"JobProfile:931cc0bd784645abaa12df07bb6390c1"
                     },
                     "JobVacancyTotalApplicant": {
                         "N": "1"
@@ -687,16 +690,13 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/init"
                     },
                     "JobVacancyJobLevel": {
                         "S": "Senior"
-                    },
-                    "clientName":{
-                        "S":"Van Dara"
                     },
                     "PositionTitle":{
                         "S": "Web Developer"
                     }
                 },{
                     "EntityItemId": {
-                        "S":"JobProfileInternalClient:931cc0bd784645abaa12df07bb6390c2"
+                        "S":"JobProfile:931cc0bd784645abaa12df07bb6390c2"
                     },
                     "JobVacancyTotalApplicant": {
                         "N": "1"
@@ -707,51 +707,132 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/init"
                     "JobVacancyJobLevel": {
                         "S": "Senior"
                     },
-                    "clientName":{
-                        "S":"Van Dara"
-                    },
                     "PositionTitle":{
-                        "S": "Web Developer"
+                        "S": "HR"
                     }
                 }
 
             ]
         },
-        "external": [
+        "External": [
             {
                 "EntityItemId": {
-                    "S":"ExternalClient:931cc0bd784645abaa12df07bb6390c1"
+                    "S":"Client:931cc0bd784645abaa12df07bb6390c5"
                 },
-                "departmentName":{
+                "ClientEntityName":{
                     "S":"Borumy Thida"
                 },
                 "ClientEntityShortName":{
                     "S":"Thida"
-                }
-            }, {
-                "EntityItemId": {
-                    "S":"ExternalClient:931cc0bd784645abaa12df07bb6390c2"
                 },
-                "departmentName":{
+                "JobProfile":[
+                    {
+                        "EntityItemId": {
+                            "S":"JobProfile:931cc0bd784645abaa12df07bb6390c6"
+                        },
+                        "JobVacancyTotalApplicant": {
+                            "N": "1"
+                        },
+                        "JobVacancyCountry": {
+                            "S": "Cambodia"
+                        },
+                        "JobVacancyJobLevel": {
+                            "S": "Senior"
+                        },
+                        "ClientEntityItemId": {
+                            "S":"Client:931cc0bd784645abaa12df07bb6390c5"
+                        },
+                        "PositionTitle":{
+                            "S": "IT Officer"
+                        }
+                    },{
+                        "EntityItemId": {
+                            "S":"JobProfile:931cc0bd784645abaa12df07bb6390c7"
+                        },
+                        "JobVacancyTotalApplicant": {
+                            "N": "1"
+                        },
+                        "JobVacancyCountry": {
+                            "S": "Cambodia"
+                        },
+                        "JobVacancyJobLevel": {
+                            "S": "Senior"
+                        },
+                        "ClientEntityItemId": {
+                            "S":"Client:931cc0bd784645abaa12df07bb6390c5"
+                        },
+                        "PositionTitle":{
+                            "S": "Doctor"
+                        }
+                    }
+                ]
+            }, 
+            {
+                "EntityItemId": {
+                    "S":"Client:931cc0bd784645abaa12df07bb6390c6"
+                },
+                "ClientEntityName":{
                     "S":"Dalin Many"
                 },
                 "ClientEntityShortName":{
                     "S":"Many"
-                }
-            }, {
-                "EntityItemId": {
-                    "S":"ExternalClient:931cc0bd784645abaa12df07bb6390c3"
                 },
-                "departmentName":{
+                "JobProfile":[
+                    {
+                        "EntityItemId": {
+                            "S":"JobProfile:931cc0bd784645abaa12df07bb6390c8"
+                        },
+                        "JobVacancyTotalApplicant": {
+                            "N": "1"
+                        },
+                        "JobVacancyCountry": {
+                            "S": "Cambodia"
+                        },
+                        "JobVacancyJobLevel": {
+                            "S": "Senior"
+                        },
+                        "ClientEntityItemId": {
+                            "S":"Client:931cc0bd784645abaa12df07bb6390c6"
+                        },
+                        "PositionTitle":{
+                            "S": "Account"
+                        }
+                    },{
+                        "EntityItemId": {
+                            "S":"JobProfile:931cc0bd784645abaa12df07bb6390c9"
+                        },
+                        "JobVacancyTotalApplicant": {
+                            "N": "1"
+                        },
+                        "JobVacancyCountry": {
+                            "S": "Cambodia"
+                        },
+                        "JobVacancyJobLevel": {
+                            "S": "Senior"
+                        },
+                        "ClientEntityItemId": {
+                            "S":"Client:931cc0bd784645abaa12df07bb6390c6"
+                        },
+                        "PositionTitle":{
+                            "S": "Sale"
+                        }
+                    }
+                ]
+            },
+            {
+                "EntityItemId": {
+                    "S":"Client:931cc0bd784645abaa12df07bb6390c7"
+                },
+                "ClientEntityName":{
                     "S":"Phech Dany"
                 },
                 "ClientEntityShortName":{
                     "S":"Dany"
                 },
-                "jobProfiles":[
+                "JobProfile":[
                     {
                         "EntityItemId": {
-                            "S":"JobProfileInternalClient:931cc0bd784645abaa12df07bb6390c1"
+                            "S":"JobProfile:931cc0bd784645abaa12df07bb6390c10"
                         },
                         "JobVacancyTotalApplicant": {
                             "N": "1"
@@ -763,14 +844,14 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/init"
                             "S": "Senior"
                         },
                         "ClientEntityItemId": {
-                            "S":"ExternalClient:931cc0bd784645abaa12df07bb6390c3"
+                            "S":"Client:931cc0bd784645abaa12df07bb6390c7"
                         },
                         "PositionTitle":{
                             "S": "Web Developer"
                         }
                     },{
                         "EntityItemId": {
-                            "S":"JobProfileInternalClient:931cc0bd784645abaa12df07bb6390c2"
+                            "S":"JobProfile:931cc0bd784645abaa12df07bb6390c11"
                         },
                         "JobVacancyTotalApplicant": {
                             "N": "1"
@@ -782,27 +863,28 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/init"
                             "S": "Senior"
                         },
                         "ClientEntityItemId": {
-                            "S":"ExternalClient:931cc0bd784645abaa12df07bb6390c3"
+                            "S":"Client:931cc0bd784645abaa12df07bb6390c7"
                         },
                         "PositionTitle":{
-                            "S": "Web Developer"
+                            "S": "Mobile App Developer"
                         }
-                    },
+                    }
                 ]
-            }, {
+            }, 
+            {
                 "EntityItemId": {
-                    "S":"ExternalClient:931cc0bd784645abaa12df07bb6390c4"
+                    "S":"Client:931cc0bd784645abaa12df07bb6390c8"
                 },
-                "departmentName":{
+                "ClientEntityName":{
                     "S":"Doung Chan"
                 },
                 "ClientEntityShortName":{
                     "S":"Chan"
                 },
-                "jobProfiles":[
+                "JobProfile":[
                     {
                         "EntityItemId": {
-                            "S":"JobProfileInternalClient:931cc0bd784645abaa12df07bb6390c1"
+                            "S":"JobProfile:931cc0bd784645abaa12df07bb6390c12"
                         },
                         "JobVacancyTotalApplicant": {
                             "N": "1"
@@ -814,14 +896,14 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/init"
                             "S": "Senior"
                         },
                         "ClientEntityItemId": {
-                            "S":"ExternalClient:931cc0bd784645abaa12df07bb6390c4"
+                            "S":"Client:931cc0bd784645abaa12df07bb6390c8"
                         },
                         "PositionTitle":{
                             "S": "Web Developer"
                         }
                     },{
                         "EntityItemId": {
-                            "S":"JobProfileInternalClient:931cc0bd784645abaa12df07bb6390c2"
+                            "S":"JobProfile:931cc0bd784645abaa12df07bb6390c13"
                         },
                         "JobVacancyTotalApplicant": {
                             "N": "1"
@@ -833,12 +915,12 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/init"
                             "S": "Senior"
                         },
                         "ClientEntityItemId": {
-                            "S":"ExternalClient:931cc0bd784645abaa12df07bb6390c4"
+                            "S":"Client:931cc0bd784645abaa12df07bb6390c8"
                         },
                         "PositionTitle":{
-                            "S": "Web Developer"
+                            "S": "HR Manager"
                         }
-                    },
+                    }
                 ]
             }
         ]
@@ -871,7 +953,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/clients"
 {
     "ClientProfile":{
         "ClientEntityName": "Phic Thida",
-        "ClientEntityShortName": "internal",
+        "ClientEntityShortName": "Thida",
         "ClientType": "Internal", 
         "CompositeAccessPatterns": "Client#ClientEntityName:Phic Thida#ClientEntityShortName:Thida"
     }
@@ -900,16 +982,16 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/clients"
     
         "EntityItemId": "Client:931cc0bd784645abaa12df07bb6390c4",
         "ClientEntityName": "Phic Thida",
-        "ClientEntityShortName": "internal",
+        "ClientEntityShortName": "Thida",
         "ClientType": "Internal", 
-        "CompositeAccessPatterns": "Client#ClientEntityName:Phic Thida#ClientEntityShortName:Thida"
+        "CompositeAccessPatterns": "Client#ClientEntityName:Phic Thida#ClientEntityShortName:Thida#ClientType:Internal"
     },
     {
         "EntityItemId": "Client:931cc0bd784645abaa12df07bb6390c5",
         "ClientEntityName": "Phen Davy",
-        "ClientEntityShortName": "internal",
+        "ClientEntityShortName": "Thida",
         "ClientType": "External", 
-        "CompositeAccessPatterns": "Client#ClientEntityName:Phen Davy#ClientEntityShortName:Davy"
+        "CompositeAccessPatterns": "Client#ClientEntityName:Phen Davy#ClientEntityShortName:Davy#ClientType:Internal"
     }
 ]
 ```
@@ -936,9 +1018,9 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/clients/Client:931cc0bd784
     
     "EntityItemId": "Client:931cc0bd784645abaa12df07bb6390c4",
     "ClientEntityName": "Phic Thida",
-    "ClientEntityShortName": "internal",
+    "ClientEntityShortName": "Thida",
     "ClientType": "Internal", 
-    "CompositeAccessPatterns": "Client#ClientEntityName:Phic Thida#ClientEntityShortName:Thida"
+    "CompositeAccessPatterns": "Client#ClientEntityName:Phic Thida#ClientEntityShortName:Thida#ClientType:Internal"
 }
 ```
 
@@ -969,9 +1051,9 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/clients/Client:931cc0bd784
     "ClientProfile":{
         "EntityItemId": "Client:931cc0bd784645abaa12df07bb6390c4",
         "ClientEntityName": "Phic Thida",
-        "ClientEntityShortName": "internal",
+        "ClientEntityShortName": "Thida",
         "ClientType": "Internal", 
-        "CompositeAccessPatterns": "Client#ClientEntityName:Phic Thida#ClientEntityShortName:Thida"
+        "CompositeAccessPatterns": "Client#ClientEntityName:Phic Thida#ClientEntityShortName:Thida#ClientType:Internal"
     }
 }
 ```
