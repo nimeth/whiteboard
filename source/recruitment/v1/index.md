@@ -1323,6 +1323,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:1
         "JobVacanyApplicantJobVacancyId": "JobVacancy:1e9cf083a2c3b07f0078b1b82d7ed274",
         "JobVacanyApplicantPeopleId": "People:1e9cf083a2c3b07f0078b1b82d7ed274",
         "JobVacanyApplicantPeopleName": "Dyna",
+        "JobVacanyApplicantPeopleSex": "F",
         "JobVacanyApplicantCurrentStepId": "Step:1e9cf083a2c3b07f0078b1b82d7ed274", 
         "JobVacanyApplicantCurrentStepTitle": "Apply Job", 
         "JobVacanyApplicantProcessResult": "PROCESSING",
@@ -1487,6 +1488,9 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:4
             "EntityItemId": {
                 "S": "JobVacancyApplicant:453c51ef252985f7b4eb942c63129a0f"
             },
+             "JobVacanyApplicantPeopleSex": {
+            "S": "F"
+            },
             "CompositeAccessPatterns": {
                 "S": "JobVacancyApplicant#JobVacanyApplicantPeopleName:Dyna#JobVacanyApplicantCurrentStepTitle:Apply Job#JobVacanyApplicantProcessResult:PROCESSING"
             },
@@ -1515,6 +1519,9 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:4
             },
             "EntityItemId": {
                 "S": "JobVacancyApplicant:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+            },
+            "JobVacanyApplicantPeopleSex": {
+                "S": "F"
             },
             "CompositeAccessPatterns": {
                 "S": "JobVacancyApplicant#JobVacanyApplicantPeopleName:Dyna#JobVacanyApplicantCurrentStepTitle:Apply Job#JobVacanyApplicantProcessResult:PROCESSING"
