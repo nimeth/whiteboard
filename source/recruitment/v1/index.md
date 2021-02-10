@@ -47,8 +47,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders"
 ```json
 {
     "JobOrder": {
-        "JobVacancyJobOrderId": "testing update",
-        "JobOrderClientType": "internal",
+        "JobOrderClientType": "Internal",
         "JobOrderClientId": "Client:931cc0bd784645abaa12df07bb6390c8", 
         "JobOrderClientEntityName": "testing", 
         "JobOrderClientEntityShortName": "rrrrrrrrrrrrrrrrr", 
@@ -58,36 +57,37 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders"
         "JobOrderCreatedById": "User:nauuua@aimlera.com", 
         "JobOrderCreatedByName": "Narggga", 
         "JobOrderSelectionProcessId": "SelectionProcess:025e103c1ac74e66aed9b7da0063609e",
-        "CompositeAccessPatterns": "JobOrder#Client:931cc0bd784645abaa12df07bb6390c8#JobOrderCreatedByName:Nara#ReceiveDateTime:2020-11-30 16:25:33"
-    },
-    "Children":{
-        "JobVacancy": [
-            {
-                "JobVacancyJobOrderId":"",
-                "JobVacancyJobProfileId": "JobProfile:1b7d5c4fbaf64fb89433c7040866f446",
-                "JobVacancyCountry": "Cambodiakkkk", 
-                "JobVacancyHeadcount":"1", 
-                "JobVacancyJobLevel": "Junior",
-                "JobVacancyLocationLevel1": "Phnom Penh",
-                "JobVacancyPositionTitle": "HR",
-                "JobVacancyStatus": "Open",
-                "JobVacancyTotalApplicant":"1", 
-                "JobVacancyUrgencyLevel": "Medium"
-            },{
+        "CompositeAccessPatterns": "JobOrder#Client:931cc0bd784645abaa12df07bb6390c8#JobOrderCreatedByName:Nara#ReceiveDateTime:2020-11-30 16:25:33",
+        "Children":{
+            "JobVacancy": [
+                {
+                    "JobVacancyJobOrderId":"",
+                    "JobVacancyJobProfileId": "JobProfile:1b7d5c4fbaf64fb89433c7040866f446",
+                    "JobVacancyCountry": "Cambodiakkkk", 
+                    "JobVacancyHeadcount":"1", 
+                    "JobVacancyJobLevel": "Junior",
+                    "JobVacancyLocationLevel1": "Phnom Penh",
+                    "JobVacancyPositionTitle": "HR",
+                    "JobVacancyStatus": "Open",
+                    "JobVacancyTotalApplicant":"1", 
+                    "JobVacancyUrgencyLevel": "Medium"
+                },{
 
-                "JobVacancyJobOrderId":"",
-                "JobVacancyJobProfileId": "JobProfile:1b7d5c4fbaf64fb89433c7040866f446",
-                "JobVacancyCountry": "Cambodiammm", 
-                "JobVacancyHeadcount":"1", 
-                "JobVacancyJobLevel": "Junior",
-                "JobVacancyLocationLevel1": "Phnom Penh",
-                "JobVacancyPositionTitle": "HR Officer and Web developer",
-                "JobVacancyStatus": "Open",
-                "JobVacancyTotalApplicant":"1", 
-                "JobVacancyUrgencyLevel": "Lage"
-            }
-        ]
+                    "JobVacancyJobOrderId":"",
+                    "JobVacancyJobProfileId": "JobProfile:1b7d5c4fbaf64fb89433c7040866f446",
+                    "JobVacancyCountry": "Cambodiammm", 
+                    "JobVacancyHeadcount":"1", 
+                    "JobVacancyJobLevel": "Junior",
+                    "JobVacancyLocationLevel1": "Phnom Penh",
+                    "JobVacancyPositionTitle": "HR Officer and Web developer",
+                    "JobVacancyStatus": "Open",
+                    "JobVacancyTotalApplicant":"1", 
+                    "JobVacancyUrgencyLevel": "Lage"
+                }
+            ]
+        }
     }
+    
 }
 ```
 
@@ -1292,7 +1292,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets/Candidat
 ```
 
 
-This endpoint Delete a specific Client Profile.
+This endpoint Delete a specific CandidateBucket.
 
 <aside class="warning">If you're not using an administrator API key, note that some CandidateBucket will return 403 Forbidden if they are hidden for admins only.</aside>
 
@@ -1305,3 +1305,641 @@ This endpoint Delete a specific Client Profile.
 Parameter | Description
 --------- | -----------
 ID | The ID of the CandidateBucket to delete 
+
+# JobVacancy Applicant
+## Create JobVacancy Applicant
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:1e9cf083a2c3b07f0078b1b82d7ed274/applicants"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+
+{
+    "JobVacancyApplicant":{
+        "JobVacanyApplicantJobVacancyId": "JobVacancy:1e9cf083a2c3b07f0078b1b82d7ed274",
+        "JobVacanyApplicantPeopleId": "People:1e9cf083a2c3b07f0078b1b82d7ed274",
+        "JobVacanyApplicantPeopleName": "Dyna",
+        "JobVacanyApplicantCurrentStepId": "Step:1e9cf083a2c3b07f0078b1b82d7ed274", 
+        "JobVacanyApplicantCurrentStepTitle": "Apply Job", 
+        "JobVacanyApplicantProcessResult": "PROCESSING",
+        "CompositeAccessPatterns": ""
+    }
+}
+```
+
+This endpoint create a specific JobVacancy Applicant.
+
+<aside class="warning">If you're not using an administrator API key, note that some JobVacancy Applicant will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`POST https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:1e9cf083a2c3b07f0078b1b82d7ed274/applicants`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the JobVacancy 
+
+## View Detaile​ JobVacancy Applicant
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:412af8742b5a465db54cd5648b80bd72/applicants/JobVacancyApplicant:1fb61bd50be4434aa28a609f1d54e022"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+[
+    {
+        "JobVacanyApplicantProcessResult": {
+            "S": "PROCESSING"
+        },
+        "EntityItemId": {
+            "S": "JobVacancyApplicant:1fb61bd50be4434aa28a609f1d54e022"
+        },
+        "CompositeAccessPatterns": {
+            "S": "JobVacancyApplicant#JobVacancy:412af8742b5a465db54cd5648b80bd72#PeopleName:Dun Sovannaroath"
+        },
+        "JobVacanyApplicantPeopleSex": {
+            "S": "F"
+        },
+        "JobVacanyApplicantPeopleId": {
+            "S": "People:4585454897fc431899dcdfc5b37ffad5"
+        },
+        "JobVacanyApplicantJobVacancyId": {
+            "S": "JobVacancy:412af8742b5a465db54cd5648b80bd72JobVacancy:412af8742b5a465db54cd5648b80bd72"
+        },
+        "JobVacanyApplicantPeopleName": {
+            "S": "Dun Sovannaroath"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "JobVacanyApplicantCurrentStepId": {
+            "S": "Step:f99eddc6cece49c4824cc6b9b72a13ef"
+        },
+        "JobVacanyApplicantCurrentStepTitle": {
+            "S": "Screen profile"
+        }
+    }
+]
+```
+
+This endpoint view detail a specific JobVacancyApplicant.
+
+<aside class="warning">If you're not using an administrator API key, note that some JobVacancyApplicant will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:412af8742b5a465db54cd5648b80bd72/applicants/JobVacancyApplicant:1fb61bd50be4434aa28a609f1d54e022`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the JobVacancy
+ID | The ID of JobVacancyApplicant
+
+## Retrive CandidateBuckets
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:412af8742b5a465db54cd5648b80bd72/applicants"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "JobVacancyApplicant": [
+        {
+            "JobVacanyApplicantProcessResult": {
+                "S": "Pass"
+            },
+            "EntityItemId": {
+                "S": "JobVacancyApplicant:396b0e3887a8e24d7a0f4d89854aee8c"
+            },
+            "JobVacanyApplicantPeopleSex": {
+                "S": "Male"
+            },
+            "CompositeAccessPatterns": {
+                "S": "JobVacancyApplicant#JobVacanyApplicantPeopleName:SoTheara#JobVacanyApplicantCurrentStepTitle:ApplyJob#JobVacanyApplicantProcessResult:Pass"
+            },
+            "JobVacanyApplicantPeopleId": {
+                "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantJobVacancyId": {
+                "S": "JobVacancy:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantPeopleName": {
+                "S": "SoTheara"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "JobVacanyApplicantCurrentStepId": {
+                "S": "Step:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantCurrentStepTitle": {
+                "S": "ApplyJob"
+            }
+        },
+        {
+            "JobVacanyApplicantProcessResult": {
+                "S": "Pass"
+            },
+            "EntityItemId": {
+                "S": "JobVacancyApplicant:41477c8763f7ad0fd8d5079b24d276d0"
+            },
+            "JobVacanyApplicantPeopleSex": {
+                "S": "Female"
+            },
+            "CompositeAccessPatterns": {
+                "S": "JobVacancyApplicant#JobVacanyApplicantPeopleName:SoTheara#JobVacanyApplicantCurrentStepTitle:ApplyJob#JobVacanyApplicantProcessResult:Pass"
+            },
+            "JobVacanyApplicantPeopleId": {
+                "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantJobVacancyId": {
+                "S": "JobVacancy:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantPeopleName": {
+                "S": "SoTheara"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "JobVacanyApplicantCurrentStepId": {
+                "S": "Step:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantCurrentStepTitle": {
+                "S": "ApplyJob"
+            }
+        },
+        {
+            "JobVacanyApplicantProcessResult": {
+                "S": "PROCESSING"
+            },
+            "EntityItemId": {
+                "S": "JobVacancyApplicant:453c51ef252985f7b4eb942c63129a0f"
+            },
+            "CompositeAccessPatterns": {
+                "S": "JobVacancyApplicant#JobVacanyApplicantPeopleName:Dyna#JobVacanyApplicantCurrentStepTitle:Apply Job#JobVacanyApplicantProcessResult:PROCESSING"
+            },
+            "JobVacanyApplicantPeopleId": {
+                "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantJobVacancyId": {
+                "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantPeopleName": {
+                "S": "Dyna"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "JobVacanyApplicantCurrentStepId": {
+                "S": "Step:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantCurrentStepTitle": {
+                "S": "Apply Job"
+            }
+        },
+        {
+            "JobVacanyApplicantProcessResult": {
+                "S": "PROCESSING"
+            },
+            "EntityItemId": {
+                "S": "JobVacancyApplicant:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+            },
+            "CompositeAccessPatterns": {
+                "S": "JobVacancyApplicant#JobVacanyApplicantPeopleName:Dyna#JobVacanyApplicantCurrentStepTitle:Apply Job#JobVacanyApplicantProcessResult:PROCESSING"
+            },
+            "JobVacanyApplicantPeopleId": {
+                "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantJobVacancyId": {
+                "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantPeopleName": {
+                "S": "Dyna"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "JobVacanyApplicantCurrentStepId": {
+                "S": "Step:1e9cf083a2c3b07f0078b1b82d7ed274"
+            },
+            "JobVacanyApplicantCurrentStepTitle": {
+                "S": "Apply Job"
+            }
+        }
+    ],
+    "FilterAttributes": [
+        {
+            "JobVacanyApplicantPeopleName": "People Name"
+        },
+        {
+            "JobVacanyApplicantCurrentStepTitle": "Current Step Title"
+        },
+        {
+            "JobVacanyApplicantProcessResult": "Process Result"
+        }
+    ]
+}
+```
+
+This endpoint retrive JobVacancyApplicant.
+
+<aside class="warning">If you're not using an administrator API key, note that some JobVacancyApplicant will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:412af8742b5a465db54cd5648b80bd72/applicants`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of JobVacancy
+
+## Delete JobVacancy Applicant
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:412af8742b5a465db54cd5648b80bd72/applicants/JobVacancyApplicant:1fb61bd50be4434aa28a609f1d54e022"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+
+This endpoint Delete a specific JobVacancy Applicant.
+
+<aside class="warning">If you're not using an administrator API key, note that some JobOrders will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`DELETE https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:412af8742b5a465db54cd5648b80bd72/applicants/JobVacancyApplicant:1fb61bd50be4434aa28a609f1d54e022`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of JobVacancy
+ID | The ID of JobVacancy Applicant
+
+
+# Applicant Processing Step
+## Create ApplicantProcessingStep
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+
+{
+    "ApplicantProcessingStep":{
+        "ApplicantProcessingJobVacancyApplicantId": "JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b",
+        "ApplicantProcessingStepId": "Step:1ab83367a398b6c66d04924348abc06b",
+        "ApplicantProcessingStepStatus": "IN_PROGRESS",
+        "ApplicantProcessingStepPlannedCompleteDate": "08-02-2021", 
+        "ApplicantProcessingStepAddedByPeopleId": "People:1ab83367a398b6c66d04924348abc06b", 
+        "ApplicantProcessingStepAddedByPeopleName": "Nary Doung",
+        "ApplicantProcessingStepProcessResult": "SHORTLISTED",
+        "ApplicantProcessingStepActualCompleteDate": "08-02-2021",
+        "ApplicantProcessingStepCompletedById": "CompletedBy:1ab83367a398b6c66d04924348abc06b",
+        "ApplicantProcessingStepCompletedByName": "Mony Chan",
+        "CompositeAccessPatterns": ""
+
+    }
+}
+```
+
+This endpoint create a Applicant Processing Step.
+
+<aside class="warning">If you're not using an administrator API key, note that some Applicant Processing Step will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`POST https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of Applicant
+
+## Get Applicant Processing Step
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ApplicantProcessingStep": [
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "Mony Chan"
+            },
+            "ApplicantProcessingStepProcessResult": {
+                "S": "SHORTLISTED"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepStatus:IN_PROGRESS#ApplicantProcessingStepAddedByPeopleName:Nary Doung#ApplicantProcessingStepCompletedByName:Mony Chan"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "IN_PROGRESS"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "08-02-2021"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:1ab83367a398b6c66d04924348abc06b"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "Nary Doung"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "CompletedBy:1ab83367a398b6c66d04924348abc06b"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:1ab83367a398b6c66d04924348abc06b"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "Mony Chan"
+            },
+            "ApplicantProcessingStepProcessResult": {
+                "S": "SHORTLISTED"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "ScreenCandidate"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:ScreenCandidate#ApplicantProcessingStepStatus:IN_PROGRESS#ApplicantProcessingStepAddedByPeopleName:Sopha NyTa#ApplicantProcessingStepCompletedByName:Mony Chan"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "IN_PROGRESS"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:4cb185d04887d0e206e3c2e9b1e552d8"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "08-02-2021"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:1ab83367a398b6c66d04924348abc06b"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "Sopha NyTa"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:1ab83367a398b6c66d04924348abc06b"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "CompletedBy:1ab83367a398b6c66d04924348abc06b"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "Mony Chan"
+            },
+            "ApplicantProcessingStepProcessResult": {
+                "S": "SHORTLISTED"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "ScreenCandidate"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:ScreenCandidate#ApplicantProcessingStepStatus:IN_PROGRESS#ApplicantProcessingStepAddedByPeopleName:Sopha Ny#ApplicantProcessingStepCompletedByName:Mony Chan"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "IN_PROGRESS"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:a1945d018b57da121d47d602ade6a6d4"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "08-02-2021"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:1ab83367a398b6c66d04924348abc06b"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "Sopha Ny"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "CompletedBy:1ab83367a398b6c66d04924348abc06b"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:1ab83367a398b6c66d04924348abc06b"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        }
+    ],
+    "FilterAttributes": [
+        {
+            "ApplicantProcessingStepTitle": "Selection Step"
+        },
+        {
+            "ApplicantProcessingStepStatus": "Step Status"
+        },
+        {
+            "ApplicantProcessingStepAddedByPeopleName": "Added by"
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": "Completed by"
+        }
+    ]
+}
+
+```
+
+This endpoint retrieves all Applicant Processing Step.
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps`
+
+<aside class="success">
+Remember — a happy Applicant Processing Step is an authenticated Recruitment!
+</aside>
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of Applicant
+
+## Delete Applicant Processing Step
+```bash
+curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+
+This endpoint Delete a specific Applicant Processing Step.
+
+<aside class="warning">If you're not using an administrator API key, note that some JobOrders will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`DELETE http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of Applicant
+ID | The ID of Processing Step
+
+## View Detaile Applicant Processing Step
+```bash
+curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+[
+    {
+        "ApplicantProcessingStepCompletedByName": {
+            "S": "Mony Chan"
+        },
+        "ApplicantProcessingStepProcessResult": {
+            "S": "SHORTLISTED"
+        },
+        "CompositeAccessPatterns": {
+            "S": "ApplicantProcessingStep#ApplicantProcessingStepStatus:IN_PROGRESS#ApplicantProcessingStepAddedByPeopleName:Nary Doung#ApplicantProcessingStepCompletedByName:Mony Chan"
+        },
+        "ApplicantProcessingStepStatus": {
+            "S": "IN_PROGRESS"
+        },
+        "ApplicantProcessingJobVacancyApplicantId": {
+            "S": "JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b"
+        },
+        "EntityItemId": {
+            "S": "ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
+        },
+        "ApplicantProcessingStepActualCompleteDate": {
+            "S": "08-02-2021"
+        },
+        "ApplicantProcessingStepId": {
+            "S": "Step:1ab83367a398b6c66d04924348abc06b"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "ApplicantProcessingStepAddedByPeopleName": {
+            "S": "Nary Doung"
+        },
+        "ApplicantProcessingStepCompletedById": {
+            "S": "CompletedBy:1ab83367a398b6c66d04924348abc06b"
+        },
+        "ApplicantProcessingStepAddedByPeopleId": {
+            "S": "People:1ab83367a398b6c66d04924348abc06b"
+        },
+        "ApplicantProcessingStepPlannedCompleteDate": {
+            "S": "08-02-2021"
+        }
+    }
+]
+```
+
+This endpoint view detail a specific Applicant Processing Step.
+
+<aside class="warning">If you're not using an administrator API key, note that some Applicant Processing Step will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`GET http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of Applicant
+ID | The ID of Processing Step
+
+## Update Client Profile
+```bash
+curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "ApplicantProcessingStep":{
+        "ApplicantProcessingJobVacancyApplicantId": "JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b",
+        "ApplicantProcessingStepId": "Step:1ab83367a398b6c66d04924348abc06b",
+        "ApplicantProcessingStepTitle": "Screen Candidate",
+        "ApplicantProcessingStepStatus": "IN_PROGRESS",
+        "ApplicantProcessingStepPlannedCompleteDate": "08-02-2021", 
+        "ApplicantProcessingStepAddedByPeopleId": "People:1ab83367a398b6c66d04924348abc06b", 
+        "ApplicantProcessingStepAddedByPeopleName": "Sopha NyTa",
+        "ApplicantProcessingStepProcessResult": "SHORTLISTED",
+        "ApplicantProcessingStepActualCompleteDate": "08-02-2021",
+        "ApplicantProcessingStepCompletedById": "CompletedBy:1ab83367a398b6c66d04924348abc06b",
+        "ApplicantProcessingStepCompletedByName": "Mony Chan",
+        "CompositeAccessPatterns": "ApplicantProcessingStep#ApplicantProcessingStepTitle:ApplyJob#ApplicantProcessingStepStatus:IN_PROGRESS#ApplicantProcessingStepAddedByPeopleName:Nary Doung#ApplicantProcessingStepCompletedByName:Mony Chan"
+
+    }
+}
+```
+
+This endpoint update a specific Applicant Processing Step
+
+<aside class="warning">If you're not using an administrator API key, note that some Applicant Processing Step will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`PUT http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of Applicant
+ID | The ID of Processing Step
