@@ -1950,3 +1950,1093 @@ Parameter | Description
 --------- | -----------
 ID | The ID of Applicant
 ID | The ID of Processing Step
+
+
+# UrgencyLevel
+## Create UrgencyLevel
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+
+{
+    "UrgencyLevel":{
+        "UrgencyLevel": "FAIL",
+    }
+}
+```
+
+This endpoint create a specific UrgencyLevel.
+
+<aside class="warning">If you're not using an administrator API key, note that some UrgencyLevel will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`POST https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels`
+
+## Retrive UrgencyLevel
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "UrgencyLevel": [
+        {
+            "EntityItemId": {
+                "S": "UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+            },
+            "UrgencyLevel": {
+                "S": "FAIL"
+            }
+        },
+        {
+            "EntityItemId": {
+                "S": "UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "UrgencyLevel": {
+                "S": "FAIL"
+            }
+        }
+    ],
+    "FilterAttributes": [
+        {
+            "UrgencyLevel": "Urgency Level"
+        }
+    ]
+}
+```
+
+This endpoint retrive UrgencyLevels.
+
+<aside class="warning">If you're not using an administrator API key, note that some UrgencyLevels will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels`
+
+## Update UrgencyLevel
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels/UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "UrgencyLevel":{
+        "UrgencyLevel": "FAIL",
+    }
+}
+```
+
+This endpoint update a specific UrgencyLevel
+
+<aside class="warning">If you're not using an administrator API key, note that some UrgencyLevel will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`PUT https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels/UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of UrgencyLevel
+
+## View Detaile Applicant Processing Step
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels/UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+[
+   {
+            "EntityItemId": {
+                "S": "UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "UrgencyLevel": {
+                "S": "FAIL"
+            }
+        }
+]
+```
+
+This endpoint view detail a specific UrgencyLevel.
+
+<aside class="warning">If you're not using an administrator API key, note that some UrgencyLevel will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`get https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels/UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of UrgencyLevel
+
+## Delete a UrgencyLevel
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels/UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+This endpoint delete a UrgencyLevel.
+
+<aside class="warning">If you're not using an administrator API key, note that some UrgencyLevel will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`DELETE https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels/UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of UrgencyLevel
+
+# FeeRate
+## Create FeeRate
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+
+{
+    "FeeRate":{
+        "FeeRate": "5.5$",
+    }
+}
+```
+
+This endpoint create a specific FeeRate.
+
+<aside class="warning">If you're not using an administrator API key, note that some FeeRate will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`POST https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates`
+
+## Retrive FeeRate
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "FeeRate": [
+        {
+            "EntityItemId": {
+                "S": "FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+            },
+            "FeeRate": {
+                "S": "5.5$"
+            }
+        },
+        {
+            "EntityItemId": {
+                "S": "FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "FeeRate": {
+                "S": "5.6$"
+            }
+        }
+    ],
+    "FilterAttributes": [
+        {
+            "FeeRate": "Fee Rate"
+        }
+    ]
+}
+```
+
+This endpoint retrive FeeRates.
+
+<aside class="warning">If you're not using an administrator API key, note that some FeeRates will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates`
+
+## Update FeeRate
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates/FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "FeeRate":{
+        "FeeRate": "FAIL",
+    }
+}
+```
+
+This endpoint update a specific FeeRate
+
+<aside class="warning">If you're not using an administrator API key, note that some FeeRate will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`PUT https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates/FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of FeeRate
+
+## View Detaile Applicant Processing Step
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates/FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+[
+   {
+            "EntityItemId": {
+                "S": "FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "FeeRate": {
+                "S": "5.7$"
+            }
+        }
+]
+```
+
+This endpoint view detail a specific FeeRate.
+
+<aside class="warning">If you're not using an administrator API key, note that some FeeRate will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`get https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates/FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of FeeRate
+
+## Delete a FeeRate
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates/FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+This endpoint delete a FeeRate.
+
+<aside class="warning">If you're not using an administrator API key, note that some FeeRate will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`DELETE https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates/FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of FeeRate
+# JobChannel
+## Create JobChannel
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+
+{
+    "JobChannel":{
+        "JobChannelName": "ODI",
+        "JobChannelWebsite": "www.ODI.com",
+        "JobChannelAddress": "Phnom Phenh",
+        "JobChannelEmail": "odi@gmail.com",
+        "JobChannelPhoneNumber": "0987654321",
+        "JobChannelNote": "Recruitment Office",
+    }
+}
+```
+
+This endpoint create a specific JobChannel.
+
+<aside class="warning">If you're not using an administrator API key, note that some JobChannel will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`POST https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels`
+
+## Retrive JobChannel
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "JobChannel": [
+        {
+            "EntityItemId": {
+                "S": "JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+            },
+            "JobChannelName": {
+                "S": "ODI"
+            },
+            "JobChannelWebsite": {
+                "S": "www.ODI.com"
+            },
+            "JobChannelAddress": {
+                "S": "Phnom Phenh"
+            },
+            "JobChannelPhoneNumber": {
+                "S": "0987654321"
+            },
+            "JobChannelNote": {
+                "S": "Recruitment Office"
+            }
+        },
+        {
+            "EntityItemId": {
+                "S": "JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "JobChannelName": {
+                "S": "ODI"
+            },
+            "JobChannelWebsite": {
+                "S": "www.ODI.com"
+            },
+            "JobChannelAddress": {
+                "S": "Phnom Phenh"
+            },
+            "JobChannelPhoneNumber": {
+                "S": "0987654321"
+            },
+            "JobChannelNote": {
+                "S": "Recruitment Office"
+            }
+        }
+    ]
+}
+```
+
+This endpoint retrive JobChannels.
+
+<aside class="warning">If you're not using an administrator API key, note that some JobChannels will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels`
+
+## Update JobChannel
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels/JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "JobChannel":{
+        "JobChannelName": "ODI",
+        "JobChannelWebsite": "www.ODI.com",
+        "JobChannelAddress": "Phnom Phenh",
+        "JobChannelEmail": "odi@gmail.com",
+        "JobChannelPhoneNumber": "0987654321",
+        "JobChannelNote": "Recruitment Office",
+    }
+}
+```
+
+This endpoint update a specific JobChannel
+
+<aside class="warning">If you're not using an administrator API key, note that some JobChannel will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`PUT https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels/JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of JobChannel
+
+## View Detaile Applicant Processing Step
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels/JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+[
+    {
+        "EntityItemId": {
+            "S": "JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+        },
+        "JobChannelName": {
+            "S": "ODI"
+        },
+        "JobChannelWebsite": {
+            "S": "www.ODI.com"
+        },
+        "JobChannelAddress": {
+            "S": "Phnom Phenh"
+        },
+        "JobChannelPhoneNumber": {
+            "S": "0987654321"
+        },
+        "JobChannelNote": {
+            "S": "Recruitment Office"
+        }
+    }
+]
+```
+
+This endpoint view detail a specific JobChannel.
+
+<aside class="warning">If you're not using an administrator API key, note that some JobChannel will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`get https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels/JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of JobChannel
+
+## Delete a JobChannel
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels/JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+This endpoint delete a JobChannel.
+
+<aside class="warning">If you're not using an administrator API key, note that some JobChannel will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`DELETE https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels/JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of JobChannel
+
+# DecisionOption
+## Create DecisionOption
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+
+{
+    "DecisionOption":{
+        "DecisionOption": "FAIL",
+    }
+}
+```
+
+This endpoint create a specific DecisionOption.
+
+<aside class="warning">If you're not using an administrator API key, note that some DecisionOption will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`POST https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options`
+
+## Retrive DecisionOption
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "DecisionOption": [
+        {
+            "EntityItemId": {
+                "S": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+            },
+            "DecisionOption": {
+                "S": "FAIL"
+            }
+        },
+        {
+            "EntityItemId": {
+                "S": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "DecisionOption": {
+                "S": "FAIL"
+            }
+        }
+    ],
+    "FilterAttributes": [
+        {
+            "DecisionOption": "Decision"
+        }
+    ]
+}
+```
+
+This endpoint retrive DecisionOptions.
+
+<aside class="warning">If you're not using an administrator API key, note that some DecisionOptions will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options`
+
+## Update DecisionOption
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options/DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "DecisionOption":{
+        "DecisionOption": "FAIL",
+    }
+}
+```
+
+This endpoint update a specific DecisionOption
+
+<aside class="warning">If you're not using an administrator API key, note that some DecisionOption will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`PUT https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options/DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of DecisionOption
+
+## View Detaile Applicant Processing Step
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options/DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+[
+   {
+            "EntityItemId": {
+                "S": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "DecisionOption": {
+                "S": "FAIL"
+            }
+        }
+]
+```
+
+This endpoint view detail a specific DecisionOption.
+
+<aside class="warning">If you're not using an administrator API key, note that some DecisionOption will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`get https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options/DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of DecisionOption
+
+## Delete a DecisionOption
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options/DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+This endpoint delete a DecisionOption.
+
+<aside class="warning">If you're not using an administrator API key, note that some DecisionOption will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`DELETE https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options/DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of DecisionOption
+
+# Step
+## Create Step
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/steps"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+
+{
+    "Step":{
+        "StepSelectionProcessId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+        "StepTitle": "Screen Candidate",
+        "StepCouldStart": "YES",
+        "StepNeedDecision": "YES",
+        "StepOfferJob": "NO",
+        "StepLinkSystemResource": "Screen Candidate",
+        "StepLinkPurpose": "Screen Candidate",
+
+    }
+}
+```
+
+This endpoint create a specific Step.
+
+<aside class="warning">If you're not using an administrator API key, note that some Step will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`POST https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/steps`
+
+## Retrive Step
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/steps"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "Step": [
+        {
+            "EntityItemId": {
+                "S": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepSelectionProcessId": {
+                "S": "SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepTitle": {
+                "S": "Screen Candidate"
+            },
+            "StepCouldStart": {
+                "S": "YES"
+            },
+            "StepNeedDecision": {
+                "S": "YES"
+            },
+            "StepOfferJob": {
+                "S": "NO"
+            },
+            "StepLinkSystemResource": {
+                "S": "Screen Candidate"
+            },
+            "StepLinkPurpose": {
+                "S": "Screen Candidate"
+            }
+        },
+        {
+             "EntityItemId": {
+                "S": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+            },
+            "StepSelectionProcessId": {
+                "S": "SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepTitle": {
+                "S": "Apply Job"
+            },
+            "StepCouldStart": {
+                "S": "YES"
+            },
+            "StepNeedDecision": {
+                "S": "YES"
+            },
+            "StepOfferJob": {
+                "S": "NO"
+            },
+            "StepLinkSystemResource": {
+                "S": "Apply Job"
+            },
+            "StepLinkPurpose": {
+                "S": "Apply Job"
+            }
+        }
+    ],
+    "FilterAttributes": [
+        {
+            "Step": "Decision",
+        }
+    ]
+}
+```
+
+This endpoint retrive Steps.
+
+<aside class="warning">If you're not using an administrator API key, note that some Steps will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/steps`
+
+## Update Step
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/steps/Step:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+     "Step":{
+        "StepSelectionProcessId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+        "StepTitle": "Screen Candidate",
+        "StepCouldStart": "YES",
+        "StepNeedDecision": "YES",
+        "StepOfferJob": "NO",
+        "StepLinkSystemResource": "Screen Candidate",
+        "StepLinkPurpose": "Screen Candidate",
+
+    }
+}
+```
+
+This endpoint update a specific Step
+
+<aside class="warning">If you're not using an administrator API key, note that some Step will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`PUT https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/steps/Step:bf8a7e80f6978e9a2d2ee54b9c6494d8`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of Step
+
+## View Detaile Applicant Processing Step
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/steps/Step:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+[
+{        "EntityItemId": {
+            "S": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+        },
+        "StepSelectionProcessId": {
+            "S": "SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+        },
+        "StepTitle": {
+            "S": "Screen Candidate"
+        },
+        "StepCouldStart": {
+            "S": "YES"
+        },
+        "StepNeedDecision": {
+            "S": "YES"
+        },
+        "StepOfferJob": {
+            "S": "NO"
+        },
+        "StepLinkSystemResource": {
+            "S": "Screen Candidate"
+        },
+        "StepLinkPurpose": {
+            "S": "Screen Candidate"
+        }
+    }
+]
+```
+
+This endpoint view detail a specific Step.
+
+<aside class="warning">If you're not using an administrator API key, note that some Step will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`get https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/steps/Step:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of Step
+
+## Delete a Step
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/steps/Step:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+This endpoint delete a Step.
+
+<aside class="warning">If you're not using an administrator API key, note that some Step will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`DELETE https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/steps/Step:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of Step
+
+# StepFlowConfig
+## Create StepFlowConfig
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+
+{
+    "StepFlowConfig":{
+        "StepFlowConfigSelectionProcessId": "SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+        "StepFlowConfigFromStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+        "StepFlowConfigDecisionOptionId": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+        "StepFlowConfigEndProcess": "NO",
+        "StepFlowConfigToStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10"
+    }
+}
+```
+
+This endpoint create a specific StepFlowConfig.
+
+<aside class="warning">If you're not using an administrator API key, note that some StepFlowConfig will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`POST https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs`
+
+## Retrive StepFlowConfig
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "StepFlowConfig": [
+        {
+            "EntityItemId": {
+                "S": "StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+            },
+            "StepFlowConfigSelectionProcessId": {
+                "S":"SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepFlowConfigFromStepId": {
+                "S":"Step:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepFlowConfigDecisionOptionId": {
+                "S":"DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepFlowConfigEndProcess": {
+                "S":"NO"
+            },
+            "StepFlowConfigToStepId":{
+                "S": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10"
+            }
+        },
+        {
+            "EntityItemId": {
+                "S": "StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+            },
+            "StepFlowConfigSelectionProcessId": {
+                "S":"SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepFlowConfigFromStepId": {
+                "S":"Step:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepFlowConfigDecisionOptionId": {
+                "S":"DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepFlowConfigEndProcess": {
+                "S":"NO"
+            },
+            "StepFlowConfigToStepId":{
+                "S": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10"
+            }
+        }
+    ]
+}
+```
+
+This endpoint retrive StepFlowConfigs.
+
+<aside class="warning">If you're not using an administrator API key, note that some StepFlowConfigs will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs`
+
+## Update StepFlowConfig
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs/StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d8"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "StepFlowConfig":{
+        "StepFlowConfigSelectionProcessId": "SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+        "StepFlowConfigFromStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+        "StepFlowConfigDecisionOptionId": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+        "StepFlowConfigEndProcess": "NO",
+        "StepFlowConfigToStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10"
+    }
+}
+```
+
+This endpoint update a specific StepFlowConfig
+
+<aside class="warning">If you're not using an administrator API key, note that some StepFlowConfig will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`PUT https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs/StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d8`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of StepFlowConfig
+
+## View Detaile Applicant Processing StepFlowConfig
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs/StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+[
+    {
+        "EntityItemId": {
+            "S": "StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+        },
+        "StepFlowConfigSelectionProcessId": {
+            "S":"SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+        },
+        "StepFlowConfigFromStepId": {
+            "S":"Step:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+        },
+        "StepFlowConfigDecisionOptionId": {
+            "S":"DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+        },
+        "StepFlowConfigEndProcess": {
+            "S":"NO"
+        },
+        "StepFlowConfigToStepId":{
+            "S": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10"
+        }
+    }
+]
+```
+
+This endpoint view detail a specific StepFlowConfig.
+
+<aside class="warning">If you're not using an administrator API key, note that some StepFlowConfig will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`get https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs/StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of StepFlowConfig
+
+## Delete a StepFlowConfig
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs/StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+This endpoint delete a StepFlowConfig.
+
+<aside class="warning">If you're not using an administrator API key, note that some StepFlowConfig will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`DELETE https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs/StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d9`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of StepFlowConfig
+
