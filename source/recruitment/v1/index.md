@@ -1107,17 +1107,29 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets"
 
 {
     "CandidateBucket": {
-        "CandidateBucketPositionId": "Position:79526e35074d4799ab82cc37d4c79bf1",
+        "CandidateBucketPositionTitle": "Mobile Developer",
+        "CandidateBucketPositionId": "Position:79526e35074d4799ab82cc37d4c79bf2",
+        "CompositeAccessPatterns":"CandidateBucket#PositionTitle:HR Manager#Position:79526e35074d4799ab82cc37d4c79bf1",
         "Children":{
             "People":[
                 {
                     "PeopleSex": "Male",
-                    "PeopleName": "Chan Tha", 
+                    "PeopleName": "Theara sun", 
                     "PeopleId": "People:4585454897fc431899dcdfc5b37ffad5" 
                 },
                 {
                     "PeopleSex": "Female",
-                    "PeopleName": "Dara Mony",
+                    "PeopleName": "Vina chung",
+                    "PeopleId": "People:4585454897fc431899dcdfc5b37fgdg5" 
+                },
+                {
+                    "PeopleSex": "Female",
+                    "PeopleName": "Kun Thida",
+                    "PeopleId": "People:4585454897fc431899dcdfc5b37fgdg5" 
+                },
+                {
+                    "PeopleSex": "Female",
+                    "PeopleName": "Nita Kao",
                     "PeopleId": "People:4585454897fc431899dcdfc5b37fgdg5" 
                 }
             ]
@@ -1146,8 +1158,11 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets"
 {
     "CandidateBucket": [
         {
+            "CandidateBucketPositionTitle": {
+                "S": "IT Network System"
+            },
             "CandidateBucketPositionId": {
-                "S": "Position:79526e35074d4799ab82cc37d4c79bf1"
+                "S": "Position:79526e35074d4799ab82cc37d4c79bf2"
             },
             "TenantId": {
                 "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
@@ -1160,7 +1175,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets"
                                 "S": "People:4585454897fc431899dcdfc5b37ffad5"
                             },
                             "PeopleName": {
-                                "S": "Chan Tha"
+                                "S": "Dara Chan"
                             },
                             "PeopleSex": {
                                 "S": "Male"
@@ -1173,7 +1188,33 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets"
                                 "S": "People:4585454897fc431899dcdfc5b37fgdg5"
                             },
                             "PeopleName": {
-                                "S": "Dara Mony"
+                                "S": "Kim Vuty"
+                            },
+                            "PeopleSex": {
+                                "S": "Female"
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "PeopleId": {
+                                "S": "People:4585454897fc431899dcdfc5b37fgdg5"
+                            },
+                            "PeopleName": {
+                                "S": "Kun Thida"
+                            },
+                            "PeopleSex": {
+                                "S": "Female"
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "PeopleId": {
+                                "S": "People:4585454897fc431899dcdfc5b37fgdg5"
+                            },
+                            "PeopleName": {
+                                "S": "Theavy Sut"
                             },
                             "PeopleSex": {
                                 "S": "Female"
@@ -1183,16 +1224,92 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets"
                 ]
             },
             "EntityItemId": {
-                "S": "CandidateBucket:3ded93efc6ec6279ae1e6e973b215cea"
+                "S": "CandidateBucket:ba521ce76bddbe924e7ee030bde3e6a8"
             },
             "CompositeAccessPatterns": {
-                "S": "CandidateBucket"
+                "S": "CandidateBucket#CandidateBucketPositionId:Position:79526e35074d4799ab82cc37d4c79bf2#CandidateBucketPositionTitle:IT Network System"
+            }
+        },
+        {
+            "CandidateBucketPositionTitle": {
+                "S": "Mobile Developer"
+            },
+            "CandidateBucketPositionId": {
+                "S": "Position:79526e35074d4799ab82cc37d4c79bf2"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "CandidateBucketPeople": {
+                "L": [
+                    {
+                        "M": {
+                            "PeopleId": {
+                                "S": "People:4585454897fc431899dcdfc5b37ffad5"
+                            },
+                            "PeopleName": {
+                                "S": "Theara sun"
+                            },
+                            "PeopleSex": {
+                                "S": "Male"
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "PeopleId": {
+                                "S": "People:4585454897fc431899dcdfc5b37fgdg5"
+                            },
+                            "PeopleName": {
+                                "S": "Vina chung"
+                            },
+                            "PeopleSex": {
+                                "S": "Female"
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "PeopleId": {
+                                "S": "People:4585454897fc431899dcdfc5b37fgdg5"
+                            },
+                            "PeopleName": {
+                                "S": "Kun Thida"
+                            },
+                            "PeopleSex": {
+                                "S": "Female"
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "PeopleId": {
+                                "S": "People:4585454897fc431899dcdfc5b37fgdg5"
+                            },
+                            "PeopleName": {
+                                "S": "Nita Kao"
+                            },
+                            "PeopleSex": {
+                                "S": "Female"
+                            }
+                        }
+                    }
+                ]
+            },
+            "EntityItemId": {
+                "S": "CandidateBucket:be9edf11b0b22a6d1ad3786a4bb47893"
+            },
+            "CompositeAccessPatterns": {
+                "S": "CandidateBucket#CandidateBucketPositionId:Position:79526e35074d4799ab82cc37d4c79bf2#CandidateBucketPositionTitle:Mobile Developer"
             }
         }
     ],
     "FilterAttributes": [
         {
-            "PositionTitle": "Position Title"
+            "CandidateBucketPositionTitle": "Position Title"
+        },
+        {
+            "CandidateBucketPositionId": "Position Id"
         }
     ]
 }
@@ -1209,66 +1326,88 @@ This endpoint retrive CandidateBuckets.
 
 ## View Detaile CandidateBucket
 ```bash
-curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets/CandidateBucket:3ded93efc6ec6279ae1e6e973b215cea"
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets/CandidateBucket:be9edf11b0b22a6d1ad3786a4bb47893"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
 ```
 
 > The above command when submit JSON structured like this:
 
 ```json
-{
-    "CandidateBucket": [
-        {
-            "CandidateBucketPositionId": {
-                "S": "Position:79526e35074d4799ab82cc37d4c79bf1"
-            },
-            "TenantId": {
-                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-            },
-            "CandidateBucketPeople": {
-                "L": [
-                    {
-                        "M": {
-                            "PeopleId": {
-                                "S": "People:4585454897fc431899dcdfc5b37ffad5"
-                            },
-                            "PeopleName": {
-                                "S": "Chan Tha"
-                            },
-                            "PeopleSex": {
-                                "S": "Male"
-                            }
-                        }
-                    },
-                    {
-                        "M": {
-                            "PeopleId": {
-                                "S": "People:4585454897fc431899dcdfc5b37fgdg5"
-                            },
-                            "PeopleName": {
-                                "S": "Dara Mony"
-                            },
-                            "PeopleSex": {
-                                "S": "Female"
-                            }
+[
+    {
+        "CandidateBucketPositionTitle": {
+            "S": "Mobile Developer"
+        },
+        "CandidateBucketPositionId": {
+            "S": "Position:79526e35074d4799ab82cc37d4c79bf2"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "CandidateBucketPeople": {
+            "L": [
+                {
+                    "M": {
+                        "PeopleId": {
+                            "S": "People:4585454897fc431899dcdfc5b37ffad5"
+                        },
+                        "PeopleName": {
+                            "S": "Theara sun"
+                        },
+                        "PeopleSex": {
+                            "S": "Male"
                         }
                     }
-                ]
-            },
-            "EntityItemId": {
-                "S": "CandidateBucket:3ded93efc6ec6279ae1e6e973b215cea"
-            },
-            "CompositeAccessPatterns": {
-                "S": "CandidateBucket"
-            }
+                },
+                {
+                    "M": {
+                        "PeopleId": {
+                            "S": "People:4585454897fc431899dcdfc5b37fgdg5"
+                        },
+                        "PeopleName": {
+                            "S": "Vina chung"
+                        },
+                        "PeopleSex": {
+                            "S": "Female"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "PeopleId": {
+                            "S": "People:4585454897fc431899dcdfc5b37fgdg5"
+                        },
+                        "PeopleName": {
+                            "S": "Kun Thida"
+                        },
+                        "PeopleSex": {
+                            "S": "Female"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "PeopleId": {
+                            "S": "People:4585454897fc431899dcdfc5b37fgdg5"
+                        },
+                        "PeopleName": {
+                            "S": "Nita Kao"
+                        },
+                        "PeopleSex": {
+                            "S": "Female"
+                        }
+                    }
+                }
+            ]
+        },
+        "EntityItemId": {
+            "S": "CandidateBucket:be9edf11b0b22a6d1ad3786a4bb47893"
+        },
+        "CompositeAccessPatterns": {
+            "S": "CandidateBucket#CandidateBucketPositionId:Position:79526e35074d4799ab82cc37d4c79bf2#CandidateBucketPositionTitle:Mobile Developer"
         }
-    ],
-    "FilterAttributes": [
-        {
-            "PositionTitle": "Position Title"
-        }
-    ]
-}
+    }
+]
 ```
 
 This endpoint view detail a specific CandidateBucket.
@@ -1277,7 +1416,7 @@ This endpoint view detail a specific CandidateBucket.
 
 ### HTTP Request
 
-`GET https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets/CandidateBucket:3ded93efc6ec6279ae1e6e973b215cea`
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets/CandidateBucket:be9edf11b0b22a6d1ad3786a4bb47893`
 
 ### URL Parameters
 
@@ -1287,7 +1426,7 @@ ID | The ID of the Client to View Detail each CandidateBucket
 
 ## Delete CandidateBucket
 ```bash
-curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets/CandidateBucket:3ded93efc6ec6279ae1e6e973b215cea"
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets/CandidateBucket:be9edf11b0b22a6d1ad3786a4bb47893"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
 ```
 
@@ -1298,7 +1437,7 @@ This endpoint Delete a specific CandidateBucket.
 
 ### HTTP Request
 
-`DELETE https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets/CandidateBucket:3ded93efc6ec6279ae1e6e973b215cea`
+`DELETE https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets/CandidateBucket:be9edf11b0b22a6d1ad3786a4bb47893`
 
 ### URL Parameters
 
@@ -3039,4 +3178,78 @@ This endpoint delete a StepFlowConfig.
 Parameter | Description
 --------- | -----------
 ID | The ID of StepFlowConfig
+
+<===>
+# Selection Process
+## Selection Process
+
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "SelectionProcess": {
+        "SelectionProcessName": "Select Candidate",
+        "CompositeAccessPatterns": "SelectionProcess#SelectionProcessName:Select Candidate",
+        "Children":{
+            "Step": [
+                {
+                    "StepSelectionProcessId": "",
+                    "StepTitle": "Screen Candidate",
+                    "StepCouldStart": "YES",
+                    "StepNeedDecision": "YES",
+                    "StepOfferJob": "NO",
+                    "StepLinkSystemResource": "Screen Candidate",
+                    "StepLinkPurpose": "Screen Candidate",
+                    "CompositeAccessPatterns": "Step#SelectioProcess:931cc0bd784645abaa12df07bb6390c8#StepCouldStart: YES",
+                },
+                {
+                    "StepSelectionProcessId": "",
+                    "StepTitle": "Apply Job",
+                    "StepCouldStart": "YES",
+                    "StepNeedDecision": "YES",
+                    "StepOfferJob": "NO",
+                    "StepLinkSystemResource": "Apply Job",
+                    "StepLinkPurpose": "Apply Job",
+                    "CompositeAccessPatterns":"Step#SelectioProcess:931cc0bd784645abaa12df07bb6390c8#StepCouldStart: YES",
+
+                }
+            ],
+            "StepFlowConfig": [
+                {
+                    "StepFlowConfigSelectionProcessId": "",
+                    "StepFlowConfigFromStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+                    "StepFlowConfigDecisionOptionId": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+                    "StepFlowConfigEndProcess": "NO",
+                    "StepFlowConfigToStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10",
+                    "CompositeAccessPatterns":"StepFlowConfig#SelectioProcess:931cc0bd784645abaa12df07bb6390c8#DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+
+                },
+                {
+                    "StepFlowConfigSelectionProcessId": "",
+                    "StepFlowConfigFromStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+                    "StepFlowConfigDecisionOptionId": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+                    "StepFlowConfigEndProcess": "NO",
+                    "StepFlowConfigToStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10",
+                    "CompositeAccessPatterns":"StepFlowConfig#SelectioProcess:931cc0bd784645abaa12df07bb6390c8#DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
+                }
+            ]
+        }
+    }
+    
+}
+```
+
+This endpoint create a specific Selection Process.
+
+<aside class="warning">If you're not using an administrator API key, note that some Selection Processs will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`POST https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes`
+<===>
 
