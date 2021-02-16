@@ -31,28 +31,179 @@ TripRequestRequesterName    | Is the name of creator trip request.
 [
     {
         "CompositeAccessPatterns": {
-            "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:DRAFTED#TripRequestRequesterName:Nana#TripRequestTravelMode:RentalCar#TripRequestCoveredByOther:CoveredByOwnCompany"
+            "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:DRAFTED#TripRequestRequesterName:Dara#TripRequestTravelMode:RentalCar#TripRequestCoveredByOther:CoveredByOwnCompany"
         },
         "TripRequestLocalTrip": {
             "S": "LocalTrip"
         },
+        "TripRequestJointTraveler": {
+            "L": [
+                {
+                    "M": {
+                        "JointTravelerEmployeePersonId": {
+                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
+                        },
+                        "JointTravelerPersonName": {
+                            "S": "Son"
+                        }
+                    }
+                }
+            ]
+        },
         "TripRequestRequesterName": {
-            "S": "Nana"
+            "S": "Dara"
         },
         "TripRequestRequesterId": {
             "S": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8"
         },
         "EntityItemId": {
-            "S": "TripRequest:0b08932129b10a03ab2836efa16343e8"
+            "S": "TripRequest:b0be317762a2c83820dc956a87b6eff6"
         },
         "TripRequestStatus": {
             "S": "DRAFTED"
         },
         "TripRequestPurpose": {
-            "S": "Test Trip Request"
+            "S": "Test Trip Expenses"
+        },
+        "TripRequestTripDailyExpense": {
+            "L": [
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-16"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Meal"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "0"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-16"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Travels in LocationLevel2:464b126eface9bb6782b93e6bc7f05f2#LocationLevel3:00c34b7db1603998e9d08e9a3dffa30c"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "In-area Travel"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "0"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-16"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Alone stay per night"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Accommodation"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "15"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-17"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Meal"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "2"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-17"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Travels in LocationLevel2:464b126eface9bb6782b93e6bc7f05f2#LocationLevel3:00c34b7db1603998e9d08e9a3dffa30c"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "In-area Travel"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "0"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-17"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Alone stay per night"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Accommodation"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "0"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-16"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "From Kaoh Nheaek at 8:03 AM to Yeang"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Travel Fee"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "15.00"
+                        }
+                    }
+                }
+            ]
         },
         "TripRequestReturnDateTime": {
-            "S": "2021-02-03 10:30:00"
+            "S": "2021-02-17 10:30:00"
         },
         "TripRequestCoveredByOther": {
             "S": "CoveredByOwnCompany"
@@ -61,7 +212,7 @@ TripRequestRequesterName    | Is the name of creator trip request.
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
         "TripRequestDepartureDateTime": {
-            "S": "2021-01-31 8:03:00"
+            "S": "2021-02-16 8:03:00"
         },
         "TripRequestTravelMode": {
             "S": "RentalCar"
@@ -70,203 +221,22 @@ TripRequestRequesterName    | Is the name of creator trip request.
             "L": [
                 {
                     "M": {
-                        "Date": {
-                            "S": "2021-02-09"
-                        },
-                        "Route": {
+                        "Shop": {
                             "L": [
                                 {
                                     "M": {
-                                        "From": {
-                                            "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "b2d5cda7-5943-4b28-bf45-c41aaa7839b1"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Takeo"
-                                                        },
-                                                        "LocationLevel2": {
-                                                            "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "2108"
-                                                                },
-                                                                "LocationLevel3": {
-                                                                    "M": {
-                                                                        "LocationLevel3Id": {
-                                                                            "S": "210802"
-                                                                        },
-                                                                        "LocationLevel3Name": {
-                                                                            "S": "Sangkat Roka Knong"
-                                                                        },
-                                                                        "LocationLevel4": {
-                                                                            "M": {
-                                                                                "LocationLevel4Name": {
-                                                                                    "S": "Snaor"
-                                                                                },
-                                                                                "LocationLevel4Id": {
-                                                                                    "S": "21080212"
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Krong Doun Kaev"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
+                                        "ShopId": {
+                                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
                                         },
-                                        "To": {
-                                            "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "ca2bc9a4-b6a3-4870-99e2-c038179d2068"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Phnom Penh"
-                                                        },
-                                                        "LocationLevel2": {
-                                                            "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "1206"
-                                                                },
-                                                                "LocationLevel3": {
-                                                                    "M": {
-                                                                        "LocationLevel3Id": {
-                                                                            "S": "120611"
-                                                                        },
-                                                                        "LocationLevel3Name": {
-                                                                            "S": "Boeng Tompun 1"
-                                                                        },
-                                                                        "LocationLevel4": {
-                                                                            "M": {
-                                                                                "LocationLevel4Name": {
-                                                                                    "S": "Sansam Kosal I"
-                                                                                },
-                                                                                "LocationLevel4Id": {
-                                                                                    "S": "12061106"
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Khan Mean Chey"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "M": {
-                                        "From": {
-                                            "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "ca2bc9a4-b6a3-4870-99e2-c038179d2068"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Phnom Penh"
-                                                        },
-                                                        "LocationLevel2": {
-                                                            "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "1206"
-                                                                },
-                                                                "LocationLevel3": {
-                                                                    "M": {
-                                                                        "LocationLevel3Id": {
-                                                                            "S": "120611"
-                                                                        },
-                                                                        "LocationLevel3Name": {
-                                                                            "S": "Boeng Tompun 1"
-                                                                        },
-                                                                        "LocationLevel4": {
-                                                                            "M": {
-                                                                                "LocationLevel4Name": {
-                                                                                    "S": "Sansam Kosal I"
-                                                                                },
-                                                                                "LocationLevel4Id": {
-                                                                                    "S": "12061106"
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Khan Mean Chey"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "To": {
-                                            "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "b2d5cda7-5943-4b28-bf45-c41aaa7839b1"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Takeo"
-                                                        },
-                                                        "LocationLevel2": {
-                                                            "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "2108"
-                                                                },
-                                                                "LocationLevel3": {
-                                                                    "M": {
-                                                                        "LocationLevel3Id": {
-                                                                            "S": "210802"
-                                                                        },
-                                                                        "LocationLevel3Name": {
-                                                                            "S": "Sangkat Roka Knong"
-                                                                        },
-                                                                        "LocationLevel4": {
-                                                                            "M": {
-                                                                                "LocationLevel4Name": {
-                                                                                    "S": "Snaor"
-                                                                                },
-                                                                                "LocationLevel4Id": {
-                                                                                    "S": "21080212"
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Krong Doun Kaev"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
+                                        "ShopName": {
+                                            "S": "Sumsung Shop"
                                         }
                                     }
                                 }
                             ]
-                        }
-                    }
-                },
-                {
-                    "M": {
+                        },
                         "Date": {
-                            "S": "2021-02-10"
+                            "S": "2021-02-16"
                         },
                         "Route": {
                             "L": [
@@ -277,38 +247,18 @@ TripRequestRequesterName    | Is the name of creator trip request.
                                                 "LocationLevel1": {
                                                     "M": {
                                                         "LocationLevel1Id": {
-                                                            "S": "ca2bc9a4-b6a3-4870-99e2-c038179d2068"
+                                                            "S": "LocationLevel1:111b3abe7795b6231a75523c37148713"
                                                         },
                                                         "LocationLevel1Name": {
-                                                            "S": "Phnom Penh"
+                                                            "S": "Mondul Kiri"
                                                         },
                                                         "LocationLevel2": {
                                                             "M": {
                                                                 "LocationLevel2Id": {
-                                                                    "S": "1206"
-                                                                },
-                                                                "LocationLevel3": {
-                                                                    "M": {
-                                                                        "LocationLevel3Id": {
-                                                                            "S": "120611"
-                                                                        },
-                                                                        "LocationLevel3Name": {
-                                                                            "S": "Boeng Tompun 1"
-                                                                        },
-                                                                        "LocationLevel4": {
-                                                                            "M": {
-                                                                                "LocationLevel4Name": {
-                                                                                    "S": "Sansam Kosal I"
-                                                                                },
-                                                                                "LocationLevel4Id": {
-                                                                                    "S": "12061106"
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
+                                                                    "S": "LocationLevel2:464b126eface9bb6782b93e6bc7f05f2"
                                                                 },
                                                                 "LocationLevel2Name": {
-                                                                    "S": "Khan Mean Chey"
+                                                                    "S": "Kaoh Nheaek"
                                                                 }
                                                             }
                                                         }
@@ -321,38 +271,28 @@ TripRequestRequesterName    | Is the name of creator trip request.
                                                 "LocationLevel1": {
                                                     "M": {
                                                         "LocationLevel1Id": {
-                                                            "S": "b2d5cda7-5943-4b28-bf45-c41aaa7839b1"
+                                                            "S": "LocationLevel1:67acd409189307f17531e3548277ceb8"
                                                         },
                                                         "LocationLevel1Name": {
-                                                            "S": "Phnom Penh"
+                                                            "S": "Siemreap"
                                                         },
                                                         "LocationLevel2": {
                                                             "M": {
                                                                 "LocationLevel2Id": {
-                                                                    "S": "2108"
+                                                                    "S": "LocationLevel2:919e80eb971db6281300ef80a3ec81c8"
                                                                 },
                                                                 "LocationLevel3": {
                                                                     "M": {
                                                                         "LocationLevel3Id": {
-                                                                            "S": "210802"
+                                                                            "S": "LocationLevel3:00c34b7db1603998e9d08e9a3dffa30c"
                                                                         },
                                                                         "LocationLevel3Name": {
-                                                                            "S": "Kraing Thnung"
-                                                                        },
-                                                                        "LocationLevel4": {
-                                                                            "M": {
-                                                                                "LocationLevel4Name": {
-                                                                                    "S": "Kraing Angkrang"
-                                                                                },
-                                                                                "LocationLevel4Id": {
-                                                                                    "S": "21080212"
-                                                                                }
-                                                                            }
+                                                                            "S": "Yeang"
                                                                         }
                                                                     }
                                                                 },
                                                                 "LocationLevel2Name": {
-                                                                    "S": "Senson"
+                                                                    "S": "Puok"
                                                                 }
                                                             }
                                                         }
@@ -479,56 +419,50 @@ TripRequestRequesterName    | Is the name of creator trip request.
 {
     "TripRequest": {
         "TripRequestLocalTrip": "LocalTrip",
-        "TripRequestDepartureDateTime": "2021-01-31 8:03:00",
-        "TripRequestReturnDateTime": "2021-02-03 10:30:00",
+        "TripRequestDepartureDateTime": "2021-02-16 8:03:00",
+        "TripRequestReturnDateTime": "2021-02-17 10:30:00",
         "TripRequestStatus": "DRAFTED",
         "TripRequestRequesterId": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8",
-        "TripRequestRequesterName": "Nana",
-        "TripRequestPurpose": "Test Trip Request",
+        "TripRequestRequesterName": "Dara",
+        "TripRequestPurpose": "Test Trip Expenses",
         "TripRequestTravelMode": "RentalCar",
         "TripRequestCoveredByOther": "CoveredByOwnCompany",
         "Children": {
             "TripRoute": [
                 {
-                    "Date": "2021-01-31",
+                    "Date": "2021-02-16",
                     "Route": [
                         { 
                             "From": {
                                 "LocationLevel1": {
-                                    "LocationLevel1Id": "b2d5cda7-5943-4b28-bf45-c41aaa7839b1",
-                                    "LocationLevel1Name": "Takeo",
+                                    "LocationLevel1Id": "LocationLevel1:111b3abe7795b6231a75523c37148713",
+                                    "LocationLevel1Name": "Mondul Kiri",
                                     "LocationLevel2": {
-                                        "LocationLevel2Id": "2108",
-                                        "LocationLevel2Name": "Krong Doun Kaev",
-                                        "LocationLevel3": {
-                                            "LocationLevel3Id": "210802",
-                                            "LocationLevel3Name": "Sangkat Roka Knong",
-                                            "LocationLevel4": {
-                                                "LocationLevel4Id": "21080212",
-                                                "LocationLevel4Name": "Snaor"
-                                            }
-                                        }
+                                        "LocationLevel2Id": "LocationLevel2:464b126eface9bb6782b93e6bc7f05f2",
+                                        "LocationLevel2Name": "Kaoh Nheaek"
                                     }
                                 }
                             },
                             "To": {
                                 "LocationLevel1": {
-                                    "LocationLevel1Id": "ca2bc9a4-b6a3-4870-99e2-c038179d2068",
-                                    "LocationLevel1Name": "Phnom Penh",
+                                    "LocationLevel1Id": "LocationLevel1:67acd409189307f17531e3548277ceb8",
+                                    "LocationLevel1Name": "Siemreap",
                                     "LocationLevel2": {
-                                        "LocationLevel2Id": "1206",
-                                        "LocationLevel2Name": "Khan Mean Chey",
-                                        "LocationLevel3": {
-                                            "LocationLevel3Id": "120611",
-                                            "LocationLevel3Name": "Boeng Tompun 1",
-                                            "LocationLevel4": {
-                                                "LocationLevel4Id": "12061106",
-                                                "LocationLevel4Name": "Sansam Kosal I"
-                                            }
+                                        "LocationLevel2Id": "LocationLevel2:919e80eb971db6281300ef80a3ec81c8",
+                                            "LocationLevel2Name": "Puok",
+                                            "LocationLevel3": {
+                                            "LocationLevel3Id": "LocationLevel3:00c34b7db1603998e9d08e9a3dffa30c",
+                                            "LocationLevel3Name": "Yeang"
                                         }
                                     }
                                 }
                             }
+                        }
+                    ],
+                    "Shop": [
+                        {
+                            "ShopId": "d8d6f92d-c683-4480-bc45-8324599f550d",
+                            "ShopName": "Sumsung Shop"
                         }
                     ]
                 }
@@ -536,16 +470,9 @@ TripRequestRequesterName    | Is the name of creator trip request.
             "JointTraveler": [
                 {
                     "JointTravelerEmployeePersonId": "d8d6f92d-c683-4480-bc45-8324599f550d",
-                    "JointTravelerPersonName": "Lily"
+                    "JointTravelerPersonName": "Son"
                 }
-            ],
-            "Shop": [
-                {
-                    "ShopId": "d8d6f92d-c683-4480-bc45-8324599f550d",
-                    "ShopName": "Sumsung"
-                }
-            ]
-                
+            ]   
         }
     }
 
@@ -556,32 +483,32 @@ TripRequestRequesterName    | Is the name of creator trip request.
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-    [
-        {
-            "ConsumedCapacity": {
-                "TableName": "DsaDev",
-                "CapacityUnits": 1
+[
+    {
+        "ConsumedCapacity": {
+            "TableName": "DsaDev",
+            "CapacityUnits": 1
+        },
+        "@metadata": {
+            "statusCode": 200,
+            "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+            "headers": {
+                "server": "Server",
+                "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                "content-type": "application/x-amz-json-1.0",
+                "content-length": "63",
+                "connection": "keep-alive",
+                "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                "x-amz-crc32": "3143598553"
             },
-            "@metadata": {
-                "statusCode": 200,
-                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
-                "headers": {
-                    "server": "Server",
-                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
-                    "content-type": "application/x-amz-json-1.0",
-                    "content-length": "63",
-                    "connection": "keep-alive",
-                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
-                    "x-amz-crc32": "3143598553"
-                },
-                "transferStats": {
-                    "http": [
-                        []
-                    ]
-                }
+            "transferStats": {
+                "http": [
+                    []
+                ]
             }
         }
-    ]
+    }
+]
 ```
 
 ## Update Trip Request
@@ -893,4 +820,516 @@ id                                  | The ID of the trip expense to update infor
     },
     "message": "Trip Expense Updated Successfully"
 }
+```
+
+# Travel Fee
+
+## Create Trip Expense
+### HTTP Request
+`GET dsa-svc/api/locations/travelFee`
+
+### Body Request
+```json
+{
+    "TravelFee": {
+        "TravelFeeFromLocationLevelId": "LocationLevel2:464b126eface9bb6782b93e6bc7f05f2",
+        "TravelFeeFromLocationLevelName": "Kaoh Nheaek",
+        "TravelFeeToLocationLevelId": "LocationLevel3:00c34b7db1603998e9d08e9a3dffa30c",
+        "TravelFeeToLocationLevelName": "Yeang",
+        "TravelFeeDistance": "457.00",
+        "TravelFeeRate": "15.00"
+    }
+}
+```
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+[
+    {
+        "ConsumedCapacity": {
+            "TableName": "DsaDev",
+            "CapacityUnits": 1
+        },
+        "@metadata": {
+            "statusCode": 200,
+            "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+            "headers": {
+                "server": "Server",
+                "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                "content-type": "application/x-amz-json-1.0",
+                "content-length": "63",
+                "connection": "keep-alive",
+                "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                "x-amz-crc32": "3143598553"
+            },
+            "transferStats": {
+                "http": [
+                    []
+                ]
+            }
+        }
+    }
+]
+```
+### HTTP Request Filter 
+`GET dsa-svc/api/v1/trip-requests?contains=TripRequestRequesterName:Son`
+
+### HTTP Response Filter
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+[
+    {
+        "CompositeAccessPatterns": {
+            "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:DRAFTED#TripRequestRequesterName:Dara#TripRequestTravelMode:RentalCar#TripRequestCoveredByOther:CoveredByOwnCompany"
+        },
+        "TripRequestLocalTrip": {
+            "S": "LocalTrip"
+        },
+        "TripRequestJointTraveler": {
+            "L": [
+                {
+                    "M": {
+                        "JointTravelerEmployeePersonId": {
+                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
+                        },
+                        "JointTravelerPersonName": {
+                            "S": "Lily"
+                        }
+                    }
+                }
+            ]
+        },
+        "TripRequestRequesterName": {
+            "S": "Dara"
+        },
+        "TripRequestRequesterId": {
+            "S": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8"
+        },
+        "EntityItemId": {
+            "S": "TripRequest:19ab3852ab49a0cb4dd408798ba7d670"
+        },
+        "TripRequestStatus": {
+            "S": "DRAFTED"
+        },
+        "TripRequestPurpose": {
+            "S": "Test Trip Expenses"
+        },
+        "TripRequestTripDailyExpense": {
+            "L": [
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-12"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "From Phnom Penh at 8:03 AM to Battambong"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Travel Fee (Departure)"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "8"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-12"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Meal"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "10"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-12"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Travels in Battambong"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "In-area Travel"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "0"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-12"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Alone stay per night"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Accommodation"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "15"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-13"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Meal"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "7"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-13"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Travels in Battambong"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "In-area Travel"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "0"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-13"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Alone stay per night"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Accommodation"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "0"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-02-13"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "From Battambong at 10:30 AM to Phnom Penh"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Travel Fee (Return)"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "8.00"
+                        }
+                    }
+                }
+            ]
+        },
+        "TripRequestReturnDateTime": {
+            "S": "2021-02-13 10:30:00"
+        },
+        "TripRequestCoveredByOther": {
+            "S": "CoveredByOwnCompany"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "TripRequestDepartureDateTime": {
+            "S": "2021-02-12 8:03:00"
+        },
+        "TripRequestTravelMode": {
+            "S": "RentalCar"
+        },
+        "TripRequestShop": {
+            "L": [
+                {
+                    "M": {
+                        "ShopId": {
+                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
+                        },
+                        "ShopName": {
+                            "S": "Sumsung"
+                        }
+                    }
+                }
+            ]
+        },
+        "TripRequestTripRoute": {
+            "L": [
+                {
+                    "M": {
+                        "Date": {
+                            "S": "2021-02-15"
+                        },
+                        "Route": {
+                            "L": [
+                                {
+                                    "M": {
+                                        "From": {
+                                            "M": {
+                                                "LocationLevel1": {
+                                                    "M": {
+                                                        "LocationLevel1Id": {
+                                                            "S": "b2d5cda7-5943-4b28-bf45-c41aaa7839b1"
+                                                        },
+                                                        "LocationLevel1Name": {
+                                                            "S": "Takeo"
+                                                        },
+                                                        "LocationLevel2": {
+                                                            "M": {
+                                                                "LocationLevel2Id": {
+                                                                    "S": "2108"
+                                                                },
+                                                                "LocationLevel2Name": {
+                                                                    "S": "Krong Doun Kaev"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "To": {
+                                            "M": {
+                                                "LocationLevel1": {
+                                                    "M": {
+                                                        "LocationLevel1Id": {
+                                                            "S": "ca2bc9a4-b6a3-4870-99e2-c038179d2068"
+                                                        },
+                                                        "LocationLevel1Name": {
+                                                            "S": "Phnom Penh"
+                                                        },
+                                                        "LocationLevel2": {
+                                                            "M": {
+                                                                "LocationLevel2Id": {
+                                                                    "S": "1206"
+                                                                },
+                                                                "LocationLevel2Name": {
+                                                                    "S": "Khan Mean Chey"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "CompositeAccessPatterns": {
+            "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:DRAFTED#TripRequestRequesterName:Nana#TripRequestTravelMode:RentalCar#TripRequestCoveredByOther:CoveredByOwnCompany"
+        },
+        "TripRequestLocalTrip": {
+            "S": "LocalTrip"
+        },
+        "TripRequestRequesterName": {
+            "S": "Nana"
+        },
+        "TripRequestRequesterId": {
+            "S": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8"
+        },
+        "EntityItemId": {
+            "S": "TripRequest:2b64c9cb380bec9d5e506208de812ca3"
+        },
+        "TripRequestStatus": {
+            "S": "DRAFTED"
+        },
+        "TripRequestPurpose": {
+            "S": "Test Trip Request"
+        },
+        "TripRequestReturnDateTime": {
+            "S": "2021-02-03 10:30:00"
+        },
+        "TripRequestCoveredByOther": {
+            "S": "CoveredByOwnCompany"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "TripRequestDepartureDateTime": {
+            "S": "2021-01-31 8:03:00"
+        },
+        "TripRequestTravelMode": {
+            "S": "RentalCar"
+        },
+        "TripRequestShop": {
+            "L": [
+                {
+                    "M": {
+                        "ShopId": {
+                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
+                        },
+                        "ShopName": {
+                            "S": "Sumsung"
+                        }
+                    }
+                }
+            ]
+        },
+        "TripRequestTripRoute": {
+            "L": [
+                {
+                    "M": []
+                }
+            ]
+        }
+    }
+]
+```
+
+## Get All Travel Fee
+### HTTP Request
+`GET dsa-svc/api/locations/travelFee`
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json 
+[
+    {
+        "TravelFeeRate": {
+            "S": "15.00"
+        },
+        "EntityItemId": {
+            "S": "TravelFee:da88760e78fa70abfd540f0ca027e201"
+        },
+        "TravelFeeDistance": {
+            "S": "457.00"
+        },
+        "TravelFeeFromLocationLevelId": {
+            "S": "LocationLevel2:464b126eface9bb6782b93e6bc7f05f2"
+        },
+        "CompositeAccessPatterns": {
+            "S": "TravelFee#TravelFeeFromLocationLevelId:LocationLevel2:464b126eface9bb6782b93e6bc7f05f2#TravelFeeFromLocationLevelName:Kaoh Nheaek#TravelFeeToLocationLevelId:LocationLevel3:00c34b7db1603998e9d08e9a3dffa30c#TravelFeeToLocationLevelName:Yeang"
+        },
+        "TravelFeeFromLocationLevelName": {
+            "S": "Kaoh Nheaek"
+        },
+        "TravelFeeToLocationLevelId": {
+            "S": "LocationLevel3:00c34b7db1603998e9d08e9a3dffa30c"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "TravelFeeToLocationLevelName": {
+            "S": "Yeang"
+        }
+    },
+    {
+        "TravelFeeRate": {
+            "S": "10.00"
+        },
+        "TravelFeeFromLocationLevel2Name": {
+            "S": "Tuek Chhou"
+        },
+        "EntityItemId": {
+            "S": "TravelFee:f522cb093b2b643b1701095d4e03d3a3"
+        },
+        "CompositeAccessPatterns": {
+            "S": "TravelFee#TravelFeeFromLocationLevel2Id:LocationLevel2:38c46419461651167a9d94da2eb470dd#TravelFeeFromLocationLevel2Name:Tuek Chhou#TravelFeeToLocationLevel2Id:LocationLevel2:37ea3ede9376c13dae975c7184e642a4#TravelFeeToLocationLevel2Name:Saensokh"
+        },
+        "TravelFeeToLocationLevel2Id": {
+            "S": "LocationLevel2:37ea3ede9376c13dae975c7184e642a4"
+        },
+        "TravelFeeFromLocationLevel2Id": {
+            "S": "LocationLevel2:38c46419461651167a9d94da2eb470dd"
+        },
+        "TravelFeeToLocationLevel2Name": {
+            "S": "Saensokh"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        }
+    }
+]
+```
+### HTTP Request Filter 
+`GET dsa-svc/api/locations/travelFee?contains=LocationLevel2:029d52772c42cf101560c4c52d929d5d#LocationLevel2:d02b7673b0046130511cde65091e5067`
+
+### HTTP Response Filter
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+[
+    {
+        "TravelFeeRate": {
+            "S": "5.00"
+        },
+        "TravelFeeFromLocationLevel2Name": {
+            "S": "Srei Santhor"
+        },
+        "EntityItemId": {
+            "S": "TravelFee:7b596cff8fab077872671c0046fe5b87"
+        },
+        "CompositeAccessPatterns": {
+            "S": "TravelFee#TravelFeeFromLocationLevel2Id:LocationLevel2:029d52772c42cf101560c4c52d929d5d#TravelFeeFromLocationLevel2Name:Srei Santhor#TravelFeeToLocationLevel2Id:LocationLevel2:d02b7673b0046130511cde65091e5067#TravelFeeToLocationLevel2Name:Angkor Borei"
+        },
+        "TravelFeeToLocationLevel2Id": {
+            "S": "LocationLevel2:d02b7673b0046130511cde65091e5067"
+        },
+        "TravelFeeFromLocationLevel2Id": {
+            "S": "LocationLevel2:029d52772c42cf101560c4c52d929d5d"
+        },
+        "TravelFeeToLocationLevel2Name": {
+            "S": "Angkor Borei"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        }
+    }
+]
 ```
