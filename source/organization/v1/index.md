@@ -715,3 +715,1520 @@ LocationLevel3Name          | Is the name of the communes.
     }
 ]
 ```
+
+# Organization
+## Get All Organization
+
+### HTTP Request
+`GET organization-svc/api/organizations`
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+[
+    {
+        "OrganizationVatNumber": {
+            "S": "Activate"
+        },
+        "EntityItemId": {
+            "S": "Organization:efb8fc57567919cce70374bf1a1f3f8d"
+        },
+        "OrganizationContactOther": {
+            "L": [
+                {
+                    "M": {
+                        "PhoneNumber": {
+                            "S": "023 995 500"
+                        },
+                        "Website": {
+                            "S": "https://www.passerellesnumeriques.org/en/"
+                        },
+                        "SocialProfile": {
+                            "S": "https://www.facebook.com/PnCambodiaAlumni/"
+                        },
+                        "Email": {
+                            "S": "info.cambodia@passerellesnumeriques.org"
+                        }
+                    }
+                }
+            ]
+        },
+        "CompositeAccessPatterns": {
+            "S": "Organization#OrganizationNature:Nonprofit#OrganizationName:Passerelles Numeriques Cambodia#OrganizationShortName:PNC"
+        },
+        "OrganizationIndustry": {
+            "L": [
+                {
+                    "M": {
+                        "IndustryName": {
+                            "S": "Organization"
+                        },
+                        "SubIndustry": {
+                            "L": [
+                                {
+                                    "M": {
+                                        "Name": {
+                                            "S": "School"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "OrganizationName": {
+            "S": "Passerelles Numeriques Cambodia"
+        },
+        "OrganizationAddress": {
+            "L": [
+                {
+                    "M": {
+                        "CountryName": {
+                            "S": "Cambodia"
+                        },
+                        "LocationLevel4Name": {
+                            "S": "Phum Tropeang Chhuk"
+                        },
+                        "StreetAddessDetail": {
+                            "S": "371"
+                        },
+                        "LocationLevel1Name": {
+                            "S": "Phnom Penh"
+                        },
+                        "LocationLevel2Name": {
+                            "S": "Sen Sok"
+                        },
+                        "LocationLevel3Name": {
+                            "S": "Tek Thla"
+                        },
+                        "PostalCode": {
+                            "S": "120209"
+                        }
+                    }
+                }
+            ]
+        },
+        "OrganizationNature": {
+            "S": "Nonprofit"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "OrganizationShortName": {
+            "S": "PNC"
+        }
+    }
+]
+```
+
+### HTTP Request Filter 
+`GET organization-svc/api/organizations?contains=OrganizationNature:Nonprofit`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+OrganizationNature          | Is the nature of organization. EX: Private, Nonprofit, Public
+OrganizationName            | Is the name of the organization. EX: Artifcial Intelligence Machine Learning
+OrganizationShortName       | Is the short name of the organization. Ex: AIML
+
+### HTTP Response Filter
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "OrganizationVatNumber": {
+        "S": "Activate"
+    },
+    "EntityItemId": {
+        "S": "Organization:efb8fc57567919cce70374bf1a1f3f8d"
+    },
+    "OrganizationContactOther": {
+        "L": [
+            {
+                "M": {
+                    "PhoneNumber": {
+                        "S": "023 995 500"
+                    },
+                    "Website": {
+                        "S": "https://www.passerellesnumeriques.org/en/"
+                    },
+                    "SocialProfile": {
+                        "S": "https://www.facebook.com/PnCambodiaAlumni/"
+                    },
+                    "Email": {
+                        "S": "info.cambodia@passerellesnumeriques.org"
+                    }
+                }
+            }
+        ]
+    },
+    "CompositeAccessPatterns": {
+        "S": "Organization#OrganizationNature:Nonprofit#OrganizationName:Passerelles Numeriques Cambodia#OrganizationShortName:PNC"
+    },
+    "OrganizationIndustry": {
+        "L": [
+            {
+                "M": {
+                    "IndustryName": {
+                        "S": "Organization"
+                    },
+                    "SubIndustry": {
+                        "L": [
+                            {
+                                "M": {
+                                    "Name": {
+                                        "S": "School"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "OrganizationName": {
+        "S": "Passerelles Numeriques Cambodia"
+    },
+    "OrganizationAddress": {
+        "L": [
+            {
+                "M": {
+                    "CountryName": {
+                        "S": "Cambodia"
+                    },
+                    "LocationLevel4Name": {
+                        "S": "Phum Tropeang Chhuk"
+                    },
+                    "StreetAddessDetail": {
+                        "S": "371"
+                    },
+                    "LocationLevel1Name": {
+                        "S": "Phnom Penh"
+                    },
+                    "LocationLevel2Name": {
+                        "S": "Sen Sok"
+                    },
+                    "LocationLevel3Name": {
+                        "S": "Tek Thla"
+                    },
+                    "PostalCode": {
+                        "S": "120209"
+                    }
+                }
+            }
+        ]
+    },
+    "OrganizationNature": {
+        "S": "Nonprofit"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "OrganizationShortName": {
+        "S": "PNC"
+    }
+}
+```
+
+## Create a Organization
+### HTTP Request
+`POST organization-svc/api/organization`
+
+### Body Request
+
+```json
+{
+    "Organization": {
+        "OrganizationName": "Passerelles Numeriques Cambodia",
+        "OrganizationShortName": "PNC",
+        "OrganizationNature": "Nonprofit",
+        "OrganizationVatNumber": "Activate",
+        "Children": {
+            "Industry": [
+                {
+                    "IndustryName":"Organization",
+                    "SubIndustry":[
+                        {
+                            "Name":"School"
+                        }
+                    ]
+                }
+            ],
+            "Address": [
+                {
+                    "CountryName": "Cambodia",
+                    "LocationLevel1Name": "Phnom Penh",
+                    "PostalCode": "120209",
+                    "LocationLevel2Name": "Sen Sok",
+                    "LocationLevel3Name": "Tek Thla",
+                    "LocationLevel4Name": "Phum Tropeang Chhuk",
+                    "StreetAddessDetail": "371"
+                }
+            ],
+            "ContactOther": [
+                {
+                    "PhoneNumber": "023 995 500",
+                    "Email": "info.cambodia@passerellesnumeriques.org",
+                    "Website": "https://www.passerellesnumeriques.org/en/",
+                    "SocialProfile": "https://www.facebook.com/PnCambodiaAlumni/"
+                }
+            ]
+        }
+    }
+}
+
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    [
+        {
+            "ConsumedCapacity": {
+                "TableName": "DsaDev",
+                "CapacityUnits": 1
+            },
+            "@metadata": {
+                "statusCode": 200,
+                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+                "headers": {
+                    "server": "Server",
+                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                    "content-type": "application/x-amz-json-1.0",
+                    "content-length": "63",
+                    "connection": "keep-alive",
+                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "x-amz-crc32": "3143598553"
+                },
+                "transferStats": {
+                    "http": [
+                        []
+                    ]
+                }
+            }
+        }
+    ]
+```
+
+## Update a Organization
+### HTTP Request
+`PUT organization-svc/api/organization/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of organization. EX: Organization:c38176abf908a76616ed9ab31bc63eb4
+
+### Body Request
+
+```json
+{
+    "Organization": {
+        "OrganizationName": "Passerelles Numeriques Cambodia",
+        "OrganizationShortName": "PNC",
+        "OrganizationNature": "Nonprofit",
+        "OrganizationVatNumber": "Activate",
+        "Children": {
+            "Industry": [
+                {
+                    "IndustryName":"Organization",
+                    "SubIndustry":[
+                        {
+                            "Name":"School"
+                        }
+                    ]
+                }
+            ],
+            "Address": [
+                {
+                    "CountryName": "Cambodia",
+                    "LocationLevel1Name": "Phnom Penh",
+                    "PostalCode": "120209",
+                    "LocationLevel2Name": "Sen Sok",
+                    "LocationLevel3Name": "Tek Thla",
+                    "LocationLevel4Name": "Phum Tropeang Chhuk",
+                    "StreetAddessDetail": "371"
+                }
+            ],
+            "ContactOther": [
+                {
+                    "PhoneNumber": "023 995 500",
+                    "Email": "info.cambodia@passerellesnumeriques.org",
+                    "Website": "https://www.passerellesnumeriques.org/en/",
+                    "SocialProfile": "https://www.facebook.com/PnCambodiaAlumni/"
+                }
+            ]
+        }
+    }
+}
+
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "OrganizationVatNumber": {
+        "S": "Activate"
+    },
+    "EntityItemId": {
+        "S": "Organization:efb8fc57567919cce70374bf1a1f3f8d"
+    },
+    "OrganizationContactOther": {
+        "L": [
+            {
+                "M": {
+                    "PhoneNumber": {
+                        "S": "023 995 500"
+                    },
+                    "Website": {
+                        "S": "https://www.passerellesnumeriques.org/en/"
+                    },
+                    "SocialProfile": {
+                        "S": "https://www.facebook.com/PnCambodiaAlumni/"
+                    },
+                    "Email": {
+                        "S": "info.cambodia@passerellesnumeriques.org"
+                    }
+                }
+            }
+        ]
+    },
+    "CompositeAccessPatterns": {
+        "S": "Organization#OrganizationNature:Nonprofit#OrganizationName:Passerelles Numeriques Cambodia#OrganizationShortName:PNC"
+    },
+    "OrganizationIndustry": {
+        "L": [
+            {
+                "M": {
+                    "IndustryName": {
+                        "S": "Organization"
+                    },
+                    "SubIndustry": {
+                        "L": [
+                            {
+                                "M": {
+                                    "Name": {
+                                        "S": "School"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "OrganizationName": {
+        "S": "Passerelles Numeriques Cambodia"
+    },
+    "OrganizationAddress": {
+        "L": [
+            {
+                "M": {
+                    "CountryName": {
+                        "S": "Cambodia"
+                    },
+                    "LocationLevel4Name": {
+                        "S": "Phum Tropeang Chhuk"
+                    },
+                    "StreetAddessDetail": {
+                        "S": "371"
+                    },
+                    "LocationLevel1Name": {
+                        "S": "Phnom Penh"
+                    },
+                    "LocationLevel2Name": {
+                        "S": "Sen Sok"
+                    },
+                    "LocationLevel3Name": {
+                        "S": "Tek Thla"
+                    },
+                    "PostalCode": {
+                        "S": "120209"
+                    }
+                }
+            }
+        ]
+    },
+    "OrganizationNature": {
+        "S": "Nonprofit"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "OrganizationShortName": {
+        "S": "PNC"
+    }
+}
+```
+
+## Delete a Organization
+### HTTP Request
+`DELETE organization-svc/api/organization/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of organization. EX: Organization:c38176abf908a76616ed9ab31bc63eb4
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    [
+        {
+            "ConsumedCapacity": {
+                "TableName": "DsaDev",
+                "CapacityUnits": 1
+            },
+            "@metadata": {
+                "statusCode": 200,
+                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+                "headers": {
+                    "server": "Server",
+                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                    "content-type": "application/x-amz-json-1.0",
+                    "content-length": "63",
+                    "connection": "keep-alive",
+                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "x-amz-crc32": "3143598553"
+                },
+                "transferStats": {
+                    "http": [
+                        []
+                    ]
+                }
+            }
+        }
+    ]
+```
+
+# OrganizationalUnit
+## Get All OrganizationalUnits
+
+### HTTP Request
+`GET organization-svc/api/organizationalUnits`
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+[
+    {
+        "OrganizationalUnitPrimaryInCharge": {
+            "L": [
+                {
+                    "M": {
+                        "EmployeeId": {
+                            "S": "Employee:748f596f-3144-4704-b816-3d0cbd5f5f64"
+                        },
+                        "EmployeeName": {
+                            "S": "Dyna"
+                        }
+                    }
+                }
+            ]
+        },
+        "EntityItemId": {
+            "S": "OrganizationalUnit:cf89605f7a6536680b5ff7d952394607"
+        },
+        "CompositeAccessPatterns": {
+            "S": "OrganizationalUnit#OrganizationalUnitLevel:1#OrganizationalUnitName:Sopheap#OrganizationalUnitShortName:SP#OrganizationalUnitParentId:61751b1b-0d66-4b80-82dc-4c3d12969224#OrganizationalUnitParentName:ODI"
+        },
+        "OrganizationalUnitLevel": {
+            "N": "1"
+        },
+        "OrganizationalUnitParentName": {
+            "S": "ODI"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "OrganizationalUnitShortName": {
+            "S": "SP"
+        },
+        "OrganizationalUnitSecondaryInCharge": {
+            "L": [
+                {
+                    "M": {
+                        "EmployeeId": {
+                            "S": "Employee:b4b09720-bf38-4f56-a6b1-df9876f5f000"
+                        },
+                        "EmployeeName": {
+                            "S": "Sina"
+                        }
+                    }
+                }
+            ]
+        },
+        "OrganizationalUnitName": {
+            "S": "Sopheap"
+        },
+        "OrganizationalUnitParentId": {
+            "S": "61751b1b-0d66-4b80-82dc-4c3d12969224"
+        }
+    }
+]
+```
+
+### HTTP Request Filter 
+`GET organization-svc/api/organizationalUnits?contains=OrganizationalUnitLevel:1`
+
+### Query Paramaeters
+Parameter                       | Description
+---------                       | -----------
+OrganizationalUnitLevel         | Is the level of organizational unit.
+OrganizationalUnitName          | Is the name of the organizational unit.
+OrganizationalUnitShortName     | Is the short name of the organizational unit.
+OrganizationalUnitParentId      | Is the parent id of the organizational unit.
+OrganizationalUnitParentName    | Is the parent name of the organizational unit.
+
+### HTTP Response Filter
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "OrganizationalUnitPrimaryInCharge": {
+        "L": [
+            {
+                "M": {
+                    "EmployeeId": {
+                        "S": "Employee:748f596f-3144-4704-b816-3d0cbd5f5f64"
+                    },
+                    "EmployeeName": {
+                        "S": "Dyna"
+                    }
+                }
+            }
+        ]
+    },
+    "EntityItemId": {
+        "S": "OrganizationalUnit:cf89605f7a6536680b5ff7d952394607"
+    },
+    "CompositeAccessPatterns": {
+        "S": "OrganizationalUnit#OrganizationalUnitLevel:1#OrganizationalUnitName:Sopheap#OrganizationalUnitShortName:SP#OrganizationalUnitParentId:61751b1b-0d66-4b80-82dc-4c3d12969224#OrganizationalUnitParentName:ODI"
+    },
+    "OrganizationalUnitLevel": {
+        "N": "1"
+    },
+    "OrganizationalUnitParentName": {
+        "S": "ODI"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "OrganizationalUnitShortName": {
+        "S": "SP"
+    },
+    "OrganizationalUnitSecondaryInCharge": {
+        "L": [
+            {
+                "M": {
+                    "EmployeeId": {
+                        "S": "Employee:b4b09720-bf38-4f56-a6b1-df9876f5f000"
+                    },
+                    "EmployeeName": {
+                        "S": "Sina"
+                    }
+                }
+            }
+        ]
+    },
+    "OrganizationalUnitName": {
+        "S": "Sopheap"
+    },
+    "OrganizationalUnitParentId": {
+        "S": "61751b1b-0d66-4b80-82dc-4c3d12969224"
+    }
+}
+```
+
+## Create a OrganizationalUnit
+### HTTP Request
+`POST organization-svc/api/organizationalUnit`
+
+### Body Request
+
+```json
+{
+    "OrganizationalUnit": {
+        "OrganizationalUnitName": "Sopheap",
+        "OrganizationalUnitShortName": "SP",
+        "OrganizationalUnitLevel": "1",
+        "OrganizationalUnitParentId": "61751b1b-0d66-4b80-82dc-4c3d12969224",
+        "OrganizationalUnitParentName": "ODI",
+        "Children": {
+            "PrimaryInCharge": [
+                {
+                    "EmployeeId": "Employee:748f596f-3144-4704-b816-3d0cbd5f5f64",
+                    "EmployeeName": "Dyna"
+                }
+            ],
+            "SecondaryInCharge":[
+                {
+                    "EmployeeId": "Employee:b4b09720-bf38-4f56-a6b1-df9876f5f000",
+                    "EmployeeName": "Sina"
+                }
+            ]
+        }
+    }
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    [
+        {
+            "ConsumedCapacity": {
+                "TableName": "DsaDev",
+                "CapacityUnits": 1
+            },
+            "@metadata": {
+                "statusCode": 200,
+                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+                "headers": {
+                    "server": "Server",
+                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                    "content-type": "application/x-amz-json-1.0",
+                    "content-length": "63",
+                    "connection": "keep-alive",
+                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "x-amz-crc32": "3143598553"
+                },
+                "transferStats": {
+                    "http": [
+                        []
+                    ]
+                }
+            }
+        }
+    ]
+```
+
+## Update a OrganizationalUnit
+### HTTP Request
+`PUT organization-svc/api/organizationalUnit/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of organizationalUnit. EX: OrganizationalUnit:cf89605f7a6536680b5ff7d952394607
+
+### Body Request
+
+```json
+{
+    "OrganizationalUnit": {
+        "OrganizationalUnitName": "Sopheap",
+        "OrganizationalUnitShortName": "SP",
+        "OrganizationalUnitLevel": "1",
+        "OrganizationalUnitParentId": "61751b1b-0d66-4b80-82dc-4c3d12969224",
+        "OrganizationalUnitParentName": "ODI",
+        "Children": {
+            "PrimaryInCharge": [
+                {
+                    "EmployeeId": "Employee:748f596f-3144-4704-b816-3d0cbd5f5f64",
+                    "EmployeeName": "Dyna"
+                }
+            ],
+            "SecondaryInCharge":[
+                {
+                    "EmployeeId": "Employee:b4b09720-bf38-4f56-a6b1-df9876f5f000",
+                    "EmployeeName": "Sina"
+                }
+            ]
+        }
+    }
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "OrganizationalUnitPrimaryInCharge": {
+        "L": [
+            {
+                "M": {
+                    "EmployeeId": {
+                        "S": "Employee:748f596f-3144-4704-b816-3d0cbd5f5f64"
+                    },
+                    "EmployeeName": {
+                        "S": "Dyna"
+                    }
+                }
+            }
+        ]
+    },
+    "EntityItemId": {
+        "S": "OrganizationalUnit:cf89605f7a6536680b5ff7d952394607"
+    },
+    "CompositeAccessPatterns": {
+        "S": "OrganizationalUnit#OrganizationalUnitLevel:1#OrganizationalUnitName:Sopheap#OrganizationalUnitShortName:SP#OrganizationalUnitParentId:61751b1b-0d66-4b80-82dc-4c3d12969224#OrganizationalUnitParentName:ODI"
+    },
+    "OrganizationalUnitLevel": {
+        "N": "1"
+    },
+    "OrganizationalUnitParentName": {
+        "S": "ODI"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "OrganizationalUnitShortName": {
+        "S": "SP"
+    },
+    "OrganizationalUnitSecondaryInCharge": {
+        "L": [
+            {
+                "M": {
+                    "EmployeeId": {
+                        "S": "Employee:b4b09720-bf38-4f56-a6b1-df9876f5f000"
+                    },
+                    "EmployeeName": {
+                        "S": "Sina"
+                    }
+                }
+            }
+        ]
+    },
+    "OrganizationalUnitName": {
+        "S": "Sopheap"
+    },
+    "OrganizationalUnitParentId": {
+        "S": "61751b1b-0d66-4b80-82dc-4c3d12969224"
+    }
+}
+```
+
+## Delete a OrganizationalUnit
+### HTTP Request
+`DELETE organization-svc/api/organizationalUnit/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of organization. EX: OrganizationalUnit:cf89605f7a6536680b5ff7d952394607
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    [
+        {
+            "ConsumedCapacity": {
+                "TableName": "DsaDev",
+                "CapacityUnits": 1
+            },
+            "@metadata": {
+                "statusCode": 200,
+                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+                "headers": {
+                    "server": "Server",
+                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                    "content-type": "application/x-amz-json-1.0",
+                    "content-length": "63",
+                    "connection": "keep-alive",
+                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "x-amz-crc32": "3143598553"
+                },
+                "transferStats": {
+                    "http": [
+                        []
+                    ]
+                }
+            }
+        }
+    ]
+```
+
+# JobProfile
+## Get All JobProfiles
+
+### HTTP Request
+`GET organization-svc/api/jobProfiles`
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+[
+    {
+        "JobProfileSalaryMax": {
+            "S": "300"
+        },
+        "EntityItemId": {
+            "S": "JobProfile:9a7360586dcc7578cb792b58e3ba6072"
+        },
+        "JobProfilePositionId": {
+            "S": "bebb9cdb-230a-4e7c-9f7b-a9e175445ca6"
+        },
+        "JobProfileDetail": {
+            "N": "2"
+        },
+        "CompositeAccessPatterns": {
+            "S": "JobProfile#JobProfilePositionId:bebb9cdb-230a-4e7c-9f7b-a9e175445ca6#JobProfilePositionTitle:Web Programing"
+        },
+        "JobProfileSalaryMin": {
+            "S": "250"
+        },
+        "JobProfilePositionTitle": {
+            "S": "Web Programing"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "JobProfileOverview": {
+            "N": "1"
+        },
+        "JobProfileJobGrade": {
+            "N": "5"
+        },
+        "JobProfileWorkingHour": {
+            "N": "8"
+        }
+    }
+]
+```
+
+### HTTP Request Filter 
+`GET organization-svc/api/jobProfiles?contains=JobProfilePositionId:001`
+
+### Query Paramaeters
+Parameter                       | Description
+---------                       | -----------
+JobProfilePositionId            | Is the position id of jobProfile.
+JobProfilePositionTitle         | Is the position title of the jobProfile.
+JobProfileJobGrade              | Is the job grade of the jobProfile. Ex: 1, 2, 3, 4, 5...
+
+### HTTP Response Filter
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "JobProfileSalaryMax": {
+        "S": "2000"
+    },
+    "EntityItemId": {
+        "S": "JobProfile:9a7360586dcc7578cb792b58e3ba6072"
+    },
+    "JobProfileDetail": {
+        "N": "112"
+    },
+    "JobProfilePositionId": {
+        "S": "001"
+    },
+    "CompositeAccessPatterns": {
+        "S": "JobProfile#JobProfilePositionId:001#JobProfilePositionTitle:Java Team Lead"
+    },
+    "JobProfileSalaryMin": {
+        "S": "1500"
+    },
+    "JobProfilePositionTitle": {
+        "S": "Java Team Lead"
+    },
+    "JobProfileOverview": {
+        "N": "111"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "JobProfileJobGrade": {
+        "N": "1"
+    },
+    "JobProfileWorkingHour": {
+        "N": "8"
+    }
+}
+```
+
+## Create a JobProfile
+### HTTP Request
+`POST organization-svc/api/jobProfile`
+
+### Body Request
+
+```json
+{
+    "JobProfile": {
+        "JobProfilePositionId": "001",
+        "JobProfilePositionTitle": "Java Team Lead",
+        "JobProfileJobGrade": "1",
+        "JobProfileSalaryMin": "1500",
+        "JobProfileSalaryMax": "2000",
+        "JobProfileWorkingHour": "8",
+        "JobProfileOverview": "111",
+        "JobProfileDetail": "112"
+    }
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    [
+        {
+            "ConsumedCapacity": {
+                "TableName": "DsaDev",
+                "CapacityUnits": 1
+            },
+            "@metadata": {
+                "statusCode": 200,
+                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+                "headers": {
+                    "server": "Server",
+                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                    "content-type": "application/x-amz-json-1.0",
+                    "content-length": "63",
+                    "connection": "keep-alive",
+                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "x-amz-crc32": "3143598553"
+                },
+                "transferStats": {
+                    "http": [
+                        []
+                    ]
+                }
+            }
+        }
+    ]
+```
+
+## Update a jobProfile
+### HTTP Request
+`PUT organization-svc/api/jobProfile/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of jobProfile. EX: JobProfile:9a7360586dcc7578cb792b58e3ba6072
+
+### Body Request
+
+```json
+{
+    "JobProfile": {
+        "JobProfilePositionId": "001",
+        "JobProfilePositionTitle": "Java Team Lead",
+        "JobProfileJobGrade": "1",
+        "JobProfileSalaryMin": "1500",
+        "JobProfileSalaryMax": "2000",
+        "JobProfileWorkingHour": "8",
+        "JobProfileOverview": "111",
+        "JobProfileDetail": "112"
+    }
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "JobProfileSalaryMax": {
+        "S": "2000"
+    },
+    "EntityItemId": {
+        "S": "JobProfile:9a7360586dcc7578cb792b58e3ba6072"
+    },
+    "JobProfileDetail": {
+        "N": "112"
+    },
+    "JobProfilePositionId": {
+        "S": "001"
+    },
+    "CompositeAccessPatterns": {
+        "S": "JobProfile#JobProfilePositionId:001#JobProfilePositionTitle:Java Team Lead"
+    },
+    "JobProfileSalaryMin": {
+        "S": "1500"
+    },
+    "JobProfilePositionTitle": {
+        "S": "Java Team Lead"
+    },
+    "JobProfileOverview": {
+        "N": "111"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "JobProfileJobGrade": {
+        "N": "1"
+    },
+    "JobProfileWorkingHour": {
+        "N": "8"
+    }
+}
+```
+
+## Delete a jobProfile
+### HTTP Request
+`DELETE organization-svc/api/jobProfile/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of jobProfile. EX: JobProfile:9a7360586dcc7578cb792b58e3ba6072
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    [
+        {
+            "ConsumedCapacity": {
+                "TableName": "DsaDev",
+                "CapacityUnits": 1
+            },
+            "@metadata": {
+                "statusCode": 200,
+                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+                "headers": {
+                    "server": "Server",
+                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                    "content-type": "application/x-amz-json-1.0",
+                    "content-length": "63",
+                    "connection": "keep-alive",
+                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "x-amz-crc32": "3143598553"
+                },
+                "transferStats": {
+                    "http": [
+                        []
+                    ]
+                }
+            }
+        }
+    ]
+```
+
+# Position
+## Get All Positions
+
+### HTTP Request
+`GET organization-svc/api/postions`
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+[
+    {
+        "PostionTitleEn": {
+            "S": "Programmer"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "EntityItemId": {
+            "S": "Postion:18053c214000057310161eb13f4e67d6"
+        },
+        "CompositeAccessPatterns": {
+            "S": "Postion#PostionTitleEn:Programmer#PostionTitleKh:អ្នកសរសេរកម្មវិធី"
+        },
+        "PostionTitleKh": {
+            "S": "អ្នកសរសេរកម្មវិធី"
+        }
+    },
+    {
+        "PostionTitleEn": {
+            "S": "Marketing"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "EntityItemId": {
+            "S": "Postion:97ae6cded39dc1c42890b9075bb7e183"
+        },
+        "CompositeAccessPatterns": {
+            "S": "Postion#PostionTitleEn:Marketing#PostionTitleKh:ផ្នែកទីផ្សារ"
+        },
+        "PostionTitleKh": {
+            "S": "ផ្នែកទីផ្សារ"
+        }
+    },
+]
+```
+
+### HTTP Request Filter 
+`GET organization-svc/api/positions?contains=PostionTitleEn:Programmer`
+
+### Query Paramaeters
+Parameter                       | Description
+---------                       | -----------
+PostionTitleEn                  | Is the title English of the position.
+PostionTitleKh                  | Is the title Khmer of the position.
+
+### HTTP Response Filter
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "PostionTitleEn": {
+        "S": "Programmer"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "EntityItemId": {
+        "S": "Postion:18053c214000057310161eb13f4e67d6"
+    },
+    "CompositeAccessPatterns": {
+        "S": "Postion#PostionTitleEn:Programmer#PostionTitleKh:អ្នកសរសេរកម្មវិធី"
+    },
+    "PostionTitleKh": {
+        "S": "អ្នកសរសេរកម្មវិធី"
+    }
+}
+```
+
+## Create a Position
+### HTTP Request
+`POST organization-svc/api/postion`
+
+### Body Request
+
+```json
+{
+    "Postion": {
+        "PostionTitleEn": "Programmer",
+        "PostionTitleKh": "អ្នកសរសេរកម្មវិធី"
+    }
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    [
+        {
+            "ConsumedCapacity": {
+                "TableName": "DsaDev",
+                "CapacityUnits": 1
+            },
+            "@metadata": {
+                "statusCode": 200,
+                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+                "headers": {
+                    "server": "Server",
+                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                    "content-type": "application/x-amz-json-1.0",
+                    "content-length": "63",
+                    "connection": "keep-alive",
+                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "x-amz-crc32": "3143598553"
+                },
+                "transferStats": {
+                    "http": [
+                        []
+                    ]
+                }
+            }
+        }
+    ]
+```
+
+## Update a Position
+### HTTP Request
+`PUT organization-svc/api/postion/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of postion. EX: Postion:18053c214000057310161eb13f4e67d6
+
+### Body Request
+
+```json
+{
+    "Postion": {
+        "PostionTitleEn": "Programmer",
+        "PostionTitleKh": "អ្នកសរសេរកម្មវិធី"
+    }
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "PostionTitleEn": {
+        "S": "Programmer"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "EntityItemId": {
+        "S": "Postion:18053c214000057310161eb13f4e67d6"
+    },
+    "CompositeAccessPatterns": {
+        "S": "Postion#PostionTitleEn:Programmer#PostionTitleKh:អ្នកសរសេរកម្មវិធី"
+    },
+    "PostionTitleKh": {
+        "S": "អ្នកសរសេរកម្មវិធី"
+    }
+}
+```
+
+## Delete a Position
+### HTTP Request
+`DELETE organization-svc/api/postion/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of postion. EX: Postion:18053c214000057310161eb13f4e67d6
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    [
+        {
+            "ConsumedCapacity": {
+                "TableName": "DsaDev",
+                "CapacityUnits": 1
+            },
+            "@metadata": {
+                "statusCode": 200,
+                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+                "headers": {
+                    "server": "Server",
+                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                    "content-type": "application/x-amz-json-1.0",
+                    "content-length": "63",
+                    "connection": "keep-alive",
+                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "x-amz-crc32": "3143598553"
+                },
+                "transferStats": {
+                    "http": [
+                        []
+                    ]
+                }
+            }
+        }
+    ]
+```
+
+# Benefit
+## Get All Benefits
+
+### HTTP Request
+`GET organization-svc/api/benefits`
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+[
+    {
+        "BenefitGroupTitleKh": {
+            "S": "ប្រាក់ខែ"
+        },
+        "EntityItemId": {
+            "S": "Benefit:c21268600e4c10798746b9e67000bd94"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "BenefitBenefitItem": {
+            "L": [
+                {
+                    "M": {
+                        "TitleEn": {
+                            "S": "Holiday"
+                        },
+                        "TitleKh": {
+                            "S": "ថ្ងៃឈប់សំរាក"
+                        }
+                    }
+                }
+            ]
+        },
+        "CompositeAccessPatterns": {
+            "S": "Benefit#BenefitGroupTitleEn:Salary#BenefitGroupTitleKh:ប្រាក់ខែ"
+        },
+        "BenefitGroupTitleEn": {
+            "S": "Salary"
+        }
+    }
+]
+```
+
+## Create a Benifit
+### HTTP Request
+`POST organization-svc/api/benefit`
+
+### Body Request
+
+```json
+{
+    "Benefit": {
+        "BenefitGroupTitleEn": "Salary",
+        "BenefitGroupTitleKh": "ប្រាក់ខែ",
+        "Children": {
+            "BenefitItem":[
+                {
+                    "TitleEn":"Holiday",
+                    "TitleKh":"ថ្ងៃឈប់សំរាក"
+                }
+            ]
+        }
+    }
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    [
+        {
+            "ConsumedCapacity": {
+                "TableName": "DsaDev",
+                "CapacityUnits": 1
+            },
+            "@metadata": {
+                "statusCode": 200,
+                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+                "headers": {
+                    "server": "Server",
+                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                    "content-type": "application/x-amz-json-1.0",
+                    "content-length": "63",
+                    "connection": "keep-alive",
+                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "x-amz-crc32": "3143598553"
+                },
+                "transferStats": {
+                    "http": [
+                        []
+                    ]
+                }
+            }
+        }
+    ]
+```
+
+## Update a Benefit
+### HTTP Request
+`PUT organization-svc/api/benefit/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of benefit. EX: Benefit:18053c214000057310161eb13f4e67d6
+
+### Body Request
+
+```json
+{
+    "Benefit": {
+        "BenefitGroupTitleEn": "Salary",
+        "BenefitGroupTitleKh": "ប្រាក់ខែ",
+        "Children": {
+            "BenefitItem":[
+                {
+                    "TitleEn":"Holiday",
+                    "TitleKh":"ថ្ងៃឈប់សំរាក"
+                }
+            ]
+        }
+    }
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "BenefitGroupTitleKh": {
+        "S": "ប្រាក់ខែ"
+    },
+    "EntityItemId": {
+        "S": "Benefit:c21268600e4c10798746b9e67000bd94"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "BenefitBenefitItem": {
+        "L": [
+            {
+                "M": {
+                    "TitleEn": {
+                        "S": "Holiday"
+                    },
+                    "TitleKh": {
+                        "S": "ថ្ងៃឈប់សំរាក"
+                    }
+                }
+            }
+        ]
+    },
+    "CompositeAccessPatterns": {
+        "S": "Benefit#BenefitGroupTitleEn:Salary#BenefitGroupTitleKh:ប្រាក់ខែ"
+    },
+    "BenefitGroupTitleEn": {
+        "S": "Salary"
+    }
+}
+```
+
+## Delete a Benefit
+### HTTP Request
+`DELETE organization-svc/api/benefit/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of Benefit. EX: Benefit:18053c214000057310161eb13f4e67d6
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    [
+        {
+            "ConsumedCapacity": {
+                "TableName": "DsaDev",
+                "CapacityUnits": 1
+            },
+            "@metadata": {
+                "statusCode": 200,
+                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+                "headers": {
+                    "server": "Server",
+                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                    "content-type": "application/x-amz-json-1.0",
+                    "content-length": "63",
+                    "connection": "keep-alive",
+                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "x-amz-crc32": "3143598553"
+                },
+                "transferStats": {
+                    "http": [
+                        []
+                    ]
+                }
+            }
+        }
+    ]
+```
+
+
+
