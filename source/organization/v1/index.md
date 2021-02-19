@@ -1895,7 +1895,7 @@ PostionTitleKh                  | Is the title Khmer of the position.
 
 ## Create a Position
 ### HTTP Request
-`POST organization-svc/api/postion`
+`POST organization-svc/api/position`
 
 ### Body Request
 
@@ -1942,7 +1942,7 @@ PostionTitleKh                  | Is the title Khmer of the position.
 
 ## Update a Position
 ### HTTP Request
-`PUT organization-svc/api/postion/{item_id}`
+`PUT organization-svc/api/position/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1985,7 +1985,7 @@ item_id                     | Is the entity item id of postion. EX: Postion:1805
 
 ## Delete a Position
 ### HTTP Request
-`DELETE organization-svc/api/postion/{item_id}`
+`DELETE organization-svc/api/position/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
