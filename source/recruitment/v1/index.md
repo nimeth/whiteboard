@@ -34,8 +34,8 @@ Recruitment uses API keys to access to the API. You can get token after login.Re
 You must login to get token again after<code> expired token</code>.
 </aside>
 
-# JobOrder
-## Create JobOrder and JobVacancies
+# Job Order
+## Create Job Order and Job Vacancies
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders"
@@ -61,7 +61,6 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders"
         "Children":{
             "JobVacancy": [
                 {
-                    "JobVacancyJobOrderId":"",
                     "JobVacancyJobProfileId": "JobProfile:1b7d5c4fbaf64fb89433c7040866f446",
                     "JobVacancyCountry": "Cambodiakkkk", 
                     "JobVacancyHeadcount":"1", 
@@ -73,7 +72,6 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders"
                     "JobVacancyUrgencyLevel": "Medium"
                 },{
 
-                    "JobVacancyJobOrderId":"",
                     "JobVacancyJobProfileId": "JobProfile:1b7d5c4fbaf64fb89433c7040866f446",
                     "JobVacancyCountry": "Cambodiammm", 
                     "JobVacancyHeadcount":"1", 
@@ -99,7 +97,7 @@ This endpoint create a specific jobOrder.
 
 `POST https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders`
 
-## Get JobOrder
+## Get Job Order
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -174,7 +172,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders"
                 "S": "Internal"
             },
             "JobOrderSelectionProcessId": {
-                "S": "External client"
+                "S": "SelectionProcessId:931cc0bd784645abaa12df07bb6390c8"
             },
             "JobOrderClientId": {
                 "S": "Client:931cc0bd784645abaa12df07bb6390c8"
@@ -233,7 +231,7 @@ This endpoint retrieves all jobOrders.
 Remember — a happy jobOrder is an authenticated Recruitment!
 </aside>
 
-## Get a Specific JobOrder
+## Get a Specific Job Order
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders/JobOrder:7f584eaba7074d66d1e5e4863502e2fa"
@@ -258,7 +256,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders/JobOrder:7f584e
             "S": "InternalClient"
         },
         "JobOrderSelectionProcessId": {
-            "S": "External client"
+            "S": ""
         },
         "JobOrderClientId": {
             "S": "Client:931cc0bd784645abaa12df07bb6390c8"
@@ -302,7 +300,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the jobOrder to retrieve
 
-## Delete a Specific JobOrder
+## Delete a Specific Job Order
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders/JobOrder:7f584eaba7074d66d1e5e4863502e2fa"
@@ -325,7 +323,7 @@ ID | The ID of the jobOrder to delete
 
 # JobVacacies
 
-## Get JobVacancies don't specific JobOrder
+## Get Job Vacancies don't specific Job Order
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -472,7 +470,7 @@ This endpoint retrieves all jobVacacies.
 Remember — a happy jobOrder is an authenticated Recruitment!
 </aside>
 
-## Get JobVacancies specific JobOrder
+## Get Job Vacancies specific Job Order
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies?contains=JobOrder:b74c6a8277b77079df061fc1da98f0cd"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -632,7 +630,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/init"
 ```json
 { 
     "Client":{
-        "Iternal": {
+        "Internal": {
             "Entity":[
                 {
                     "EntityItemId": {
@@ -1005,7 +1003,7 @@ This endpoint retrive a specific Client Profile.
 `GET https://dev.aimlapps.com/recruitment-svc/api/v1/client-profiles`
 
 
-## View Detaile Client Profile
+## View Detail Client Profile
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/client-profiles/ClientProfile:931cc0bd784645abaa12df07bb6390c4"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -1093,8 +1091,8 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the Client to delete Client Profile
 
-# CandidateBucket
-## Create CandidateBucket
+# Candidate Bucket
+## Create Candidate Bucket
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets"
@@ -1146,7 +1144,7 @@ This endpoint create a specific CandidateBucket.
 
 `POST https://dev.aimlapps.com/recruitment-svc/api/v1/CandidateBucket`
 
-## Retrive CandidateBuckets
+## Retrive Candidate Buckets
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -1324,7 +1322,7 @@ This endpoint retrive CandidateBuckets.
 `GET https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets`
 
 
-## View Detaile CandidateBucket
+## View Detail Candidate Bucket
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets/CandidateBucket:be9edf11b0b22a6d1ad3786a4bb47893"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -1424,7 +1422,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the Client to View Detail each CandidateBucket
 
-## Delete CandidateBucket
+## Delete Candidate Bucket
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/candidate-buckets/CandidateBucket:be9edf11b0b22a6d1ad3786a4bb47893"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -1445,8 +1443,8 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the CandidateBucket to delete 
 
-# JobVacancy Applicant
-## Create JobVacancy Applicant
+# Job Vacancy Applicant
+## Create Job Vacancy Applicant
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:1e9cf083a2c3b07f0078b1b82d7ed274/applicants"
@@ -1459,13 +1457,13 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:1
 
 {
     "JobVacancyApplicant":{
-        "JobVacanyApplicantJobVacancyId": "JobVacancy:1e9cf083a2c3b07f0078b1b82d7ed274",
-        "JobVacanyApplicantPeopleId": "People:1e9cf083a2c3b07f0078b1b82d7ed274",
-        "JobVacanyApplicantPeopleName": "Dyna",
-        "JobVacanyApplicantPeopleSex": "F",
-        "JobVacanyApplicantCurrentStepId": "Step:1e9cf083a2c3b07f0078b1b82d7ed274", 
-        "JobVacanyApplicantCurrentStepTitle": "Apply Job", 
-        "JobVacanyApplicantProcessResult": "PROCESSING",
+        "JobVacancyApplicantJobVacancyId": "JobVacancy:1e9cf083a2c3b07f0078b1b82d7ed274",
+        "JobVacancyApplicantPeopleId": "People:1e9cf083a2c3b07f0078b1b82d7ed274",
+        "JobVacancyApplicantPeopleName": "Dyna",
+        "JobVacancyApplicantPeopleSex": "F",
+        "JobVacancyApplicantCurrentStepId": "Step:1e9cf083a2c3b07f0078b1b82d7ed274", 
+        "JobVacancyApplicantCurrentStepTitle": "Apply Job", 
+        "JobVacancyApplicantProcessResult": "PROCESSING",
         "CompositeAccessPatterns": ""
     }
 }
@@ -1485,7 +1483,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the JobVacancy 
 
-## View Detaile​ JobVacancy Applicant
+## View Detail Job Vacancy Applicant
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:412af8742b5a465db54cd5648b80bd72/applicants/JobVacancyApplicant:1fb61bd50be4434aa28a609f1d54e022"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -1494,40 +1492,61 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:4
 > The above command when submit JSON structured like this:
 
 ```json
-[
-    {
-        "JobVacanyApplicantProcessResult": {
-            "S": "PROCESSING"
-        },
+{
+    "PersonalData":{
+        "EntityItemId":"People:People:4585454897fc431899dcdfc5b37ffad5",
+        "PeopleFirstName": "Vorleak",
+        "PeopleLastName": "Chan",
+        "PeopleSex": "F",
+        "PeopleDateOfBirth": "05-01-1995",
+        "PeopleNationality": "Cambodian",
+        "PeoplePhoneNumber": "0987654321",
+        "PeopleEmail": "vorleak.chan@gmail.com"
+    },
+    "CurrentStep": {
         "EntityItemId": {
             "S": "JobVacancyApplicant:1fb61bd50be4434aa28a609f1d54e022"
         },
-        "CompositeAccessPatterns": {
-            "S": "JobVacancyApplicant#JobVacancy:412af8742b5a465db54cd5648b80bd72#PeopleName:Dun Sovannaroath"
+        "JobVacancyApplicantProcessResult": {
+            "S": "PROCESSING"
         },
-        "JobVacanyApplicantPeopleSex": {
-            "S": "F"
+        "JobVacancyStatus": {
+            "S": "OPEN"
         },
-        "JobVacanyApplicantPeopleId": {
-            "S": "People:4585454897fc431899dcdfc5b37ffad5"
+        "JobVacancyApplicantPositionTitle": {
+            "S": "HR Manager"
         },
-        "JobVacanyApplicantJobVacancyId": {
-            "S": "JobVacancy:412af8742b5a465db54cd5648b80bd72JobVacancy:412af8742b5a465db54cd5648b80bd72"
-        },
-        "JobVacanyApplicantPeopleName": {
-            "S": "Dun Sovannaroath"
-        },
-        "TenantId": {
-            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-        },
-        "JobVacanyApplicantCurrentStepId": {
-            "S": "Step:f99eddc6cece49c4824cc6b9b72a13ef"
-        },
-        "JobVacanyApplicantCurrentStepTitle": {
+        "JobVacancyApplicantCurrentStepTitle": {
             "S": "Screen profile"
-        }
-    }
-]
+        },
+        "ApplicantProcessingStepStatus":"IN_PROGRESS"
+    },
+    "CompleteStep":[
+        {
+            "StepTitle":{
+                "S": "Apply Job",
+            },
+            "ExpectedCompleteDate":{
+                "S": "15-02-2021",
+            },
+            "ActualComplateDate":{
+                "S": "15-02-2021",
+            },
+            "JobVacancyApplicantStepResult": {
+                "S": "SHORTLISTED"
+            },
+            "ApplicantProcessingStepCompletedByName":{
+                "S": "Thida Chan"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "Testing Note"
+            }
+        },
+        
+    ]
+}
+
+
 ```
 
 This endpoint view detail a specific JobVacancyApplicant.
@@ -1545,7 +1564,7 @@ Parameter | Description
 ID | The ID of the JobVacancy
 ID | The ID of JobVacancyApplicant
 
-## Retrive CandidateBuckets
+## Retrive Job Vacancy Applicant
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:412af8742b5a465db54cd5648b80bd72/applicants"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -1557,143 +1576,143 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:4
 {
     "JobVacancyApplicant": [
         {
-            "JobVacanyApplicantProcessResult": {
+            "JobVacancyApplicantProcessResult": {
                 "S": "Pass"
             },
             "EntityItemId": {
                 "S": "JobVacancyApplicant:396b0e3887a8e24d7a0f4d89854aee8c"
             },
-            "JobVacanyApplicantPeopleSex": {
+            "JobVacancyApplicantPeopleSex": {
                 "S": "Male"
             },
             "CompositeAccessPatterns": {
-                "S": "JobVacancyApplicant#JobVacanyApplicantPeopleName:SoTheara#JobVacanyApplicantCurrentStepTitle:ApplyJob#JobVacanyApplicantProcessResult:Pass"
+                "S": "JobVacancyApplicant#JobVacancyApplicantPeopleName:SoTheara#JobVacancyApplicantCurrentStepTitle:ApplyJob#JobVacancyApplicantProcessResult:Pass"
             },
-            "JobVacanyApplicantPeopleId": {
+            "JobVacancyApplicantPeopleId": {
                 "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantJobVacancyId": {
+            "JobVacancyApplicantJobVacancyId": {
                 "S": "JobVacancy:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantPeopleName": {
+            "JobVacancyApplicantPeopleName": {
                 "S": "SoTheara"
             },
             "TenantId": {
                 "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
             },
-            "JobVacanyApplicantCurrentStepId": {
+            "JobVacancyApplicantCurrentStepId": {
                 "S": "Step:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantCurrentStepTitle": {
+            "JobVacancyApplicantCurrentStepTitle": {
                 "S": "ApplyJob"
             }
         },
         {
-            "JobVacanyApplicantProcessResult": {
+            "JobVacancyApplicantProcessResult": {
                 "S": "Pass"
             },
             "EntityItemId": {
                 "S": "JobVacancyApplicant:41477c8763f7ad0fd8d5079b24d276d0"
             },
-            "JobVacanyApplicantPeopleSex": {
+            "JobVacancyApplicantPeopleSex": {
                 "S": "Female"
             },
             "CompositeAccessPatterns": {
-                "S": "JobVacancyApplicant#JobVacanyApplicantPeopleName:SoTheara#JobVacanyApplicantCurrentStepTitle:ApplyJob#JobVacanyApplicantProcessResult:Pass"
+                "S": "JobVacancyApplicant#JobVacancyApplicantPeopleName:SoTheara#JobVacancyApplicantCurrentStepTitle:ApplyJob#JobVacancyApplicantProcessResult:Pass"
             },
-            "JobVacanyApplicantPeopleId": {
+            "JobVacancyApplicantPeopleId": {
                 "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantJobVacancyId": {
+            "JobVacancyApplicantJobVacancyId": {
                 "S": "JobVacancy:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantPeopleName": {
+            "JobVacancyApplicantPeopleName": {
                 "S": "SoTheara"
             },
             "TenantId": {
                 "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
             },
-            "JobVacanyApplicantCurrentStepId": {
+            "JobVacancyApplicantCurrentStepId": {
                 "S": "Step:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantCurrentStepTitle": {
+            "JobVacancyApplicantCurrentStepTitle": {
                 "S": "ApplyJob"
             }
         },
         {
-            "JobVacanyApplicantProcessResult": {
+            "JobVacancyApplicantProcessResult": {
                 "S": "PROCESSING"
             },
             "EntityItemId": {
                 "S": "JobVacancyApplicant:453c51ef252985f7b4eb942c63129a0f"
             },
-             "JobVacanyApplicantPeopleSex": {
+             "JobVacancyApplicantPeopleSex": {
             "S": "F"
             },
             "CompositeAccessPatterns": {
-                "S": "JobVacancyApplicant#JobVacanyApplicantPeopleName:Dyna#JobVacanyApplicantCurrentStepTitle:Apply Job#JobVacanyApplicantProcessResult:PROCESSING"
+                "S": "JobVacancyApplicant#JobVacancyApplicantPeopleName:Dyna#JobVacancyApplicantCurrentStepTitle:Apply Job#JobVacancyApplicantProcessResult:PROCESSING"
             },
-            "JobVacanyApplicantPeopleId": {
+            "JobVacancyApplicantPeopleId": {
                 "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantJobVacancyId": {
+            "JobVacancyApplicantJobVacancyId": {
                 "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantPeopleName": {
+            "JobVacancyApplicantPeopleName": {
                 "S": "Dyna"
             },
             "TenantId": {
                 "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
             },
-            "JobVacanyApplicantCurrentStepId": {
+            "JobVacancyApplicantCurrentStepId": {
                 "S": "Step:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantCurrentStepTitle": {
+            "JobVacancyApplicantCurrentStepTitle": {
                 "S": "Apply Job"
             }
         },
         {
-            "JobVacanyApplicantProcessResult": {
+            "JobVacancyApplicantProcessResult": {
                 "S": "PROCESSING"
             },
             "EntityItemId": {
                 "S": "JobVacancyApplicant:bf8a7e80f6978e9a2d2ee54b9c6494d8"
             },
-            "JobVacanyApplicantPeopleSex": {
+            "JobVacancyApplicantPeopleSex": {
                 "S": "F"
             },
             "CompositeAccessPatterns": {
-                "S": "JobVacancyApplicant#JobVacanyApplicantPeopleName:Dyna#JobVacanyApplicantCurrentStepTitle:Apply Job#JobVacanyApplicantProcessResult:PROCESSING"
+                "S": "JobVacancyApplicant#JobVacancyApplicantPeopleName:Dyna#JobVacancyApplicantCurrentStepTitle:Apply Job#JobVacancyApplicantProcessResult:PROCESSING"
             },
-            "JobVacanyApplicantPeopleId": {
+            "JobVacancyApplicantPeopleId": {
                 "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantJobVacancyId": {
+            "JobVacancyApplicantJobVacancyId": {
                 "S": "People:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantPeopleName": {
+            "JobVacancyApplicantPeopleName": {
                 "S": "Dyna"
             },
             "TenantId": {
                 "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
             },
-            "JobVacanyApplicantCurrentStepId": {
+            "JobVacancyApplicantCurrentStepId": {
                 "S": "Step:1e9cf083a2c3b07f0078b1b82d7ed274"
             },
-            "JobVacanyApplicantCurrentStepTitle": {
+            "JobVacancyApplicantCurrentStepTitle": {
                 "S": "Apply Job"
             }
         }
     ],
     "FilterAttributes": [
         {
-            "JobVacanyApplicantPeopleName": "People Name"
+            "JobVacancyApplicantPeopleName": "People Name"
         },
         {
-            "JobVacanyApplicantCurrentStepTitle": "Current Step Title"
+            "JobVacancyApplicantCurrentStepTitle": "Current Step Title"
         },
         {
-            "JobVacanyApplicantProcessResult": "Process Result"
+            "JobVacancyApplicantProcessResult": "Process Result"
         }
     ]
 }
@@ -1713,7 +1732,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of JobVacancy
 
-## Delete JobVacancy Applicant
+## Delete Job Vacancy Applicant
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:412af8742b5a465db54cd5648b80bd72/applicants/JobVacancyApplicant:1fb61bd50be4434aa28a609f1d54e022"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -1737,10 +1756,10 @@ ID | The ID of JobVacancy Applicant
 
 
 # Applicant Processing Step
-## Create ApplicantProcessingStep
+## Create Applicant Processing Step
 
 ```bash
-curl "https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps"
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/steps"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
 ```
 
@@ -1756,11 +1775,12 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyAppli
         "ApplicantProcessingStepPlannedCompleteDate": "08-02-2021", 
         "ApplicantProcessingStepAddedByPeopleId": "People:1ab83367a398b6c66d04924348abc06b", 
         "ApplicantProcessingStepAddedByPeopleName": "Nary Doung",
-        "ApplicantProcessingStepProcessResult": "SHORTLISTED",
-        "ApplicantProcessingStepActualCompleteDate": "08-02-2021",
-        "ApplicantProcessingStepCompletedById": "CompletedBy:1ab83367a398b6c66d04924348abc06b",
-        "ApplicantProcessingStepCompletedByName": "Mony Chan",
-        "CompositeAccessPatterns": ""
+        "ApplicantProcessingStepResult": "",
+        "ApplicantProcessingStepActualCompleteDate": "",
+        "ApplicantProcessingStepCompletedById": "",
+        "ApplicantProcessingStepCompletedByName": "",
+        "CompositeAccessPatterns": "",
+        "ApplicantProcessingStepNote": "testing",
 
     }
 }
@@ -1772,7 +1792,7 @@ This endpoint create a Applicant Processing Step.
 
 ### HTTP Request
 
-`POST https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps`
+`POST https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/steps`
 
 ### URL Parameters
 
@@ -1782,7 +1802,7 @@ ID | The ID of Applicant
 
 ## Get Applicant Processing Step
 ```bash
-curl "https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps"
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/steps"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
 ```
 
@@ -1794,10 +1814,10 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyAppli
     "ApplicantProcessingStep": [
         {
             "ApplicantProcessingStepCompletedByName": {
-                "S": "Mony Chan"
+                "S": ""
             },
-            "ApplicantProcessingStepProcessResult": {
-                "S": "SHORTLISTED"
+            "ApplicantProcessingStepResult": {
+                "S": ""
             },
             "CompositeAccessPatterns": {
                 "S": "ApplicantProcessingStep#ApplicantProcessingStepStatus:IN_PROGRESS#ApplicantProcessingStepAddedByPeopleName:Nary Doung#ApplicantProcessingStepCompletedByName:Mony Chan"
@@ -1812,32 +1832,30 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyAppli
                 "S": "ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
             },
             "ApplicantProcessingStepActualCompleteDate": {
-                "S": "08-02-2021"
+                "S": ""
             },
             "ApplicantProcessingStepId": {
                 "S": "Step:1ab83367a398b6c66d04924348abc06b"
-            },
-            "TenantId": {
-                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
             },
             "ApplicantProcessingStepAddedByPeopleName": {
                 "S": "Nary Doung"
             },
             "ApplicantProcessingStepCompletedById": {
-                "S": "CompletedBy:1ab83367a398b6c66d04924348abc06b"
+                "S": ""
             },
             "ApplicantProcessingStepAddedByPeopleId": {
                 "S": "People:1ab83367a398b6c66d04924348abc06b"
             },
             "ApplicantProcessingStepPlannedCompleteDate": {
                 "S": "08-02-2021"
-            }
+            },
+            "ApplicantProcessingStepNote": "testing",
         },
         {
             "ApplicantProcessingStepCompletedByName": {
                 "S": "Mony Chan"
             },
-            "ApplicantProcessingStepProcessResult": {
+            "ApplicantProcessingStepResult": {
                 "S": "SHORTLISTED"
             },
             "ApplicantProcessingStepTitle": {
@@ -1875,13 +1893,14 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyAppli
             },
             "ApplicantProcessingStepPlannedCompleteDate": {
                 "S": "08-02-2021"
-            }
+            },
+            "ApplicantProcessingStepNote": "testing",
         },
         {
             "ApplicantProcessingStepCompletedByName": {
                 "S": "Mony Chan"
             },
-            "ApplicantProcessingStepProcessResult": {
+            "ApplicantProcessingStepResult": {
                 "S": "SHORTLISTED"
             },
             "ApplicantProcessingStepTitle": {
@@ -1919,7 +1938,8 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyAppli
             },
             "ApplicantProcessingStepPlannedCompleteDate": {
                 "S": "08-02-2021"
-            }
+            },
+            "ApplicantProcessingStepNote": "testing",
         }
     ],
     "FilterAttributes": [
@@ -1944,7 +1964,7 @@ This endpoint retrieves all Applicant Processing Step.
 
 ### HTTP Request
 
-`GET https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps`
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/steps`
 
 <aside class="success">
 Remember — a happy Applicant Processing Step is an authenticated Recruitment!
@@ -1958,7 +1978,7 @@ ID | The ID of Applicant
 
 ## Delete Applicant Processing Step
 ```bash
-curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
+curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
 ```
 
@@ -1969,7 +1989,7 @@ This endpoint Delete a specific Applicant Processing Step.
 
 ### HTTP Request
 
-`DELETE http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe`
+`DELETE http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe`
 
 ### URL Parameters
 
@@ -1978,9 +1998,9 @@ Parameter | Description
 ID | The ID of Applicant
 ID | The ID of Processing Step
 
-## View Detaile Applicant Processing Step
+## View Detail Applicant Processing Step
 ```bash
-curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
+curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
 ```
 
@@ -1992,7 +2012,7 @@ curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplican
         "ApplicantProcessingStepCompletedByName": {
             "S": "Mony Chan"
         },
-        "ApplicantProcessingStepProcessResult": {
+        "ApplicantProcessingStepResult": {
             "S": "SHORTLISTED"
         },
         "CompositeAccessPatterns": {
@@ -2027,7 +2047,8 @@ curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplican
         },
         "ApplicantProcessingStepPlannedCompleteDate": {
             "S": "08-02-2021"
-        }
+        },
+        "ApplicantProcessingStepNote": "testing",
     }
 ]
 ```
@@ -2038,7 +2059,7 @@ This endpoint view detail a specific Applicant Processing Step.
 
 ### HTTP Request
 
-`GET http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe`
+`GET http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe`
 
 ### URL Parameters
 
@@ -2047,9 +2068,9 @@ Parameter | Description
 ID | The ID of Applicant
 ID | The ID of Processing Step
 
-## Update Client Profile
+## Update Applicant Processing Step
 ```bash
-curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
+curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
 ```
 
@@ -2058,14 +2079,15 @@ curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplican
 ```json
 {
     "ApplicantProcessingStep":{
+        "ApplicantProcessingStepNote": "testing",
         "ApplicantProcessingJobVacancyApplicantId": "JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b",
         "ApplicantProcessingStepId": "Step:1ab83367a398b6c66d04924348abc06b",
         "ApplicantProcessingStepTitle": "Screen Candidate",
-        "ApplicantProcessingStepStatus": "IN_PROGRESS",
+        "ApplicantProcessingStepStatus": "Completed",
         "ApplicantProcessingStepPlannedCompleteDate": "08-02-2021", 
         "ApplicantProcessingStepAddedByPeopleId": "People:1ab83367a398b6c66d04924348abc06b", 
         "ApplicantProcessingStepAddedByPeopleName": "Sopha NyTa",
-        "ApplicantProcessingStepProcessResult": "SHORTLISTED",
+        "ApplicantProcessingStepResult": "SHORTLISTED",
         "ApplicantProcessingStepActualCompleteDate": "08-02-2021",
         "ApplicantProcessingStepCompletedById": "CompletedBy:1ab83367a398b6c66d04924348abc06b",
         "ApplicantProcessingStepCompletedByName": "Mony Chan",
@@ -2081,7 +2103,7 @@ This endpoint update a specific Applicant Processing Step
 
 ### HTTP Request
 
-`PUT http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/processing-steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe`
+`PUT http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b/steps/ApplicantProcessingStep:3fa403b1977f72dc73fdc65e62b79ebe`
 
 ### URL Parameters
 
@@ -2091,8 +2113,8 @@ ID | The ID of Applicant
 ID | The ID of Processing Step
 
 
-# UrgencyLevel
-## Create UrgencyLevel
+# Urgency Level
+## Create Urgency Level
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels"
@@ -2105,7 +2127,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels"
 
 {
     "UrgencyLevel":{
-        "UrgencyLevel": "FAIL",
+        "UrgencyLevel": "Urgent"
     }
 }
 ```
@@ -2118,7 +2140,7 @@ This endpoint create a specific UrgencyLevel.
 
 `POST https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels`
 
-## Retrive UrgencyLevel
+## Retrive Urgency Level
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2134,7 +2156,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels"
                 "S": "UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d8"
             },
             "UrgencyLevel": {
-                "S": "FAIL"
+                "S": "Urgent"
             }
         },
         {
@@ -2142,7 +2164,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels"
                 "S": "UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
             },
             "UrgencyLevel": {
-                "S": "FAIL"
+                "S": "Urgent"
             }
         }
     ],
@@ -2162,7 +2184,7 @@ This endpoint retrive UrgencyLevels.
 
 `GET https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels`
 
-## Update UrgencyLevel
+## Update Urgency Level
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels/UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2173,7 +2195,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels/UrgencyLeve
 ```json
 {
     "UrgencyLevel":{
-        "UrgencyLevel": "FAIL",
+        "UrgencyLevel": "Urgent"
     }
 }
 ```
@@ -2192,7 +2214,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of UrgencyLevel
 
-## View Detaile Applicant Processing Step
+## View Detail Urgency Level
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels/UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2207,7 +2229,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels/UrgencyLeve
                 "S": "UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
             },
             "UrgencyLevel": {
-                "S": "FAIL"
+                "S": "Urgent"
             }
         }
 ]
@@ -2227,7 +2249,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of UrgencyLevel
 
-## Delete a UrgencyLevel
+## Delete a Urgency Level
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/urgency-levels/UrgencyLevel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
@@ -2248,8 +2270,8 @@ Parameter | Description
 --------- | -----------
 ID | The ID of UrgencyLevel
 
-# FeeRate
-## Create FeeRate
+# Fee Rate
+## Create Fee Rate
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates"
@@ -2262,7 +2284,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates"
 
 {
     "FeeRate":{
-        "FeeRate": "5.5$",
+        "FeeRate": "5.5"
     }
 }
 ```
@@ -2275,7 +2297,7 @@ This endpoint create a specific FeeRate.
 
 `POST https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates`
 
-## Retrive FeeRate
+## Retrive Fee Rate
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2291,7 +2313,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates"
                 "S": "FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d8"
             },
             "FeeRate": {
-                "S": "5.5$"
+                "S": "5.5"
             }
         },
         {
@@ -2299,7 +2321,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates"
                 "S": "FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9"
             },
             "FeeRate": {
-                "S": "5.6$"
+                "S": "5.6"
             }
         }
     ],
@@ -2319,7 +2341,7 @@ This endpoint retrive FeeRates.
 
 `GET https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates`
 
-## Update FeeRate
+## Update Fee Rate
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates/FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2330,7 +2352,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates/FeeRate:bf8a7e80
 ```json
 {
     "FeeRate":{
-        "FeeRate": "FAIL",
+        "FeeRate": "6.6"
     }
 }
 ```
@@ -2349,7 +2371,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of FeeRate
 
-## View Detaile Applicant Processing Step
+## View Detail Fee Rate
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates/FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2364,7 +2386,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates/FeeRate:bf8a7e80
                 "S": "FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9"
             },
             "FeeRate": {
-                "S": "5.7$"
+                "S": "5.7"
             }
         }
 ]
@@ -2384,7 +2406,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of FeeRate
 
-## Delete a FeeRate
+## Delete a Fee Rate
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/fee-rates/FeeRate:bf8a7e80f6978e9a2d2ee54b9c6494d9"
@@ -2404,8 +2426,8 @@ This endpoint delete a FeeRate.
 Parameter | Description
 --------- | -----------
 ID | The ID of FeeRate
-# JobChannel
-## Create JobChannel
+# Job Channel
+## Create Job Channel
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels"
@@ -2423,7 +2445,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels"
         "JobChannelAddress": "Phnom Phenh",
         "JobChannelEmail": "odi@gmail.com",
         "JobChannelPhoneNumber": "0987654321",
-        "JobChannelNote": "Recruitment Office",
+        "JobChannelNote": "Recruitment Office"
     }
 }
 ```
@@ -2436,7 +2458,7 @@ This endpoint create a specific JobChannel.
 
 `POST https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels`
 
-## Retrive JobChannel
+## Retrive Job Channel
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2499,7 +2521,7 @@ This endpoint retrive JobChannels.
 
 `GET https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels`
 
-## Update JobChannel
+## Update Job Channel
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels/JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2515,7 +2537,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels/JobChannel:bf
         "JobChannelAddress": "Phnom Phenh",
         "JobChannelEmail": "odi@gmail.com",
         "JobChannelPhoneNumber": "0987654321",
-        "JobChannelNote": "Recruitment Office",
+        "JobChannelNote": "Recruitment Office"
     }
 }
 ```
@@ -2534,7 +2556,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of JobChannel
 
-## View Detaile Applicant Processing Step
+## View Detail Job Channal
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels/JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2581,7 +2603,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of JobChannel
 
-## Delete a JobChannel
+## Delete a Job Channel
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-channels/JobChannel:bf8a7e80f6978e9a2d2ee54b9c6494d9"
@@ -2602,8 +2624,8 @@ Parameter | Description
 --------- | -----------
 ID | The ID of JobChannel
 
-# DecisionOption
-## Create DecisionOption
+# Decision Option
+## Create Decision Option
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options"
@@ -2616,7 +2638,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options"
 
 {
     "DecisionOption":{
-        "DecisionOption": "FAIL",
+        "DecisionOption": "PASS"
     }
 }
 ```
@@ -2629,7 +2651,7 @@ This endpoint create a specific DecisionOption.
 
 `POST https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options`
 
-## Retrive DecisionOption
+## Retrive Decision Option
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2645,7 +2667,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options"
                 "S": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d8"
             },
             "DecisionOption": {
-                "S": "FAIL"
+                "S": "PASS"
             }
         },
         {
@@ -2653,7 +2675,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options"
                 "S": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
             },
             "DecisionOption": {
-                "S": "FAIL"
+                "S": "PASS"
             }
         }
     ],
@@ -2673,7 +2695,7 @@ This endpoint retrive DecisionOptions.
 
 `GET https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options`
 
-## Update DecisionOption
+## Update Decision Option
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options/DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2684,7 +2706,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options/DecisionO
 ```json
 {
     "DecisionOption":{
-        "DecisionOption": "FAIL",
+        "DecisionOption": "PASS"
     }
 }
 ```
@@ -2703,7 +2725,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of DecisionOption
 
-## View Detaile Applicant Processing Step
+## View Detail Decision Option
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options/DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2718,7 +2740,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options/DecisionO
                 "S": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
             },
             "DecisionOption": {
-                "S": "FAIL"
+                "S": "PASS"
             }
         }
 ]
@@ -2738,7 +2760,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of DecisionOption
 
-## Delete a DecisionOption
+## Delete a Decision Option
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/decision-options/DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
@@ -2910,7 +2932,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of Step
 
-## View Detaile Applicant Processing Step
+## View Detail Step
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/steps/Step:bf8a7e80f6978e9a2d2ee54b9c6494d9"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -2983,8 +3005,8 @@ Parameter | Description
 --------- | -----------
 ID | The ID of Step
 
-# StepFlowConfig
-## Create StepFlowConfig
+# Step Flow Config
+## Create Step Flow Config
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs"
@@ -3001,7 +3023,8 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/Select
         "StepFlowConfigFromStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9",
         "StepFlowConfigDecisionOptionId": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
         "StepFlowConfigEndProcess": "NO",
-        "StepFlowConfigToStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10"
+        "StepFlowConfigToStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10",
+        "CompositeAccessPatterns": "StepFlowConfig#Step:bf8a7e80f6978e9a2d2ee54b9c6494d9#DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9#StepFlowConfigSelectionProcessId",
     }
 }
 ```
@@ -3014,7 +3037,7 @@ This endpoint create a specific StepFlowConfig.
 
 `POST https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs`
 
-## Retrive StepFlowConfig
+## Retrive Step Flow Config
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -3077,7 +3100,7 @@ This endpoint retrive StepFlowConfigs.
 
 `GET https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs`
 
-## Update StepFlowConfig
+## Update Step Flow Config
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs/StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d8"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -3092,7 +3115,8 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/Select
         "StepFlowConfigFromStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9",
         "StepFlowConfigDecisionOptionId": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
         "StepFlowConfigEndProcess": "NO",
-        "StepFlowConfigToStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10"
+        "StepFlowConfigToStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10",
+        "CompositeAccessPatterns": "StepFlowConfig#Step:bf8a7e80f6978e9a2d2ee54b9c6494d9#DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9#StepFlowConfigSelectionProcessId",
     }
 }
 ```
@@ -3111,7 +3135,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of StepFlowConfig
 
-## View Detaile Applicant Processing StepFlowConfig
+## View Detail Step Flow Config
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs/StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d9"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
@@ -3158,7 +3182,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of StepFlowConfig
 
-## Delete a StepFlowConfig
+## Delete a Step Flow Config
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs/StepFlowConfig:bf8a7e80f6978e9a2d2ee54b9c6494d9"
@@ -3179,9 +3203,109 @@ Parameter | Description
 --------- | -----------
 ID | The ID of StepFlowConfig
 
-<===>
+# Retrieve Next Processing Step
+```bash
+curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs?contains=StepFlowConfigFromStepId=Step:bf8a7e80f6978e9a2d2ee54b9c6494d9&StepFlowConfigDecisionOptionId:DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
+```
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "NextStep": [
+        {
+            "EntityItemId": {
+                "S": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d2"
+            },
+            "StepSelectionProcessId": {
+                "S": "SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepTitle": {
+                "S": "Conduct interview(Agent)"
+            },
+            "StepCouldStart": {
+                "S": "YES"
+            },
+            "StepNeedDecision": {
+                "S": "YES"
+            },
+            "StepOfferJob": {
+                "S": "NO"
+            },
+            "StepLinkSystemResource": {
+                "S": "Screen Candidate"
+            },
+            "StepLinkPurpose": {
+                "S": "Screen Candidate"
+            }
+        },
+        {
+            "EntityItemId": {
+                "S": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepSelectionProcessId": {
+                "S": "SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepTitle": {
+                "S": "Recomment to client"
+            },
+            "StepCouldStart": {
+                "S": "YES"
+            },
+            "StepNeedDecision": {
+                "S": "YES"
+            },
+            "StepOfferJob": {
+                "S": "NO"
+            },
+            "StepLinkSystemResource": {
+                "S": "Screen Candidate"
+            },
+            "StepLinkPurpose": {
+                "S": "Screen Candidate"
+            }
+        },
+        {
+            "EntityItemId": {
+                "S": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d5"
+            },
+            "StepSelectionProcessId": {
+                "S": "SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9"
+            },
+            "StepTitle": {
+                "S": "Conduct assessement/test"
+            },
+            "StepCouldStart": {
+                "S": "YES"
+            },
+            "StepNeedDecision": {
+                "S": "YES"
+            },
+            "StepOfferJob": {
+                "S": "NO"
+            },
+            "StepLinkSystemResource": {
+                "S": "Screen Candidate"
+            },
+            "StepLinkPurpose": {
+                "S": "Screen Candidate"
+            }
+        }
+    ]
+}
+```
+
+This endpoint retrive StepFlowConfigs.
+
+<aside class="warning">If you're not using an administrator API key, note that some StepFlowConfigs will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/recruitment-svc/api/v1/selectios-processes/SelectionProcess:bf8a7e80f6978e9a2d2ee54b9c6494d9/step-flow-configs`
+
 # Selection Process
-## Selection Process
+## Create Selection Process
 
 ```bash
 curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes"
@@ -3198,7 +3322,7 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes"
         "Children":{
             "Step": [
                 {
-                    "StepSelectionProcessId": "",
+                
                     "StepTitle": "Screen Candidate",
                     "StepCouldStart": "YES",
                     "StepNeedDecision": "YES",
@@ -3208,7 +3332,6 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes"
                     "CompositeAccessPatterns": "Step#SelectioProcess:931cc0bd784645abaa12df07bb6390c8#StepCouldStart: YES",
                 },
                 {
-                    "StepSelectionProcessId": "",
                     "StepTitle": "Apply Job",
                     "StepCouldStart": "YES",
                     "StepNeedDecision": "YES",
@@ -3217,25 +3340,6 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes"
                     "StepLinkPurpose": "Apply Job",
                     "CompositeAccessPatterns":"Step#SelectioProcess:931cc0bd784645abaa12df07bb6390c8#StepCouldStart: YES",
 
-                }
-            ],
-            "StepFlowConfig": [
-                {
-                    "StepFlowConfigSelectionProcessId": "",
-                    "StepFlowConfigFromStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9",
-                    "StepFlowConfigDecisionOptionId": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
-                    "StepFlowConfigEndProcess": "NO",
-                    "StepFlowConfigToStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10",
-                    "CompositeAccessPatterns":"StepFlowConfig#SelectioProcess:931cc0bd784645abaa12df07bb6390c8#DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
-
-                },
-                {
-                    "StepFlowConfigSelectionProcessId": "",
-                    "StepFlowConfigFromStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d9",
-                    "StepFlowConfigDecisionOptionId": "DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
-                    "StepFlowConfigEndProcess": "NO",
-                    "StepFlowConfigToStepId": "Step:bf8a7e80f6978e9a2d2ee54b9c6494d10",
-                    "CompositeAccessPatterns":"StepFlowConfig#SelectioProcess:931cc0bd784645abaa12df07bb6390c8#DecisionOption:bf8a7e80f6978e9a2d2ee54b9c6494d9",
                 }
             ]
         }
@@ -3251,5 +3355,7 @@ This endpoint create a specific Selection Process.
 ### HTTP Request
 
 `POST https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes`
-<===>
+
+
+
 
