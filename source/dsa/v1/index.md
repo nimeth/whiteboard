@@ -23,7 +23,15 @@ TripRequestDestination      | Is the destination you go to trip.
 TripRequestStatus           | Requester has the status DRAFTED, APPROVED, and REJECTED.
 TripRequestRequesterName    | Is the name of creator trip request.
 
+### Body Request
 
+```json 
+{
+    "Resource": "aiml:dsa:trip-request/*",
+    "Operation": "dsa:item-operation:Retrieve"
+}
+```
+            
 ### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
 
@@ -31,87 +39,76 @@ TripRequestRequesterName    | Is the name of creator trip request.
 [
     {
         "CompositeAccessPatterns": {
-            "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:DRAFTED#TripRequestRequesterName:Jonh#TripRequestTravelMode:PublicTransport#TripRequestCoveredByOther:CoveredByOwnCompany"
+            "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:Drafted#TripRequestRequesterName:Sreyta#TripRequestTravelMode:PublicTransport#TripRequestCoveredByOther:CoveredByOwnCompany"
         },
         "TripRequestLocalTrip": {
             "S": "LocalTrip"
         },
-        "TripRequestJointTraveler": {
-            "L": [
-                {
-                    "M": {
-                        "JointTravelerEmployeePersonId": {
-                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
-                        },
-                        "JointTravelerPersonName": {
-                            "S": "Zhinee"
-                        }
-                    }
-                }
-            ]
-        },
         "TripRequestRequesterName": {
-            "S": "Jonh"
+            "S": "Sreyta"
         },
         "TripRequestRequesterId": {
             "S": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8"
         },
         "EntityItemId": {
-            "S": "TripRequest:befbdefb8dacf8da84cc9bb43f663157"
+            "S": "TripRequest:190fb791ce8eedee2c013d10796838b2"
         },
         "TripRequestStatus": {
-            "S": "DRAFTED"
+            "S": "Drafted"
         },
         "TripRequestPurpose": {
-            "S": "Test Shop On host server"
+            "S": "Last Test Update Trip Request"
+        },
+        "TripRequestReturnDateTime": {
+            "S": "2021-03-07 8:30"
         },
         "TripRequestTripDailyExpense": {
             "L": [
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
+                            "S": "2021-03-04"
                         },
                         "TripDailyExpenseNotes": {
-                            "S": "null"
+                            "S": "Null"
                         },
                         "TripDailyExpenseDescription": {
-                            "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
+                            "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
                         },
                         "TripDailyExpenseType": {
                             "S": "Meal"
                         },
                         "TripDailyExpenseAmount": {
-                            "S": "12"
+                            "S": "12.00"
                         }
                     }
                 },
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
+                            "S": "2021-03-04"
                         },
                         "TripDailyExpenseNotes": {
-                            "S": "null"
+                            "S": "Null"
                         },
                         "TripDailyExpenseDescription": {
-                            "S": "Travels in Prek Prasab"
+                            "S": "In-area Travel"
                         },
                         "TripDailyExpenseType": {
                             "S": "In-area Travel"
                         },
                         "TripDailyExpenseAmount": {
-                            "S": "3"
+                            "S": "3.00"
                         }
                     }
                 },
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
+                            "S": "2021-03-04"
                         },
                         "TripDailyExpenseNotes": {
-                            "S": "null"
+                            "S": "Null"
                         },
                         "TripDailyExpenseDescription": {
                             "S": "Alone stay per night"
@@ -120,71 +117,14 @@ TripRequestRequesterName    | Is the name of creator trip request.
                             "S": "Accommodation"
                         },
                         "TripDailyExpenseAmount": {
-                            "S": "15"
+                            "S": "15.00"
                         }
                     }
                 },
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-18"
-                        },
-                        "TripDailyExpenseNotes": {
-                            "S": "null"
-                        },
-                        "TripDailyExpenseDescription": {
-                            "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
-                        },
-                        "TripDailyExpenseType": {
-                            "S": "Meal"
-                        },
-                        "TripDailyExpenseAmount": {
-                            "S": "12"
-                        }
-                    }
-                },
-                {
-                    "M": {
-                        "TripDailyExpenseDate": {
-                            "S": "2021-02-18"
-                        },
-                        "TripDailyExpenseNotes": {
-                            "S": "null"
-                        },
-                        "TripDailyExpenseDescription": {
-                            "S": "Travels in Prek Prasab"
-                        },
-                        "TripDailyExpenseType": {
-                            "S": "In-area Travel"
-                        },
-                        "TripDailyExpenseAmount": {
-                            "S": "3"
-                        }
-                    }
-                },
-                {
-                    "M": {
-                        "TripDailyExpenseDate": {
-                            "S": "2021-02-18"
-                        },
-                        "TripDailyExpenseNotes": {
-                            "S": "null"
-                        },
-                        "TripDailyExpenseDescription": {
-                            "S": "Alone stay per night"
-                        },
-                        "TripDailyExpenseType": {
-                            "S": "Accommodation"
-                        },
-                        "TripDailyExpenseAmount": {
-                            "S": "0"
-                        }
-                    }
-                },
-                {
-                    "M": {
-                        "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
+                            "S": "2021-03-04"
                         },
                         "TripDailyExpenseNotes": {
                             "S": "null"
@@ -203,7 +143,64 @@ TripRequestRequesterName    | Is the name of creator trip request.
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
+                            "S": "2021-03-05"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "Null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Meal"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "12.00"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-03-05"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "Null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "In-area Travel"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "In-area Travel"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "3.00"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-03-05"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "Null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Alone stay per night"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Accommodation"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "15.00"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-03-05"
                         },
                         "TripDailyExpenseNotes": {
                             "S": "null"
@@ -222,10 +219,143 @@ TripRequestRequesterName    | Is the name of creator trip request.
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-18"
+                            "S": "2021-03-06"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "Null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Meal"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "12.00"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-03-06"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "TEST LINE EXPENSE"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "In-area Travel"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "In-area Travel"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "3.00"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-03-06"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "Null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Alone stay per night"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Accommodation"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "15.00"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-03-06"
                         },
                         "TripDailyExpenseNotes": {
                             "S": "null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "From Kracheh to Prek Prasab"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Travel Fee"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "3.00"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-03-07"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "Null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Meal"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "12.00"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-03-07"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "Null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "In-area Travel"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "In-area Travel"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "3.00"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-03-07"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "Null"
+                        },
+                        "TripDailyExpenseDescription": {
+                            "S": "Alone stay per night"
+                        },
+                        "TripDailyExpenseType": {
+                            "S": "Accommodation"
+                        },
+                        "TripDailyExpenseAmount": {
+                            "S": "0.00"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "TripDailyExpenseDate": {
+                            "S": "2021-03-07"
+                        },
+                        "TripDailyExpenseNotes": {
+                            "S": "TEST DATA UPDATED"
                         },
                         "TripDailyExpenseDescription": {
                             "S": "From Prek Prasab to Phnum Sruoch"
@@ -234,23 +364,20 @@ TripRequestRequesterName    | Is the name of creator trip request.
                             "S": "Travel Fee"
                         },
                         "TripDailyExpenseAmount": {
-                            "S": "8.00"
+                            "S": "3.00"
                         }
                     }
                 }
             ]
         },
-        "TripRequestReturnDateTime": {
-            "S": "2021-02-18 8:30:00"
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
         "TripRequestCoveredByOther": {
             "S": "CoveredByOwnCompany"
         },
-        "TenantId": {
-            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-        },
         "TripRequestDepartureDateTime": {
-            "S": "2021-02-17 7:30:00"
+            "S": "2021-03-04 7:30"
         },
         "TripRequestTravelMode": {
             "S": "PublicTransport"
@@ -259,38 +386,38 @@ TripRequestRequesterName    | Is the name of creator trip request.
             "L": [
                 {
                     "M": {
-                        "Date": {
-                            "S": "2021-02-17"
-                        },
-                        "Route": {
-                            "L": [
-                                {
+                        "ReturnRoute": {
+                            "M": {
+                                "Date": {
+                                    "S": "2021-03-07 8:30"
+                                },
+                                "Route": {
                                     "M": {
-                                        "Shop": {
-                                            "L": [
-                                                {
+                                        "From": {
+                                            "M": {
+                                                "LocationLevel1": {
                                                     "M": {
-                                                        "ShopId": {
-                                                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
+                                                        "LocationLevel1Id": {
+                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
                                                         },
-                                                        "ShopName": {
-                                                            "S": "Sreymi Sumsung Shop branch 1"
-                                                        }
-                                                    }
-                                                },
-                                                {
-                                                    "M": {
-                                                        "ShopId": {
-                                                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
+                                                        "LocationLevel1Name": {
+                                                            "S": "Kratie"
                                                         },
-                                                        "ShopName": {
-                                                            "S": "Sreymi Sumsung Shop branch 2"
+                                                        "LocationLevel2": {
+                                                            "M": {
+                                                                "LocationLevel2Id": {
+                                                                    "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                },
+                                                                "LocationLevel2Name": {
+                                                                    "S": "Prek Prasab"
+                                                                }
+                                                            }
                                                         }
                                                     }
                                                 }
-                                            ]
+                                            }
                                         },
-                                        "From": {
+                                        "To": {
                                             "M": {
                                                 "LocationLevel1": {
                                                     "M": {
@@ -313,24 +440,77 @@ TripRequestRequesterName    | Is the name of creator trip request.
                                                     }
                                                 }
                                             }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "OtherRoute": {
+                            "L": [
+                                {
+                                    "M": {
+                                        "Date": {
+                                            "S": "2021-03-05 8:30"
                                         },
-                                        "To": {
+                                        "Route": {
                                             "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Kratie"
-                                                        },
-                                                        "LocationLevel2": {
+                                                "Shop": {
+                                                    "L": [
+                                                        {
                                                             "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                "ShopId": {
+                                                                    "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
                                                                 },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Kracheh"
+                                                                "ShopName": {
+                                                                    "S": "Samsung LG"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "From": {
+                                                    "M": {
+                                                        "LocationLevel1": {
+                                                            "M": {
+                                                                "LocationLevel1Id": {
+                                                                    "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                                },
+                                                                "LocationLevel1Name": {
+                                                                    "S": "Kratie"
+                                                                },
+                                                                "LocationLevel2": {
+                                                                    "M": {
+                                                                        "LocationLevel2Id": {
+                                                                            "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                        },
+                                                                        "LocationLevel2Name": {
+                                                                            "S": "Kracheh"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "To": {
+                                                    "M": {
+                                                        "LocationLevel1": {
+                                                            "M": {
+                                                                "LocationLevel1Id": {
+                                                                    "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                                },
+                                                                "LocationLevel1Name": {
+                                                                    "S": "Kratie"
+                                                                },
+                                                                "LocationLevel2": {
+                                                                    "M": {
+                                                                        "LocationLevel2Id": {
+                                                                            "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                        },
+                                                                        "LocationLevel2Name": {
+                                                                            "S": "Prek Prasab"
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -342,61 +522,68 @@ TripRequestRequesterName    | Is the name of creator trip request.
                                 },
                                 {
                                     "M": {
-                                        "Shop": {
-                                            "L": [
-                                                {
-                                                    "M": {
-                                                        "ShopId": {
-                                                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
-                                                        },
-                                                        "ShopName": {
-                                                            "S": "Sophi Sumsung Shop branch 1"
-                                                        }
-                                                    }
-                                                }
-                                            ]
+                                        "Date": {
+                                            "S": "2021-03-06 10:30"
                                         },
-                                        "From": {
+                                        "Route": {
                                             "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Kratie"
-                                                        },
-                                                        "LocationLevel2": {
+                                                "Shop": {
+                                                    "L": [
+                                                        {
                                                             "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                "ShopId": {
+                                                                    "S": "1088dd48-a325-4c32-95ea-7802dcca3c5c"
                                                                 },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Kracheh"
+                                                                "ShopName": {
+                                                                    "S": "Samsung"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "From": {
+                                                    "M": {
+                                                        "LocationLevel1": {
+                                                            "M": {
+                                                                "LocationLevel1Id": {
+                                                                    "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                                },
+                                                                "LocationLevel1Name": {
+                                                                    "S": "Kratie"
+                                                                },
+                                                                "LocationLevel2": {
+                                                                    "M": {
+                                                                        "LocationLevel2Id": {
+                                                                            "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                        },
+                                                                        "LocationLevel2Name": {
+                                                                            "S": "Kracheh"
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }
                                                     }
-                                                }
-                                            }
-                                        },
-                                        "To": {
-                                            "M": {
-                                                "LocationLevel1": {
+                                                },
+                                                "To": {
                                                     "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Kratie"
-                                                        },
-                                                        "LocationLevel2": {
+                                                        "LocationLevel1": {
                                                             "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                "LocationLevel1Id": {
+                                                                    "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
                                                                 },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Prek Prasab"
+                                                                "LocationLevel1Name": {
+                                                                    "S": "Kratie"
+                                                                },
+                                                                "LocationLevel2": {
+                                                                    "M": {
+                                                                        "LocationLevel2Id": {
+                                                                            "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                        },
+                                                                        "LocationLevel2Name": {
+                                                                            "S": "Prek Prasab"
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -407,57 +594,39 @@ TripRequestRequesterName    | Is the name of creator trip request.
                                     }
                                 }
                             ]
-                        }
-                    }
-                },
-                {
-                    "M": {
-                        "Date": {
-                            "S": "2021-02-18"
                         },
-                        "Route": {
-                            "L": [
-                                {
+                        "DepartureRoute": {
+                            "M": {
+                                "Date": {
+                                    "S": "2021-03-04 7:30"
+                                },
+                                "Route": {
                                     "M": {
                                         "Shop": {
                                             "L": [
                                                 {
                                                     "M": {
                                                         "ShopId": {
-                                                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
+                                                            "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
                                                         },
                                                         "ShopName": {
-                                                            "S": "Ah mouy Sumsung Shop"
+                                                            "S": "Samsung LG"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "M": {
+                                                        "ShopId": {
+                                                            "S": "d5739d3d-0992-49fe-86c9-25d0015e735c"
+                                                        },
+                                                        "ShopName": {
+                                                            "S": "Samsung Galaxy Store"
                                                         }
                                                     }
                                                 }
                                             ]
                                         },
                                         "From": {
-                                            "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Kratie"
-                                                        },
-                                                        "LocationLevel2": {
-                                                            "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
-                                                                },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Prek Prasab"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "To": {
                                             "M": {
                                                 "LocationLevel1": {
                                                     "M": {
@@ -480,10 +649,34 @@ TripRequestRequesterName    | Is the name of creator trip request.
                                                     }
                                                 }
                                             }
+                                        },
+                                        "To": {
+                                            "M": {
+                                                "LocationLevel1": {
+                                                    "M": {
+                                                        "LocationLevel1Id": {
+                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                        },
+                                                        "LocationLevel1Name": {
+                                                            "S": "Kratie"
+                                                        },
+                                                        "LocationLevel2": {
+                                                            "M": {
+                                                                "LocationLevel2Id": {
+                                                                    "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                },
+                                                                "LocationLevel2Name": {
+                                                                    "S": "Kracheh"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
-                            ]
+                            }
                         }
                     }
                 }
@@ -491,6 +684,16 @@ TripRequestRequesterName    | Is the name of creator trip request.
         }
     }
 ]
+```
+
+> The above HTTP request, if failure, will return Json structured like this:
+
+```json
+{
+    "Resource": "aiml:dsa:trip-request/*",
+    "Operation": "dsa:item-operation:Retrieves",
+    "Message": "You're denied from performing the operation."
+}
 ```
 
 ### HTTP Request Filter 
@@ -503,24 +706,10 @@ TripRequestRequesterName    | Is the name of creator trip request.
 [
     {
         "CompositeAccessPatterns": {
-            "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:DRAFTED#TripRequestRequesterName:Jonh#TripRequestTravelMode:PublicTransport#TripRequestCoveredByOther:CoveredByOwnCompany"
+            "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestRequesterName:Jonh#TripRequestTravelMode:CompanyCar#TripRequestCoveredByOther:CoveredByOwnCompany"
         },
         "TripRequestLocalTrip": {
             "S": "LocalTrip"
-        },
-        "TripRequestJointTraveler": {
-            "L": [
-                {
-                    "M": {
-                        "JointTravelerEmployeePersonId": {
-                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
-                        },
-                        "JointTravelerPersonName": {
-                            "S": "Zhinee"
-                        }
-                    }
-                }
-            ]
         },
         "TripRequestRequesterName": {
             "S": "Jonh"
@@ -529,61 +718,61 @@ TripRequestRequesterName    | Is the name of creator trip request.
             "S": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8"
         },
         "EntityItemId": {
-            "S": "TripRequest:befbdefb8dacf8da84cc9bb43f663157"
-        },
-        "TripRequestStatus": {
-            "S": "DRAFTED"
+            "S": "TripRequest:36aea7b372b7f0a7416e7af0f34e5146"
         },
         "TripRequestPurpose": {
             "S": "Test Shop On host server"
+        },
+        "TripRequestReturnDateTime": {
+            "S": "2021-02-27 8:30"
         },
         "TripRequestTripDailyExpense": {
             "L": [
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
+                            "S": "2021-02-22"
                         },
                         "TripDailyExpenseNotes": {
-                            "S": "null"
+                            "S": "Test Update trip expense"
                         },
                         "TripDailyExpenseDescription": {
-                            "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
+                            "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
                         },
                         "TripDailyExpenseType": {
                             "S": "Meal"
                         },
                         "TripDailyExpenseAmount": {
-                            "S": "12"
+                            "S": "12.00"
                         }
                     }
                 },
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
+                            "S": "2021-02-22"
                         },
                         "TripDailyExpenseNotes": {
-                            "S": "null"
+                            "S": "test"
                         },
                         "TripDailyExpenseDescription": {
-                            "S": "Travels in Prek Prasab"
+                            "S": "In-area Travel"
                         },
                         "TripDailyExpenseType": {
                             "S": "In-area Travel"
                         },
                         "TripDailyExpenseAmount": {
-                            "S": "3"
+                            "S": "3.00"
                         }
                     }
                 },
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
+                            "S": "2021-02-22"
                         },
                         "TripDailyExpenseNotes": {
-                            "S": "null"
+                            "S": "Share Stay Per Night"
                         },
                         "TripDailyExpenseDescription": {
                             "S": "Alone stay per night"
@@ -592,55 +781,55 @@ TripRequestRequesterName    | Is the name of creator trip request.
                             "S": "Accommodation"
                         },
                         "TripDailyExpenseAmount": {
-                            "S": "15"
+                            "S": "20.00"
                         }
                     }
                 },
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-18"
+                            "S": "2021-02-23"
                         },
                         "TripDailyExpenseNotes": {
-                            "S": "null"
+                            "S": "Null"
                         },
                         "TripDailyExpenseDescription": {
-                            "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
+                            "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
                         },
                         "TripDailyExpenseType": {
                             "S": "Meal"
                         },
                         "TripDailyExpenseAmount": {
-                            "S": "12"
+                            "S": "12.00"
                         }
                     }
                 },
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-18"
+                            "S": "2021-02-23"
                         },
                         "TripDailyExpenseNotes": {
-                            "S": "null"
+                            "S": "Null"
                         },
                         "TripDailyExpenseDescription": {
-                            "S": "Travels in Prek Prasab"
+                            "S": "In-area Travel"
                         },
                         "TripDailyExpenseType": {
                             "S": "In-area Travel"
                         },
                         "TripDailyExpenseAmount": {
-                            "S": "3"
+                            "S": "3.00"
                         }
                     }
                 },
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-18"
+                            "S": "2021-02-23"
                         },
                         "TripDailyExpenseNotes": {
-                            "S": "null"
+                            "S": "Null"
                         },
                         "TripDailyExpenseDescription": {
                             "S": "Alone stay per night"
@@ -649,20 +838,20 @@ TripRequestRequesterName    | Is the name of creator trip request.
                             "S": "Accommodation"
                         },
                         "TripDailyExpenseAmount": {
-                            "S": "0"
+                            "S": "0.00"
                         }
                     }
                 },
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
+                            "S": "2021-02-22"
                         },
                         "TripDailyExpenseNotes": {
                             "S": "null"
                         },
                         "TripDailyExpenseDescription": {
-                            "S": "From Phnum Sruoch to Kracheh"
+                            "S": "From Kracheh to Phnum Sruoch"
                         },
                         "TripDailyExpenseType": {
                             "S": "Travel Fee"
@@ -675,7 +864,7 @@ TripRequestRequesterName    | Is the name of creator trip request.
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
+                            "S": "2021-02-22"
                         },
                         "TripDailyExpenseNotes": {
                             "S": "null"
@@ -694,13 +883,13 @@ TripRequestRequesterName    | Is the name of creator trip request.
                 {
                     "M": {
                         "TripDailyExpenseDate": {
-                            "S": "2021-02-18"
+                            "S": "2021-02-23"
                         },
                         "TripDailyExpenseNotes": {
                             "S": "null"
                         },
                         "TripDailyExpenseDescription": {
-                            "S": "From Prek Prasab to Phnum Sruoch"
+                            "S": "From Phnum Sruoch to Prek Prasab"
                         },
                         "TripDailyExpenseType": {
                             "S": "Travel Fee"
@@ -712,57 +901,54 @@ TripRequestRequesterName    | Is the name of creator trip request.
                 }
             ]
         },
-        "TripRequestReturnDateTime": {
-            "S": "2021-02-18 8:30:00"
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
         "TripRequestCoveredByOther": {
             "S": "CoveredByOwnCompany"
         },
-        "TenantId": {
-            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-        },
         "TripRequestDepartureDateTime": {
-            "S": "2021-02-17 7:30:00"
+            "S": "2021-02-26 7:30"
         },
         "TripRequestTravelMode": {
-            "S": "PublicTransport"
+            "S": "CompanyCar"
         },
         "TripRequestTripRoute": {
             "L": [
                 {
                     "M": {
-                        "Date": {
-                            "S": "2021-02-17"
-                        },
-                        "Route": {
-                            "L": [
-                                {
+                        "ReturnRoute": {
+                            "M": {
+                                "Date": {
+                                    "S": "2021-02-27 8:30"
+                                },
+                                "Route": {
                                     "M": {
-                                        "Shop": {
-                                            "L": [
-                                                {
+                                        "From": {
+                                            "M": {
+                                                "LocationLevel1": {
                                                     "M": {
-                                                        "ShopId": {
-                                                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
+                                                        "LocationLevel1Id": {
+                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
                                                         },
-                                                        "ShopName": {
-                                                            "S": "Sreymi Sumsung Shop branch 1"
-                                                        }
-                                                    }
-                                                },
-                                                {
-                                                    "M": {
-                                                        "ShopId": {
-                                                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
+                                                        "LocationLevel1Name": {
+                                                            "S": "Kratie"
                                                         },
-                                                        "ShopName": {
-                                                            "S": "Sreymi Sumsung Shop branch 2"
+                                                        "LocationLevel2": {
+                                                            "M": {
+                                                                "LocationLevel2Id": {
+                                                                    "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                },
+                                                                "LocationLevel2Name": {
+                                                                    "S": "Prek Prasab"
+                                                                }
+                                                            }
                                                         }
                                                     }
                                                 }
-                                            ]
+                                            }
                                         },
-                                        "From": {
+                                        "To": {
                                             "M": {
                                                 "LocationLevel1": {
                                                     "M": {
@@ -785,24 +971,77 @@ TripRequestRequesterName    | Is the name of creator trip request.
                                                     }
                                                 }
                                             }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "OtherRoute": {
+                            "L": [
+                                {
+                                    "M": {
+                                        "Date": {
+                                            "S": "2021-02-26 8:30"
                                         },
-                                        "To": {
+                                        "Route": {
                                             "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Kratie"
-                                                        },
-                                                        "LocationLevel2": {
+                                                "Shop": {
+                                                    "L": [
+                                                        {
                                                             "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                "ShopId": {
+                                                                    "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
                                                                 },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Kracheh"
+                                                                "ShopName": {
+                                                                    "S": "Samsung LG"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "From": {
+                                                    "M": {
+                                                        "LocationLevel1": {
+                                                            "M": {
+                                                                "LocationLevel1Id": {
+                                                                    "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                                },
+                                                                "LocationLevel1Name": {
+                                                                    "S": "Kratie"
+                                                                },
+                                                                "LocationLevel2": {
+                                                                    "M": {
+                                                                        "LocationLevel2Id": {
+                                                                            "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                        },
+                                                                        "LocationLevel2Name": {
+                                                                            "S": "Kracheh"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "To": {
+                                                    "M": {
+                                                        "LocationLevel1": {
+                                                            "M": {
+                                                                "LocationLevel1Id": {
+                                                                    "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                                },
+                                                                "LocationLevel1Name": {
+                                                                    "S": "Kratie"
+                                                                },
+                                                                "LocationLevel2": {
+                                                                    "M": {
+                                                                        "LocationLevel2Id": {
+                                                                            "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                        },
+                                                                        "LocationLevel2Name": {
+                                                                            "S": "Prek Prasab"
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -814,61 +1053,68 @@ TripRequestRequesterName    | Is the name of creator trip request.
                                 },
                                 {
                                     "M": {
-                                        "Shop": {
-                                            "L": [
-                                                {
-                                                    "M": {
-                                                        "ShopId": {
-                                                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
-                                                        },
-                                                        "ShopName": {
-                                                            "S": "Sophi Sumsung Shop branch 1"
-                                                        }
-                                                    }
-                                                }
-                                            ]
+                                        "Date": {
+                                            "S": "2021-02-26 10:30"
                                         },
-                                        "From": {
+                                        "Route": {
                                             "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Kratie"
-                                                        },
-                                                        "LocationLevel2": {
+                                                "Shop": {
+                                                    "L": [
+                                                        {
                                                             "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                "ShopId": {
+                                                                    "S": "1088dd48-a325-4c32-95ea-7802dcca3c5c"
                                                                 },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Kracheh"
+                                                                "ShopName": {
+                                                                    "S": "Samsung"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "From": {
+                                                    "M": {
+                                                        "LocationLevel1": {
+                                                            "M": {
+                                                                "LocationLevel1Id": {
+                                                                    "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                                },
+                                                                "LocationLevel1Name": {
+                                                                    "S": "Kratie"
+                                                                },
+                                                                "LocationLevel2": {
+                                                                    "M": {
+                                                                        "LocationLevel2Id": {
+                                                                            "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                        },
+                                                                        "LocationLevel2Name": {
+                                                                            "S": "Kracheh"
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }
                                                     }
-                                                }
-                                            }
-                                        },
-                                        "To": {
-                                            "M": {
-                                                "LocationLevel1": {
+                                                },
+                                                "To": {
                                                     "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Kratie"
-                                                        },
-                                                        "LocationLevel2": {
+                                                        "LocationLevel1": {
                                                             "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                "LocationLevel1Id": {
+                                                                    "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
                                                                 },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Prek Prasab"
+                                                                "LocationLevel1Name": {
+                                                                    "S": "Kratie"
+                                                                },
+                                                                "LocationLevel2": {
+                                                                    "M": {
+                                                                        "LocationLevel2Id": {
+                                                                            "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                        },
+                                                                        "LocationLevel2Name": {
+                                                                            "S": "Prek Prasab"
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -879,57 +1125,39 @@ TripRequestRequesterName    | Is the name of creator trip request.
                                     }
                                 }
                             ]
-                        }
-                    }
-                },
-                {
-                    "M": {
-                        "Date": {
-                            "S": "2021-02-18"
                         },
-                        "Route": {
-                            "L": [
-                                {
+                        "DepartureRoute": {
+                            "M": {
+                                "Date": {
+                                    "S": "2021-02-26 7:30"
+                                },
+                                "Route": {
                                     "M": {
                                         "Shop": {
                                             "L": [
                                                 {
                                                     "M": {
                                                         "ShopId": {
-                                                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
+                                                            "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
                                                         },
                                                         "ShopName": {
-                                                            "S": "Ah mouy Sumsung Shop"
+                                                            "S": "Samsung LG"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "M": {
+                                                        "ShopId": {
+                                                            "S": "d5739d3d-0992-49fe-86c9-25d0015e735c"
+                                                        },
+                                                        "ShopName": {
+                                                            "S": "Samsung Galaxy Store"
                                                         }
                                                     }
                                                 }
                                             ]
                                         },
                                         "From": {
-                                            "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Kratie"
-                                                        },
-                                                        "LocationLevel2": {
-                                                            "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
-                                                                },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Prek Prasab"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "To": {
                                             "M": {
                                                 "LocationLevel1": {
                                                     "M": {
@@ -952,10 +1180,34 @@ TripRequestRequesterName    | Is the name of creator trip request.
                                                     }
                                                 }
                                             }
+                                        },
+                                        "To": {
+                                            "M": {
+                                                "LocationLevel1": {
+                                                    "M": {
+                                                        "LocationLevel1Id": {
+                                                            "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                        },
+                                                        "LocationLevel1Name": {
+                                                            "S": "Kratie"
+                                                        },
+                                                        "LocationLevel2": {
+                                                            "M": {
+                                                                "LocationLevel2Id": {
+                                                                    "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                },
+                                                                "LocationLevel2Name": {
+                                                                    "S": "Kracheh"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
-                            ]
+                            }
                         }
                     }
                 }
@@ -976,20 +1228,19 @@ TripRequestRequesterName    | Is the name of creator trip request.
 {
     "TripRequest": {
         "TripRequestLocalTrip": "LocalTrip",
-        "TripRequestDepartureDateTime": "2021-02-17 7:30:00",
-        "TripRequestReturnDateTime": "2021-02-18 8:30:00",
-        "TripRequestStatus": "DRAFTED",
+        "TripRequestDepartureDateTime": "2021-02-26 7:30",
+        "TripRequestReturnDateTime": "2021-02-27 8:30",
         "TripRequestRequesterId": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8",
         "TripRequestRequesterName": "Jonh",
         "TripRequestPurpose": "Test Shop On host server",
         "TripRequestTravelMode": "PublicTransport",
-        "TripRequestCoveredByOther": "CoveredByOwnCompany",
+        "TripRequestCoveredByOther": "CoveredByPartner",
         "Children": {
             "TripRoute": [
                 {
-                    "Date": "2021-02-17",
-                    "Route": [
-                        { 
+                    "DepartureRoute":{
+                        "Date": "2021-02-26 7:30",
+                        "Route": { 
                             "From": {
                                 "LocationLevel1": {
                                     "LocationLevel1Id": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5",
@@ -1012,196 +1263,84 @@ TripRequestRequesterName    | Is the name of creator trip request.
                             },
                             "Shop": [
                                 {
-                                    "ShopId": "d8d6f92d-c683-4480-bc45-8324599f550d",
-                                    "ShopName": "Sreymi Sumsung Shop branch 1"
+                                    "ShopId": "59564083-7e2c-4c79-8345-0b7d178f0355",
+                                    "ShopName": "Samsung LG"
                                 },
                                 {
-                                    "ShopId": "d8d6f92d-c683-4480-bc45-8324599f550d",
-                                    "ShopName": "Sreymi Sumsung Shop branch 2"
-                                }
-                            ]
-                        },
-                        { 
-                            "From": {
-                                "LocationLevel1": {
-                                    "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
-                                    "LocationLevel1Name": "Kratie",
-                                    "LocationLevel2": {
-                                        "LocationLevel2Id": "LocationLevel2:b5fb20fadc9552021625383e30e44d88",
-                                        "LocationLevel2Name": "Kracheh"
-                                    }
-                                }
-                            },
-                            "To": {
-                                "LocationLevel1": {
-                                    "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
-                                    "LocationLevel1Name": "Kratie",
-                                    "LocationLevel2": {
-                                        "LocationLevel2Id": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210",
-                                        "LocationLevel2Name": "Prek Prasab"
-                                    }
-                                }
-                            },
-                            "Shop": [
-                                {
-                                    "ShopId": "d8d6f92d-c683-4480-bc45-8324599f550d",
-                                    "ShopName": "Sophi Sumsung Shop branch 1"
+                                    "ShopId": "d5739d3d-0992-49fe-86c9-25d0015e735c",
+                                    "ShopName": "Samsung Galaxy Store"
                                 }
                             ]
                         }
-                    ]
-                },
-                {
-                    "Date": "2021-02-18",
-                    "Route": [
-                        { 
-                            "From": {
-                                "LocationLevel1": {
-                                    "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
-                                    "LocationLevel1Name": "Kratie",
-                                    "LocationLevel2": {
-                                        "LocationLevel2Id": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210",
-                                        "LocationLevel2Name": "Prek Prasab"
+                    },
+                    "OtherRoute":[
+                        {
+                            "Date": "2021-02-26 8:30",
+                            "Route":{ 
+                                "From": {
+                                    "LocationLevel1": {
+                                        "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
+                                        "LocationLevel1Name": "Kratie",
+                                        "LocationLevel2": {
+                                            "LocationLevel2Id": "LocationLevel2:b5fb20fadc9552021625383e30e44d88",
+                                            "LocationLevel2Name": "Kracheh"
+                                        }
                                     }
-                                }
-                            },
-                            "To": {
-                                "LocationLevel1": {
-                                    "LocationLevel1Id": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5",
-                                    "LocationLevel1Name": "Kampong Speu",
-                                    "LocationLevel2": {
-                                        "LocationLevel2Id": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5",
-                                        "LocationLevel2Name": "Phnum Sruoch"
-                                    }
-                                }
-                            },
-                            "Shop": [
-                                {
-                                    "ShopId": "d8d6f92d-c683-4480-bc45-8324599f550d",
-                                    "ShopName": "Ah mouy Sumsung Shop"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "JointTraveler": [
-                {
-                    "JointTravelerEmployeePersonId": "d8d6f92d-c683-4480-bc45-8324599f550d",
-                    "JointTravelerPersonName": "Zhinee"
-                }
-            ]   
-        }
-    }
-}
-
-```
-
-### HTTP Response
-> The above HTTP request, if successful, will return Json structured like this:
-
-```json
-[
-    {
-        "ConsumedCapacity": {
-            "TableName": "DsaDev",
-            "CapacityUnits": 1
-        },
-        "@metadata": {
-            "statusCode": 200,
-            "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
-            "headers": {
-                "server": "Server",
-                "date": "Fri, 29 Jan 2021 03:42:05 GMT",
-                "content-type": "application/x-amz-json-1.0",
-                "content-length": "63",
-                "connection": "keep-alive",
-                "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
-                "x-amz-crc32": "3143598553"
-            },
-            "transferStats": {
-                "http": [
-                    []
-                ]
-            }
-        }
-    }
-]
-```
-
-## Update Trip Request
-
-### HTTP Request
-`PUT dsa-svc/api/v1/trip-requests/{trip-request-id}`
-
-### Query Paramaeters
-Parameter       | Description
----------       | -----------
-trip-request-id | Is the EntityItemId Of trip request
-
-### Body Request
-
-```json
-{
-    "TripRequest": {
-        "TripRequestLocalTrip": "LocalTrip",
-        "TripRequestDepartureDateTime": "2021-02-18 9:30:00",
-        "TripRequestReturnDateTime": "2021-02-19 8:30:00",
-        "TripRequestStatus": "DRAFTED",
-        "TripRequestRequesterId": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8",
-        "TripRequestRequesterName": "Nuna",
-        "TripRequestPurpose": "Test Update Data",
-        "TripRequestTravelMode": "PublicTransport",
-        "TripRequestCoveredByOther": "CoveredByOwnCompany",
-        "Children": {
-            "TripRoute": [
-                {
-                    "Date": "2021-02-17",
-                    "Route": [
-                        { 
-                            "From": {
-                                "LocationLevel1": {
-                                    "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
-                                    "LocationLevel1Name": "Kratie",
-                                    "LocationLevel2": {
-                                        "LocationLevel2Id": "LocationLevel2:b5fb20fadc9552021625383e30e44d88",
-                                        "LocationLevel2Name": "Kracheh"
-                                    }
-                                }
-                            },
-                            "To": {
-                                "LocationLevel1": {
-                                    "LocationLevel1Id": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5",
-                                    "LocationLevel1Name": "Kampong Speu",
-                                    "LocationLevel2": {
-                                        "LocationLevel2Id": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5",
-                                        "LocationLevel2Name": "Phnum Sruoch"
-                                    }
-                                }
-                            },
-                            "Shop": [
-                                {
-                                    "ShopId": "d8d6f92d-c683-4480-bc45-8324599f550d",
-                                    "ShopName": "Mama Sumsung Shop branch 1"
                                 },
-                                {
-                                    "ShopId": "d8d6f92d-c683-4480-bc45-8324599f550d",
-                                    "ShopName": "Mama Sumsung Shop branch 2"
-                                }
-                            ]
-                        },
-                        { 
-                            "From": {
-                                "LocationLevel1": {
-                                    "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
-                                    "LocationLevel1Name": "Kratie",
-                                    "LocationLevel2": {
-                                        "LocationLevel2Id": "LocationLevel2:b5fb20fadc9552021625383e30e44d88",
-                                        "LocationLevel2Name": "Kracheh"
+                                "To": {
+                                    "LocationLevel1": {
+                                        "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
+                                        "LocationLevel1Name": "Kratie",
+                                        "LocationLevel2": {
+                                            "LocationLevel2Id": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210",
+                                            "LocationLevel2Name": "Prek Prasab"
+                                        }
                                     }
-                                }
-                            },
-                            "To": {
+                                },
+                                "Shop": [
+                                    {
+                                        "ShopId": "59564083-7e2c-4c79-8345-0b7d178f0355",
+                                        "ShopName": "Samsung LG"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Date": "2021-02-26 10:30",
+                            "Route":{ 
+                                "From": {
+                                    "LocationLevel1": {
+                                        "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
+                                        "LocationLevel1Name": "Kratie",
+                                        "LocationLevel2": {
+                                            "LocationLevel2Id": "LocationLevel2:b5fb20fadc9552021625383e30e44d88",
+                                            "LocationLevel2Name": "Kracheh"
+                                        }
+                                    }
+                                },
+                                "To": {
+                                    "LocationLevel1": {
+                                        "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
+                                        "LocationLevel1Name": "Kratie",
+                                        "LocationLevel2": {
+                                            "LocationLevel2Id": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210",
+                                            "LocationLevel2Name": "Prek Prasab"
+                                        }
+                                    }
+                                },
+                                "Shop": [
+                                    {
+                                        "ShopId": "1088dd48-a325-4c32-95ea-7802dcca3c5c",
+                                        "ShopName": "Samsung"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "ReturnRoute":{
+                        "Date": "2021-02-27 8:30",
+                        "Route":{ 
+                            "From": {
                                 "LocationLevel1": {
                                     "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
                                     "LocationLevel1Name": "Kratie",
@@ -1211,223 +1350,85 @@ trip-request-id | Is the EntityItemId Of trip request
                                     }
                                 }
                             },
-                            "Shop": [
-                                {
-                                    "ShopId": "d8d6f92d-c683-4480-bc45-8324599f550d",
-                                    "ShopName": "Same Sumsung Shop branch 1"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "Date": "2021-02-18",
-                    "Route": [
-                        { 
-                            "From": {
+                            "To": {
                                 "LocationLevel1": {
                                     "LocationLevel1Id": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5",
                                     "LocationLevel1Name": "Kampong Speu",
                                     "LocationLevel2": {
                                         "LocationLevel2Id": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5",
                                         "LocationLevel2Name": "Phnum Sruoch"
-                                    }
-                                }
-                            },
-                            "To": {
-                                "LocationLevel1": {
-                                    "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
-                                    "LocationLevel1Name": "Kratie",
-                                    "LocationLevel2": {
-                                        "LocationLevel2Id": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210",
-                                        "LocationLevel2Name": "Prek Prasab"
                                     }
                                 }
                             }
                         }
-                    ]
+                    }
                 }
-            ],
-            "JointTraveler": [
-                {
-                    "JointTravelerEmployeePersonId": "d8d6f92d-c683-4480-bc45-8324599f550d",
-                    "JointTravelerPersonName": "Zhinee"
-                }
-            ]   
+            ] 
         }
-    }
+    },
+    "PreviousStatus": "null",
+    "Operation": "dsa:item-operation:Create"
 }
+
 ```
 
 ### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
 
-```json 
+```json
 {
     "CompositeAccessPatterns": {
-        "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:DRAFTED#TripRequestRequesterName:Nuna#TripRequestTravelMode:PublicTransport#TripRequestCoveredByOther:CoveredByOwnCompany"
+        "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:Drafted#TripRequestRequesterName:Jonh#TripRequestTravelMode:PublicTransport#TripRequestCoveredByOther:CoveredByPartner"
     },
     "TripRequestLocalTrip": {
         "S": "LocalTrip"
     },
-    "TripRequestJointTraveler": {
-        "L": [
-            {
-                "M": {
-                    "JointTravelerEmployeePersonId": {
-                        "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
-                    },
-                    "JointTravelerPersonName": {
-                        "S": "Zhinee"
-                    }
-                }
-            }
-        ]
-    },
     "TripRequestRequesterName": {
-        "S": "Nuna"
+        "S": "Jonh"
     },
     "TripRequestRequesterId": {
         "S": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8"
     },
     "EntityItemId": {
-        "S": "TripRequest:0b02d7084eaf409130a85ff6f3e7d102"
+        "S": "TripRequest:9187db0081aac0add2c43100d28a0d77"
     },
     "TripRequestStatus": {
-        "S": "DRAFTED"
+        "S": "Drafted"
     },
     "TripRequestPurpose": {
-        "S": "Test Update Data"
-    },
-    "TripRequestReturnDateTime": {
-        "S": "2021-02-19 8:30:00"
+        "S": "Test Shop On host server"
     },
     "TripRequestTripDailyExpense": {
         "L": [
             {
                 "M": {
                     "TripDailyExpenseDate": {
-                        "S": "2021-02-18"
+                        "S": "2021-02-26"
                     },
                     "TripDailyExpenseNotes": {
-                        "S": "null"
+                        "S": "Null"
                     },
                     "TripDailyExpenseDescription": {
-                        "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
+                        "S": "Lump Sum"
                     },
                     "TripDailyExpenseType": {
-                        "S": "Meal"
+                        "S": "Lump Sum"
                     },
                     "TripDailyExpenseAmount": {
-                        "S": "10"
+                        "S": "10.00"
                     }
                 }
             },
             {
                 "M": {
                     "TripDailyExpenseDate": {
-                        "S": "2021-02-18"
+                        "S": "2021-02-26"
                     },
                     "TripDailyExpenseNotes": {
                         "S": "null"
                     },
                     "TripDailyExpenseDescription": {
-                        "S": "null"
-                    },
-                    "TripDailyExpenseType": {
-                        "S": "In-area Travel"
-                    },
-                    "TripDailyExpenseAmount": {
-                        "S": "3"
-                    }
-                }
-            },
-            {
-                "M": {
-                    "TripDailyExpenseDate": {
-                        "S": "2021-02-18"
-                    },
-                    "TripDailyExpenseNotes": {
-                        "S": "null"
-                    },
-                    "TripDailyExpenseDescription": {
-                        "S": "Alone stay per night"
-                    },
-                    "TripDailyExpenseType": {
-                        "S": "Accommodation"
-                    },
-                    "TripDailyExpenseAmount": {
-                        "S": "15"
-                    }
-                }
-            },
-            {
-                "M": {
-                    "TripDailyExpenseDate": {
-                        "S": "2021-02-19"
-                    },
-                    "TripDailyExpenseNotes": {
-                        "S": "null"
-                    },
-                    "TripDailyExpenseDescription": {
-                        "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
-                    },
-                    "TripDailyExpenseType": {
-                        "S": "Meal"
-                    },
-                    "TripDailyExpenseAmount": {
-                        "S": "12"
-                    }
-                }
-            },
-            {
-                "M": {
-                    "TripDailyExpenseDate": {
-                        "S": "2021-02-19"
-                    },
-                    "TripDailyExpenseNotes": {
-                        "S": "null"
-                    },
-                    "TripDailyExpenseDescription": {
-                        "S": "null"
-                    },
-                    "TripDailyExpenseType": {
-                        "S": "In-area Travel"
-                    },
-                    "TripDailyExpenseAmount": {
-                        "S": "3"
-                    }
-                }
-            },
-            {
-                "M": {
-                    "TripDailyExpenseDate": {
-                        "S": "2021-02-19"
-                    },
-                    "TripDailyExpenseNotes": {
-                        "S": "null"
-                    },
-                    "TripDailyExpenseDescription": {
-                        "S": "Alone stay per night"
-                    },
-                    "TripDailyExpenseType": {
-                        "S": "Accommodation"
-                    },
-                    "TripDailyExpenseAmount": {
-                        "S": "0"
-                    }
-                }
-            },
-            {
-                "M": {
-                    "TripDailyExpenseDate": {
-                        "S": "2021-02-17"
-                    },
-                    "TripDailyExpenseNotes": {
-                        "S": "null"
-                    },
-                    "TripDailyExpenseDescription": {
-                        "S": "From Kracheh to Phnum Sruoch"
+                        "S": "From Phnum Sruoch to Kracheh"
                     },
                     "TripDailyExpenseType": {
                         "S": "Travel Fee"
@@ -1440,7 +1441,7 @@ trip-request-id | Is the EntityItemId Of trip request
             {
                 "M": {
                     "TripDailyExpenseDate": {
-                        "S": "2021-02-17"
+                        "S": "2021-02-26"
                     },
                     "TripDailyExpenseNotes": {
                         "S": "null"
@@ -1459,19 +1460,1349 @@ trip-request-id | Is the EntityItemId Of trip request
             {
                 "M": {
                     "TripDailyExpenseDate": {
-                        "S": "2021-02-18"
+                        "S": "2021-02-26"
                     },
                     "TripDailyExpenseNotes": {
                         "S": "null"
                     },
                     "TripDailyExpenseDescription": {
-                        "S": "From Phnum Sruoch to Prek Prasab"
+                        "S": "From Kracheh to Prek Prasab"
                     },
                     "TripDailyExpenseType": {
                         "S": "Travel Fee"
                     },
                     "TripDailyExpenseAmount": {
-                        "S": "8.00"
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-27"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Lump Sum"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Lump Sum"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "10.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-27"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Prek Prasab to Phnum Sruoch"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            }
+        ]
+    },
+    "TripRequestReturnDateTime": {
+        "S": "2021-02-27 8:30"
+    },
+    "TripRequestCoveredByOther": {
+        "S": "CoveredByPartner"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "TripRequestDepartureDateTime": {
+        "S": "2021-02-26 7:30"
+    },
+    "TripRequestTravelMode": {
+        "S": "PublicTransport"
+    },
+    "TripRequestTripRoute": {
+        "L": [
+            {
+                "M": {
+                    "ReturnRoute": {
+                        "M": {
+                            "Date": {
+                                "S": "2021-02-27 8:30"
+                            },
+                            "Route": {
+                                "M": {
+                                    "From": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kratie"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Prek Prasab"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "To": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kampong Speu"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Phnum Sruoch"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "OtherRoute": {
+                        "L": [
+                            {
+                                "M": {
+                                    "Date": {
+                                        "S": "2021-02-26 8:30"
+                                    },
+                                    "Route": {
+                                        "M": {
+                                            "Shop": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "ShopId": {
+                                                                "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
+                                                            },
+                                                            "ShopName": {
+                                                                "S": "Samsung LG"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "From": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Kracheh"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "To": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Prek Prasab"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "Date": {
+                                        "S": "2021-02-26 10:30"
+                                    },
+                                    "Route": {
+                                        "M": {
+                                            "Shop": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "ShopId": {
+                                                                "S": "1088dd48-a325-4c32-95ea-7802dcca3c5c"
+                                                            },
+                                                            "ShopName": {
+                                                                "S": "Samsung"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "From": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Kracheh"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "To": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Prek Prasab"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "DepartureRoute": {
+                        "M": {
+                            "Date": {
+                                "S": "2021-02-26 7:30"
+                            },
+                            "Route": {
+                                "M": {
+                                    "Shop": {
+                                        "L": [
+                                            {
+                                                "M": {
+                                                    "ShopId": {
+                                                        "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
+                                                    },
+                                                    "ShopName": {
+                                                        "S": "Samsung LG"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "M": {
+                                                    "ShopId": {
+                                                        "S": "d5739d3d-0992-49fe-86c9-25d0015e735c"
+                                                    },
+                                                    "ShopName": {
+                                                        "S": "Samsung Galaxy Store"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "From": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kampong Speu"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Phnum Sruoch"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "To": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kratie"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Kracheh"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
+## Update Trip Request
+
+### HTTP Request
+`PUT dsa-svc/api/v1/trip-requests/{trip-request-id}`
+
+### Query Paramaeters
+Parameter       | Description
+---------       | -----------
+trip-request-id | Is the EntityItemId Of trip request
+
+### Body Request
+
+```json
+{
+    "TripRequest": {
+        "TripRequestLocalTrip": "LocalTrip",
+        "TripRequestDepartureDateTime": "2021-02-26 7:30",
+        "TripRequestReturnDateTime": "2021-02-27 8:30",
+        "TripRequestRequesterId": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8",
+        "TripRequestRequesterName": "Jonh",
+        "TripRequestPurpose": "Test Shop On host server",
+        "TripRequestTravelMode": "PublicTransport",
+        "TripRequestCoveredByOther": "CoveredByPartner",
+        "Children": {
+            "TripRoute": [
+                {
+                    "DepartureRoute":{
+                        "Date": "2021-02-26 7:30",
+                        "Route": { 
+                            "From": {
+                                "LocationLevel1": {
+                                    "LocationLevel1Id": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5",
+                                    "LocationLevel1Name": "Kampong Speu",
+                                    "LocationLevel2": {
+                                        "LocationLevel2Id": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5",
+                                        "LocationLevel2Name": "Phnum Sruoch"
+                                    }
+                                }
+                            },
+                            "To": {
+                                "LocationLevel1": {
+                                    "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
+                                    "LocationLevel1Name": "Kratie",
+                                    "LocationLevel2": {
+                                        "LocationLevel2Id": "LocationLevel2:b5fb20fadc9552021625383e30e44d88",
+                                        "LocationLevel2Name": "Kracheh"
+                                    }
+                                }
+                            },
+                            "Shop": [
+                                {
+                                    "ShopId": "59564083-7e2c-4c79-8345-0b7d178f0355",
+                                    "ShopName": "Samsung LG"
+                                },
+                                {
+                                    "ShopId": "d5739d3d-0992-49fe-86c9-25d0015e735c",
+                                    "ShopName": "Samsung Galaxy Store"
+                                }
+                            ]
+                        }
+                    },
+                    "OtherRoute":[
+                        {
+                            "Date": "2021-02-26 8:30",
+                            "Route":{ 
+                                "From": {
+                                    "LocationLevel1": {
+                                        "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
+                                        "LocationLevel1Name": "Kratie",
+                                        "LocationLevel2": {
+                                            "LocationLevel2Id": "LocationLevel2:b5fb20fadc9552021625383e30e44d88",
+                                            "LocationLevel2Name": "Kracheh"
+                                        }
+                                    }
+                                },
+                                "To": {
+                                    "LocationLevel1": {
+                                        "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
+                                        "LocationLevel1Name": "Kratie",
+                                        "LocationLevel2": {
+                                            "LocationLevel2Id": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210",
+                                            "LocationLevel2Name": "Prek Prasab"
+                                        }
+                                    }
+                                },
+                                "Shop": [
+                                    {
+                                        "ShopId": "59564083-7e2c-4c79-8345-0b7d178f0355",
+                                        "ShopName": "Samsung LG"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Date": "2021-02-26 10:30",
+                            "Route":{ 
+                                "From": {
+                                    "LocationLevel1": {
+                                        "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
+                                        "LocationLevel1Name": "Kratie",
+                                        "LocationLevel2": {
+                                            "LocationLevel2Id": "LocationLevel2:b5fb20fadc9552021625383e30e44d88",
+                                            "LocationLevel2Name": "Kracheh"
+                                        }
+                                    }
+                                },
+                                "To": {
+                                    "LocationLevel1": {
+                                        "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
+                                        "LocationLevel1Name": "Kratie",
+                                        "LocationLevel2": {
+                                            "LocationLevel2Id": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210",
+                                            "LocationLevel2Name": "Prek Prasab"
+                                        }
+                                    }
+                                },
+                                "Shop": [
+                                    {
+                                        "ShopId": "1088dd48-a325-4c32-95ea-7802dcca3c5c",
+                                        "ShopName": "Samsung"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "ReturnRoute":{
+                        "Date": "2021-02-27 8:30",
+                        "Route":{ 
+                            "From": {
+                                "LocationLevel1": {
+                                    "LocationLevel1Id": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378",
+                                    "LocationLevel1Name": "Kratie",
+                                    "LocationLevel2": {
+                                        "LocationLevel2Id": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210",
+                                        "LocationLevel2Name": "Prek Prasab"
+                                    }
+                                }
+                            },
+                            "To": {
+                                "LocationLevel1": {
+                                    "LocationLevel1Id": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5",
+                                    "LocationLevel1Name": "Kampong Speu",
+                                    "LocationLevel2": {
+                                        "LocationLevel2Id": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5",
+                                        "LocationLevel2Name": "Phnum Sruoch"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ] 
+        }
+    },
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "CompositeAccessPatterns": {
+        "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:Drafted#TripRequestRequesterName:Jonh#TripRequestTravelMode:PublicTransport#TripRequestCoveredByOther:CoveredByPartner"
+    },
+    "TripRequestLocalTrip": {
+        "S": "LocalTrip"
+    },
+    "TripRequestRequesterName": {
+        "S": "Jonh"
+    },
+    "TripRequestRequesterId": {
+        "S": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8"
+    },
+    "EntityItemId": {
+        "S": "TripRequest:9187db0081aac0add2c43100d28a0d77"
+    },
+    "TripRequestStatus": {
+        "S": "Drafted"
+    },
+    "TripRequestPurpose": {
+        "S": "Test Shop On host server"
+    },
+    "TripRequestTripDailyExpense": {
+        "L": [
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-26"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Lump Sum"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Lump Sum"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "10.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-26"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Phnum Sruoch to Kracheh"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "10.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-26"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Kracheh to Prek Prasab"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-26"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Kracheh to Prek Prasab"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-27"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Lump Sum"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Lump Sum"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "10.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-27"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Prek Prasab to Phnum Sruoch"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            }
+        ]
+    },
+    "TripRequestReturnDateTime": {
+        "S": "2021-02-27 8:30"
+    },
+    "TripRequestCoveredByOther": {
+        "S": "CoveredByPartner"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "TripRequestDepartureDateTime": {
+        "S": "2021-02-26 7:30"
+    },
+    "TripRequestTravelMode": {
+        "S": "PublicTransport"
+    },
+    "TripRequestTripRoute": {
+        "L": [
+            {
+                "M": {
+                    "ReturnRoute": {
+                        "M": {
+                            "Date": {
+                                "S": "2021-02-27 8:30"
+                            },
+                            "Route": {
+                                "M": {
+                                    "From": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kratie"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Prek Prasab"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "To": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kampong Speu"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Phnum Sruoch"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "OtherRoute": {
+                        "L": [
+                            {
+                                "M": {
+                                    "Date": {
+                                        "S": "2021-02-26 8:30"
+                                    },
+                                    "Route": {
+                                        "M": {
+                                            "Shop": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "ShopId": {
+                                                                "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
+                                                            },
+                                                            "ShopName": {
+                                                                "S": "Samsung LG"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "From": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Kracheh"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "To": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Prek Prasab"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "Date": {
+                                        "S": "2021-02-26 10:30"
+                                    },
+                                    "Route": {
+                                        "M": {
+                                            "Shop": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "ShopId": {
+                                                                "S": "1088dd48-a325-4c32-95ea-7802dcca3c5c"
+                                                            },
+                                                            "ShopName": {
+                                                                "S": "Samsung"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "From": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Kracheh"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "To": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Prek Prasab"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "DepartureRoute": {
+                        "M": {
+                            "Date": {
+                                "S": "2021-02-26 7:30"
+                            },
+                            "Route": {
+                                "M": {
+                                    "Shop": {
+                                        "L": [
+                                            {
+                                                "M": {
+                                                    "ShopId": {
+                                                        "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
+                                                    },
+                                                    "ShopName": {
+                                                        "S": "Samsung LG"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "M": {
+                                                    "ShopId": {
+                                                        "S": "d5739d3d-0992-49fe-86c9-25d0015e735c"
+                                                    },
+                                                    "ShopName": {
+                                                        "S": "Samsung Galaxy Store"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "From": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kampong Speu"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Phnum Sruoch"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "To": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kratie"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Kracheh"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
+## Get Info Detail Of Trip Request
+### HTTP Request
+`GET dsa-svc/api/v1/trip-requests/{trip-request-id}`
+
+### Query Paramaeters
+Parameter       | Description
+---------       | -----------
+trip-request-id | Is the EntityItemId Of trip request
+
+### Body Request
+
+```json
+{
+    "Resource": "aiml:dsa:trip-request/TripRequest:190fb791ce8eedee2c013d10796838b2",
+    "Operation": "dsa:item-operation:Retrieve"
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "CompositeAccessPatterns": {
+        "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:Drafted#TripRequestRequesterName:Sreyta#TripRequestTravelMode:PublicTransport#TripRequestCoveredByOther:CoveredByOwnCompany"
+    },
+    "TripRequestLocalTrip": {
+        "S": "LocalTrip"
+    },
+    "TripRequestRequesterName": {
+        "S": "Sreyta"
+    },
+    "TripRequestRequesterId": {
+        "S": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8"
+    },
+    "EntityItemId": {
+        "S": "TripRequest:190fb791ce8eedee2c013d10796838b2"
+    },
+    "TripRequestStatus": {
+        "S": "Drafted"
+    },
+    "TripRequestPurpose": {
+        "S": "Last Test Update Trip Request"
+    },
+    "TripRequestReturnDateTime": {
+        "S": "2021-03-07 8:30"
+    },
+    "TripRequestTripDailyExpense": {
+        "L": [
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-04"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Meal"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "12.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-04"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-04"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Alone stay per night"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Accommodation"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "15.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-04"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Phnum Sruoch to Kracheh"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "10.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-05"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Meal"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "12.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-05"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-05"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Alone stay per night"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Accommodation"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "15.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-05"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Kracheh to Prek Prasab"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-06"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Meal"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "12.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-06"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "TEST LINE EXPENSE"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-06"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Alone stay per night"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Accommodation"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "15.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-06"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Kracheh to Prek Prasab"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-07"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Meal"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "12.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-07"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-07"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Alone stay per night"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Accommodation"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "0.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-03-07"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "TEST DATA UPDATED"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Prek Prasab to Phnum Sruoch"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
                     }
                 }
             }
@@ -1484,7 +2815,7 @@ trip-request-id | Is the EntityItemId Of trip request
         "S": "CoveredByOwnCompany"
     },
     "TripRequestDepartureDateTime": {
-        "S": "2021-02-18 9:30:00"
+        "S": "2021-03-04 7:30"
     },
     "TripRequestTravelMode": {
         "S": "PublicTransport"
@@ -1493,37 +2824,13 @@ trip-request-id | Is the EntityItemId Of trip request
         "L": [
             {
                 "M": {
-                    "Date": {
-                        "S": "2021-02-17"
-                    },
-                    "Route": {
-                        "L": [
-                            {
+                    "ReturnRoute": {
+                        "M": {
+                            "Date": {
+                                "S": "2021-03-07 8:30"
+                            },
+                            "Route": {
                                 "M": {
-                                    "Shop": {
-                                        "L": [
-                                            {
-                                                "M": {
-                                                    "ShopId": {
-                                                        "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
-                                                    },
-                                                    "ShopName": {
-                                                        "S": "Mama Sumsung Shop branch 1"
-                                                    }
-                                                }
-                                            },
-                                            {
-                                                "M": {
-                                                    "ShopId": {
-                                                        "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
-                                                    },
-                                                    "ShopName": {
-                                                        "S": "Mama Sumsung Shop branch 2"
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    },
                                     "From": {
                                         "M": {
                                             "LocationLevel1": {
@@ -1537,10 +2844,10 @@ trip-request-id | Is the EntityItemId Of trip request
                                                     "LocationLevel2": {
                                                         "M": {
                                                             "LocationLevel2Id": {
-                                                                "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
                                                             },
                                                             "LocationLevel2Name": {
-                                                                "S": "Kracheh"
+                                                                "S": "Prek Prasab"
                                                             }
                                                         }
                                                     }
@@ -1565,6 +2872,83 @@ trip-request-id | Is the EntityItemId Of trip request
                                                             },
                                                             "LocationLevel2Name": {
                                                                 "S": "Phnum Sruoch"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "OtherRoute": {
+                        "L": [
+                            {
+                                "M": {
+                                    "Date": {
+                                        "S": "2021-03-05 8:30"
+                                    },
+                                    "Route": {
+                                        "M": {
+                                            "Shop": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "ShopId": {
+                                                                "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
+                                                            },
+                                                            "ShopName": {
+                                                                "S": "Samsung LG"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "From": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Kracheh"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "To": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Prek Prasab"
+                                                                    }
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -1576,61 +2960,68 @@ trip-request-id | Is the EntityItemId Of trip request
                             },
                             {
                                 "M": {
-                                    "Shop": {
-                                        "L": [
-                                            {
-                                                "M": {
-                                                    "ShopId": {
-                                                        "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
-                                                    },
-                                                    "ShopName": {
-                                                        "S": "Same Sumsung Shop branch 1"
-                                                    }
-                                                }
-                                            }
-                                        ]
+                                    "Date": {
+                                        "S": "2021-03-06 10:30"
                                     },
-                                    "From": {
+                                    "Route": {
                                         "M": {
-                                            "LocationLevel1": {
-                                                "M": {
-                                                    "LocationLevel1Id": {
-                                                        "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
-                                                    },
-                                                    "LocationLevel1Name": {
-                                                        "S": "Kratie"
-                                                    },
-                                                    "LocationLevel2": {
+                                            "Shop": {
+                                                "L": [
+                                                    {
                                                         "M": {
-                                                            "LocationLevel2Id": {
-                                                                "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                            "ShopId": {
+                                                                "S": "1088dd48-a325-4c32-95ea-7802dcca3c5c"
                                                             },
-                                                            "LocationLevel2Name": {
-                                                                "S": "Kracheh"
+                                                            "ShopName": {
+                                                                "S": "Samsung"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "From": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Kracheh"
+                                                                    }
+                                                                }
                                                             }
                                                         }
                                                     }
                                                 }
-                                            }
-                                        }
-                                    },
-                                    "To": {
-                                        "M": {
-                                            "LocationLevel1": {
+                                            },
+                                            "To": {
                                                 "M": {
-                                                    "LocationLevel1Id": {
-                                                        "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
-                                                    },
-                                                    "LocationLevel1Name": {
-                                                        "S": "Kratie"
-                                                    },
-                                                    "LocationLevel2": {
+                                                    "LocationLevel1": {
                                                         "M": {
-                                                            "LocationLevel2Id": {
-                                                                "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
                                                             },
-                                                            "LocationLevel2Name": {
-                                                                "S": "Prek Prasab"
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Prek Prasab"
+                                                                    }
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -1641,18 +3032,38 @@ trip-request-id | Is the EntityItemId Of trip request
                                 }
                             }
                         ]
-                    }
-                }
-            },
-            {
-                "M": {
-                    "Date": {
-                        "S": "2021-02-18"
                     },
-                    "Route": {
-                        "L": [
-                            {
+                    "DepartureRoute": {
+                        "M": {
+                            "Date": {
+                                "S": "2021-03-04 7:30"
+                            },
+                            "Route": {
                                 "M": {
+                                    "Shop": {
+                                        "L": [
+                                            {
+                                                "M": {
+                                                    "ShopId": {
+                                                        "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
+                                                    },
+                                                    "ShopName": {
+                                                        "S": "Samsung LG"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "M": {
+                                                    "ShopId": {
+                                                        "S": "d5739d3d-0992-49fe-86c9-25d0015e735c"
+                                                    },
+                                                    "ShopName": {
+                                                        "S": "Samsung Galaxy Store"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
                                     "From": {
                                         "M": {
                                             "LocationLevel1": {
@@ -1690,10 +3101,10 @@ trip-request-id | Is the EntityItemId Of trip request
                                                     "LocationLevel2": {
                                                         "M": {
                                                             "LocationLevel2Id": {
-                                                                "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
                                                             },
                                                             "LocationLevel2Name": {
-                                                                "S": "Prek Prasab"
+                                                                "S": "Kracheh"
                                                             }
                                                         }
                                                     }
@@ -1703,313 +3114,24 @@ trip-request-id | Is the EntityItemId Of trip request
                                     }
                                 }
                             }
-                        ]
+                        }
                     }
                 }
             }
         ]
     }
 }
-
 ```
 
-## Get Info Detail Of Trip Request
-### HTTP Request
-`GET dsa-svc/api/v1/trip-requests/{trip-request-id}`
-
-### Query Paramaeters
-Parameter       | Description
----------       | -----------
-trip-request-id | Is the EntityItemId Of trip request
-
-### HTTP Response
-> The above HTTP request, if successful, will return Json structured like this:
+> The above HTTP request, if failure, will return Json structured like this:
 
 ```json
-[
-    {
-        "CompositeAccessPatterns": {
-            "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestStatus:DRAFTED#TripRequestRequesterName:SreyTa#TripRequestTravelMode:PublicTransport#TripRequestCoveredByOther:CoveredByOwnCompany"
-        },
-        "TripRequestLocalTrip": {
-            "S": "LocalTrip"
-        },
-        "TripRequestJointTraveler": {
-            "L": [
-                {
-                    "M": {
-                        "JointTravelerEmployeePersonId": {
-                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
-                        },
-                        "JointTravelerPersonName": {
-                            "S": "MonySakor"
-                        }
-                    }
-                }
-            ]
-        },
-        "TripRequestRequesterName": {
-            "S": "SreyTa"
-        },
-        "TripRequestRequesterId": {
-            "S": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8"
-        },
-        "EntityItemId": {
-            "S": "TripRequest:3bad4ade93c24dcf9929934be4fe9495"
-        },
-        "TripRequestStatus": {
-            "S": "DRAFTED"
-        },
-        "TripRequestPurpose": {
-            "S": "Test Trip Expenses"
-        },
-        "TripRequestTripDailyExpense": {
-            "L": [
-                {
-                    "M": {
-                        "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
-                        },
-                        "TripDailyExpenseNotes": {
-                            "S": "null"
-                        },
-                        "TripDailyExpenseDescription": {
-                            "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
-                        },
-                        "TripDailyExpenseType": {
-                            "S": "Meal"
-                        },
-                        "TripDailyExpenseAmount": {
-                            "S": "12"
-                        }
-                    }
-                },
-                {
-                    "M": {
-                        "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
-                        },
-                        "TripDailyExpenseNotes": {
-                            "S": "null"
-                        },
-                        "TripDailyExpenseDescription": {
-                            "S": "Travels in Thma Koul"
-                        },
-                        "TripDailyExpenseType": {
-                            "S": "In-area Travel"
-                        },
-                        "TripDailyExpenseAmount": {
-                            "S": "3"
-                        }
-                    }
-                },
-                {
-                    "M": {
-                        "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
-                        },
-                        "TripDailyExpenseNotes": {
-                            "S": "null"
-                        },
-                        "TripDailyExpenseDescription": {
-                            "S": "Alone stay per night"
-                        },
-                        "TripDailyExpenseType": {
-                            "S": "Accommodation"
-                        },
-                        "TripDailyExpenseAmount": {
-                            "S": "15"
-                        }
-                    }
-                },
-                {
-                    "M": {
-                        "TripDailyExpenseDate": {
-                            "S": "2021-02-18"
-                        },
-                        "TripDailyExpenseNotes": {
-                            "S": "null"
-                        },
-                        "TripDailyExpenseDescription": {
-                            "S": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)"
-                        },
-                        "TripDailyExpenseType": {
-                            "S": "Meal"
-                        },
-                        "TripDailyExpenseAmount": {
-                            "S": "12"
-                        }
-                    }
-                },
-                {
-                    "M": {
-                        "TripDailyExpenseDate": {
-                            "S": "2021-02-18"
-                        },
-                        "TripDailyExpenseNotes": {
-                            "S": "null"
-                        },
-                        "TripDailyExpenseDescription": {
-                            "S": "Travels in Thma Koul"
-                        },
-                        "TripDailyExpenseType": {
-                            "S": "In-area Travel"
-                        },
-                        "TripDailyExpenseAmount": {
-                            "S": "3"
-                        }
-                    }
-                },
-                {
-                    "M": {
-                        "TripDailyExpenseDate": {
-                            "S": "2021-02-18"
-                        },
-                        "TripDailyExpenseNotes": {
-                            "S": "null"
-                        },
-                        "TripDailyExpenseDescription": {
-                            "S": "Alone stay per night"
-                        },
-                        "TripDailyExpenseType": {
-                            "S": "Accommodation"
-                        },
-                        "TripDailyExpenseAmount": {
-                            "S": "0"
-                        }
-                    }
-                },
-                {
-                    "M": {
-                        "TripDailyExpenseDate": {
-                            "S": "2021-02-17"
-                        },
-                        "TripDailyExpenseNotes": {
-                            "S": "null"
-                        },
-                        "TripDailyExpenseDescription": {
-                            "S": "From Prek Ruessey at 7:30 AM to Thma Koul"
-                        },
-                        "TripDailyExpenseType": {
-                            "S": "Travel Fee"
-                        },
-                        "TripDailyExpenseAmount": {
-                            "S": "8.00"
-                        }
-                    }
-                }
-            ]
-        },
-        "TripRequestReturnDateTime": {
-            "S": "2021-02-18 8:30:00"
-        },
-        "TripRequestCoveredByOther": {
-            "S": "CoveredByOwnCompany"
-        },
-        "TenantId": {
-            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-        },
-        "TripRequestDepartureDateTime": {
-            "S": "2021-02-17 7:30:00"
-        },
-        "TripRequestTravelMode": {
-            "S": "PublicTransport"
-        },
-        "TripRequestTripRoute": {
-            "L": [
-                {
-                    "M": {
-                        "Shop": {
-                            "L": [
-                                {
-                                    "M": {
-                                        "ShopId": {
-                                            "S": "d8d6f92d-c683-4480-bc45-8324599f550d"
-                                        },
-                                        "ShopName": {
-                                            "S": "Sumsung Shop"
-                                        }
-                                    }
-                                }
-                            ]
-                        },
-                        "Date": {
-                            "S": "2021-02-17"
-                        },
-                        "Route": {
-                            "L": [
-                                {
-                                    "M": {
-                                        "From": {
-                                            "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "LocationLevel1:581c0d3e739fe0ada7e91962b4ec2d6d"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Kandal"
-                                                        },
-                                                        "LocationLevel2": {
-                                                            "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "LocationLevel2:0dabd9ae90f9b48220d6449d2bbfd85c"
-                                                                },
-                                                                "LocationLevel3": {
-                                                                    "M": {
-                                                                        "LocationLevel3Id": {
-                                                                            "S": "LocationLevel3:3a6c640ec33f8e0545e702bd54ec38b5"
-                                                                        },
-                                                                        "LocationLevel3Name": {
-                                                                            "S": "Prek Ruessey"
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Ta Khmau"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "To": {
-                                            "M": {
-                                                "LocationLevel1": {
-                                                    "M": {
-                                                        "LocationLevel1Id": {
-                                                            "S": "LocationLevel1:7ed870110dc3d34491b73fe37f02f370"
-                                                        },
-                                                        "LocationLevel1Name": {
-                                                            "S": "Battambang"
-                                                        },
-                                                        "LocationLevel2": {
-                                                            "M": {
-                                                                "LocationLevel2Id": {
-                                                                    "S": "LocationLevel2:0bcb3dbe94797e903d600e3efb144ac1"
-                                                                },
-                                                                "LocationLevel2Name": {
-                                                                    "S": "Thma Koul"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        }
-    }
-]
+{
+    "Resource": "aiml:dsa:trip-request/TripRequest:190fb791ce8eedee2c013d10796838b2",
+    "Operation": "dsa:item-operation:Retrieves",
+    "Message": "You're denied from performing the operation."
+}
 ```
-
 
 ## Delete Info Of Trip Request
 ### HTTP Request
@@ -2053,44 +3175,12 @@ trip-request-id | Is the EntityItemId Of trip request
 }
 ```
 
-
 # Trip Expense
-## View Detail of Trip Expense
+
+## Update the Trip Daily Expense
 
 ### HTTP Request
-`GET v1/trip-requests/{trip_request_id}/tripExpense/{id}`
-
-### Query Paramaeters
-Parameter                           | Description
----------                           | -----------
-trip_request_id                     | The ID of the trip request to retrieve information
-id                                  | The ID of the trip expense to get info detail
-
-### HTTP Response
-> The above HTTP request, if successful, will return Json structured like this:
-
-```json
-{
-    "data": [
-        {
-            "id": 41,
-            "trip_request_id": 2,
-            "date": "2021-01-26",
-            "type": "Meal",
-            "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
-            "amount": "10.00",
-            "notes": null,
-            "created_at": "2021-01-26T07:40:58.000000Z",
-            "updated_at": "2021-01-26T07:40:58.000000Z"
-        }
-    ],
-    "message": "Trip Expense retrieved Successfully"
-}
-```
-## Record detail of Trip Expense
-
-### HTTP Request
-`GET v1/trip-requests/{trip_request_id}/tripExpense/{id}`
+`PUT v1/trip-requests/{trip_request_id}`
 
 ### Query Paramaeters
 Parameter                           | Description
@@ -2098,230 +3188,643 @@ Parameter                           | Description
 trip_request_id                     | The ID of the trip request to retrieve information
 
 ### Body Request
+
 ```json
 {
-    "aiml:TripAllowance/TripGeoScope": "LocalTrip",
-    "departureDate": "2020-12-31",
-    "departureTime": "15:00:00",
-    "returnDate": "2021-01-03",
-    "returnTime": "11:30:00",
-    "aiml:TripAllowance/CoveringAgent": "CoveredByOwnCompany",
-    "travelSegment": "PhnomPenh-Takeo",
-    "date":[
-        {
-            "aiml:TripAllowance/DepartureFrom": "PhnomPenh",
-            "aiml:TripAllowance/DepartureDateTime": "2020-12-31 8:00",
-            "aiml:TripAllowance/StayDate":"",
-            "aiml:TripAllowance/ReturnFrom": "Takeo",
-            "aiml:TripAllowance/ReturnDateTime": "2021-01-03 17:00",
-            "aiml:TripAllowance/TravelDistance": "PhnomPenh-Takeo",
-            "aiml:TripAllowance/InAreaTravelMode":"PublicTransport",
-            "aiml:TripAllowance/NumberOfPeople": "1"
+    "TripRequest": {
+        "Children": {
+            "TripDailyExpense": [
+                {
+                    "TripDailyExpenseDate": "2021-03-04",
+                    "TripDailyExpenseType": "Meal",
+                    "TripDailyExpenseDescription": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)",
+                    "TripDailyExpenseAmount": "12.00",
+                    "TripDailyExpenseNotes": "Null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-04",
+                    "TripDailyExpenseType": "In-area Travel",
+                    "TripDailyExpenseDescription": "In-area Travel",
+                    "TripDailyExpenseAmount": "3.00",
+                    "TripDailyExpenseNotes": "Null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-04",
+                    "TripDailyExpenseType": "Accommodation",
+                    "TripDailyExpenseDescription": "Alone stay per night",
+                    "TripDailyExpenseAmount": "15.00",
+                    "TripDailyExpenseNotes": "Null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-04",
+                    "TripDailyExpenseType": "Travel Fee",
+                    "TripDailyExpenseDescription": "From Phnum Sruoch to Kracheh",
+                    "TripDailyExpenseAmount": "10.00",
+                    "TripDailyExpenseNotes": "null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-05",
+                    "TripDailyExpenseType": "Meal",
+                    "TripDailyExpenseDescription": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)",
+                    "TripDailyExpenseAmount": "12.00",
+                    "TripDailyExpenseNotes": "Null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-05",
+                    "TripDailyExpenseType": "In-area Travel",
+                    "TripDailyExpenseDescription": "In-area Travel",
+                    "TripDailyExpenseAmount": "3.00",
+                    "TripDailyExpenseNotes": "Null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-05",
+                    "TripDailyExpenseType": "Accommodation",
+                    "TripDailyExpenseDescription": "Alone stay per night",
+                    "TripDailyExpenseAmount": "15.00",
+                    "TripDailyExpenseNotes": "Null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-05",
+                    "TripDailyExpenseType": "Travel Fee",
+                    "TripDailyExpenseDescription": "From Kracheh to Prek Prasab",
+                    "TripDailyExpenseAmount": "3.00",
+                    "TripDailyExpenseNotes": "null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-06",
+                    "TripDailyExpenseType": "Meal",
+                    "TripDailyExpenseDescription": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)",
+                    "TripDailyExpenseAmount": "12.00",
+                    "TripDailyExpenseNotes": "Null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-06",
+                    "TripDailyExpenseType": "In-area Travel",
+                    "TripDailyExpenseDescription": "In-area Travel",
+                    "TripDailyExpenseAmount": "3.00",
+                    "TripDailyExpenseNotes": "TEST LINE EXPENSE"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-06",
+                    "TripDailyExpenseType": "Accommodation",
+                    "TripDailyExpenseDescription": "Alone stay per night",
+                    "TripDailyExpenseAmount": "15.00",
+                    "TripDailyExpenseNotes": "Null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-06",
+                    "TripDailyExpenseType": "Travel Fee",
+                    "TripDailyExpenseDescription": "From Kracheh to Prek Prasab",
+                    "TripDailyExpenseAmount": "3.00",
+                    "TripDailyExpenseNotes": "null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-07",
+                    "TripDailyExpenseType": "Meal",
+                    "TripDailyExpenseDescription": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)",
+                    "TripDailyExpenseAmount": "12.00",
+                    "TripDailyExpenseNotes": "Null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-07",
+                    "TripDailyExpenseType": "In-area Travel",
+                    "TripDailyExpenseDescription": "In-area Travel",
+                    "TripDailyExpenseAmount": "3.00",
+                    "TripDailyExpenseNotes": "Null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-07",
+                    "TripDailyExpenseType": "Accommodation",
+                    "TripDailyExpenseDescription": "Alone stay per night",
+                    "TripDailyExpenseAmount": "0.00",
+                    "TripDailyExpenseNotes": "Null"
+                },
+                {
+                    "TripDailyExpenseDate": "2021-03-07",
+                    "TripDailyExpenseType": "Travel Fee",
+                    "TripDailyExpenseDescription": "From Prek Prasab to Phnum Sruoch",
+                    "TripDailyExpenseAmount": "3.00",
+                    "TripDailyExpenseNotes": "TEST DATA UPDATED"
+                }
+            ]
         }
-    ],
-    "param":"TripAllowance/Trip"
+    }
 }
 ```
+
 ### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
 {
-    "data": [
-        {
-            "id": 78,
-            "trip_request_id": 2,
-            "date": "2020-12-31",
-            "type": "Travel Fee (Departure)",
-            "description": "From Phnom Penh at 3:00 PM to Takeo",
-            "amount": "5.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 79,
-            "trip_request_id": 2,
-            "date": "2020-12-31",
-            "type": "Meal",
-            "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
-            "amount": "12.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 80,
-            "trip_request_id": 2,
-            "date": "2020-12-31",
-            "type": "In-area Travel",
-            "description": "Travels in Takeo",
-            "amount": "3.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 81,
-            "trip_request_id": 2,
-            "date": "2020-12-31",
-            "type": "Accommodation",
-            "description": "Alone stay per night",
-            "amount": "15.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 82,
-            "trip_request_id": 2,
-            "date": "2021-01-01",
-            "type": "Meal",
-            "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
-            "amount": "12.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 83,
-            "trip_request_id": 2,
-            "date": "2021-01-01",
-            "type": "In-area Travel",
-            "description": "Travels in Takeo",
-            "amount": "3.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 84,
-            "trip_request_id": 2,
-            "date": "2021-01-01",
-            "type": "Accommodation",
-            "description": "Alone stay per night",
-            "amount": "15.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 85,
-            "trip_request_id": 2,
-            "date": "2021-01-02",
-            "type": "Meal",
-            "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
-            "amount": "12.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 86,
-            "trip_request_id": 2,
-            "date": "2021-01-02",
-            "type": "In-area Travel",
-            "description": "Travels in Takeo",
-            "amount": "3.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 87,
-            "trip_request_id": 2,
-            "date": "2021-01-02",
-            "type": "Accommodation",
-            "description": "Alone stay per night",
-            "amount": "15.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 88,
-            "trip_request_id": 2,
-            "date": "2021-01-03",
-            "type": "Meal",
-            "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
-            "amount": "2.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 89,
-            "trip_request_id": 2,
-            "date": "2021-01-03",
-            "type": "In-area Travel",
-            "description": "Travels in Takeo",
-            "amount": "3.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 90,
-            "trip_request_id": 2,
-            "date": "2021-01-03",
-            "type": "Accommodation",
-            "description": "Alone stay per night",
-            "amount": "0.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        },
-        {
-            "id": 91,
-            "trip_request_id": 2,
-            "date": "2021-01-03",
-            "type": "Travel Fee (Return)",
-            "description": "From Takeo at 11:30 AM to Phnom Penh",
-            "amount": "5.00",
-            "notes": null,
-            "created_at": "2021-02-02T11:28:06.000000Z",
-            "updated_at": "2021-02-02T11:28:06.000000Z"
-        }
-    ],
-    "message": "Trip Adlevel1 Created Successfully"
-}
-```
-
-## Update the Trip Expense by id
-
-### HTTP Request
-`PUT v1/trip-requests/{trip_request_id}/tripExpense/{id}`
-
-### Query Paramaeters
-Parameter                           | Description
----------                           | -----------
-trip_request_id                     | The ID of the trip request to retrieve information
-id                                  | The ID of the trip expense to update information
-
-### Body Request
-```json
-{
-    "amount": "10.00",
-    "notes": "Test amount"
-}
-```
-### HTTP Response
-> The above HTTP request, if successful, will return Json structured like this:
-
-```json
-{
-    "data": {
-        "id": 88,
-        "trip_request_id": 2,
-        "date": "2021-01-03",
-        "type": "Meal",
-        "description": "Breakfast (2.00$), Lunch (5.00$), Diner (5.00$)",
-        "amount": "10.00",
-        "notes": "Test amount",
-        "created_at": "2021-02-02T11:28:06.000000Z",
-        "updated_at": "2021-02-03T01:34:36.000000Z"
+    "CompositeAccessPatterns": {
+        "S": "TripRequest#TripRequestLocalTrip:LocalTrip#TripRequestRequesterName:Jonh#TripRequestTravelMode:CompanyCar#TripRequestCoveredByOther:CoveredByOwnCompany"
     },
-    "message": "Trip Expense Updated Successfully"
+    "TripRequestLocalTrip": {
+        "S": "LocalTrip"
+    },
+    "TripRequestRequesterName": {
+        "S": "Jonh"
+    },
+    "TripRequestRequesterId": {
+        "S": "93551f78-c2e2-4d47-bc5e-e2dad7ce5ba8"
+    },
+    "EntityItemId": {
+        "S": "TripRequest:36aea7b372b7f0a7416e7af0f34e5146"
+    },
+    "TripRequestPurpose": {
+        "S": "Test Shop On host server"
+    },
+    "TripRequestReturnDateTime": {
+        "S": "2021-02-27 8:30"
+    },
+    "TripRequestTripDailyExpense": {
+        "L": [
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-22"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Test Update trip expense"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Meal"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "12.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-22"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "test"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-22"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Share Stay Per Night"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Alone stay per night"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Accommodation"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "20.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-23"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Breakfast (2.00.$), Lunch (5.00.$), Diner (5.00.$)"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Meal"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "12.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-23"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "In-area Travel"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-23"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "Null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "Alone stay per night"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Accommodation"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "0.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-22"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Kracheh to Phnum Sruoch"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "10.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-22"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Kracheh to Prek Prasab"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "3.00"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "TripDailyExpenseDate": {
+                        "S": "2021-02-23"
+                    },
+                    "TripDailyExpenseNotes": {
+                        "S": "null"
+                    },
+                    "TripDailyExpenseDescription": {
+                        "S": "From Phnum Sruoch to Prek Prasab"
+                    },
+                    "TripDailyExpenseType": {
+                        "S": "Travel Fee"
+                    },
+                    "TripDailyExpenseAmount": {
+                        "S": "8.00"
+                    }
+                }
+            }
+        ]
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "TripRequestCoveredByOther": {
+        "S": "CoveredByOwnCompany"
+    },
+    "TripRequestDepartureDateTime": {
+        "S": "2021-02-26 7:30"
+    },
+    "TripRequestTravelMode": {
+        "S": "CompanyCar"
+    },
+    "TripRequestTripRoute": {
+        "L": [
+            {
+                "M": {
+                    "ReturnRoute": {
+                        "M": {
+                            "Date": {
+                                "S": "2021-02-27 8:30"
+                            },
+                            "Route": {
+                                "M": {
+                                    "From": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kratie"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Prek Prasab"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "To": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kampong Speu"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Phnum Sruoch"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "OtherRoute": {
+                        "L": [
+                            {
+                                "M": {
+                                    "Date": {
+                                        "S": "2021-02-26 8:30"
+                                    },
+                                    "Route": {
+                                        "M": {
+                                            "Shop": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "ShopId": {
+                                                                "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
+                                                            },
+                                                            "ShopName": {
+                                                                "S": "Samsung LG"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "From": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Kracheh"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "To": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Prek Prasab"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "Date": {
+                                        "S": "2021-02-26 10:30"
+                                    },
+                                    "Route": {
+                                        "M": {
+                                            "Shop": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "ShopId": {
+                                                                "S": "1088dd48-a325-4c32-95ea-7802dcca3c5c"
+                                                            },
+                                                            "ShopName": {
+                                                                "S": "Samsung"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "From": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Kracheh"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "To": {
+                                                "M": {
+                                                    "LocationLevel1": {
+                                                        "M": {
+                                                            "LocationLevel1Id": {
+                                                                "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                            },
+                                                            "LocationLevel1Name": {
+                                                                "S": "Kratie"
+                                                            },
+                                                            "LocationLevel2": {
+                                                                "M": {
+                                                                    "LocationLevel2Id": {
+                                                                        "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+                                                                    },
+                                                                    "LocationLevel2Name": {
+                                                                        "S": "Prek Prasab"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "DepartureRoute": {
+                        "M": {
+                            "Date": {
+                                "S": "2021-02-26 7:30"
+                            },
+                            "Route": {
+                                "M": {
+                                    "Shop": {
+                                        "L": [
+                                            {
+                                                "M": {
+                                                    "ShopId": {
+                                                        "S": "59564083-7e2c-4c79-8345-0b7d178f0355"
+                                                    },
+                                                    "ShopName": {
+                                                        "S": "Samsung LG"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "M": {
+                                                    "ShopId": {
+                                                        "S": "d5739d3d-0992-49fe-86c9-25d0015e735c"
+                                                    },
+                                                    "ShopName": {
+                                                        "S": "Samsung Galaxy Store"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "From": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:f142a3e8ca8f5df1462dd36ad22245e5"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kampong Speu"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Phnum Sruoch"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "To": {
+                                        "M": {
+                                            "LocationLevel1": {
+                                                "M": {
+                                                    "LocationLevel1Id": {
+                                                        "S": "LocationLevel1:c8d910d391a4314482aa4bfd61ede378"
+                                                    },
+                                                    "LocationLevel1Name": {
+                                                        "S": "Kratie"
+                                                    },
+                                                    "LocationLevel2": {
+                                                        "M": {
+                                                            "LocationLevel2Id": {
+                                                                "S": "LocationLevel2:b5fb20fadc9552021625383e30e44d88"
+                                                            },
+                                                            "LocationLevel2Name": {
+                                                                "S": "Kracheh"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
 }
 ```
 
@@ -2348,33 +3851,34 @@ id                                  | The ID of the trip expense to update infor
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-[
-    {
-        "ConsumedCapacity": {
-            "TableName": "DsaDev",
-            "CapacityUnits": 1
-        },
-        "@metadata": {
-            "statusCode": 200,
-            "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
-            "headers": {
-                "server": "Server",
-                "date": "Fri, 29 Jan 2021 03:42:05 GMT",
-                "content-type": "application/x-amz-json-1.0",
-                "content-length": "63",
-                "connection": "keep-alive",
-                "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
-                "x-amz-crc32": "3143598553"
-            },
-            "transferStats": {
-                "http": [
-                    []
-                ]
-            }
-        }
+{
+    "TravelFeeRate": {
+        "S": "8.00"
+    },
+    "TravelFeeFromLocationId": {
+        "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+    },
+    "TravelFeeFromLocationName": {
+        "S": "Prek Prasab"
+    },
+    "EntityItemId": {
+        "S": "TravelFee:e3be7592678c0f2ec54e9203751043b9"
+    },
+    "CompositeAccessPatterns": {
+        "S": "TravelFee#TravelFeeFromLocationId:LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210#TravelFeeFromLocationName:Prek Prasab#TravelFeeToLocationId:LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5#TravelFeeToLocationName:Phnum Sruoch"
+    },
+    "TravelFeeToLocationId": {
+        "S": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "TravelFeeToLocationName": {
+        "S": "Phnum Sruoch"
     }
-]
+}
 ```
+
 ### HTTP Request Filter 
 `GET dsa-svc/api/v1/trip-requests?contains=TripRequestRequesterName:Son`
 
@@ -2745,94 +4249,328 @@ id                                  | The ID of the trip expense to update infor
 [
     {
         "TravelFeeRate": {
-            "S": "15.00"
+            "S": "8.00"
+        },
+        "TravelFeeFromLocationId": {
+            "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+        },
+        "TravelFeeFromLocationName": {
+            "S": "Prek Prasab"
         },
         "EntityItemId": {
-            "S": "TravelFee:da88760e78fa70abfd540f0ca027e201"
-        },
-        "TravelFeeDistance": {
-            "S": "457.00"
-        },
-        "TravelFeeFromLocationLevelId": {
-            "S": "LocationLevel2:464b126eface9bb6782b93e6bc7f05f2"
+            "S": "TravelFee:e3be7592678c0f2ec54e9203751043b9"
         },
         "CompositeAccessPatterns": {
-            "S": "TravelFee#TravelFeeFromLocationLevelId:LocationLevel2:464b126eface9bb6782b93e6bc7f05f2#TravelFeeFromLocationLevelName:Kaoh Nheaek#TravelFeeToLocationLevelId:LocationLevel3:00c34b7db1603998e9d08e9a3dffa30c#TravelFeeToLocationLevelName:Yeang"
+            "S": "TravelFee#TravelFeeFromLocationId:LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210#TravelFeeFromLocationName:Prek Prasab#TravelFeeToLocationId:LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5#TravelFeeToLocationName:Phnum Sruoch"
         },
-        "TravelFeeFromLocationLevelName": {
-            "S": "Kaoh Nheaek"
-        },
-        "TravelFeeToLocationLevelId": {
-            "S": "LocationLevel3:00c34b7db1603998e9d08e9a3dffa30c"
+        "TravelFeeToLocationId": {
+            "S": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5"
         },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
-        "TravelFeeToLocationLevelName": {
-            "S": "Yeang"
-        }
-    },
-    {
-        "TravelFeeRate": {
-            "S": "10.00"
-        },
-        "TravelFeeFromLocationLevel2Name": {
-            "S": "Tuek Chhou"
-        },
-        "EntityItemId": {
-            "S": "TravelFee:f522cb093b2b643b1701095d4e03d3a3"
-        },
-        "CompositeAccessPatterns": {
-            "S": "TravelFee#TravelFeeFromLocationLevel2Id:LocationLevel2:38c46419461651167a9d94da2eb470dd#TravelFeeFromLocationLevel2Name:Tuek Chhou#TravelFeeToLocationLevel2Id:LocationLevel2:37ea3ede9376c13dae975c7184e642a4#TravelFeeToLocationLevel2Name:Saensokh"
-        },
-        "TravelFeeToLocationLevel2Id": {
-            "S": "LocationLevel2:37ea3ede9376c13dae975c7184e642a4"
-        },
-        "TravelFeeFromLocationLevel2Id": {
-            "S": "LocationLevel2:38c46419461651167a9d94da2eb470dd"
-        },
-        "TravelFeeToLocationLevel2Name": {
-            "S": "Saensokh"
-        },
-        "TenantId": {
-            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        "TravelFeeToLocationName": {
+            "S": "Phnum Sruoch"
         }
     }
 ]
 ```
+
 ### HTTP Request Filter 
-`GET dsa-svc/api/locations/travelFee?contains=LocationLevel2:029d52772c42cf101560c4c52d929d5d#LocationLevel2:d02b7673b0046130511cde65091e5067`
+`GET dsa-svc/api/locations/travelFee?contains=TravelFeeFromLocationId:LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210#TravelFeeToLocationId:LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+TravelFeeFromLocationId     | Is the location id of travel fee from
+TravelFeeToLocationId       | Is the location id of travel fee to
 
 ### HTTP Response Filter
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json 
+[
+    {
+        "TravelFeeRate": {
+            "S": "8.00"
+        },
+        "TravelFeeFromLocationId": {
+            "S": "LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210"
+        },
+        "TravelFeeFromLocationName": {
+            "S": "Prek Prasab"
+        },
+        "EntityItemId": {
+            "S": "TravelFee:e3be7592678c0f2ec54e9203751043b9"
+        },
+        "CompositeAccessPatterns": {
+            "S": "TravelFee#TravelFeeFromLocationId:LocationLevel2:e703ab5ab8328937e8b7a91d3c17d210#TravelFeeFromLocationName:Prek Prasab#TravelFeeToLocationId:LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5#TravelFeeToLocationName:Phnum Sruoch"
+        },
+        "TravelFeeToLocationId": {
+            "S": "LocationLevel2:43415b8b6ab8b1c9e542f7da5eb136d5"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "TravelFeeToLocationName": {
+            "S": "Phnum Sruoch"
+        }
+    }
+]
+```
+
+# ContextData
+## Get ContextData
+### HTTP Request
+`GET dsa-svc/api/initData`
+
+### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
 [
     {
-        "TravelFeeRate": {
-            "S": "5.00"
-        },
-        "TravelFeeFromLocationLevel2Name": {
-            "S": "Srei Santhor"
-        },
-        "EntityItemId": {
-            "S": "TravelFee:7b596cff8fab077872671c0046fe5b87"
-        },
-        "CompositeAccessPatterns": {
-            "S": "TravelFee#TravelFeeFromLocationLevel2Id:LocationLevel2:029d52772c42cf101560c4c52d929d5d#TravelFeeFromLocationLevel2Name:Srei Santhor#TravelFeeToLocationLevel2Id:LocationLevel2:d02b7673b0046130511cde65091e5067#TravelFeeToLocationLevel2Name:Angkor Borei"
-        },
-        "TravelFeeToLocationLevel2Id": {
-            "S": "LocationLevel2:d02b7673b0046130511cde65091e5067"
-        },
-        "TravelFeeFromLocationLevel2Id": {
-            "S": "LocationLevel2:029d52772c42cf101560c4c52d929d5d"
-        },
-        "TravelFeeToLocationLevel2Name": {
-            "S": "Angkor Borei"
-        },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "EntityItemId": {
+            "S": "TripRequestContextData:df57896c7e3626c6e6c977e0dc3170e0"
+        },
+        "CompositeAccessPatterns": {
+            "S": "TripRequestContextData"
+        },
+        "TripRequestContextDataData": {
+            "L": [
+                {
+                    "M": {
+                        "HomeCountry": {
+                            "M": {
+                                "Value": {
+                                    "S": "Cambodia"
+                                },
+                                "MetaData": {
+                                    "M": {
+                                        "Label": {
+                                            "S": "Home Country"
+                                        },
+                                        "Description": {
+                                            "S": "Specify the country in which the main office is located."
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "DepartureFrom": {
+                            "L": [
+                                {
+                                    "M": {
+                                        "Value": {
+                                            "S": "BaseOffice"
+                                        },
+                                        "Label": {
+                                            "S": "Base Office"
+                                        }
+                                    }
+                                },
+                                {
+                                    "M": {
+                                        "Value": {
+                                            "S": "Destination"
+                                        },
+                                        "Label": {
+                                            "S": "Destination"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "CoveringAgent": {
+                            "L": [
+                                {
+                                    "M": {
+                                        "Value": {
+                                            "S": "CoveredByOwnCompany"
+                                        },
+                                        "Label": {
+                                            "S": "Covered by own company"
+                                        },
+                                        "Default": {
+                                            "S": "YES"
+                                        }
+                                    }
+                                },
+                                {
+                                    "M": {
+                                        "Value": {
+                                            "S": "CoveredByPartner"
+                                        },
+                                        "Label": {
+                                            "S": "Covered by company's client or partner"
+                                        },
+                                        "Default": {
+                                            "S": "NO"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "ManagingOperation": {
+                            "L": [
+                                {
+                                    "S": "dsa:item-operation:Retrieve"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Verify"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Return"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Reject"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Approve"
+                                }
+                            ]
+                        },
+                        "BasicOperation": {
+                            "L": [
+                                {
+                                    "S": "dsa:item-operation:Create"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Retrieve"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Update"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Delete"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Submit"
+                                }
+                            ]
+                        },
+                        "TransportMode": {
+                            "L": [
+                                {
+                                    "M": {
+                                        "Value": {
+                                            "S": "PublicTransport"
+                                        },
+                                        "Label": {
+                                            "S": "PublicTransport"
+                                        },
+                                        "Default": {
+                                            "S": "YES"
+                                        }
+                                    }
+                                },
+                                {
+                                    "M": {
+                                        "Value": {
+                                            "S": "ComapnyCar"
+                                        },
+                                        "Label": {
+                                            "S": "Company Car"
+                                        },
+                                        "Default": {
+                                            "S": "NO"
+                                        }
+                                    }
+                                },
+                                {
+                                    "M": {
+                                        "Value": {
+                                            "S": "RentalCar"
+                                        },
+                                        "Label": {
+                                            "S": "Rental Car"
+                                        },
+                                        "Default": {
+                                            "S": "NO"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "OvernightStayMode": {
+                            "L": [
+                                {
+                                    "M": {
+                                        "Value": {
+                                            "S": "AloneStayPerNight"
+                                        },
+                                        "Label": {
+                                            "S": "Stay Alone"
+                                        }
+                                    }
+                                },
+                                {
+                                    "M": {
+                                        "Value": {
+                                            "S": "ShareStayPerNight"
+                                        },
+                                        "Label": {
+                                            "S": "Share with Another"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "TripGeoScope": {
+                            "L": [
+                                {
+                                    "M": {
+                                        "Value": {
+                                            "S": "LocalTrip"
+                                        },
+                                        "Label": {
+                                            "S": "Local Trip"
+                                        },
+                                        "Default": {
+                                            "S": "YES"
+                                        }
+                                    }
+                                },
+                                {
+                                    "M": {
+                                        "Value": {
+                                            "S": "Oversea"
+                                        },
+                                        "Label": {
+                                            "S": "Oversea Trip"
+                                        },
+                                        "Default": {
+                                            "S": "NO"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "HomeCity": {
+                            "M": {
+                                "Value": {
+                                    "S": "Phnom Penh"
+                                },
+                                "MetaData": {
+                                    "M": {
+                                        "Label": {
+                                            "S": "Home City"
+                                        },
+                                        "Description": {
+                                            "S": "Specify the city in which the main office is located."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
         }
     }
 ]
 ```
+
