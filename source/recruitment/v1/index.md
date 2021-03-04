@@ -1507,59 +1507,983 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-vacancies/JobVacancy:4
 
 ```json
 {
-    "PersonalData":{
-        "EntityItemId":"People:People:4585454897fc431899dcdfc5b37ffad5",
-        "PeopleFirstName": "Vorleak",
-        "PeopleLastName": "Chan",
-        "PeopleSex": "F",
-        "PeopleDateOfBirth": "05-01-1995",
-        "PeopleNationality": "Cambodian",
-        "PeoplePhoneNumber": "0987654321",
-        "PeopleEmail": "vorleak.chan@gmail.com"
-    },
-    "CurrentStep": {
+    "PersonalData": {
+        "JobVacancyApplicantCurrentStepId": {
+            "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+        },
+        "JobVacancyApplicantPeopleName": {
+            "S": "SamaiDUCH"
+        },
+        "JobVacancyApplicantPeopleId": {
+            "S": "People:e303c774cd6aaf492950011bf7e6b50f"
+        },
+        "JobVacancyApplicantJobVacancyId": {
+            "S": "JobVacancy:e303c774cd6aaf492950011bf7e6b50f"
+        },
         "EntityItemId": {
-            "S": "JobVacancyApplicant:1fb61bd50be4434aa28a609f1d54e022"
-        },
-        "JobVacancyApplicantProcessResult": {
-            "S": "PROCESSING"
-        },
-        "JobVacancyStatus": {
-            "S": "OPEN"
-        },
-        "JobVacancyApplicantPositionTitle": {
-            "S": "HR Manager"
+            "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
         },
         "JobVacancyApplicantCurrentStepTitle": {
-            "S": "Screen profile"
+            "S": "Testing/Assessment"
         },
-        "ApplicantProcessingStepStatus":"IN_PROGRESS"
+        "CompositeAccessPatterns": {
+            "S": "JobVacancyApplicant#JobVacancyApplicantJobVacancyId:JobVacancy:e303c774cd6aaf492950011bf7e6b50f#JobVacancyApplicantPeopleName:SamaiDUCH#JobVacancyApplicantCurrentStepTitle:Testing/Assessment#JobVacancyApplicantProcessResult:IN_PROGRESS"
+        },
+        "JobVacancyApplicantPeopleSex": {
+            "S": "F"
+        },
+        "JobVacancyApplicantProcessResult": {
+            "S": "IN_PROGRESS"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        }
     },
-    "CompleteStep":[
+    "CurrentStep": [
         {
-            "StepTitle":{
-                "S": "Apply Job",
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "Not avalable"
             },
-            "ExpectedCompleteDate":{
-                "S": "15-02-2021",
+            "ApplicantProcessingStepTitle": {
+                "S": "Testing/Assessment"
             },
-            "ActualComplateDate":{
-                "S": "15-02-2021",
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Testing/Assessment#ApplicantProcessingStepStatus:IN_PROGRESS#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:Not avalable"
             },
-            "JobVacancyApplicantStepResult": {
-                "S": "SHORTLISTED"
+            "ApplicantProcessingStepResult": {
+                "S": "Not avalable"
             },
-            "ApplicantProcessingStepCompletedByName":{
-                "S": "Thida Chan"
+            "ApplicantProcessingStepStatus": {
+                "S": "IN_PROGRESS"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:882bb66c864cdf4f3b0c1d242be39115"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "Not avalable"
             },
             "ApplicantProcessingStepNote": {
-                "S": "Testing Note"
+                "S": "mmmmmmmmmmmmmmmmmm"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "Not avalable"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        }
+    ],
+    "CompleteStep": [
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Conduct interview"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Conduct interview#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Accept offer?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:0d90a5bb4a56c3bea9e6cb26b8d2b722"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-01-31"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "testing"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
             }
         },
-        
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Send job offer note"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Send job offer note#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Accept offer?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:2e76a54681fad66c613976cdff12c04a"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-02"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "testing"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Testing/Assessment"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Testing/Assessment#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Agree to processed?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:4ca859000f0277de8040f074c4b7a2b5"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-23"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "testing"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Send job offer note"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Send job offer note#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Agree to processed?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:605f561c05a84772dec9ada1674e3c2e"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-23"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "Tesigngdskoankldvfiue"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Recommend to client"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Recommend to client#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Shortlisted?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:7ac9de85ce0e4305446303a419c9d019"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-25"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "aaaaaaaaaaaaaa"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Send job offer note"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Send job offer note#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Accept offer?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:818e49f376b7fdd96c374125670fc0a1"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-09"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "testing"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Conduct interview"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Conduct interview#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Shortlisted?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:84e0f6742a1d93f77026519c456e206b"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-25"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "dcfvtgbyhnujmik"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Send job offer note"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Send job offer note#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Shortlisted?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:89b2410e3a6fc6f02c54172798152e94"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-25"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "DATA TEST"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Testing/Assessment"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Testing/Assessment#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Agree to processed?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:8ce47fa212b98e83c6d849b17d908a97"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-01"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "testing"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Arrange accessment/interview/shortisting(ODI/Client)"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Arrange accessment/interview/shortisting(ODI/Client)#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Shortlisted?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:8f0b318d8c3cda988d6363a3df736af9"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-25"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "TEST UPDATE"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Arrange accessment/interview/shortisting(ODI/Client)"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Arrange accessment/interview/shortisting(ODI/Client)#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Accept offer?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:9c9b280938858c969edcca0196a003b8"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-23"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "testing"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Arrange accessment/interview/shortisting(ODI/Client)"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Arrange accessment/interview/shortisting(ODI/Client)#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Agree to processed?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:9d7a6f6f43958bb906f2e6502bf01fb0"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-25"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "UPDATE"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Arrange accessment/interview/shortisting(ODI/Client)"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Arrange accessment/interview/shortisting(ODI/Client)#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Agree to processed?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:bd4458ec25ea28b8de54be895813feca"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-01"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Send job offer note"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Send job offer note#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Accept offer?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:d6d737fc53865fe33cd02a005d4fdbeb"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-23"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "Updating Step Status"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Send job offer note"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Send job offer note#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Agree to processed?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:d8334ab30ad99fbabfa0d18fb3b864ee"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-22"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "testing"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Arrange accessment/interview/shortisting(ODI/Client)"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Arrange accessment/interview/shortisting(ODI/Client)#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Agree to processed?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:d96fdda7ebf469104ff5d080de2d5e58"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-25"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "kkkkkkkkkk"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Screen candidate profile"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Screen candidate profile#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Shortlisted?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:df4cd5c6a8a3b9302dfafea7f425e75e"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "18-02-2021"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "testing"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:83257e73ea5ca99e19ff75992c24c634"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Conduct interview"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Conduct interview#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Accept offer?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:f6be517e14606f845e24b0fac85e8937"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-23"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "testing"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        },
+        {
+            "ApplicantProcessingStepCompletedByName": {
+                "S": "samaiduch"
+            },
+            "ApplicantProcessingStepTitle": {
+                "S": "Arrange accessment/interview/shortisting(ODI/Client)"
+            },
+            "CompositeAccessPatterns": {
+                "S": "ApplicantProcessingStep#ApplicantProcessingStepTitle:Arrange accessment/interview/shortisting(ODI/Client)#ApplicantProcessingStepStatus:DONE#ApplicantProcessingStepAddedByPeopleName:SamaiDUCH#ApplicantProcessingStepCompletedByName:samaiduch"
+            },
+            "ApplicantProcessingStepResult": {
+                "S": "Shortlisted?"
+            },
+            "ApplicantProcessingStepStatus": {
+                "S": "DONE"
+            },
+            "ApplicantProcessingJobVacancyApplicantId": {
+                "S": "JobVacancyApplicant:aea453883098e9bccf5ca022a819a2b9"
+            },
+            "EntityItemId": {
+                "S": "ApplicantProcessingStep:fca9cb2cd3adf765204d6db134a3e117"
+            },
+            "ApplicantProcessingStepActualCompleteDate": {
+                "S": "2021-02-25"
+            },
+            "ApplicantProcessingStepNote": {
+                "S": "tttttttttttttttttttttttttttttttttttttttttttttttt"
+            },
+            "ApplicantProcessingStepId": {
+                "S": "Step:ac3d4ee48c4c5e272d74ebd762ceaa41"
+            },
+            "ApplicantProcessingStepAddedByPeopleName": {
+                "S": "SamaiDUCH"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "ApplicantProcessingStepAddedByPeopleId": {
+                "S": "People:e303c774cd6daafffR492950011bf7e6b50f"
+            },
+            "ApplicantProcessingStepCompletedById": {
+                "S": "user:1ab83367a398b6c66d04924d348abc06"
+            },
+            "ApplicantProcessingStepPlannedCompleteDate": {
+                "S": "08-02-2021"
+            }
+        }
     ]
 }
-
 
 ```
 
@@ -2093,27 +3017,27 @@ curl "http://127.0.0.1:8000/recruitment-svc/api/v1/applicants/JobVacancyApplican
 ```json
 {
     "ApplicantProcessingStep":{
-        "ApplicantProcessingStepNote": "testing",
-        "ApplicantProcessingJobVacancyApplicantId": "JobVacancyApplicant:1ab83367a398b6c66d04924348abc06b",
-        "ApplicantProcessingStepId": "Step:1ab83367a398b6c66d04924348abc06b",
-        "ApplicantProcessingStepTitle": "Screen Candidate",
-        "ApplicantProcessingStepStatus": "Completed",
+        "ApplicantProcessingJobVacancyApplicantId":"JobVacancyApplicant:8b254209482f8e12bddf093b4fa85222",
+        "ApplicantProcessingStepTitle":"Ratha Testing",
+        "ApplicantProcessingStepId": "Step:741a08e9bde2708b59fee705d09f4cd9",
+        "ApplicantProcessingStepStatus": "DONE",
         "ApplicantProcessingStepPlannedCompleteDate": "08-02-2021", 
-        "ApplicantProcessingStepAddedByPeopleId": "People:1ab83367a398b6c66d04924348abc06b", 
-        "ApplicantProcessingStepAddedByPeopleName": "Sopha NyTa",
-        "ApplicantProcessingStepResult": "SHORTLISTED",
-        "ApplicantProcessingStepActualCompleteDate": "08-02-2021",
-        "ApplicantProcessingStepCompletedById": "CompletedBy:1ab83367a398b6c66d04924348abc06b",
-        "ApplicantProcessingStepCompletedByName": "Mony Chan",
-        "CompositeAccessPatterns": "ApplicantProcessingStep#ApplicantProcessingStepTitle:ApplyJob#ApplicantProcessingStepStatus:IN_PROGRESS#ApplicantProcessingStepAddedByPeopleName:Nary Doung#ApplicantProcessingStepCompletedByName:Mony Chan"
-
+        "ApplicantProcessingStepAddedByPeopleId": "People:e303c774cd6daafffR49295t0011bf7e6b50f", 
+        "ApplicantProcessingStepAddedByPeopleName": "SamaiDUCH",
+        "ApplicantProcessingStepResult": "Shortlisted?",
+        "ApplicantProcessingStepActualCompleteDate": "18-02-2021",
+        "ApplicantProcessingStepCompletedById": "user:1ab83367a398b6c66d04924d348abc06",
+        "ApplicantProcessingStepCompletedByName": "samaiduch",
+        "CompositeAccessPatterns": "ApplicantProcessingStep#ApplicantProcessingStepTitle:ScreenCandidate#ApplicantProcessingStepStatus:IN_PROGRESS#ApplicantProcessingStepAddedByPeopleName:Sopha Ny#ApplicantProcessingStepCompletedByName:Mony Chan",
+        "ApplicantProcessingOldStepNote": "Step Arrange accessment/interview/shortisting(ODI/Client)",
+        "ApplicantProcessingNextStepNote": "Step Arrange accessment/interview/shortisting(ODI/Client)"
     }
 }
 ```
 
 This endpoint update a specific Applicant Processing Step
 
-<aside class="warning">If you're not using an administrator API key, note that some Applicant Processing Step will return 403 Forbidden if they are hidden for admins only.</aside>
+<aside class="warning">If you're not using an administrator API key, note that some Applicant Processing Step will return 403 FForbidden if they are hidden for admins only.</aside>
 
 ### HTTP Request
 
