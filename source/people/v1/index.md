@@ -44,6 +44,10 @@ curl "api_endpoint_here"
         "PeopleProfilePhoto": "profile.png",
         "PeopleProfileSummary": "I am 23 year old. I finish ...",
         "PeopleAchievement": "I finish ...",
+        "PeopleCreatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleCreatedDateTime":"02-03-2021",
+        "PeopleUpdatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleUpdatedDateTime":"02-03-2021",
         "CompositeAccessPatterns":"",
         "Children":{
             "ComputerApplication":[
@@ -86,218 +90,14 @@ curl "api_endpoint_here"
 
 `POST https://dev.aimlapps.com/people-svc/api/v1/people`
 
-## Update People
-
-> The above command when submit JSON structured like this:
-
-```json
-{
-    "People": {
-        "PeopleFirstName": "Dalin",
-        "PeopleMiddleName": "Lin",
-         "PeopleLastName": "Luon",
-        "PeopleGender": "F",
-        "PeopleBirthDate": "04-02-1998",
-        "PeopleMaritalStatus": "Available",
-        "PeopleNationality": "Cambodia",
-        "PeopleBirthLocationLevel1": "Battambong",
-        "PeopleProfilePhoto": "profile.png",
-        "PeopleProfileSummary": "I am 23 year old. I finish ...",
-        "PeopleAchievement": "I finish ...",
-        "CompositeAccessPatterns":"",
-        "Children":{
-            "ComputerApplication":[
-                {
-                    "ComputerApplicationName": "Microsoft Excel",
-                    "ComputerApplicationLevel": "Intermediate"
-                }
-            ],
-            "CoreCompetency":[
-                {
-                    "CoreCompetencyCompetency": "Use Computer"
-                }
-            ],
-            "Document":[
-                {
-                    "DocumentName": "High School Certificate",
-                    "DocumentFileName": "UUID"
-                     
-                }
-            ],
-            "Contact":[
-                {
-                    "ContactName": "Putheara",
-                    "ContactValue": "putheara.pen@gmail.com"
-                }
-            ],
-             "Language":[
-                {
-                    "LanguageLanguage": "English",
-                    "LanguageSkill": "Speaking, Writing, Listening, Reading", 
-                    "LanguageProficiencyLevel": "Professional Working Proficiency, Limited Working Proficiency" 
-                }
-            ]
-        }
-    }
-}
-```
-
-### HTTP Request
-
-`PUT https://dev.aimlapps.com/people-svc/api/v1/people/People:b03bb96458a86f867e6324ecd1c8133d`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the People. Ex : People:b03bb96458a86f867e6324ecd1c8133d
-
 ## Retrieve People
 > The above command returns JSON structured like this:
 
 ```json
 {
-    "People": [
-        {
-            "PeopleCoreCompetency": {
-                "L": [
-                    {
-                        "M": {
-                            "CoreCompetencyCompetency": {
-                                "S": "Use Computer"
-                            }
-                        }
-                    }
-                ]
-            },
-            "PeopleNationality": {
-                "S": "Cambodia"
-            },
-            "CompositeAccessPatterns": {
-                "S": "People#PeopleFirstName:Dalin#PeopleMiddleName:Lin#PeopleLastName:Luon"
-            },
-            "PeopleContact": {
-                "L": [
-                    {
-                        "M": {
-                            "ContactName": {
-                                "S": "Putheara"
-                            },
-                            "ContactValue": {
-                                "S": "putheara.pen@gmail.com"
-                            }
-                        }
-                    }
-                ]
-            },
-            "PeopleDocument": {
-                "L": [
-                    {
-                        "M": {
-                            "DocumentFileName": {
-                                "S": "UUID"
-                            },
-                            "DocumentName": {
-                                "S": "High School Certificate"
-                            }
-                        }
-                    }
-                ]
-            },
-            "PeopleBirthLocationLevel1": {
-                "S": "Battambong"
-            },
-            "PeopleBirthDate": {
-                "S": "04-02-1998"
-            },
-            "PeopleAchievement": {
-                "S": "I finish ..."
-            },
-            "PeopleLanguage": {
-                "L": [
-                    {
-                        "M": {
-                            "LanguageLanguage": {
-                                "S": "English"
-                            },
-                            "LanguageProficiencyLevel": {
-                                "S": "Professional Working Proficiency, Limited Working Proficiency"
-                            },
-                            "LanguageSkill": {
-                                "S": "Speaking, Writing, Listening, Reading"
-                            }
-                        }
-                    }
-                ]
-            },
-            "PeopleProfilePhoto": {
-                "S": "profile.png"
-            },
-            "EntityItemId": {
-                "S": "People:b03bb96458a86f867e6324ecd1c8133d"
-            },
-            "PeopleFirstName": {
-                "S": "Dalin"
-            },
-            "PeopleMiddleName": {
-                "S": "Lin"
-            },
-            "PeopleLastName": {
-                "S": "Luon"
-            },
-            "PeopleComputerApplication": {
-                "L": [
-                    {
-                        "M": {
-                            "ComputerApplicationName": {
-                                "S": "Microsoft Excel"
-                            },
-                            "ComputerApplicationLevel": {
-                                "S": "Intermediate"
-                            }
-                        }
-                    }
-                ]
-            },
-            "PeopleGender": {
-                "S": "F"
-            },
-            "PeopleMaritalStatus": {
-                "S": "Available"
-            },
-            "TenantId": {
-                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-            },
-            "PeopleProfileSummary": {
-                "S": "I am 23 year old. I finish ..."
-            }
-        }
-    ],
-    "FilterAttributes": [
-        {
-            "PeopleFirstName": "First Name"
-        },
-        {
-            "PeopleMiddleName": "Middle Name"
-        },
-        {
-            "PeopleLastName": "Last Name"
-        }
-    ]
-}
-```
-
-This endpoint retrieves all People.
-
-### HTTP Request
-
-`GET https://dev.aimlapps.com/people-svc/api/v1/job-orders`
-
-## View Detail People
-> The above command returns JSON structured like this:
-
-```json
-{
+    "PeopleCreatedDateTime": {
+        "S": "02-03-2021"
+    },
     "PeopleCoreCompetency": {
         "L": [
             {
@@ -328,6 +128,9 @@ This endpoint retrieves all People.
                 }
             }
         ]
+    },
+    "PeopleUpdatedDateTime": {
+        "S": "02-03-2021"
     },
     "PeopleDocument": {
         "L": [
@@ -373,7 +176,10 @@ This endpoint retrieves all People.
         "S": "profile.png"
     },
     "EntityItemId": {
-        "S": "People:b03bb96458a86f867e6324ecd1c8133d"
+        "S": "People:999ea2a64c7a26db46da69dcf1ba92fe"
+    },
+    "PeopleUpdatedByUserId": {
+        "S": "User:b03bb96458a86f867e6324ecd1c8133d"
     },
     "PeopleFirstName": {
         "S": "Dalin"
@@ -398,6 +204,9 @@ This endpoint retrieves all People.
             }
         ]
     },
+    "PeopleCreatedByUserId": {
+        "S": "User:b03bb96458a86f867e6324ecd1c8133d"
+    },
     "PeopleGender": {
         "S": "F"
     },
@@ -417,13 +226,221 @@ This endpoint view detail People.
 
 ### HTTP Request
 
-`GET https://dev.aimlapps.com/people-svc/api/v1/people/People:b03bb96458a86f867e6324ecd1c8133d`
+`GET https://dev.aimlapps.com/people-svc/api/v1/people`
+
+## Update People
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "People": {
+        "PeopleFirstName": "Dalin",
+        "PeopleMiddleName": "Lin",
+         "PeopleLastName": "Luon",
+        "PeopleGender": "F",
+        "PeopleBirthDate": "04-02-1998",
+        "PeopleMaritalStatus": "Available",
+        "PeopleNationality": "Cambodia",
+        "PeopleBirthLocationLevel1": "Battambong",
+        "PeopleProfilePhoto": "profile.png",
+        "PeopleProfileSummary": "I am 23 year old. I finish ...",
+        "PeopleAchievement": "I finish ...",
+        "PeopleCreatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleCreatedDateTime":"02-03-2021",
+        "PeopleUpdatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleUpdatedDateTime":"02-03-2021",
+        "CompositeAccessPatterns":"",
+        "Children":{
+            "ComputerApplication":[
+                {
+                    "ComputerApplicationName": "Microsoft Excel",
+                    "ComputerApplicationLevel": "Intermediate"
+                }
+            ],
+            "CoreCompetency":[
+                {
+                    "CoreCompetencyCompetency": "Use Computer"
+                }
+            ],
+            "Document":[
+                {
+                    "DocumentName": "High School Certificate",
+                    "DocumentFileName": "UUID"
+                     
+                }
+            ],
+            "Contact":[
+                {
+                    "ContactName": "Putheara",
+                    "ContactValue": "putheara.pen@gmail.com"
+                }
+            ],
+             "Language":[
+                {
+                    "LanguageLanguage": "English",
+                    "LanguageSkill": "Speaking, Writing, Listening, Reading", 
+                    "LanguageProficiencyLevel": "Professional Working Proficiency, Limited Working Proficiency" 
+                }
+            ]
+        }
+    }
+}
+```
+
+### HTTP Request
+
+`PUT https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the People. Ex : People:b03bb96458a86f867e6324ecd1c8133d
+ID | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
+
+## View Detail People
+> The above command returns JSON structured like this:
+
+```json
+{
+    "PeopleCreatedDateTime": {
+        "S": "02-03-2021"
+    },
+    "PeopleCoreCompetency": {
+        "L": [
+            {
+                "M": {
+                    "CoreCompetencyCompetency": {
+                        "S": "Use Computer"
+                    }
+                }
+            }
+        ]
+    },
+    "PeopleNationality": {
+        "S": "Cambodia"
+    },
+    "CompositeAccessPatterns": {
+        "S": "People#PeopleFirstName:Dalin#PeopleMiddleName:Lin#PeopleLastName:Luon"
+    },
+    "PeopleContact": {
+        "L": [
+            {
+                "M": {
+                    "ContactName": {
+                        "S": "Putheara"
+                    },
+                    "ContactValue": {
+                        "S": "putheara.pen@gmail.com"
+                    }
+                }
+            }
+        ]
+    },
+    "PeopleUpdatedDateTime": {
+        "S": "02-03-2021"
+    },
+    "PeopleDocument": {
+        "L": [
+            {
+                "M": {
+                    "DocumentFileName": {
+                        "S": "UUID"
+                    },
+                    "DocumentName": {
+                        "S": "High School Certificate"
+                    }
+                }
+            }
+        ]
+    },
+    "PeopleBirthLocationLevel1": {
+        "S": "Battambong"
+    },
+    "PeopleBirthDate": {
+        "S": "04-02-1998"
+    },
+    "PeopleAchievement": {
+        "S": "I finish ..."
+    },
+    "PeopleLanguage": {
+        "L": [
+            {
+                "M": {
+                    "LanguageLanguage": {
+                        "S": "English"
+                    },
+                    "LanguageProficiencyLevel": {
+                        "S": "Professional Working Proficiency, Limited Working Proficiency"
+                    },
+                    "LanguageSkill": {
+                        "S": "Speaking, Writing, Listening, Reading"
+                    }
+                }
+            }
+        ]
+    },
+    "PeopleProfilePhoto": {
+        "S": "profile.png"
+    },
+    "EntityItemId": {
+        "S": "People:999ea2a64c7a26db46da69dcf1ba92fe"
+    },
+    "PeopleUpdatedByUserId": {
+        "S": "User:b03bb96458a86f867e6324ecd1c8133d"
+    },
+    "PeopleFirstName": {
+        "S": "Dalin"
+    },
+    "PeopleMiddleName": {
+        "S": "Lin"
+    },
+    "PeopleLastName": {
+        "S": "Luon"
+    },
+    "PeopleComputerApplication": {
+        "L": [
+            {
+                "M": {
+                    "ComputerApplicationName": {
+                        "S": "Microsoft Excel"
+                    },
+                    "ComputerApplicationLevel": {
+                        "S": "Intermediate"
+                    }
+                }
+            }
+        ]
+    },
+    "PeopleCreatedByUserId": {
+        "S": "User:b03bb96458a86f867e6324ecd1c8133d"
+    },
+    "PeopleGender": {
+        "S": "F"
+    },
+    "PeopleMaritalStatus": {
+        "S": "Available"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "PeopleProfileSummary": {
+        "S": "I am 23 year old. I finish ..."
+    }
+}
+```
+
+This endpoint view detail People.
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
 
 ## Delete People
 
@@ -431,11 +448,152 @@ This endpoint delete a specific People.
 
 ### HTTP Request
 
-`DELETE https://dev.aimlapps.com/people-svc/api/v1/people/People:b03bb96458a86f867e6324ecd1c8133d`
+`DELETE https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the People to delete. Ex : People:b03bb96458a86f867e6324ecd1c8133d
+ID | The ID of the People to delete. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
 
+# Commend On People
+## Create Commend On People
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "CommentOnPeople": {
+        "CommentOnPeoplePeopleId": "People:999ea2a64c7a26db46da69dcf1ba92fe",
+        "CommentOnPeopleComment": "He want to apply Web Developer",
+        "PeopleCreatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleCreatedDateTime":"02-03-2021",
+        "PeopleUpdatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleUpdatedDateTime":"02-03-2021",
+        "CompositeAccessPatterns":""
+        
+    }
+}
+```
+
+### HTTP Request
+
+`POST https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comment-on-people`
+
+Parameter | Description
+--------- | -----------
+People_id | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
+
+## Update Commend On People
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "CommentOnPeople": {
+        "CommentOnPeoplePeopleId": "People:999ea2a64c7a26db46da69dcf1ba92fe",
+        "CommentOnPeopleComment": "He want to apply Web Developer",
+        "PeopleCreatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleCreatedDateTime":"02-03-2021",
+        "PeopleUpdatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleUpdatedDateTime":"02-03-2021",
+        "CompositeAccessPatterns":""
+        
+    }
+}
+```
+
+### HTTP Request
+
+`PUT https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comment-on-people/CommentOnPeople:ba452ece82e9d2caf8014816ac580251`
+
+### URL Parameters
+Parameter | Description
+--------- | -----------
+People_id | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
+ID        | The ID of the People. Ex : CommentOnPeople:ba452ece82e9d2caf8014816ac580251
+
+## Retrieve Commend On People
+> The above command returns JSON structured like this:
+
+```json
+{
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "EntityItemId": {
+        "S": "CommentOnPeople:ba452ece82e9d2caf8014816ac580251"
+    },
+    "CompositeAccessPatterns": {
+        "S": "CommentOnPeople#CommentOnPeoplePeopleId:People:999ea2a64c7a26db46da69dcf1ba92fe"
+    },
+    "CommentOnPeoplePeopleId": {
+        "S": "People:999ea2a64c7a26db46da69dcf1ba92fe"
+    },
+    "CommentOnPeopleComment": {
+        "S": "He want to apply Web Developer"
+    }
+}
+```
+
+This endpoint retrieve People.
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comment-on-people/`
+
+### URL Parameters
+Parameter | Description
+--------- | -----------
+People_id | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
+ID | The ID of the People. Ex : CommentOnPeople:ba452ece82e9d2caf8014816ac580251
+## View Detail Commend On People
+> The above command returns JSON structured like this:
+
+```json
+{
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "EntityItemId": {
+        "S": "CommentOnPeople:ba452ece82e9d2caf8014816ac580251"
+    },
+    "CompositeAccessPatterns": {
+        "S": "CommentOnPeople#CommentOnPeoplePeopleId:People:999ea2a64c7a26db46da69dcf1ba92fe"
+    },
+    "CommentOnPeoplePeopleId": {
+        "S": "People:999ea2a64c7a26db46da69dcf1ba92fe"
+    },
+    "CommentOnPeopleComment": {
+        "S": "He want to apply Web Developer"
+    }
+}
+```
+
+This endpoint view detail People.
+
+### HTTP Request
+
+`GET https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comment-on-people/CommentOnPeople:ba452ece82e9d2caf8014816ac580251`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+People_id | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
+ID | The ID of the People. Ex : CommentOnPeople:ba452ece82e9d2caf8014816ac580251
+
+## Delete Commend On People
+
+This endpoint delete a specific People.
+
+### HTTP Request
+
+`DELETE https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comment-on-people/CommentOnPeople:ba452ece82e9d2caf8014816ac580251`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+People_id | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
+ID | The ID of the People. Ex : CommentOnPeople:ba452ece82e9d2caf8014816ac580251
