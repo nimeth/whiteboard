@@ -50,10 +50,10 @@ curl "api_endpoint_here"
         "PeopleUpdatedDateTime":"02-03-2021",
         "CompositeAccessPatterns":"",
         "Children":{
-            "ComputerApplication":[
+            "ComputerLiterace":[
                 {
-                    "ComputerApplicationName": "Microsoft Excel",
-                    "ComputerApplicationLevel": "Intermediate"
+                    "ComputerLiteraceApplication": "Microsoft Excel",
+                    "ComputerLiteracePracticalLevel": "Intermediate"
                 }
             ],
             "CoreCompetency":[
@@ -95,130 +95,397 @@ curl "api_endpoint_here"
 
 ```json
 {
-    "PeopleCreatedDateTime": {
-        "S": "02-03-2021"
-    },
-    "PeopleCoreCompetency": {
-        "L": [
-            {
-                "M": {
-                    "CoreCompetencyCompetency": {
-                        "S": "Use Computer"
+    "People": [
+        {
+            "PeopleCreatedDateTime": {
+                "S": "02-03-2021"
+            },
+            "PeopleCoreCompetency": {
+                "L": [
+                    {
+                        "M": {
+                            "CoreCompetencyCompetency": {
+                                "S": "Use Computer"
+                            }
+                        }
                     }
-                }
-            }
-        ]
-    },
-    "PeopleNationality": {
-        "S": "Cambodia"
-    },
-    "CompositeAccessPatterns": {
-        "S": "People#PeopleFirstName:Dalin#PeopleMiddleName:Lin#PeopleLastName:Luon"
-    },
-    "PeopleContact": {
-        "L": [
-            {
-                "M": {
-                    "ContactName": {
-                        "S": "Putheara"
-                    },
-                    "ContactValue": {
-                        "S": "putheara.pen@gmail.com"
+                ]
+            },
+            "PeopleNationality": {
+                "S": "Cambodia"
+            },
+            "CompositeAccessPatterns": {
+                "S": "People#PeopleFirstName:Ratha#PeopleMiddleName:Ratha#PeopleLastName:Chan"
+            },
+            "PeopleContact": {
+                "L": [
+                    {
+                        "M": {
+                            "ContactName": {
+                                "S": "Nita"
+                            },
+                            "ContactValue": {
+                                "S": "Nita.pen@gmail.com"
+                            }
+                        }
                     }
-                }
-            }
-        ]
-    },
-    "PeopleUpdatedDateTime": {
-        "S": "02-03-2021"
-    },
-    "PeopleDocument": {
-        "L": [
-            {
-                "M": {
-                    "DocumentFileName": {
-                        "S": "UUID"
-                    },
-                    "DocumentName": {
-                        "S": "High School Certificate"
+                ]
+            },
+            "PeopleUpdatedDateTime": {
+                "S": "02-03-2021"
+            },
+            "PeopleDocument": {
+                "L": [
+                    {
+                        "M": {
+                            "DocumentFileName": {
+                                "S": "UUID"
+                            },
+                            "DocumentName": {
+                                "S": "High School Certificate"
+                            }
+                        }
                     }
-                }
-            }
-        ]
-    },
-    "PeopleBirthLocationLevel1": {
-        "S": "Battambong"
-    },
-    "PeopleBirthDate": {
-        "S": "04-02-1998"
-    },
-    "PeopleAchievement": {
-        "S": "I finish ..."
-    },
-    "PeopleLanguage": {
-        "L": [
-            {
-                "M": {
-                    "LanguageLanguage": {
-                        "S": "English"
-                    },
-                    "LanguageProficiencyLevel": {
-                        "S": "Professional Working Proficiency, Limited Working Proficiency"
-                    },
-                    "LanguageSkill": {
-                        "S": "Speaking, Writing, Listening, Reading"
+                ]
+            },
+            "PeopleBirthLocationLevel1": {
+                "S": "Bontay mean jey"
+            },
+            "PeopleBirthDate": {
+                "S": "04-02-1998"
+            },
+            "PeopleAchievement": {
+                "S": "I finish ..."
+            },
+            "PeopleLanguage": {
+                "L": [
+                    {
+                        "M": {
+                            "LanguageLanguage": {
+                                "S": "English"
+                            },
+                            "LanguageProficiencyLevel": {
+                                "S": "Professional Working Proficiency, Limited Working Proficiency"
+                            },
+                            "LanguageSkill": {
+                                "S": "Speaking, Writing, Listening, Reading"
+                            }
+                        }
                     }
-                }
-            }
-        ]
-    },
-    "PeopleProfilePhoto": {
-        "S": "profile.png"
-    },
-    "EntityItemId": {
-        "S": "People:999ea2a64c7a26db46da69dcf1ba92fe"
-    },
-    "PeopleUpdatedByUserId": {
-        "S": "User:b03bb96458a86f867e6324ecd1c8133d"
-    },
-    "PeopleFirstName": {
-        "S": "Dalin"
-    },
-    "PeopleMiddleName": {
-        "S": "Lin"
-    },
-    "PeopleLastName": {
-        "S": "Luon"
-    },
-    "PeopleComputerApplication": {
-        "L": [
-            {
-                "M": {
-                    "ComputerApplicationName": {
-                        "S": "Microsoft Excel"
-                    },
-                    "ComputerApplicationLevel": {
-                        "S": "Intermediate"
+                ]
+            },
+            "PeopleProfilePhoto": {
+                "S": "profile.png"
+            },
+            "EntityItemId": {
+                "S": "People:5a47e4140b04a7be24774629bbcfc855"
+            },
+            "PeopleUpdatedByUserId": {
+                "S": "User:b03bb96458a86f867e6324ecd1c8133d"
+            },
+            "PeopleFirstName": {
+                "S": "Ratha"
+            },
+            "PeopleMiddleName": {
+                "S": "Ratha"
+            },
+            "PeopleLastName": {
+                "S": "Chan"
+            },
+            "PeopleCreatedByUserId": {
+                "S": "User:b03bb96458a86f867e6324ecd1c8133d"
+            },
+            "PeopleGender": {
+                "S": "F"
+            },
+            "PeopleMaritalStatus": {
+                "S": "Available"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "PeopleComputerLiterace": {
+                "L": [
+                    {
+                        "M": {
+                            "ComputerLiteracePracticalLevel": {
+                                "S": "Advance"
+                            },
+                            "ComputerLiteraceApplication": {
+                                "S": "Microsoft Excel"
+                            }
+                        }
                     }
-                }
+                ]
+            },
+            "PeopleProfileSummary": {
+                "S": "I am 23 year old. I finish ..."
             }
-        ]
-    },
-    "PeopleCreatedByUserId": {
-        "S": "User:b03bb96458a86f867e6324ecd1c8133d"
-    },
-    "PeopleGender": {
-        "S": "F"
-    },
-    "PeopleMaritalStatus": {
-        "S": "Available"
-    },
-    "TenantId": {
-        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-    },
-    "PeopleProfileSummary": {
-        "S": "I am 23 year old. I finish ..."
-    }
+        },
+        {
+            "PeopleCreatedDateTime": {
+                "S": "02-03-2021"
+            },
+            "PeopleCoreCompetency": {
+                "L": [
+                    {
+                        "M": {
+                            "CoreCompetencyCompetency": {
+                                "S": "Use Computer"
+                            }
+                        }
+                    }
+                ]
+            },
+            "PeopleNationality": {
+                "S": "Cambodia"
+            },
+            "CompositeAccessPatterns": {
+                "S": "People#PeopleFirstName:Son#PeopleMiddleName:Son#PeopleLastName:Hom"
+            },
+            "PeopleContact": {
+                "L": [
+                    {
+                        "M": {
+                            "ContactName": {
+                                "S": "Nita"
+                            },
+                            "ContactValue": {
+                                "S": "Nita.pen@gmail.com"
+                            }
+                        }
+                    }
+                ]
+            },
+            "PeopleUpdatedDateTime": {
+                "S": "02-03-2021"
+            },
+            "PeopleDocument": {
+                "L": [
+                    {
+                        "M": {
+                            "DocumentFileName": {
+                                "S": "UUID"
+                            },
+                            "DocumentName": {
+                                "S": "High School Certificate"
+                            }
+                        }
+                    }
+                ]
+            },
+            "PeopleBirthLocationLevel1": {
+                "S": "Siem Reap"
+            },
+            "PeopleBirthDate": {
+                "S": "04-02-1998"
+            },
+            "PeopleAchievement": {
+                "S": "I finish ..."
+            },
+            "PeopleLanguage": {
+                "L": [
+                    {
+                        "M": {
+                            "LanguageLanguage": {
+                                "S": "English"
+                            },
+                            "LanguageProficiencyLevel": {
+                                "S": "Professional Working Proficiency, Limited Working Proficiency"
+                            },
+                            "LanguageSkill": {
+                                "S": "Speaking, Writing, Listening, Reading"
+                            }
+                        }
+                    }
+                ]
+            },
+            "PeopleProfilePhoto": {
+                "S": "profile.png"
+            },
+            "EntityItemId": {
+                "S": "People:648311551b2f33a84d95f87ca878e6e5"
+            },
+            "PeopleUpdatedByUserId": {
+                "S": "User:b03bb96458a86f867e6324ecd1c8133d"
+            },
+            "PeopleFirstName": {
+                "S": "Son"
+            },
+            "PeopleMiddleName": {
+                "S": "Son"
+            },
+            "PeopleLastName": {
+                "S": "Hom"
+            },
+            "PeopleCreatedByUserId": {
+                "S": "User:b03bb96458a86f867e6324ecd1c8133d"
+            },
+            "PeopleGender": {
+                "S": "F"
+            },
+            "PeopleMaritalStatus": {
+                "S": "Available"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "PeopleComputerLiterace": {
+                "L": [
+                    {
+                        "M": {
+                            "ComputerLiteracePracticalLevel": {
+                                "S": "Advance"
+                            },
+                            "ComputerLiteraceApplication": {
+                                "S": "Microsoft Excel"
+                            }
+                        }
+                    }
+                ]
+            },
+            "PeopleProfileSummary": {
+                "S": "I am 23 year old. I finish ..."
+            }
+        },
+        {
+            "PeopleCreatedDateTime": {
+                "S": "02-03-2021"
+            },
+            "PeopleCoreCompetency": {
+                "L": [
+                    {
+                        "M": {
+                            "CoreCompetencyCompetency": {
+                                "S": "Use Computer"
+                            }
+                        }
+                    }
+                ]
+            },
+            "PeopleNationality": {
+                "S": "Cambodia"
+            },
+            "CompositeAccessPatterns": {
+                "S": "People#PeopleFirstName:SreyTa#PeopleMiddleName:Ta#PeopleLastName:Sen"
+            },
+            "PeopleContact": {
+                "L": [
+                    {
+                        "M": {
+                            "ContactName": {
+                                "S": "Putheara"
+                            },
+                            "ContactValue": {
+                                "S": "putheara.pen@gmail.com"
+                            }
+                        }
+                    }
+                ]
+            },
+            "PeopleUpdatedDateTime": {
+                "S": "02-03-2021"
+            },
+            "PeopleDocument": {
+                "L": [
+                    {
+                        "M": {
+                            "DocumentFileName": {
+                                "S": "UUID"
+                            },
+                            "DocumentName": {
+                                "S": "High School Certificate"
+                            }
+                        }
+                    }
+                ]
+            },
+            "PeopleBirthLocationLevel1": {
+                "S": "Siem Reap"
+            },
+            "PeopleBirthDate": {
+                "S": "04-02-1998"
+            },
+            "PeopleAchievement": {
+                "S": "I finish ..."
+            },
+            "PeopleLanguage": {
+                "L": [
+                    {
+                        "M": {
+                            "LanguageLanguage": {
+                                "S": "English"
+                            },
+                            "LanguageProficiencyLevel": {
+                                "S": "Professional Working Proficiency, Limited Working Proficiency"
+                            },
+                            "LanguageSkill": {
+                                "S": "Speaking, Writing, Listening, Reading"
+                            }
+                        }
+                    }
+                ]
+            },
+            "PeopleProfilePhoto": {
+                "S": "profile.png"
+            },
+            "EntityItemId": {
+                "S": "People:fa4a8b984a7ab3a99bdf74ae00d24fa8"
+            },
+            "PeopleUpdatedByUserId": {
+                "S": "User:b03bb96458a86f867e6324ecd1c8133d"
+            },
+            "PeopleFirstName": {
+                "S": "SreyTa"
+            },
+            "PeopleMiddleName": {
+                "S": "Ta"
+            },
+            "PeopleLastName": {
+                "S": "Sen"
+            },
+            "PeopleCreatedByUserId": {
+                "S": "User:b03bb96458a86f867e6324ecd1c8133d"
+            },
+            "PeopleGender": {
+                "S": "F"
+            },
+            "PeopleMaritalStatus": {
+                "S": "Available"
+            },
+            "TenantId": {
+                "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+            },
+            "PeopleComputerLiterace": {
+                "L": [
+                    {
+                        "M": {
+                            "ComputerLiteracePracticalLevel": {
+                                "S": "Intermediate"
+                            },
+                            "ComputerLiteraceApplication": {
+                                "S": "Microsoft Excel"
+                            }
+                        }
+                    }
+                ]
+            },
+            "PeopleProfileSummary": {
+                "S": "I am 23 year old. I finish ..."
+            }
+        }
+    ],
+    "FilterAttributes": [
+        {
+            "PeopleFirstName": "First Name"
+        },
+        {
+            "PeopleMiddleName": "Middle Name"
+        },
+        {
+            "PeopleLastName": "Last Name"
+        }
+    ]
 }
 ```
 
@@ -252,10 +519,10 @@ This endpoint view detail People.
         "PeopleUpdatedDateTime":"02-03-2021",
         "CompositeAccessPatterns":"",
         "Children":{
-            "ComputerApplication":[
+            "ComputerLiterace":[
                 {
-                    "ComputerApplicationName": "Microsoft Excel",
-                    "ComputerApplicationLevel": "Intermediate"
+                    "ComputerLiteraceApplication": "Microsoft Excel",
+                    "ComputerLiteracePracticalLevel": "Intermediate"
                 }
             ],
             "CoreCompetency":[
@@ -321,17 +588,17 @@ ID | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
         "S": "Cambodia"
     },
     "CompositeAccessPatterns": {
-        "S": "People#PeopleFirstName:Dalin#PeopleMiddleName:Lin#PeopleLastName:Luon"
+        "S": "People#PeopleFirstName:Ratha#PeopleMiddleName:Ratha#PeopleLastName:Chan"
     },
     "PeopleContact": {
         "L": [
             {
                 "M": {
                     "ContactName": {
-                        "S": "Putheara"
+                        "S": "Nita"
                     },
                     "ContactValue": {
-                        "S": "putheara.pen@gmail.com"
+                        "S": "Nita.pen@gmail.com"
                     }
                 }
             }
@@ -355,7 +622,7 @@ ID | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
         ]
     },
     "PeopleBirthLocationLevel1": {
-        "S": "Battambong"
+        "S": "Bontay mean jey"
     },
     "PeopleBirthDate": {
         "S": "04-02-1998"
@@ -384,33 +651,19 @@ ID | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
         "S": "profile.png"
     },
     "EntityItemId": {
-        "S": "People:999ea2a64c7a26db46da69dcf1ba92fe"
+        "S": "People:5a47e4140b04a7be24774629bbcfc855"
     },
     "PeopleUpdatedByUserId": {
         "S": "User:b03bb96458a86f867e6324ecd1c8133d"
     },
     "PeopleFirstName": {
-        "S": "Dalin"
+        "S": "Ratha"
     },
     "PeopleMiddleName": {
-        "S": "Lin"
+        "S": "Ratha"
     },
     "PeopleLastName": {
-        "S": "Luon"
-    },
-    "PeopleComputerApplication": {
-        "L": [
-            {
-                "M": {
-                    "ComputerApplicationName": {
-                        "S": "Microsoft Excel"
-                    },
-                    "ComputerApplicationLevel": {
-                        "S": "Intermediate"
-                    }
-                }
-            }
-        ]
+        "S": "Chan"
     },
     "PeopleCreatedByUserId": {
         "S": "User:b03bb96458a86f867e6324ecd1c8133d"
@@ -423,6 +676,20 @@ ID | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
     },
     "TenantId": {
         "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "PeopleComputerLiterace": {
+        "L": [
+            {
+                "M": {
+                    "ComputerLiteracePracticalLevel": {
+                        "S": "Advance"
+                    },
+                    "ComputerLiteraceApplication": {
+                        "S": "Microsoft Excel"
+                    }
+                }
+            }
+        ]
     },
     "PeopleProfileSummary": {
         "S": "I am 23 year old. I finish ..."
@@ -456,20 +723,47 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the People to delete. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
 
-# Commend On People
-## Create Commend On People
+# People Comment
+## Create People Comment
 
 > The above command when submit JSON structured like this:
 
 ```json
 {
-    "CommentOnPeople": {
-        "CommentOnPeoplePeopleId": "People:999ea2a64c7a26db46da69dcf1ba92fe",
-        "CommentOnPeopleComment": "He want to apply Web Developer",
-        "PeopleCreatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
-        "PeopleCreatedDateTime":"02-03-2021",
-        "PeopleUpdatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
-        "PeopleUpdatedDateTime":"02-03-2021",
+    "PeopleComment": {
+        "PeopleCommentPeopleId": "People:5a47e4140b04a7be24774629bbcfc855",
+        "PeopleComment": "He want to apply Web Developer",
+        "PeopleCommentAddedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleCommentAddedDateTime":"02-03-2021",
+        "PeopleCommentUpdatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleCommentUpdatedDateTime":"02-03-2021",
+        "CompositeAccessPatterns":""
+        
+    }
+}4
+```
+
+### HTTP Request
+
+`POST https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comments`
+
+Parameter | Description
+--------- | -----------
+People_id | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
+
+## Update People Comment
+
+> The above command when submit JSON structured like this:
+
+```json
+{
+    "PeopleComment": {
+        "PeopleCommentPeopleId": "People:5a47e4140b04a7be24774629bbcfc855",
+        "PeopleComment": "He want to apply Web Developer",
+        "PeopleCommentAddedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleCommentAddedDateTime":"02-03-2021",
+        "PeopleCommentUpdatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
+        "PeopleCommentUpdatedDateTime":"02-03-2021",
         "CompositeAccessPatterns":""
         
     }
@@ -478,122 +772,119 @@ ID | The ID of the People to delete. Ex : People:999ea2a64c7a26db46da69dcf1ba92f
 
 ### HTTP Request
 
-`POST https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comment-on-people`
-
-Parameter | Description
---------- | -----------
-People_id | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
-
-## Update Commend On People
-
-> The above command when submit JSON structured like this:
-
-```json
-{
-    "CommentOnPeople": {
-        "CommentOnPeoplePeopleId": "People:999ea2a64c7a26db46da69dcf1ba92fe",
-        "CommentOnPeopleComment": "He want to apply Web Developer",
-        "PeopleCreatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
-        "PeopleCreatedDateTime":"02-03-2021",
-        "PeopleUpdatedByUserId":"User:b03bb96458a86f867e6324ecd1c8133d",
-        "PeopleUpdatedDateTime":"02-03-2021",
-        "CompositeAccessPatterns":""
-        
-    }
-}
-```
-
-### HTTP Request
-
-`PUT https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comment-on-people/CommentOnPeople:ba452ece82e9d2caf8014816ac580251`
+`PUT https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comments/PeopleComment:ba452ece82e9d2caf8014816ac580251`
 
 ### URL Parameters
 Parameter | Description
 --------- | -----------
 People_id | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
-ID        | The ID of the People. Ex : CommentOnPeople:ba452ece82e9d2caf8014816ac580251
+ID        | The ID of the People Comment. Ex : PeopleComment:ba452ece82e9d2caf8014816ac580251
 
-## Retrieve Commend On People
+## Retrieve People Comment
 > The above command returns JSON structured like this:
 
 ```json
 {
+    "EntityItemId": {
+        "S": "PeopleComment:58a425cc6be0d8cada40a7ac001606e9"
+    },
+    "CompositeAccessPatterns": {
+        "S": "PeopleComment#PeopleCommentPeopleId:People:5a47e4140b04a7be24774629bbcfc855"
+    },
+    "PeopleCommentPeopleId": {
+        "S": "People:5a47e4140b04a7be24774629bbcfc855"
+    },
     "TenantId": {
         "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
     },
-    "EntityItemId": {
-        "S": "CommentOnPeople:ba452ece82e9d2caf8014816ac580251"
-    },
-    "CompositeAccessPatterns": {
-        "S": "CommentOnPeople#CommentOnPeoplePeopleId:People:999ea2a64c7a26db46da69dcf1ba92fe"
-    },
-    "CommentOnPeoplePeopleId": {
-        "S": "People:999ea2a64c7a26db46da69dcf1ba92fe"
-    },
-    "CommentOnPeopleComment": {
+    "PeopleComment": {
         "S": "He want to apply Web Developer"
+    },
+    "PeopleCommentAddedDateTime": {
+        "S": "02-03-2021"
+    },
+    "PeopleCommentUpdatedDateTime": {
+        "S": "02-03-2021"
+    },
+    "PeopleCommentUpdatedByUserId": {
+        "S": "User:b03bb96458a86f867e6324ecd1c8133d"
+    },
+    "PeopleCommentAddedByUserId": {
+        "S": "User:b03bb96458a86f867e6324ecd1c8133d"
     }
 }
 ```
 
-This endpoint retrieve People.
+This endpoint retrieve People Comment.
 
 ### HTTP Request
 
-`GET https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comment-on-people/`
+`GET https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comments/`
 
 ### URL Parameters
 Parameter | Description
 --------- | -----------
 People_id | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
-ID | The ID of the People. Ex : CommentOnPeople:ba452ece82e9d2caf8014816ac580251
-## View Detail Commend On People
+ID | The ID of the People. Ex : PeopleComment:ba452ece82e9d2caf8014816ac580251
+## View Detail People Comment
 > The above command returns JSON structured like this:
 
 ```json
 {
+    "EntityItemId": {
+        "S": "PeopleComment:58a425cc6be0d8cada40a7ac001606e9"
+    },
+    "CompositeAccessPatterns": {
+        "S": "PeopleComment#PeopleCommentPeopleId:People:5a47e4140b04a7be24774629bbcfc855"
+    },
+    "PeopleCommentPeopleId": {
+        "S": "People:5a47e4140b04a7be24774629bbcfc855"
+    },
     "TenantId": {
         "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
     },
-    "EntityItemId": {
-        "S": "CommentOnPeople:ba452ece82e9d2caf8014816ac580251"
-    },
-    "CompositeAccessPatterns": {
-        "S": "CommentOnPeople#CommentOnPeoplePeopleId:People:999ea2a64c7a26db46da69dcf1ba92fe"
-    },
-    "CommentOnPeoplePeopleId": {
-        "S": "People:999ea2a64c7a26db46da69dcf1ba92fe"
-    },
-    "CommentOnPeopleComment": {
+    "PeopleComment": {
         "S": "He want to apply Web Developer"
+    },
+    "PeopleCommentAddedDateTime": {
+        "S": "02-03-2021"
+    },
+    "PeopleCommentUpdatedDateTime": {
+        "S": "02-03-2021"
+    },
+    "PeopleCommentUpdatedByUserId": {
+        "S": "User:b03bb96458a86f867e6324ecd1c8133d"
+    },
+    "PeopleCommentAddedByUserId": {
+        "S": "User:b03bb96458a86f867e6324ecd1c8133d"
     }
 }
 ```
 
-This endpoint view detail People.
+This endpoint view detail People Comment.
 
 ### HTTP Request
 
-`GET https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comment-on-people/CommentOnPeople:ba452ece82e9d2caf8014816ac580251`
+`GET https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comments/PeopleComment:ba452ece82e9d2caf8014816ac580251`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 People_id | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
-ID | The ID of the People. Ex : CommentOnPeople:ba452ece82e9d2caf8014816ac580251
+ID | The ID of the People Comment. Ex : PeopleComment:ba452ece82e9d2caf8014816ac580251
 
-## Delete Commend On People
+## Delete People Comment
 
-This endpoint delete a specific People.
+This endpoint delete a specific People Comment.
 
 ### HTTP Request
 
-`DELETE https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comment-on-people/CommentOnPeople:ba452ece82e9d2caf8014816ac580251`
+`DELETE https://dev.aimlapps.com/people-svc/api/v1/people/People:999ea2a64c7a26db46da69dcf1ba92fe/comments/PeopleComment:ba452ece82e9d2caf8014816ac580251`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 People_id | The ID of the People. Ex : People:999ea2a64c7a26db46da69dcf1ba92fe
-ID | The ID of the People. Ex : CommentOnPeople:ba452ece82e9d2caf8014816ac580251
+ID | The ID of the People Comment. Ex : PeopleComment:ba452ece82e9d2caf8014816ac580251
