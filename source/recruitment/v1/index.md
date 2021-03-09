@@ -4323,7 +4323,7 @@ This endpoint create a specific Selection Process.
 
 `POST https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes`
 
-<===>
+
 # Job Post
 ## Create Job Post
 
@@ -4344,24 +4344,14 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts"
         "Children":{
             "Channel":[
                 {
-                    "ChannelJobChannelId": "Male",
-                    "ChannelJobChannelName": "ChannelJobChannelName",
-                },
-                {
-                    "PeopleSex": "Female",
-                    "PeopleName": "Vina chung",
-                    "PeopleId": "People:4585454897fc431899dcdfc5b37fgdg5" 
+                    "JobChannelId": "Male",
+                    "JobChannelName": "ChannelJobChannelName",
                 }
             ],
              "Vacancy":[
                 {
-                    "VacancyJobVacancyId": "Male",
-                    "VacancyJobVacancyPositionTitle": "ChannelJobChannelName",
-                },
-                {
-                    "PeopleSex": "Female",
-                    "PeopleName": "Vina chung",
-                    "PeopleId": "People:4585454897fc431899dcdfc5b37fgdg5" 
+                    "JobVacancyId": "Male",
+                    "JobVacancyPositionTitle": "ChannelJobChannelName",
                 }
             ]
         }
@@ -4391,20 +4381,20 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts"
         "L": [
             {
                 "M": {
-                    "VacancyJobVacancyId": {
+                    "JobVacancyId": {
                         "S": "JobVacancy:f9cc3d391b10df5a81a8a4ea684bc1c8"
                     },
-                    "VacancyJobVacancyPositionTitle": {
+                    "JobVacancyPositionTitle": {
                         "S": "Accounting Manager"
                     }
                 }
             },
             {
                 "M": {
-                    "VacancyJobVacancyId": {
+                    "JobVacancyId": {
                         "S": "JobVacancy:fadb9df5ac0b20c43f3f9f195d54e66f"
                     },
-                    "VacancyJobVacancyPositionTitle": {
+                    "JobVacancyPositionTitle": {
                         "S": "Mobile Developer"
                     }
                 }
@@ -4418,20 +4408,20 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts"
         "L": [
             {
                 "M": {
-                    "ChannelJobChannelId": {
+                    "JobChannelId": {
                         "S": "JobChannel:2b03fb005f0d75e46924c1448b3e033c"
                     },
-                    "ChannelJobChannelName": {
+                    "JobChannelName": {
                         "S": "HR"
                     }
                 }
             },
             {
                 "M": {
-                    "ChannelJobChannelId": {
+                    "JobChannelId": {
                         "S": "JobChannel:6ee8925d50c058dbf55fb568afc71f54"
                     },
-                    "ChannelJobChannelName": {
+                    "JobChannelName": {
                         "S": "ODI"
                     }
                 }
@@ -4479,20 +4469,20 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts/JobPost:3ea66f3b
         "L": [
             {
                 "M": {
-                    "VacancyJobVacancyId": {
+                    "JobVacancyId": {
                         "S": "JobVacancy:f9cc3d391b10df5a81a8a4ea684bc1c8"
                     },
-                    "VacancyJobVacancyPositionTitle": {
+                    "JobVacancyPositionTitle": {
                         "S": "Accounting Manager"
                     }
                 }
             },
             {
                 "M": {
-                    "VacancyJobVacancyId": {
+                    "JobVacancyId": {
                         "S": "JobVacancy:fadb9df5ac0b20c43f3f9f195d54e66f"
                     },
-                    "VacancyJobVacancyPositionTitle": {
+                    "JobVacancyPositionTitle": {
                         "S": "Mobile Developer"
                     }
                 }
@@ -4506,20 +4496,20 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts/JobPost:3ea66f3b
         "L": [
             {
                 "M": {
-                    "ChannelJobChannelId": {
+                    "JobChannelId": {
                         "S": "JobChannel:2b03fb005f0d75e46924c1448b3e033c"
                     },
-                    "ChannelJobChannelName": {
+                    "JobChannelName": {
                         "S": "HR"
                     }
                 }
             },
             {
                 "M": {
-                    "ChannelJobChannelId": {
+                    "JobChannelId": {
                         "S": "JobChannel:6ee8925d50c058dbf55fb568afc71f54"
                     },
-                    "ChannelJobChannelName": {
+                    "JobChannelName": {
                         "S": "ODI"
                     }
                 }
@@ -4575,22 +4565,22 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts/JobPost:3ea66f3b
         "Children":{
             "Channel":[
                 {
-                    "ChannelJobChannelId": "JobChannel:2b03fb005f0d75e46924c1448b3e033c",
-                    "ChannelJobChannelName": "HR"
+                    "JobChannelId": "JobChannel:2b03fb005f0d75e46924c1448b3e033c",
+                    "JobChannelName": "HR"
                 },
                 {
-                    "ChannelJobChannelId": "JobChannel:6ee8925d50c058dbf55fb568afc71f54",
-                    "ChannelJobChannelName": "ODI"
+                    "JobChannelId": "JobChannel:6ee8925d50c058dbf55fb568afc71f54",
+                    "JobChannelName": "ODI"
                 }
             ],
              "Vacancy":[
                 {
-                    "VacancyJobVacancyId": "JobVacancy:f9cc3d391b10df5a81a8a4ea684bc1c8",
-                    "VacancyJobVacancyPositionTitle": "Accounting Manager"
+                    "JobVacancyId": "JobVacancy:f9cc3d391b10df5a81a8a4ea684bc1c8",
+                    "JobVacancyPositionTitle": "Accounting Manager"
                 },
                 {
-                    "VacancyJobVacancyId": "JobVacancy:fadb9df5ac0b20c43f3f9f195d54e66f",
-                    "VacancyJobVacancyPositionTitle": "Mobile Developer"
+                    "JobVacancyId": "JobVacancy:fadb9df5ac0b20c43f3f9f195d54e66f",
+                    "JobVacancyPositionTitle": "Mobile Developer"
                 }
             ]
         }
@@ -4632,6 +4622,6 @@ This endpoint Delete a specific job post.
 Parameter | Description
 --------- | -----------
 ID | The ID of the job post to delete 
-<===>
+
 
 
