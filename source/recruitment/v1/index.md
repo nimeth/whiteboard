@@ -24,24 +24,9 @@ Welcome to the Recruitment API! You can use our API access Recruitment API endpo
 curl "api_endpoint_here"
   -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
 ```
->
-Recruitment uses API keys to access to the API. You can get token after login.Recruitment expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-
-`Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw`
-
-<aside class="notice">
-You must login to get token again after<code> expired token</code>.
-</aside>
 
 # Job Order
 ## Create Job Order and Job Vacancies
-
-```bash
-curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-orders"
-  -H "Authorization: Bearer eyJraWQiOiJEOFQ0V0IxWk9TTXVWUTd5d05KZWh6dDFhcGZFYkRwcVpwMEg5RWVicEd3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxNWNkOGNhZS0yY2M4LTQyNDMtYTdhMC03NjBiYzcwZmVhNmYiLCJjdXN0b206dGllciI6IlByb2Zlc3Npb25hbCBUaWVyIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX3dwMndwalZnaiIsImNvZ25pdG86dXNlcm5hbWUiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIiwiY3VzdG9tOnRlbmFudF9pZCI6IlRFTkFOVDllZDE3ZjA0MDQ1NDRkZDQ5NzdmMGE0MDRjNDIxNGEyIiwiZ2l2ZW5fbmFtZSI6IlNhbWFpIiwiYXVkIjoiNjgzOHBoNWVlY28wNmw2bzN0OXFtMGMxZDYiLCJldmVudF9pZCI6ImJlNGIxMTNmLTYzMWQtNDNlMi1hNzcxLTgzNDAwYzdlZjc0YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjExNjI5Mjk3LCJleHAiOjE2MTE2MzI4OTcsImN1c3RvbTpyb2xlIjoiVGVuYW50VXNlciIsImlhdCI6MTYxMTYyOTI5NywiZmFtaWx5X25hbWUiOiJEdWNoIiwiZW1haWwiOiJzYW1haS5kdWNoQGFpbWxlcmEuY29tIn0.fz4bVGKbYsPkC3SI5MwD6Fro7KIFk9b3Q5UkebW9461VGV-dWGu7eQ45hFYBlMWry2Tn_43yuFkP-Ppd74VQ0Ua-czSgAWwln9OkXkfvQ8Ifrczkw0y7OSRzUaSNvh80y1K_YzDlRcuIHju70YqDSXylK4KyOv6P2JZ7ydwwvwkvnTNTctzqb_IL7ZWBinZaK_LXe79-smPi4EUwXANr7jXZg1I8Dd4tzsRiA5rOOd1IKZfRYYDTAeCHLwKwnvSU-ER-RkwW53pqDnwk9tPmd4gWDRao65Oj-ncRQRYtptPqFhQX0i2xF42etb8BUgTZxazTApOs40I5rxvapwp_Fw"
-```
-
 > The above command when submit JSON structured like this:
 
 ```json
@@ -4338,7 +4323,7 @@ This endpoint create a specific Selection Process.
 
 `POST https://dev.aimlapps.com/recruitment-svc/api/v1/selection-processes`
 
-<===>
+
 # Job Post
 ## Create Job Post
 
@@ -4359,24 +4344,14 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts"
         "Children":{
             "Channel":[
                 {
-                    "ChannelJobChannelId": "Male",
-                    "ChannelJobChannelName": "ChannelJobChannelName",
-                },
-                {
-                    "PeopleSex": "Female",
-                    "PeopleName": "Vina chung",
-                    "PeopleId": "People:4585454897fc431899dcdfc5b37fgdg5" 
+                    "JobChannelId": "Male",
+                    "JobChannelName": "ChannelJobChannelName",
                 }
             ],
              "Vacancy":[
                 {
-                    "VacancyJobVacancyId": "Male",
-                    "VacancyJobVacancyPositionTitle": "ChannelJobChannelName",
-                },
-                {
-                    "PeopleSex": "Female",
-                    "PeopleName": "Vina chung",
-                    "PeopleId": "People:4585454897fc431899dcdfc5b37fgdg5" 
+                    "JobVacancyId": "Male",
+                    "JobVacancyPositionTitle": "ChannelJobChannelName",
                 }
             ]
         }
@@ -4406,20 +4381,20 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts"
         "L": [
             {
                 "M": {
-                    "VacancyJobVacancyId": {
+                    "JobVacancyId": {
                         "S": "JobVacancy:f9cc3d391b10df5a81a8a4ea684bc1c8"
                     },
-                    "VacancyJobVacancyPositionTitle": {
+                    "JobVacancyPositionTitle": {
                         "S": "Accounting Manager"
                     }
                 }
             },
             {
                 "M": {
-                    "VacancyJobVacancyId": {
+                    "JobVacancyId": {
                         "S": "JobVacancy:fadb9df5ac0b20c43f3f9f195d54e66f"
                     },
-                    "VacancyJobVacancyPositionTitle": {
+                    "JobVacancyPositionTitle": {
                         "S": "Mobile Developer"
                     }
                 }
@@ -4433,20 +4408,20 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts"
         "L": [
             {
                 "M": {
-                    "ChannelJobChannelId": {
+                    "JobChannelId": {
                         "S": "JobChannel:2b03fb005f0d75e46924c1448b3e033c"
                     },
-                    "ChannelJobChannelName": {
+                    "JobChannelName": {
                         "S": "HR"
                     }
                 }
             },
             {
                 "M": {
-                    "ChannelJobChannelId": {
+                    "JobChannelId": {
                         "S": "JobChannel:6ee8925d50c058dbf55fb568afc71f54"
                     },
-                    "ChannelJobChannelName": {
+                    "JobChannelName": {
                         "S": "ODI"
                     }
                 }
@@ -4494,20 +4469,20 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts/JobPost:3ea66f3b
         "L": [
             {
                 "M": {
-                    "VacancyJobVacancyId": {
+                    "JobVacancyId": {
                         "S": "JobVacancy:f9cc3d391b10df5a81a8a4ea684bc1c8"
                     },
-                    "VacancyJobVacancyPositionTitle": {
+                    "JobVacancyPositionTitle": {
                         "S": "Accounting Manager"
                     }
                 }
             },
             {
                 "M": {
-                    "VacancyJobVacancyId": {
+                    "JobVacancyId": {
                         "S": "JobVacancy:fadb9df5ac0b20c43f3f9f195d54e66f"
                     },
-                    "VacancyJobVacancyPositionTitle": {
+                    "JobVacancyPositionTitle": {
                         "S": "Mobile Developer"
                     }
                 }
@@ -4521,20 +4496,20 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts/JobPost:3ea66f3b
         "L": [
             {
                 "M": {
-                    "ChannelJobChannelId": {
+                    "JobChannelId": {
                         "S": "JobChannel:2b03fb005f0d75e46924c1448b3e033c"
                     },
-                    "ChannelJobChannelName": {
+                    "JobChannelName": {
                         "S": "HR"
                     }
                 }
             },
             {
                 "M": {
-                    "ChannelJobChannelId": {
+                    "JobChannelId": {
                         "S": "JobChannel:6ee8925d50c058dbf55fb568afc71f54"
                     },
-                    "ChannelJobChannelName": {
+                    "JobChannelName": {
                         "S": "ODI"
                     }
                 }
@@ -4590,22 +4565,22 @@ curl "https://dev.aimlapps.com/recruitment-svc/api/v1/job-posts/JobPost:3ea66f3b
         "Children":{
             "Channel":[
                 {
-                    "ChannelJobChannelId": "JobChannel:2b03fb005f0d75e46924c1448b3e033c",
-                    "ChannelJobChannelName": "HR"
+                    "JobChannelId": "JobChannel:2b03fb005f0d75e46924c1448b3e033c",
+                    "JobChannelName": "HR"
                 },
                 {
-                    "ChannelJobChannelId": "JobChannel:6ee8925d50c058dbf55fb568afc71f54",
-                    "ChannelJobChannelName": "ODI"
+                    "JobChannelId": "JobChannel:6ee8925d50c058dbf55fb568afc71f54",
+                    "JobChannelName": "ODI"
                 }
             ],
              "Vacancy":[
                 {
-                    "VacancyJobVacancyId": "JobVacancy:f9cc3d391b10df5a81a8a4ea684bc1c8",
-                    "VacancyJobVacancyPositionTitle": "Accounting Manager"
+                    "JobVacancyId": "JobVacancy:f9cc3d391b10df5a81a8a4ea684bc1c8",
+                    "JobVacancyPositionTitle": "Accounting Manager"
                 },
                 {
-                    "VacancyJobVacancyId": "JobVacancy:fadb9df5ac0b20c43f3f9f195d54e66f",
-                    "VacancyJobVacancyPositionTitle": "Mobile Developer"
+                    "JobVacancyId": "JobVacancy:fadb9df5ac0b20c43f3f9f195d54e66f",
+                    "JobVacancyPositionTitle": "Mobile Developer"
                 }
             ]
         }
@@ -4647,6 +4622,6 @@ This endpoint Delete a specific job post.
 Parameter | Description
 --------- | -----------
 ID | The ID of the job post to delete 
-<===>
+
 
 
