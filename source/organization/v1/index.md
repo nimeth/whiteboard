@@ -23,53 +23,42 @@ Content-Type    | application/json
 [
     {
         "CountryIso_3166_2": {
-            "S": "SB"
+            "S": "KH"
         },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
         "EntityItemId": {
-            "S": "Country:0003a74397fab2aa0d15c2d383c36eef"
+            "S": "Country:e05d7f46e40731dd0ae0760543eb5596"
         },
         "CountryIso_3166_3": {
-            "S": "SLB"
+            "S": "KHM"
+        },
+        "CountryNationality": {
+            "S": "Cambodian"
         },
         "CountryName": {
-            "S": "Solomon Islands"
+            "S": "Cambodia"
         }
     },
     {
         "CountryIso_3166_2": {
-            "S": "CN"
+            "S": "RO"
         },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
         "EntityItemId": {
-            "S": "Country:00c763e8e6895f6224cc56eef69d37c2"
+            "S": "Country:e074f500f31f8860fa675223901931d3"
         },
         "CountryIso_3166_3": {
-            "S": "CHN"
+            "S": "ROU"
+        },
+        "CountryNationality": {
+            "S": "Romanian"
         },
         "CountryName": {
-            "S": "China"
-        }
-    },
-    {
-        "CountryIso_3166_2": {
-            "S": "NR"
-        },
-        "TenantId": {
-            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-        },
-        "EntityItemId": {
-            "S": "Country:00e8c77c4aa9534224b424fe0ad6623f"
-        },
-        "CountryIso_3166_3": {
-            "S": "NRU"
-        },
-        "CountryName": {
-            "S": "Nauru"
+            "S": "Romania"
         }
     }
 ]
@@ -180,7 +169,7 @@ CountryName                 | Is the name of the country.
 
 ```json
 [
-{
+    {
         "LocationLevel1Code": {
             "S": "13"
         },
@@ -716,6 +705,7 @@ LocationLevel3Name          | Is the name of the communes.
 ]
 ```
 
+
 # Organization
 ## Get All Organization
 
@@ -936,7 +926,7 @@ OrganizationShortName       | Is the short name of the organization. Ex: AIML
 
 ## Create a Organization
 ### HTTP Request
-`POST organization-svc/api/organization`
+`POST organization-svc/api/organizations`
 
 ### Body Request
 
@@ -987,37 +977,105 @@ OrganizationShortName       | Is the short name of the organization. Ex: AIML
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-    [
-        {
-            "ConsumedCapacity": {
-                "TableName": "DsaDev",
-                "CapacityUnits": 1
-            },
-            "@metadata": {
-                "statusCode": 200,
-                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
-                "headers": {
-                    "server": "Server",
-                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
-                    "content-type": "application/x-amz-json-1.0",
-                    "content-length": "63",
-                    "connection": "keep-alive",
-                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
-                    "x-amz-crc32": "3143598553"
-                },
-                "transferStats": {
-                    "http": [
-                        []
-                    ]
+{
+    "OrganizationVatNumber": {
+        "S": "Activate"
+    },
+    "EntityItemId": {
+        "S": "Organization:efb8fc57567919cce70374bf1a1f3f8d"
+    },
+    "OrganizationContactOther": {
+        "L": [
+            {
+                "M": {
+                    "PhoneNumber": {
+                        "S": "023 995 500"
+                    },
+                    "Website": {
+                        "S": "https://www.passerellesnumeriques.org/en/"
+                    },
+                    "SocialProfile": {
+                        "S": "https://www.facebook.com/PnCambodiaAlumni/"
+                    },
+                    "Email": {
+                        "S": "info.cambodia@passerellesnumeriques.org"
+                    }
                 }
             }
-        }
-    ]
+        ]
+    },
+    "CompositeAccessPatterns": {
+        "S": "Organization#OrganizationNature:Nonprofit#OrganizationName:Passerelles Numeriques Cambodia#OrganizationShortName:PNC"
+    },
+    "OrganizationIndustry": {
+        "L": [
+            {
+                "M": {
+                    "IndustryName": {
+                        "S": "Organization"
+                    },
+                    "SubIndustry": {
+                        "L": [
+                            {
+                                "M": {
+                                    "Name": {
+                                        "S": "School"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "OrganizationName": {
+        "S": "Passerelles Numeriques Cambodia"
+    },
+    "OrganizationAddress": {
+        "L": [
+            {
+                "M": {
+                    "CountryName": {
+                        "S": "Cambodia"
+                    },
+                    "LocationLevel4Name": {
+                        "S": "Phum Tropeang Chhuk"
+                    },
+                    "StreetAddessDetail": {
+                        "S": "371"
+                    },
+                    "LocationLevel1Name": {
+                        "S": "Phnom Penh"
+                    },
+                    "LocationLevel2Name": {
+                        "S": "Sen Sok"
+                    },
+                    "LocationLevel3Name": {
+                        "S": "Tek Thla"
+                    },
+                    "PostalCode": {
+                        "S": "120209"
+                    }
+                }
+            }
+        ]
+    },
+    "OrganizationNature": {
+        "S": "Nonprofit"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "OrganizationShortName": {
+        "S": "PNC"
+    }
+}
 ```
 
 ## Update a Organization
 ### HTTP Request
-`PUT organization-svc/api/organization/{item_id}`
+`PUT organization-svc/api/organizations/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1171,7 +1229,7 @@ item_id                     | Is the entity item id of organization. EX: Organiz
 
 ## Delete a Organization
 ### HTTP Request
-`DELETE organization-svc/api/organization/{item_id}`
+`DELETE organization-svc/api/organizations/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1210,6 +1268,108 @@ item_id                     | Is the entity item id of organization. EX: Organiz
     ]
 ```
 
+# Employee
+## Get All Employees
+
+### HTTP Request
+`GET organization-svc/api/employees`
+
+### HTTP Response
+
+```json
+[
+    {
+        "EmployeePeopleId": {
+            "S": "People:a45dad3fa9694dcdb44abe19ab72e4b6"
+        },
+        "EntityItemId": {
+            "S": "Employee:dfd07b98dfb0ad1cc05533876602ef09"
+        },
+        "EmployeePeopleGender": {
+            "S": "M"
+        },
+        "CompositeAccessPatterns": {
+            "S": "Employee#EmployeePeopleFirstName:Dcc#EmployeePeopleLastName:Dcc#EmployeeEmail:dcc@aimlera.com"
+        },
+        "EmployeeOuId": {
+            "S": "OrganizationalUnit:693a5f054f956b96749c9500203bec62"
+        },
+        "EmployeeEmail": {
+            "S": "dcc@aimlera.com"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "EmployeePeopleFirstName": {
+            "S": "Dcc"
+        },
+        "EmployeePeopleLastName": {
+            "S": "Dcc"
+        }
+    }
+]
+```
+
+## Create a Employee
+
+### HTTP Request
+`GET organization-svc/api/employees`
+
+### Body Request
+
+```json
+{
+    "Employee":{
+        "EmployeePeopleId": "People:a45dad3fa9694dcdb44abe19ab72e4b6",
+        "EmployeePeopleFirstName": "Dcc",
+        "EmployeePeopleLastName": "Dcc",
+        "EmployeePeopleGender": "M",
+        "EmployeeEmail": "dcc@aimlera.com",
+        "EmployeeOuId": "OrganizationalUnit:693a5f054f956b96749c9500203bec62",
+        "Children": {
+            "EmployeeRole": [
+                "Role:8f4086c5a8c48e44c9f2a7e03a44b7d9",
+                "Role:5387cd2eff7523044338979d36b4b38c"
+            ]
+        }
+    }
+}
+```
+
+### HTTP Response
+
+```json
+{
+    "ConsumedCapacity": {
+        "TableName": "OrganizationDev",
+        "CapacityUnits": 1
+    },
+    "@metadata": {
+        "statusCode": 200,
+        "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+        "headers": {
+            "server": "Server",
+            "date": "Tue, 09 Mar 2021 01:39:20 GMT",
+            "content-type": "application/x-amz-json-1.0",
+            "content-length": "72",
+            "connection": "keep-alive",
+            "x-amzn-requestid": "SKQRBRF295SR928JAI5RJSLQ5NVV4KQNSO5AEMVJF66Q9ASUAAJG",
+            "x-amz-crc32": "1861103977"
+        },
+        "transferStats": {
+            "http": [
+                []
+            ]
+        }
+    }
+}
+```
+
+
+
+
+
+
 # OrganizationalUnit
 ## Get All OrganizationalUnits
 
@@ -1222,57 +1382,90 @@ item_id                     | Is the entity item id of organization. EX: Organiz
 ```json
 [
     {
-        "OrganizationalUnitPrimaryInCharge": {
-            "L": [
-                {
-                    "M": {
-                        "EmployeeId": {
-                            "S": "Employee:748f596f-3144-4704-b816-3d0cbd5f5f64"
-                        },
-                        "EmployeeName": {
-                            "S": "Dyna"
-                        }
-                    }
-                }
-            ]
-        },
         "EntityItemId": {
-            "S": "OrganizationalUnit:cf89605f7a6536680b5ff7d952394607"
+            "S": "OrganizationalUnit:693a5f054f956b96749c9500203bec62"
         },
         "CompositeAccessPatterns": {
-            "S": "OrganizationalUnit#OrganizationalUnitLevel:1#OrganizationalUnitName:Sopheap#OrganizationalUnitShortName:SP#OrganizationalUnitParentId:61751b1b-0d66-4b80-82dc-4c3d12969224#OrganizationalUnitParentName:ODI"
+            "S": "OrganizationalUnit#OrganizationalUnitLevel:2#OrganizationalUnitName:Department Head#OrganizationalUnitShortName:DH#OrganizationalUnitParentId:OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05#OrganizationalUnitParentName:MD#OrganizationalUnitManagingRoleId:Role:5387cd2eff7523044338979d36b4b38c"
         },
         "OrganizationalUnitLevel": {
-            "N": "1"
+            "N": "2"
         },
         "OrganizationalUnitParentName": {
-            "S": "ODI"
+            "S": "MD"
         },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
         "OrganizationalUnitShortName": {
-            "S": "SP"
+            "S": "DH"
         },
-        "OrganizationalUnitSecondaryInCharge": {
-            "L": [
-                {
-                    "M": {
-                        "EmployeeId": {
-                            "S": "Employee:b4b09720-bf38-4f56-a6b1-df9876f5f000"
-                        },
-                        "EmployeeName": {
-                            "S": "Sina"
-                        }
-                    }
-                }
-            ]
+        "OrganizationalUnitManagingRoleId": {
+            "S": "Role:5387cd2eff7523044338979d36b4b38c"
         },
         "OrganizationalUnitName": {
-            "S": "Sopheap"
+            "S": "Department Head"
         },
         "OrganizationalUnitParentId": {
-            "S": "61751b1b-0d66-4b80-82dc-4c3d12969224"
+            "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+        }
+    },
+    {
+        "EntityItemId": {
+            "S": "OrganizationalUnit:6a6fe2d2bd9fb4dbae468e35704b977a"
+        },
+        "CompositeAccessPatterns": {
+            "S": "OrganizationalUnit#OrganizationalUnitLevel:3#OrganizationalUnitName:Manager#OrganizationalUnitShortName:M#OrganizationalUnitParentId:OrganizationalUnit:693a5f054f956b96749c9500203bec62#OrganizationalUnitParentName:DH#OrganizationalUnitManagingRoleId:Role:5387cd2eff7523044338979d36b4b38c"
+        },
+        "OrganizationalUnitLevel": {
+            "N": "3"
+        },
+        "OrganizationalUnitParentName": {
+            "S": "DH"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "OrganizationalUnitShortName": {
+            "S": "M"
+        },
+        "OrganizationalUnitManagingRoleId": {
+            "S": "Role:5387cd2eff7523044338979d36b4b38c"
+        },
+        "OrganizationalUnitName": {
+            "S": "Manager"
+        },
+        "OrganizationalUnitParentId": {
+            "S": "OrganizationalUnit:693a5f054f956b96749c9500203bec62"
+        }
+    },
+    {
+        "EntityItemId": {
+            "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+        },
+        "CompositeAccessPatterns": {
+            "S": "OrganizationalUnit#OrganizationalUnitLevel:1#OrganizationalUnitName:Managing Director#OrganizationalUnitShortName:MD#OrganizationalUnitParentId:null#OrganizationalUnitParentName:null#OrganizationalUnitManagingRoleId:Role:4d544df22238f1beccca28534e18b0ba"
+        },
+        "OrganizationalUnitLevel": {
+            "N": "1"
+        },
+        "OrganizationalUnitParentName": {
+            "S": "null"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "OrganizationalUnitShortName": {
+            "S": "MD"
+        },
+        "OrganizationalUnitManagingRoleId": {
+            "S": "Role:4d544df22238f1beccca28534e18b0ba"
+        },
+        "OrganizationalUnitName": {
+            "S": "Managing Director"
+        },
+        "OrganizationalUnitParentId": {
+            "S": "null"
         }
     }
 ]
@@ -1552,6 +1745,7 @@ item_id                     | Is the entity item id of organization. EX: Organiz
     ]
 ```
 
+
 # JobProfile
 ## Get All JobProfiles
 
@@ -1654,7 +1848,7 @@ JobProfileJobGrade              | Is the job grade of the jobProfile. Ex: 1, 2, 
 
 ## Create a JobProfile
 ### HTTP Request
-`POST organization-svc/api/jobProfile`
+`POST organization-svc/api/jobProfiles`
 
 ### Body Request
 
@@ -1677,32 +1871,41 @@ JobProfileJobGrade              | Is the job grade of the jobProfile. Ex: 1, 2, 
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-    [
-        {
-            "ConsumedCapacity": {
-                "TableName": "DsaDev",
-                "CapacityUnits": 1
-            },
-            "@metadata": {
-                "statusCode": 200,
-                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
-                "headers": {
-                    "server": "Server",
-                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
-                    "content-type": "application/x-amz-json-1.0",
-                    "content-length": "63",
-                    "connection": "keep-alive",
-                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
-                    "x-amz-crc32": "3143598553"
-                },
-                "transferStats": {
-                    "http": [
-                        []
-                    ]
-                }
-            }
-        }
-    ]
+{
+    "JobProfileSalaryMax": {
+        "S": "2000"
+    },
+    "EntityItemId": {
+        "S": "JobProfile:d0b52f0e30d06a601eb4d23777daad8d"
+    },
+    "JobProfilePositionId": {
+        "S": "001"
+    },
+    "JobProfileDetail": {
+        "N": "112"
+    },
+    "CompositeAccessPatterns": {
+        "S": "JobProfile#JobProfilePositionId:001#JobProfilePositionTitle:Java Team Lead#JobProfileJobGrade:1"
+    },
+    "JobProfileSalaryMin": {
+        "S": "1500"
+    },
+    "JobProfilePositionTitle": {
+        "S": "Java Team Lead"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "JobProfileOverview": {
+        "N": "111"
+    },
+    "JobProfileJobGrade": {
+        "N": "1"
+    },
+    "JobProfileWorkingHour": {
+        "N": "8"
+    }
+}
 ```
 
 ## Update a jobProfile
@@ -1774,7 +1977,7 @@ item_id                     | Is the entity item id of jobProfile. EX: JobProfil
 
 ## Delete a jobProfile
 ### HTTP Request
-`DELETE organization-svc/api/jobProfile/{item_id}`
+`DELETE organization-svc/api/jobProfiles/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1817,7 +2020,7 @@ item_id                     | Is the entity item id of jobProfile. EX: JobProfil
 ## Get All Positions
 
 ### HTTP Request
-`GET organization-svc/api/postions`
+`GET organization-svc/api/positions`
 
 ### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
@@ -1825,44 +2028,78 @@ item_id                     | Is the entity item id of jobProfile. EX: JobProfil
 ```json
 [
     {
-        "PostionTitleEn": {
-            "S": "Programmer"
-        },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
+        "PositionTitleKh": {
+            "S": "ហិរញ្ញវត្ថុ"
+        },
         "EntityItemId": {
-            "S": "Postion:18053c214000057310161eb13f4e67d6"
+            "S": "Position:80e2f9adf264a144fd43218352bc5153"
         },
         "CompositeAccessPatterns": {
-            "S": "Postion#PostionTitleEn:Programmer#PostionTitleKh:អ្នកសរសេរកម្មវិធី"
+            "S": "Position#PositionTitleEn:Finance#PositionTitleKh:ហិរញ្ញវត្ថុ"
         },
-        "PostionTitleKh": {
-            "S": "អ្នកសរសេរកម្មវិធី"
+        "PositionTitleEn": {
+            "S": "Finance"
         }
     },
     {
-        "PostionTitleEn": {
-            "S": "Marketing"
-        },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
+        "PositionTitleKh": {
+            "S": "ធនធានមនុស្ស"
+        },
         "EntityItemId": {
-            "S": "Postion:97ae6cded39dc1c42890b9075bb7e183"
+            "S": "Position:9321b71bcbd8e70a3f0d2a73338b4015"
         },
         "CompositeAccessPatterns": {
-            "S": "Postion#PostionTitleEn:Marketing#PostionTitleKh:ផ្នែកទីផ្សារ"
+            "S": "Position#PositionTitleEn:HR#PositionTitleKh:ធនធានមនុស្ស"
         },
-        "PostionTitleKh": {
-            "S": "ផ្នែកទីផ្សារ"
+        "PositionTitleEn": {
+            "S": "HR"
         }
     },
+    {
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "PositionTitleKh": {
+            "S": "អ្នកគ្រប់គ្រងធនធានមនុស្ស"
+        },
+        "EntityItemId": {
+            "S": "Position:f2581a8d878e61dcb27bf2ef7b505037"
+        },
+        "CompositeAccessPatterns": {
+            "S": "Position#PositionTitleEn:HR Manager#PositionTitleKh:អ្នកគ្រប់គ្រងធនធានមនុស្ស"
+        },
+        "PositionTitleEn": {
+            "S": "HR Manager"
+        }
+    },
+    {
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "PositionTitleKh": {
+            "S": "អ្នកសរសេរកម្មវិធី"
+        },
+        "EntityItemId": {
+            "S": "Position:f521a525188a3f4aa04015625b6ce15a"
+        },
+        "CompositeAccessPatterns": {
+            "S": "Position#PositionTitleEn:Programmer#PositionTitleKh:អ្នកសរសេរកម្មវិធី"
+        },
+        "PositionTitleEn": {
+            "S": "Programmer"
+        }
+    }
 ]
 ```
 
 ### HTTP Request Filter 
-`GET organization-svc/api/positions?contains=PostionTitleEn:Programmer`
+`GET organization-svc/api/positions?contains=PositionTitleEn:Programmer`
 
 ### Query Paramaeters
 Parameter                       | Description
@@ -1874,36 +2111,38 @@ PostionTitleKh                  | Is the title Khmer of the position.
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-{
-    "PostionTitleEn": {
-        "S": "Programmer"
-    },
-    "TenantId": {
-        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-    },
-    "EntityItemId": {
-        "S": "Postion:18053c214000057310161eb13f4e67d6"
-    },
-    "CompositeAccessPatterns": {
-        "S": "Postion#PostionTitleEn:Programmer#PostionTitleKh:អ្នកសរសេរកម្មវិធី"
-    },
-    "PostionTitleKh": {
-        "S": "អ្នកសរសេរកម្មវិធី"
+[
+    {
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "PositionTitleKh": {
+            "S": "អ្នកសរសេរកម្មវិធី"
+        },
+        "EntityItemId": {
+            "S": "Position:f521a525188a3f4aa04015625b6ce15a"
+        },
+        "CompositeAccessPatterns": {
+            "S": "Position#PositionTitleEn:Programmer#PositionTitleKh:អ្នកសរសេរកម្មវិធី"
+        },
+        "PositionTitleEn": {
+            "S": "Programmer"
+        }
     }
-}
+]
 ```
 
 ## Create a Position
 ### HTTP Request
-`POST organization-svc/api/position`
+`POST organization-svc/api/positions`
 
 ### Body Request
 
 ```json
 {
-    "Postion": {
-        "PostionTitleEn": "Programmer",
-        "PostionTitleKh": "អ្នកសរសេរកម្មវិធី"
+    "Position": {
+        "PositionTitleEn": "Programmer",
+        "PositionTitleKh": "អ្នកសរសេរកម្មវិធី"
     }
 }
 ```
@@ -1912,37 +2151,28 @@ PostionTitleKh                  | Is the title Khmer of the position.
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-    [
-        {
-            "ConsumedCapacity": {
-                "TableName": "DsaDev",
-                "CapacityUnits": 1
-            },
-            "@metadata": {
-                "statusCode": 200,
-                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
-                "headers": {
-                    "server": "Server",
-                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
-                    "content-type": "application/x-amz-json-1.0",
-                    "content-length": "63",
-                    "connection": "keep-alive",
-                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
-                    "x-amz-crc32": "3143598553"
-                },
-                "transferStats": {
-                    "http": [
-                        []
-                    ]
-                }
-            }
-        }
-    ]
+{
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "PositionTitleKh": {
+        "S": "អ្នកសរសេរកម្មវិធី"
+    },
+    "EntityItemId": {
+        "S": "Position:5d697e13ca61184f27f3050a0f4fbd75"
+    },
+    "CompositeAccessPatterns": {
+        "S": "Position#PositionTitleEn:Programmer#PositionTitleKh:អ្នកសរសេរកម្មវិធី"
+    },
+    "PositionTitleEn": {
+        "S": "Programmer"
+    }
+}
 ```
 
 ## Update a Position
 ### HTTP Request
-`PUT organization-svc/api/position/{item_id}`
+`PUT organization-svc/api/positions/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1953,9 +2183,9 @@ item_id                     | Is the entity item id of postion. EX: Postion:1805
 
 ```json
 {
-    "Postion": {
-        "PostionTitleEn": "Programmer",
-        "PostionTitleKh": "អ្នកសរសេរកម្មវិធី"
+    "Position": {
+        "PositionTitleEn": "Programmer",
+        "PositionTitleKh": "អ្នកសរសេរកម្មវិធី"
     }
 }
 ```
@@ -1965,27 +2195,27 @@ item_id                     | Is the entity item id of postion. EX: Postion:1805
 
 ```json
 {
-    "PostionTitleEn": {
-        "S": "Programmer"
-    },
     "TenantId": {
         "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
     },
+    "PositionTitleKh": {
+        "S": "អ្នកសរសេរកម្មវិធី"
+    },
     "EntityItemId": {
-        "S": "Postion:18053c214000057310161eb13f4e67d6"
+        "S": "Position:5d697e13ca61184f27f3050a0f4fbd75"
     },
     "CompositeAccessPatterns": {
-        "S": "Postion#PostionTitleEn:Programmer#PostionTitleKh:អ្នកសរសេរកម្មវិធី"
+        "S": "Position#PositionTitleEn:Programmer#PositionTitleKh:អ្នកសរសេរកម្មវិធី"
     },
-    "PostionTitleKh": {
-        "S": "អ្នកសរសេរកម្មវិធី"
+    "PositionTitleEn": {
+        "S": "Programmer"
     }
 }
 ```
 
 ## Delete a Position
 ### HTTP Request
-`DELETE organization-svc/api/position/{item_id}`
+`DELETE organization-svc/api/positions/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -2071,7 +2301,7 @@ item_id                     | Is the entity item id of postion. EX: Postion:1805
 
 ## Create a Benifit
 ### HTTP Request
-`POST organization-svc/api/benefit`
+`POST organization-svc/api/benefits`
 
 ### Body Request
 
@@ -2126,7 +2356,7 @@ item_id                     | Is the entity item id of postion. EX: Postion:1805
 
 ## Update a Benefit
 ### HTTP Request
-`PUT organization-svc/api/benefit/{item_id}`
+`PUT organization-svc/api/benefits/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
