@@ -720,13 +720,96 @@ LocationLevel3Name          | Is the name of the communes.
 ## Get All Organization
 
 ### HTTP Request
-`GET organization-svc/api/organizations`
+`GET organization-svc/api/v1/organizations`
 
 ### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
 [
+    {
+        "OrganizationVatNumber": {
+            "S": "Activate"
+        },
+        "EntityItemId": {
+            "S": "Organization:726e989de1b117afbacc0d3f4d08a10f"
+        },
+        "OrganizationContactOther": {
+            "L": [
+                {
+                    "M": {
+                        "PhoneNumber": {
+                            "S": "012 345 678"
+                        },
+                        "Website": {
+                            "S": "https://www.aimltechnologies.com/"
+                        },
+                        "SocialProfile": {
+                            "S": "https://www.facebook.com/AIMLTechnology/"
+                        },
+                        "Email": {
+                            "S": "contact@aimltechnologies.com"
+                        }
+                    }
+                }
+            ]
+        },
+        "CompositeAccessPatterns": {
+            "S": "Organization#OrganizationNature:Privately Held#OrganizationName:Artifcail Intelligence Machine Learning#OrganizationShortName:AIML"
+        },
+        "OrganizationIndustry": {
+            "L": [
+                {
+                    "M": {
+                        "IndustryName": {
+                            "S": "Organization"
+                        }
+                    }
+                }
+            ]
+        },
+        "OrganizationName": {
+            "S": "Artifcail Intelligence Machine Learning"
+        },
+        "OrganizationAddress": {
+            "L": [
+                {
+                    "M": {
+                        "CountryName": {
+                            "S": "Cambodia"
+                        },
+                        "LocationLevel4Name": {
+                            "S": "Phum Tropeang Chhuk"
+                        },
+                        "StreetAddessDetail": {
+                            "S": "169"
+                        },
+                        "LocationLevel1Name": {
+                            "S": "Phnom Penh"
+                        },
+                        "LocationLevel2Name": {
+                            "S": "Sen Sok"
+                        },
+                        "LocationLevel3Name": {
+                            "S": "Tek Thla"
+                        },
+                        "PostalCode": {
+                            "S": "120209"
+                        }
+                    }
+                }
+            ]
+        },
+        "OrganizationNature": {
+            "S": "Privately Held"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "OrganizationShortName": {
+            "S": "AIML"
+        }
+    },
     {
         "OrganizationVatNumber": {
             "S": "Activate"
@@ -838,12 +921,163 @@ OrganizationShortName       | Is the short name of the organization. Ex: AIML
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
+[
+    {
+        "OrganizationVatNumber": {
+            "S": "Activate"
+        },
+        "EntityItemId": {
+            "S": "Organization:efb8fc57567919cce70374bf1a1f3f8d"
+        },
+        "OrganizationContactOther": {
+            "L": [
+                {
+                    "M": {
+                        "PhoneNumber": {
+                            "S": "023 995 500"
+                        },
+                        "Website": {
+                            "S": "https://www.passerellesnumeriques.org/en/"
+                        },
+                        "SocialProfile": {
+                            "S": "https://www.facebook.com/PnCambodiaAlumni/"
+                        },
+                        "Email": {
+                            "S": "info.cambodia@passerellesnumeriques.org"
+                        }
+                    }
+                }
+            ]
+        },
+        "CompositeAccessPatterns": {
+            "S": "Organization#OrganizationNature:Nonprofit#OrganizationName:Passerelles Numeriques Cambodia#OrganizationShortName:PNC"
+        },
+        "OrganizationIndustry": {
+            "L": [
+                {
+                    "M": {
+                        "IndustryName": {
+                            "S": "Organization"
+                        },
+                        "SubIndustry": {
+                            "L": [
+                                {
+                                    "M": {
+                                        "Name": {
+                                            "S": "School"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "OrganizationName": {
+            "S": "Passerelles Numeriques Cambodia"
+        },
+        "OrganizationAddress": {
+            "L": [
+                {
+                    "M": {
+                        "CountryName": {
+                            "S": "Cambodia"
+                        },
+                        "LocationLevel4Name": {
+                            "S": "Phum Tropeang Chhuk"
+                        },
+                        "StreetAddessDetail": {
+                            "S": "371"
+                        },
+                        "LocationLevel1Name": {
+                            "S": "Phnom Penh"
+                        },
+                        "LocationLevel2Name": {
+                            "S": "Sen Sok"
+                        },
+                        "LocationLevel3Name": {
+                            "S": "Tek Thla"
+                        },
+                        "PostalCode": {
+                            "S": "120209"
+                        }
+                    }
+                }
+            ]
+        },
+        "OrganizationNature": {
+            "S": "Nonprofit"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "OrganizationShortName": {
+            "S": "PNC"
+        }
+    }
+]
+```
+
+## Create a Organization
+### HTTP Request
+`POST organization-svc/api/v1/organizations`
+
+### Body Request
+
+```json
 {
+    "Organization": {
+        "OrganizationName": "Passerelles Numeriques Cambodia",
+        "OrganizationShortName": "PNC",
+        "OrganizationNature": "Nonprofit",
+        "OrganizationVatNumber": "Activate",
+        "Children": {
+            "Industry": [
+                {
+                    "IndustryName":"Organization",
+                    "SubIndustry":[
+                        {
+                            "Name":"School"
+                        }
+                    ]
+                }
+            ],
+            "Address": [
+                {
+                    "CountryName": "Cambodia",
+                    "LocationLevel1Name": "Phnom Penh",
+                    "PostalCode": "120209",
+                    "LocationLevel2Name": "Sen Sok",
+                    "LocationLevel3Name": "Tek Thla",
+                    "LocationLevel4Name": "Phum Tropeang Chhuk",
+                    "StreetAddessDetail": "371"
+                }
+            ],
+            "ContactOther": [
+                {
+                    "PhoneNumber": "023 995 500",
+                    "Email": "info.cambodia@passerellesnumeriques.org",
+                    "Website": "https://www.passerellesnumeriques.org/en/",
+                    "SocialProfile": "https://www.facebook.com/PnCambodiaAlumni/"
+                }
+            ]
+        }
+    }
+}
+
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    {
     "OrganizationVatNumber": {
         "S": "Activate"
     },
     "EntityItemId": {
-        "S": "Organization:efb8fc57567919cce70374bf1a1f3f8d"
+        "S": "Organization:fbdc938e2db8b822ba06ce05d30b4cc4"
     },
     "OrganizationContactOther": {
         "L": [
@@ -934,90 +1168,9 @@ OrganizationShortName       | Is the short name of the organization. Ex: AIML
 }
 ```
 
-## Create a Organization
-### HTTP Request
-`POST organization-svc/api/organization`
-
-### Body Request
-
-```json
-{
-    "Organization": {
-        "OrganizationName": "Passerelles Numeriques Cambodia",
-        "OrganizationShortName": "PNC",
-        "OrganizationNature": "Nonprofit",
-        "OrganizationVatNumber": "Activate",
-        "Children": {
-            "Industry": [
-                {
-                    "IndustryName":"Organization",
-                    "SubIndustry":[
-                        {
-                            "Name":"School"
-                        }
-                    ]
-                }
-            ],
-            "Address": [
-                {
-                    "CountryName": "Cambodia",
-                    "LocationLevel1Name": "Phnom Penh",
-                    "PostalCode": "120209",
-                    "LocationLevel2Name": "Sen Sok",
-                    "LocationLevel3Name": "Tek Thla",
-                    "LocationLevel4Name": "Phum Tropeang Chhuk",
-                    "StreetAddessDetail": "371"
-                }
-            ],
-            "ContactOther": [
-                {
-                    "PhoneNumber": "023 995 500",
-                    "Email": "info.cambodia@passerellesnumeriques.org",
-                    "Website": "https://www.passerellesnumeriques.org/en/",
-                    "SocialProfile": "https://www.facebook.com/PnCambodiaAlumni/"
-                }
-            ]
-        }
-    }
-}
-
-```
-
-### HTTP Response
-> The above HTTP request, if successful, will return Json structured like this:
-
-```json
-    [
-        {
-            "ConsumedCapacity": {
-                "TableName": "DsaDev",
-                "CapacityUnits": 1
-            },
-            "@metadata": {
-                "statusCode": 200,
-                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
-                "headers": {
-                    "server": "Server",
-                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
-                    "content-type": "application/x-amz-json-1.0",
-                    "content-length": "63",
-                    "connection": "keep-alive",
-                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
-                    "x-amz-crc32": "3143598553"
-                },
-                "transferStats": {
-                    "http": [
-                        []
-                    ]
-                }
-            }
-        }
-    ]
-```
-
 ## Update a Organization
 ### HTTP Request
-`PUT organization-svc/api/organization/{item_id}`
+`PUT organization-svc/api/v1/organizations/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1171,7 +1324,7 @@ item_id                     | Is the entity item id of organization. EX: Organiz
 
 ## Delete a Organization
 ### HTTP Request
-`DELETE organization-svc/api/organization/{item_id}`
+`DELETE organization-svc/api/v1/organizations/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1214,7 +1367,7 @@ item_id                     | Is the entity item id of organization. EX: Organiz
 ## Get All OrganizationalUnits
 
 ### HTTP Request
-`GET organization-svc/api/organizationalUnits`
+`GET organization-svc/api/v1/organizational-units`
 
 ### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
@@ -1222,64 +1375,97 @@ item_id                     | Is the entity item id of organization. EX: Organiz
 ```json
 [
     {
-        "OrganizationalUnitPrimaryInCharge": {
-            "L": [
-                {
-                    "M": {
-                        "EmployeeId": {
-                            "S": "Employee:748f596f-3144-4704-b816-3d0cbd5f5f64"
-                        },
-                        "EmployeeName": {
-                            "S": "Dyna"
-                        }
-                    }
-                }
-            ]
-        },
         "EntityItemId": {
-            "S": "OrganizationalUnit:cf89605f7a6536680b5ff7d952394607"
+            "S": "OrganizationalUnit:693a5f054f956b96749c9500203bec62"
         },
         "CompositeAccessPatterns": {
-            "S": "OrganizationalUnit#OrganizationalUnitLevel:1#OrganizationalUnitName:Sopheap#OrganizationalUnitShortName:SP#OrganizationalUnitParentId:61751b1b-0d66-4b80-82dc-4c3d12969224#OrganizationalUnitParentName:ODI"
+            "S": "OrganizationalUnit#OrganizationalUnitLevel:2#OrganizationalUnitName:Department Head#OrganizationalUnitShortName:DH#OrganizationalUnitParentId:OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05#OrganizationalUnitParentName:MD#OrganizationalUnitManagingRoleId:Role:5387cd2eff7523044338979d36b4b38c"
         },
         "OrganizationalUnitLevel": {
-            "N": "1"
+            "N": "2"
         },
         "OrganizationalUnitParentName": {
-            "S": "ODI"
+            "S": "MD"
         },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
         "OrganizationalUnitShortName": {
-            "S": "SP"
+            "S": "DH"
         },
-        "OrganizationalUnitSecondaryInCharge": {
-            "L": [
-                {
-                    "M": {
-                        "EmployeeId": {
-                            "S": "Employee:b4b09720-bf38-4f56-a6b1-df9876f5f000"
-                        },
-                        "EmployeeName": {
-                            "S": "Sina"
-                        }
-                    }
-                }
-            ]
+        "OrganizationalUnitManagingRoleId": {
+            "S": "Role:5387cd2eff7523044338979d36b4b38c"
         },
         "OrganizationalUnitName": {
-            "S": "Sopheap"
+            "S": "Department Head"
         },
         "OrganizationalUnitParentId": {
-            "S": "61751b1b-0d66-4b80-82dc-4c3d12969224"
+            "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+        }
+    },
+    {
+        "EntityItemId": {
+            "S": "OrganizationalUnit:6a6fe2d2bd9fb4dbae468e35704b977a"
+        },
+        "CompositeAccessPatterns": {
+            "S": "OrganizationalUnit#OrganizationalUnitLevel:3#OrganizationalUnitName:Manager#OrganizationalUnitShortName:M#OrganizationalUnitParentId:OrganizationalUnit:693a5f054f956b96749c9500203bec62#OrganizationalUnitParentName:DH#OrganizationalUnitManagingRoleId:Role:5387cd2eff7523044338979d36b4b38c"
+        },
+        "OrganizationalUnitLevel": {
+            "N": "3"
+        },
+        "OrganizationalUnitParentName": {
+            "S": "DH"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "OrganizationalUnitShortName": {
+            "S": "M"
+        },
+        "OrganizationalUnitManagingRoleId": {
+            "S": "Role:5387cd2eff7523044338979d36b4b38c"
+        },
+        "OrganizationalUnitName": {
+            "S": "Manager"
+        },
+        "OrganizationalUnitParentId": {
+            "S": "OrganizationalUnit:693a5f054f956b96749c9500203bec62"
+        }
+    },
+    {
+        "EntityItemId": {
+            "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+        },
+        "CompositeAccessPatterns": {
+            "S": "OrganizationalUnit#OrganizationalUnitLevel:1#OrganizationalUnitName:Managing Director#OrganizationalUnitShortName:MD#OrganizationalUnitParentId:null#OrganizationalUnitParentName:null#OrganizationalUnitManagingRoleId:Role:4d544df22238f1beccca28534e18b0ba"
+        },
+        "OrganizationalUnitLevel": {
+            "N": "1"
+        },
+        "OrganizationalUnitParentName": {
+            "S": "null"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "OrganizationalUnitShortName": {
+            "S": "MD"
+        },
+        "OrganizationalUnitManagingRoleId": {
+            "S": "Role:4d544df22238f1beccca28534e18b0ba"
+        },
+        "OrganizationalUnitName": {
+            "S": "Managing Director"
+        },
+        "OrganizationalUnitParentId": {
+            "S": "null"
         }
     }
 ]
 ```
 
 ### HTTP Request Filter 
-`GET organization-svc/api/organizationalUnits?contains=OrganizationalUnitLevel:1`
+`GET organization-svc/api/v1/organizational-units?contains=OrganizationalUnitLevel:1`
 
 ### Query Paramaeters
 Parameter                       | Description
@@ -1294,89 +1480,59 @@ OrganizationalUnitParentName    | Is the parent name of the organizational unit.
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-{
-    "OrganizationalUnitPrimaryInCharge": {
-        "L": [
-            {
-                "M": {
-                    "EmployeeId": {
-                        "S": "Employee:748f596f-3144-4704-b816-3d0cbd5f5f64"
-                    },
-                    "EmployeeName": {
-                        "S": "Dyna"
-                    }
-                }
-            }
-        ]
-    },
-    "EntityItemId": {
-        "S": "OrganizationalUnit:cf89605f7a6536680b5ff7d952394607"
-    },
-    "CompositeAccessPatterns": {
-        "S": "OrganizationalUnit#OrganizationalUnitLevel:1#OrganizationalUnitName:Sopheap#OrganizationalUnitShortName:SP#OrganizationalUnitParentId:61751b1b-0d66-4b80-82dc-4c3d12969224#OrganizationalUnitParentName:ODI"
-    },
-    "OrganizationalUnitLevel": {
-        "N": "1"
-    },
-    "OrganizationalUnitParentName": {
-        "S": "ODI"
-    },
-    "TenantId": {
-        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-    },
-    "OrganizationalUnitShortName": {
-        "S": "SP"
-    },
-    "OrganizationalUnitSecondaryInCharge": {
-        "L": [
-            {
-                "M": {
-                    "EmployeeId": {
-                        "S": "Employee:b4b09720-bf38-4f56-a6b1-df9876f5f000"
-                    },
-                    "EmployeeName": {
-                        "S": "Sina"
-                    }
-                }
-            }
-        ]
-    },
-    "OrganizationalUnitName": {
-        "S": "Sopheap"
-    },
-    "OrganizationalUnitParentId": {
-        "S": "61751b1b-0d66-4b80-82dc-4c3d12969224"
+[
+    {
+        "EntityItemId": {
+            "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+        },
+        "CompositeAccessPatterns": {
+            "S": "OrganizationalUnit#OrganizationalUnitLevel:1#OrganizationalUnitName:Managing Director#OrganizationalUnitShortName:MD#OrganizationalUnitParentId:null#OrganizationalUnitParentName:null#OrganizationalUnitManagingRoleId:Role:4d544df22238f1beccca28534e18b0ba"
+        },
+        "OrganizationalUnitLevel": {
+            "N": "1"
+        },
+        "OrganizationalUnitParentName": {
+            "S": "null"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "OrganizationalUnitShortName": {
+            "S": "MD"
+        },
+        "OrganizationalUnitManagingRoleId": {
+            "S": "Role:4d544df22238f1beccca28534e18b0ba"
+        },
+        "OrganizationalUnitName": {
+            "S": "Managing Director"
+        },
+        "OrganizationalUnitParentId": {
+            "S": "null"
+        }
     }
-}
+]
 ```
 
 ## Create a OrganizationalUnit
 ### HTTP Request
-`POST organization-svc/api/organizationalUnit`
+`POST organization-svc/api/v1/organizational-units`
 
 ### Body Request
 
 ```json
 {
     "OrganizationalUnit": {
-        "OrganizationalUnitName": "Sopheap",
-        "OrganizationalUnitShortName": "SP",
-        "OrganizationalUnitLevel": "1",
-        "OrganizationalUnitParentId": "61751b1b-0d66-4b80-82dc-4c3d12969224",
-        "OrganizationalUnitParentName": "ODI",
+        "OrganizationalUnitLevel": "3",
+        "OrganizationalUnitName": "Manager",
+        "OrganizationalUnitShortName": "M",
+        "OrganizationalUnitParentId": "OrganizationalUnit:d514910ef21d74a536ded81f47e9ed31",
+        "OrganizationalUnitParentName": "DH",
+        "OrganizationalUnitManagingRoleId": "Role:5387cd2eff7523044338979d36b4b38c",
         "Children": {
-            "PrimaryInCharge": [
-                {
-                    "EmployeeId": "Employee:748f596f-3144-4704-b816-3d0cbd5f5f64",
-                    "EmployeeName": "Dyna"
-                }
-            ],
-            "SecondaryInCharge":[
-                {
-                    "EmployeeId": "Employee:b4b09720-bf38-4f56-a6b1-df9876f5f000",
-                    "EmployeeName": "Sina"
-                }
-            ]
+            "EmployeeInCharge": {
+                "EmployeeId": "Employee:9a5abe2c2c4ca99e4eb219fbd0b9a319",
+                "EmployeeName": "Sreyta Sean"
+            }
         }
     }
 }
@@ -1386,37 +1542,40 @@ OrganizationalUnitParentName    | Is the parent name of the organizational unit.
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-    [
-        {
-            "ConsumedCapacity": {
-                "TableName": "DsaDev",
-                "CapacityUnits": 1
-            },
-            "@metadata": {
-                "statusCode": 200,
-                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
-                "headers": {
-                    "server": "Server",
-                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
-                    "content-type": "application/x-amz-json-1.0",
-                    "content-length": "63",
-                    "connection": "keep-alive",
-                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
-                    "x-amz-crc32": "3143598553"
-                },
-                "transferStats": {
-                    "http": [
-                        []
-                    ]
-                }
-            }
-        }
-    ]
+{
+    "EntityItemId": {
+        "S": "OrganizationalUnit:842a58eb29a6e0651ef72321cb9012d4"
+    },
+    "CompositeAccessPatterns": {
+        "S": "OrganizationalUnit#OrganizationalUnitLevel:3#OrganizationalUnitName:Manager#OrganizationalUnitShortName:M#OrganizationalUnitParentId:OrganizationalUnit:d514910ef21d74a536ded81f47e9ed31#OrganizationalUnitParentName:DH#OrganizationalUnitManagingRoleId:Role:5387cd2eff7523044338979d36b4b38c"
+    },
+    "OrganizationalUnitLevel": {
+        "N": "3"
+    },
+    "OrganizationalUnitParentName": {
+        "S": "DH"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "OrganizationalUnitShortName": {
+        "S": "M"
+    },
+    "OrganizationalUnitManagingRoleId": {
+        "S": "Role:5387cd2eff7523044338979d36b4b38c"
+    },
+    "OrganizationalUnitName": {
+        "S": "Manager"
+    },
+    "OrganizationalUnitParentId": {
+        "S": "OrganizationalUnit:d514910ef21d74a536ded81f47e9ed31"
+    }
+}
 ```
 
 ## Update a OrganizationalUnit
 ### HTTP Request
-`PUT organization-svc/api/organizationalUnit/{item_id}`
+`PUT organization-svc/api/v1/organizational-units/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1428,24 +1587,17 @@ item_id                     | Is the entity item id of organizationalUnit. EX: O
 ```json
 {
     "OrganizationalUnit": {
-        "OrganizationalUnitName": "Sopheap",
-        "OrganizationalUnitShortName": "SP",
-        "OrganizationalUnitLevel": "1",
-        "OrganizationalUnitParentId": "61751b1b-0d66-4b80-82dc-4c3d12969224",
-        "OrganizationalUnitParentName": "ODI",
+        "OrganizationalUnitLevel": "3",
+        "OrganizationalUnitName": "Manager3",
+        "OrganizationalUnitShortName": "M",
+        "OrganizationalUnitParentId": "OrganizationalUnit:d514910ef21d74a536ded81f47e9ed31",
+        "OrganizationalUnitParentName": "DH",
+        "OrganizationalUnitManagingRoleId": "Role:5387cd2eff7523044338979d36b4b38c",
         "Children": {
-            "PrimaryInCharge": [
-                {
-                    "EmployeeId": "Employee:748f596f-3144-4704-b816-3d0cbd5f5f64",
-                    "EmployeeName": "Dyna"
-                }
-            ],
-            "SecondaryInCharge":[
-                {
-                    "EmployeeId": "Employee:b4b09720-bf38-4f56-a6b1-df9876f5f000",
-                    "EmployeeName": "Sina"
-                }
-            ]
+            "EmployeeInCharge": {
+                "EmployeeId": "Employee:9a5abe2c2c4ca99e4eb219fbd0b9a319",
+                "EmployeeName": "Sreyta Sean3"
+            }
         }
     }
 }
@@ -1456,64 +1608,39 @@ item_id                     | Is the entity item id of organizationalUnit. EX: O
 
 ```json
 {
-    "OrganizationalUnitPrimaryInCharge": {
-        "L": [
-            {
-                "M": {
-                    "EmployeeId": {
-                        "S": "Employee:748f596f-3144-4704-b816-3d0cbd5f5f64"
-                    },
-                    "EmployeeName": {
-                        "S": "Dyna"
-                    }
-                }
-            }
-        ]
-    },
     "EntityItemId": {
-        "S": "OrganizationalUnit:cf89605f7a6536680b5ff7d952394607"
+        "S": "OrganizationalUnit:842a58eb29a6e0651ef72321cb9012d4"
     },
     "CompositeAccessPatterns": {
-        "S": "OrganizationalUnit#OrganizationalUnitLevel:1#OrganizationalUnitName:Sopheap#OrganizationalUnitShortName:SP#OrganizationalUnitParentId:61751b1b-0d66-4b80-82dc-4c3d12969224#OrganizationalUnitParentName:ODI"
+        "S": "OrganizationalUnit#OrganizationalUnitLevel:3#OrganizationalUnitName:Manager3#OrganizationalUnitShortName:M#OrganizationalUnitParentId:OrganizationalUnit:d514910ef21d74a536ded81f47e9ed31#OrganizationalUnitParentName:DH#OrganizationalUnitManagingRoleId:Role:5387cd2eff7523044338979d36b4b38c"
     },
     "OrganizationalUnitLevel": {
-        "N": "1"
+        "N": "3"
     },
     "OrganizationalUnitParentName": {
-        "S": "ODI"
+        "S": "DH"
+    },
+    "OrganizationalUnitShortName": {
+        "S": "M"
     },
     "TenantId": {
         "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
     },
-    "OrganizationalUnitShortName": {
-        "S": "SP"
-    },
-    "OrganizationalUnitSecondaryInCharge": {
-        "L": [
-            {
-                "M": {
-                    "EmployeeId": {
-                        "S": "Employee:b4b09720-bf38-4f56-a6b1-df9876f5f000"
-                    },
-                    "EmployeeName": {
-                        "S": "Sina"
-                    }
-                }
-            }
-        ]
+    "OrganizationalUnitManagingRoleId": {
+        "S": "Role:5387cd2eff7523044338979d36b4b38c"
     },
     "OrganizationalUnitName": {
-        "S": "Sopheap"
+        "S": "Manager3"
     },
     "OrganizationalUnitParentId": {
-        "S": "61751b1b-0d66-4b80-82dc-4c3d12969224"
+        "S": "OrganizationalUnit:d514910ef21d74a536ded81f47e9ed31"
     }
 }
 ```
 
 ## Delete a OrganizationalUnit
 ### HTTP Request
-`DELETE organization-svc/api/organizationalUnit/{item_id}`
+`DELETE organization-svc/api/v1/organizational-units/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1556,7 +1683,7 @@ item_id                     | Is the entity item id of organization. EX: Organiz
 ## Get All JobProfiles
 
 ### HTTP Request
-`GET organization-svc/api/jobProfiles`
+`GET organization-svc/api/v1/job-profiles`
 
 ### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
@@ -1565,34 +1692,34 @@ item_id                     | Is the entity item id of organization. EX: Organiz
 [
     {
         "JobProfileSalaryMax": {
-            "S": "300"
+            "S": "2000"
         },
         "EntityItemId": {
             "S": "JobProfile:9a7360586dcc7578cb792b58e3ba6072"
         },
-        "JobProfilePositionId": {
-            "S": "bebb9cdb-230a-4e7c-9f7b-a9e175445ca6"
-        },
         "JobProfileDetail": {
-            "N": "2"
+            "N": "112"
+        },
+        "JobProfilePositionId": {
+            "S": "001"
         },
         "CompositeAccessPatterns": {
-            "S": "JobProfile#JobProfilePositionId:bebb9cdb-230a-4e7c-9f7b-a9e175445ca6#JobProfilePositionTitle:Web Programing"
+            "S": "JobProfile#JobProfilePositionId:001#JobProfilePositionTitle:Java Team Lead"
         },
         "JobProfileSalaryMin": {
-            "S": "250"
+            "S": "1500"
         },
         "JobProfilePositionTitle": {
-            "S": "Web Programing"
+            "S": "Java Team Lead"
+        },
+        "JobProfileOverview": {
+            "N": "111"
         },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
-        "JobProfileOverview": {
-            "N": "1"
-        },
         "JobProfileJobGrade": {
-            "N": "5"
+            "N": "1"
         },
         "JobProfileWorkingHour": {
             "N": "8"
@@ -1602,7 +1729,7 @@ item_id                     | Is the entity item id of organization. EX: Organiz
 ```
 
 ### HTTP Request Filter 
-`GET organization-svc/api/jobProfiles?contains=JobProfilePositionId:001`
+`GET organization-svc/api/v1/job-profiles?contains=JobProfilePositionId:001`
 
 ### Query Paramaeters
 Parameter                       | Description
@@ -1615,41 +1742,43 @@ JobProfileJobGrade              | Is the job grade of the jobProfile. Ex: 1, 2, 
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-{
-    "JobProfileSalaryMax": {
-        "S": "2000"
-    },
-    "EntityItemId": {
-        "S": "JobProfile:9a7360586dcc7578cb792b58e3ba6072"
-    },
-    "JobProfileDetail": {
-        "N": "112"
-    },
-    "JobProfilePositionId": {
-        "S": "001"
-    },
-    "CompositeAccessPatterns": {
-        "S": "JobProfile#JobProfilePositionId:001#JobProfilePositionTitle:Java Team Lead"
-    },
-    "JobProfileSalaryMin": {
-        "S": "1500"
-    },
-    "JobProfilePositionTitle": {
-        "S": "Java Team Lead"
-    },
-    "JobProfileOverview": {
-        "N": "111"
-    },
-    "TenantId": {
-        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-    },
-    "JobProfileJobGrade": {
-        "N": "1"
-    },
-    "JobProfileWorkingHour": {
-        "N": "8"
+[
+    {
+        "JobProfileSalaryMax": {
+            "S": "2000"
+        },
+        "EntityItemId": {
+            "S": "JobProfile:9a7360586dcc7578cb792b58e3ba6072"
+        },
+        "JobProfileDetail": {
+            "N": "112"
+        },
+        "JobProfilePositionId": {
+            "S": "001"
+        },
+        "CompositeAccessPatterns": {
+            "S": "JobProfile#JobProfilePositionId:001#JobProfilePositionTitle:Java Team Lead"
+        },
+        "JobProfileSalaryMin": {
+            "S": "1500"
+        },
+        "JobProfilePositionTitle": {
+            "S": "Java Team Lead"
+        },
+        "JobProfileOverview": {
+            "N": "111"
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "JobProfileJobGrade": {
+            "N": "1"
+        },
+        "JobProfileWorkingHour": {
+            "N": "8"
+        }
     }
-}
+]
 ```
 
 ## Create a JobProfile
@@ -1677,37 +1806,46 @@ JobProfileJobGrade              | Is the job grade of the jobProfile. Ex: 1, 2, 
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-    [
-        {
-            "ConsumedCapacity": {
-                "TableName": "DsaDev",
-                "CapacityUnits": 1
-            },
-            "@metadata": {
-                "statusCode": 200,
-                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
-                "headers": {
-                    "server": "Server",
-                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
-                    "content-type": "application/x-amz-json-1.0",
-                    "content-length": "63",
-                    "connection": "keep-alive",
-                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
-                    "x-amz-crc32": "3143598553"
-                },
-                "transferStats": {
-                    "http": [
-                        []
-                    ]
-                }
-            }
-        }
-    ]
+{
+    "JobProfileSalaryMax": {
+        "S": "2000"
+    },
+    "EntityItemId": {
+        "S": "JobProfile:44c9f8996ff137e201f5de27048d688a"
+    },
+    "JobProfilePositionId": {
+        "S": "001"
+    },
+    "JobProfileDetail": {
+        "N": "112"
+    },
+    "CompositeAccessPatterns": {
+        "S": "JobProfile#JobProfilePositionId:001#JobProfilePositionTitle:Java Team Lead#JobProfileJobGrade:1"
+    },
+    "JobProfileSalaryMin": {
+        "S": "1500"
+    },
+    "JobProfilePositionTitle": {
+        "S": "Java Team Lead"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "JobProfileOverview": {
+        "N": "111"
+    },
+    "JobProfileJobGrade": {
+        "N": "1"
+    },
+    "JobProfileWorkingHour": {
+        "N": "8"
+    }
+}
 ```
 
 ## Update a jobProfile
 ### HTTP Request
-`PUT organization-svc/api/jobProfile/{item_id}`
+`PUT organization-svc/api/v1/job-profiles/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1719,8 +1857,8 @@ item_id                     | Is the entity item id of jobProfile. EX: JobProfil
 ```json
 {
     "JobProfile": {
-        "JobProfilePositionId": "001",
-        "JobProfilePositionTitle": "Java Team Lead",
+        "JobProfilePositionId": "002",
+        "JobProfilePositionTitle": "Project Manager",
         "JobProfileJobGrade": "1",
         "JobProfileSalaryMin": "1500",
         "JobProfileSalaryMax": "2000",
@@ -1740,22 +1878,22 @@ item_id                     | Is the entity item id of jobProfile. EX: JobProfil
         "S": "2000"
     },
     "EntityItemId": {
-        "S": "JobProfile:9a7360586dcc7578cb792b58e3ba6072"
+        "S": "JobProfile:44c9f8996ff137e201f5de27048d688a"
     },
     "JobProfileDetail": {
         "N": "112"
     },
     "JobProfilePositionId": {
-        "S": "001"
+        "S": "002"
     },
     "CompositeAccessPatterns": {
-        "S": "JobProfile#JobProfilePositionId:001#JobProfilePositionTitle:Java Team Lead"
+        "S": "JobProfile#JobProfilePositionId:002#JobProfilePositionTitle:Project Manager#JobProfileJobGrade:1"
     },
     "JobProfileSalaryMin": {
         "S": "1500"
     },
     "JobProfilePositionTitle": {
-        "S": "Java Team Lead"
+        "S": "Project Manager"
     },
     "JobProfileOverview": {
         "N": "111"
@@ -1774,7 +1912,7 @@ item_id                     | Is the entity item id of jobProfile. EX: JobProfil
 
 ## Delete a jobProfile
 ### HTTP Request
-`DELETE organization-svc/api/jobProfile/{item_id}`
+`DELETE organization-svc/api/v1/job-profiles/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1817,7 +1955,7 @@ item_id                     | Is the entity item id of jobProfile. EX: JobProfil
 ## Get All Positions
 
 ### HTTP Request
-`GET organization-svc/api/postions`
+`GET organization-svc/api/v1/positions`
 
 ### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
@@ -1825,44 +1963,78 @@ item_id                     | Is the entity item id of jobProfile. EX: JobProfil
 ```json
 [
     {
-        "PostionTitleEn": {
-            "S": "Programmer"
-        },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
+        "PositionTitleKh": {
+            "S": "ហិរញ្ញវត្ថុ"
+        },
         "EntityItemId": {
-            "S": "Postion:18053c214000057310161eb13f4e67d6"
+            "S": "Position:80e2f9adf264a144fd43218352bc5153"
         },
         "CompositeAccessPatterns": {
-            "S": "Postion#PostionTitleEn:Programmer#PostionTitleKh:អ្នកសរសេរកម្មវិធី"
+            "S": "Position#PositionTitleEn:Finance#PositionTitleKh:ហិរញ្ញវត្ថុ"
         },
-        "PostionTitleKh": {
-            "S": "អ្នកសរសេរកម្មវិធី"
+        "PositionTitleEn": {
+            "S": "Finance"
         }
     },
     {
-        "PostionTitleEn": {
-            "S": "Marketing"
-        },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
         },
+        "PositionTitleKh": {
+            "S": "ធនធានមនុស្ស"
+        },
         "EntityItemId": {
-            "S": "Postion:97ae6cded39dc1c42890b9075bb7e183"
+            "S": "Position:9321b71bcbd8e70a3f0d2a73338b4015"
         },
         "CompositeAccessPatterns": {
-            "S": "Postion#PostionTitleEn:Marketing#PostionTitleKh:ផ្នែកទីផ្សារ"
+            "S": "Position#PositionTitleEn:HR#PositionTitleKh:ធនធានមនុស្ស"
         },
-        "PostionTitleKh": {
-            "S": "ផ្នែកទីផ្សារ"
+        "PositionTitleEn": {
+            "S": "HR"
         }
     },
+    {
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "PositionTitleKh": {
+            "S": "អ្នកគ្រប់គ្រងធនធានមនុស្ស"
+        },
+        "EntityItemId": {
+            "S": "Position:f2581a8d878e61dcb27bf2ef7b505037"
+        },
+        "CompositeAccessPatterns": {
+            "S": "Position#PositionTitleEn:HR Manager#PositionTitleKh:អ្នកគ្រប់គ្រងធនធានមនុស្ស"
+        },
+        "PositionTitleEn": {
+            "S": "HR Manager"
+        }
+    },
+    {
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "PositionTitleKh": {
+            "S": "អ្នកសរសេរកម្មវិធី"
+        },
+        "EntityItemId": {
+            "S": "Position:f521a525188a3f4aa04015625b6ce15a"
+        },
+        "CompositeAccessPatterns": {
+            "S": "Position#PositionTitleEn:Programmer#PositionTitleKh:អ្នកសរសេរកម្មវិធី"
+        },
+        "PositionTitleEn": {
+            "S": "Programmer"
+        }
+    }
 ]
 ```
 
 ### HTTP Request Filter 
-`GET organization-svc/api/positions?contains=PostionTitleEn:Programmer`
+`GET organization-svc/api/v1/positions?contains=PositionTitleEn:Finance`
 
 ### Query Paramaeters
 Parameter                       | Description
@@ -1874,23 +2046,25 @@ PostionTitleKh                  | Is the title Khmer of the position.
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-{
-    "PostionTitleEn": {
-        "S": "Programmer"
-    },
-    "TenantId": {
-        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
-    },
-    "EntityItemId": {
-        "S": "Postion:18053c214000057310161eb13f4e67d6"
-    },
-    "CompositeAccessPatterns": {
-        "S": "Postion#PostionTitleEn:Programmer#PostionTitleKh:អ្នកសរសេរកម្មវិធី"
-    },
-    "PostionTitleKh": {
-        "S": "អ្នកសរសេរកម្មវិធី"
+[
+    {
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "PositionTitleKh": {
+            "S": "ហិរញ្ញវត្ថុ"
+        },
+        "EntityItemId": {
+            "S": "Position:80e2f9adf264a144fd43218352bc5153"
+        },
+        "CompositeAccessPatterns": {
+            "S": "Position#PositionTitleEn:Finance#PositionTitleKh:ហិរញ្ញវត្ថុ"
+        },
+        "PositionTitleEn": {
+            "S": "Finance"
+        }
     }
-}
+]
 ```
 
 ## Create a Position
@@ -1901,9 +2075,9 @@ PostionTitleKh                  | Is the title Khmer of the position.
 
 ```json
 {
-    "Postion": {
-        "PostionTitleEn": "Programmer",
-        "PostionTitleKh": "អ្នកសរសេរកម្មវិធី"
+    "Position": {
+        "PositionTitleEn": "Programmer",
+        "PositionTitleKh": "អ្នកសរសេរកម្មវិធី"
     }
 }
 ```
@@ -1912,37 +2086,28 @@ PostionTitleKh                  | Is the title Khmer of the position.
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-    [
-        {
-            "ConsumedCapacity": {
-                "TableName": "DsaDev",
-                "CapacityUnits": 1
-            },
-            "@metadata": {
-                "statusCode": 200,
-                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
-                "headers": {
-                    "server": "Server",
-                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
-                    "content-type": "application/x-amz-json-1.0",
-                    "content-length": "63",
-                    "connection": "keep-alive",
-                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
-                    "x-amz-crc32": "3143598553"
-                },
-                "transferStats": {
-                    "http": [
-                        []
-                    ]
-                }
-            }
-        }
-    ]
+{
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "PositionTitleKh": {
+        "S": "អ្នកសរសេរកម្មវិធី"
+    },
+    "EntityItemId": {
+        "S": "Position:4a143322ddfe9918b345021c0240a7c0"
+    },
+    "CompositeAccessPatterns": {
+        "S": "Position#PositionTitleEn:Programmer#PositionTitleKh:អ្នកសរសេរកម្មវិធី"
+    },
+    "PositionTitleEn": {
+        "S": "Programmer"
+    }
+}
 ```
 
 ## Update a Position
 ### HTTP Request
-`PUT organization-svc/api/position/{item_id}`
+`PUT organization-svc/api/v1/positions/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -1953,9 +2118,9 @@ item_id                     | Is the entity item id of postion. EX: Postion:1805
 
 ```json
 {
-    "Postion": {
-        "PostionTitleEn": "Programmer",
-        "PostionTitleKh": "អ្នកសរសេរកម្មវិធី"
+    "Position": {
+        "PositionTitleEn": "Writer",
+        "PositionTitleKh": "អ្នកនិពន្ធ"
     }
 }
 ```
@@ -1965,27 +2130,27 @@ item_id                     | Is the entity item id of postion. EX: Postion:1805
 
 ```json
 {
-    "PostionTitleEn": {
-        "S": "Programmer"
+    "EntityItemId": {
+        "S": "Position:4a143322ddfe9918b345021c0240a7c0"
+    },
+    "PositionTitleKh": {
+        "S": "អ្នកនិពន្ធ"
     },
     "TenantId": {
         "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
     },
-    "EntityItemId": {
-        "S": "Postion:18053c214000057310161eb13f4e67d6"
-    },
     "CompositeAccessPatterns": {
-        "S": "Postion#PostionTitleEn:Programmer#PostionTitleKh:អ្នកសរសេរកម្មវិធី"
+        "S": "Position#PositionTitleEn:Writer#PositionTitleKh:អ្នកនិពន្ធ"
     },
-    "PostionTitleKh": {
-        "S": "អ្នកសរសេរកម្មវិធី"
+    "PositionTitleEn": {
+        "S": "Writer"
     }
 }
 ```
 
 ## Delete a Position
 ### HTTP Request
-`DELETE organization-svc/api/position/{item_id}`
+`DELETE organization-svc/api/v1/positions/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -2028,7 +2193,7 @@ item_id                     | Is the entity item id of postion. EX: Postion:1805
 ## Get All Benefits
 
 ### HTTP Request
-`GET organization-svc/api/benefits`
+`GET organization-svc/api/v1/benefits`
 
 ### HTTP Response
 > The above HTTP request, if successful, will return Json structured like this:
@@ -2039,11 +2204,11 @@ item_id                     | Is the entity item id of postion. EX: Postion:1805
         "BenefitGroupTitleKh": {
             "S": "ប្រាក់ខែ"
         },
-        "EntityItemId": {
-            "S": "Benefit:c21268600e4c10798746b9e67000bd94"
-        },
         "TenantId": {
             "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "EntityItemId": {
+            "S": "Benefit:c21268600e4c10798746b9e67000bd94"
         },
         "BenefitBenefitItem": {
             "L": [
@@ -2071,7 +2236,7 @@ item_id                     | Is the entity item id of postion. EX: Postion:1805
 
 ## Create a Benifit
 ### HTTP Request
-`POST organization-svc/api/benefit`
+`POST organization-svc/api/v1/benefits`
 
 ### Body Request
 
@@ -2096,37 +2261,42 @@ item_id                     | Is the entity item id of postion. EX: Postion:1805
 > The above HTTP request, if successful, will return Json structured like this:
 
 ```json
-    [
-        {
-            "ConsumedCapacity": {
-                "TableName": "DsaDev",
-                "CapacityUnits": 1
-            },
-            "@metadata": {
-                "statusCode": 200,
-                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
-                "headers": {
-                    "server": "Server",
-                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
-                    "content-type": "application/x-amz-json-1.0",
-                    "content-length": "63",
-                    "connection": "keep-alive",
-                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
-                    "x-amz-crc32": "3143598553"
-                },
-                "transferStats": {
-                    "http": [
-                        []
-                    ]
+{
+    "BenefitGroupTitleKh": {
+        "S": "ប្រាក់ខែ"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "EntityItemId": {
+        "S": "Benefit:5bcfff67ab0e203136d08c8b6704e883"
+    },
+    "CompositeAccessPatterns": {
+        "S": "Benefit#BenefitGroupTitleEn:Salary#BenefitGroupTitleKh:ប្រាក់ខែ"
+    },
+    "BenefitBenefitItem": {
+        "L": [
+            {
+                "M": {
+                    "TitleEn": {
+                        "S": "Holiday"
+                    },
+                    "TitleKh": {
+                        "S": "ថ្ងៃឈប់សំរាក"
+                    }
                 }
             }
-        }
-    ]
+        ]
+    },
+    "BenefitGroupTitleEn": {
+        "S": "Salary"
+    }
+}
 ```
 
 ## Update a Benefit
 ### HTTP Request
-`PUT organization-svc/api/benefit/{item_id}`
+`PUT organization-svc/api/v1/benefits/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -2160,11 +2330,14 @@ item_id                     | Is the entity item id of benefit. EX: Benefit:1805
     "BenefitGroupTitleKh": {
         "S": "ប្រាក់ខែ"
     },
-    "EntityItemId": {
-        "S": "Benefit:c21268600e4c10798746b9e67000bd94"
-    },
     "TenantId": {
         "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "EntityItemId": {
+        "S": "Benefit:5bcfff67ab0e203136d08c8b6704e883"
+    },
+    "CompositeAccessPatterns": {
+        "S": "Benefit#BenefitGroupTitleEn:Salary#BenefitGroupTitleKh:ប្រាក់ខែ"
     },
     "BenefitBenefitItem": {
         "L": [
@@ -2180,9 +2353,6 @@ item_id                     | Is the entity item id of benefit. EX: Benefit:1805
             }
         ]
     },
-    "CompositeAccessPatterns": {
-        "S": "Benefit#BenefitGroupTitleEn:Salary#BenefitGroupTitleKh:ប្រាក់ខែ"
-    },
     "BenefitGroupTitleEn": {
         "S": "Salary"
     }
@@ -2191,7 +2361,7 @@ item_id                     | Is the entity item id of benefit. EX: Benefit:1805
 
 ## Delete a Benefit
 ### HTTP Request
-`DELETE organization-svc/api/benefit/{item_id}`
+`DELETE organization-svc/api/v1/benefits/{item_id}`
 
 ### Query Paramaeters
 Parameter                   | Description
@@ -2230,5 +2400,1026 @@ item_id                     | Is the entity item id of Benefit. EX: Benefit:1805
     ]
 ```
 
+# ProcessSetting
+## Get All ProcessSetting
 
+### HTTP Request
+`GET organization-svc/api/v1/process-settings`
 
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+[
+    {
+        "ProcessSettingValidationStructure": {
+            "L": [
+                {
+                    "M": {
+                        "OrganizationalUnitLevel": {
+                            "S": "1"
+                        },
+                        "Operation": {
+                            "L": [
+                                {
+                                    "S": "dsa:item-operation:Approve"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Return"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Reject"
+                                }
+                            ]
+                        },
+                        "ValidatedBy": {
+                            "S": "DESIGNATED_OU"
+                        },
+                        "DesignatedOu": {
+                            "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "OrganizationalUnitLevel": {
+                            "S": "2"
+                        },
+                        "Operation": {
+                            "L": [
+                                {
+                                    "S": "dsa:item-operation:Verify"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Return"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Reject"
+                                }
+                            ]
+                        },
+                        "ValidatedBy": {
+                            "S": "PARENT_OU"
+                        },
+                        "DesignatedOu": {
+                            "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "OrganizationalUnitLevel": {
+                            "S": "3"
+                        },
+                        "Operation": {
+                            "L": [
+                                {
+                                    "S": "dsa:item-operation:Verify"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Return"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Reject"
+                                }
+                            ]
+                        },
+                        "ValidatedBy": {
+                            "S": "PARENT_OU"
+                        },
+                        "DesignatedOu": {
+                            "S": "OrganizationalUnit:693a5f054f956b96749c9500203bec62"
+                        }
+                    }
+                }
+            ]
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "EntityItemId": {
+            "S": "ProcessSetting:4ca2a855020863fac9b394f38f0d3477"
+        },
+        "ProcessSettingName": {
+            "S": "Trip Request"
+        },
+        "CompositeAccessPatterns": {
+            "S": "ProcessSetting#ProcessSettingName:Trip Request"
+        },
+        "ProcessSettingLifecycle": {
+            "L": [
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Submit"
+                        },
+                        "ProcessState": {
+                            "S": "ONGOING"
+                        },
+                        "ItemDirection": {
+                            "S": "MOVE_UP"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Return"
+                        },
+                        "ProcessState": {
+                            "S": "ONGOING"
+                        },
+                        "ItemDirection": {
+                            "S": "RETURN"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Discuss"
+                        },
+                        "ProcessState": {
+                            "S": "ONGOING"
+                        },
+                        "ItemDirection": {
+                            "S": "MOVE_DOWN"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Verify"
+                        },
+                        "ProcessState": {
+                            "S": "ONGOING"
+                        },
+                        "ItemDirection": {
+                            "S": "MOVE_UP"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Reject"
+                        },
+                        "ProcessState": {
+                            "S": "ENDED"
+                        },
+                        "ItemDirection": {
+                            "S": "null"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Approve"
+                        },
+                        "ProcessState": {
+                            "S": "ENDED"
+                        },
+                        "ItemDirection": {
+                            "S": "null"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Revoke"
+                        },
+                        "ProcessState": {
+                            "S": "ENDED"
+                        },
+                        "ItemDirection": {
+                            "S": "null"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+]
+```
+
+### HTTP Request Filter 
+`GET organization-svc/api/v1/process-settings?contains=ProcessSettingName:Trip Request`
+
+### Query Paramaeters
+Parameter                       | Description
+---------                       | -----------
+ProcessSettingName              | Is the name of the process setting.
+
+### HTTP Response Filter
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+[
+    {
+        "ProcessSettingValidationStructure": {
+            "L": [
+                {
+                    "M": {
+                        "OrganizationalUnitLevel": {
+                            "S": "1"
+                        },
+                        "Operation": {
+                            "L": [
+                                {
+                                    "S": "dsa:item-operation:Approve"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Return"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Reject"
+                                }
+                            ]
+                        },
+                        "ValidatedBy": {
+                            "S": "DESIGNATED_OU"
+                        },
+                        "DesignatedOu": {
+                            "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "OrganizationalUnitLevel": {
+                            "S": "2"
+                        },
+                        "Operation": {
+                            "L": [
+                                {
+                                    "S": "dsa:item-operation:Verify"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Return"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Reject"
+                                }
+                            ]
+                        },
+                        "ValidatedBy": {
+                            "S": "PARENT_OU"
+                        },
+                        "DesignatedOu": {
+                            "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "OrganizationalUnitLevel": {
+                            "S": "3"
+                        },
+                        "Operation": {
+                            "L": [
+                                {
+                                    "S": "dsa:item-operation:Verify"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Return"
+                                },
+                                {
+                                    "S": "dsa:item-operation:Reject"
+                                }
+                            ]
+                        },
+                        "ValidatedBy": {
+                            "S": "PARENT_OU"
+                        },
+                        "DesignatedOu": {
+                            "S": "OrganizationalUnit:693a5f054f956b96749c9500203bec62"
+                        }
+                    }
+                }
+            ]
+        },
+        "TenantId": {
+            "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+        },
+        "EntityItemId": {
+            "S": "ProcessSetting:4ca2a855020863fac9b394f38f0d3477"
+        },
+        "ProcessSettingName": {
+            "S": "Trip Request"
+        },
+        "CompositeAccessPatterns": {
+            "S": "ProcessSetting#ProcessSettingName:Trip Request"
+        },
+        "ProcessSettingLifecycle": {
+            "L": [
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Submit"
+                        },
+                        "ProcessState": {
+                            "S": "ONGOING"
+                        },
+                        "ItemDirection": {
+                            "S": "MOVE_UP"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Return"
+                        },
+                        "ProcessState": {
+                            "S": "ONGOING"
+                        },
+                        "ItemDirection": {
+                            "S": "RETURN"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Discuss"
+                        },
+                        "ProcessState": {
+                            "S": "ONGOING"
+                        },
+                        "ItemDirection": {
+                            "S": "MOVE_DOWN"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Verify"
+                        },
+                        "ProcessState": {
+                            "S": "ONGOING"
+                        },
+                        "ItemDirection": {
+                            "S": "MOVE_UP"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Reject"
+                        },
+                        "ProcessState": {
+                            "S": "ENDED"
+                        },
+                        "ItemDirection": {
+                            "S": "null"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Approve"
+                        },
+                        "ProcessState": {
+                            "S": "ENDED"
+                        },
+                        "ItemDirection": {
+                            "S": "null"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "ItemOperation": {
+                            "S": "dsa:item-operation:Revoke"
+                        },
+                        "ProcessState": {
+                            "S": "ENDED"
+                        },
+                        "ItemDirection": {
+                            "S": "null"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+]
+```
+
+## Create a ProcessSetting
+### HTTP Request
+`POST organization-svc/api/v1/process-settings`
+
+### Body Request
+
+```json
+{
+    "ProcessSetting": {
+        "ProcessSettingName": "Trip Request",
+        "Children": {
+            "ValidationStructure": [
+                {
+                    "OrganizationalUnitLevel": "1",
+                    "Operation": [
+                        "dsa:item-operation:Approve",
+                        "dsa:item-operation:Return",
+                        "dsa:item-operation:Reject"
+                    ],
+                    
+                    "ValidatedBy": "DESIGNATED_OU",
+                    "DesignatedOu": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                },
+                {
+                    "OrganizationalUnitLevel": "2",
+                    "Operation": [
+                        "dsa:item-operation:Verify",
+                        "dsa:item-operation:Return",
+                        "dsa:item-operation:Reject"
+                    ],
+                    "ValidatedBy": "PARENT_OU",
+                    "DesignatedOu": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                },
+                {
+                    "OrganizationalUnitLevel": "3",
+                    "Operation": [
+                        "dsa:item-operation:Verify",
+                        "dsa:item-operation:Return",
+                        "dsa:item-operation:Reject"
+                    ],
+                    "ValidatedBy": "PARENT_OU",
+                    "DesignatedOu": "OrganizationalUnit:693a5f054f956b96749c9500203bec62"
+                }
+            ],
+            "Lifecycle": [
+                {
+                    "ItemOperation": "dsa:item-operation:Submit",
+                    "ItemDirection": "MOVE_UP",
+                    "ProcessState": "ONGOING"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Return",
+                    "ItemDirection": "RETURN",
+                    "ProcessState": "ONGOING"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Discuss",
+                    "ItemDirection": "MOVE_DOWN",
+                    "ProcessState": "ONGOING"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Verify",
+                    "ItemDirection": "MOVE_UP",
+                    "ProcessState": "ONGOING"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Reject",
+                    "ItemDirection": "null",
+                    "ProcessState": "ENDED"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Approve",
+                    "ItemDirection": "null",
+                    "ProcessState": "ENDED"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Revoke",
+                    "ItemDirection": "null",
+                    "ProcessState": "ENDED"
+                }
+            ]
+        }
+    }
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "ProcessSettingValidationStructure": {
+        "L": [
+            {
+                "M": {
+                    "OrganizationalUnitLevel": {
+                        "S": "1"
+                    },
+                    "Operation": {
+                        "L": [
+                            {
+                                "S": "dsa:item-operation:Approve"
+                            },
+                            {
+                                "S": "dsa:item-operation:Return"
+                            },
+                            {
+                                "S": "dsa:item-operation:Reject"
+                            }
+                        ]
+                    },
+                    "ValidatedBy": {
+                        "S": "DESIGNATED_OU"
+                    },
+                    "DesignatedOu": {
+                        "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "OrganizationalUnitLevel": {
+                        "S": "2"
+                    },
+                    "Operation": {
+                        "L": [
+                            {
+                                "S": "dsa:item-operation:Verify"
+                            },
+                            {
+                                "S": "dsa:item-operation:Return"
+                            },
+                            {
+                                "S": "dsa:item-operation:Reject"
+                            }
+                        ]
+                    },
+                    "ValidatedBy": {
+                        "S": "PARENT_OU"
+                    },
+                    "DesignatedOu": {
+                        "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "OrganizationalUnitLevel": {
+                        "S": "3"
+                    },
+                    "Operation": {
+                        "L": [
+                            {
+                                "S": "dsa:item-operation:Verify"
+                            },
+                            {
+                                "S": "dsa:item-operation:Return"
+                            },
+                            {
+                                "S": "dsa:item-operation:Reject"
+                            }
+                        ]
+                    },
+                    "ValidatedBy": {
+                        "S": "PARENT_OU"
+                    },
+                    "DesignatedOu": {
+                        "S": "OrganizationalUnit:693a5f054f956b96749c9500203bec62"
+                    }
+                }
+            }
+        ]
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "EntityItemId": {
+        "S": "ProcessSetting:5f8508633ddccfa47315dd52e7a2b400"
+    },
+    "ProcessSettingName": {
+        "S": "Trip Request"
+    },
+    "CompositeAccessPatterns": {
+        "S": "ProcessSetting#ProcessSettingName:Trip Request"
+    },
+    "ProcessSettingLifecycle": {
+        "L": [
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Submit"
+                    },
+                    "ProcessState": {
+                        "S": "ONGOING"
+                    },
+                    "ItemDirection": {
+                        "S": "MOVE_UP"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Return"
+                    },
+                    "ProcessState": {
+                        "S": "ONGOING"
+                    },
+                    "ItemDirection": {
+                        "S": "RETURN"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Discuss"
+                    },
+                    "ProcessState": {
+                        "S": "ONGOING"
+                    },
+                    "ItemDirection": {
+                        "S": "MOVE_DOWN"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Verify"
+                    },
+                    "ProcessState": {
+                        "S": "ONGOING"
+                    },
+                    "ItemDirection": {
+                        "S": "MOVE_UP"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Reject"
+                    },
+                    "ProcessState": {
+                        "S": "ENDED"
+                    },
+                    "ItemDirection": {
+                        "S": "null"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Approve"
+                    },
+                    "ProcessState": {
+                        "S": "ENDED"
+                    },
+                    "ItemDirection": {
+                        "S": "null"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Revoke"
+                    },
+                    "ProcessState": {
+                        "S": "ENDED"
+                    },
+                    "ItemDirection": {
+                        "S": "null"
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
+## Update a ProcessSetting
+### HTTP Request
+`PUT organization-svc/api/v1/process-settings/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of process setting. EX: ProcessSetting:5f8508633ddccfa47315dd52e7a2b400
+
+### Body Request
+
+```json
+{
+    "ProcessSetting": {
+        "ProcessSettingName": "Trip Request",
+        "Children": {
+            "ValidationStructure": [
+                {
+                    "OrganizationalUnitLevel": "1",
+                    "Operation": [
+                        "dsa:item-operation:Approve",
+                        "dsa:item-operation:Return",
+                        "dsa:item-operation:Reject"
+                    ],
+                    
+                    "ValidatedBy": "DESIGNATED_OU",
+                    "DesignatedOu": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                },
+                {
+                    "OrganizationalUnitLevel": "2",
+                    "Operation": [
+                        "dsa:item-operation:Verify",
+                        "dsa:item-operation:Return",
+                        "dsa:item-operation:Reject"
+                    ],
+                    "ValidatedBy": "PARENT_OU",
+                    "DesignatedOu": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                },
+                {
+                    "OrganizationalUnitLevel": "3",
+                    "Operation": [
+                        "dsa:item-operation:Verify",
+                        "dsa:item-operation:Return",
+                        "dsa:item-operation:Reject"
+                    ],
+                    "ValidatedBy": "PARENT_OU",
+                    "DesignatedOu": "OrganizationalUnit:693a5f054f956b96749c9500203bec62"
+                }
+            ],
+            "Lifecycle": [
+                {
+                    "ItemOperation": "dsa:item-operation:Submit",
+                    "ItemDirection": "MOVE_UP",
+                    "ProcessState": "ONGOING"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Return",
+                    "ItemDirection": "RETURN",
+                    "ProcessState": "ONGOING"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Discuss",
+                    "ItemDirection": "MOVE_DOWN",
+                    "ProcessState": "ONGOING"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Verify",
+                    "ItemDirection": "MOVE_UP",
+                    "ProcessState": "ONGOING"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Reject",
+                    "ItemDirection": "null",
+                    "ProcessState": "ENDED"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Approve",
+                    "ItemDirection": "null",
+                    "ProcessState": "ENDED"
+                },
+                {
+                    "ItemOperation": "dsa:item-operation:Revoke",
+                    "ItemDirection": "null",
+                    "ProcessState": "ENDED"
+                }
+            ]
+        }
+    }
+}
+```
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+{
+    "ProcessSettingValidationStructure": {
+        "L": [
+            {
+                "M": {
+                    "OrganizationalUnitLevel": {
+                        "S": "1"
+                    },
+                    "Operation": {
+                        "L": [
+                            {
+                                "S": "dsa:item-operation:Approve"
+                            },
+                            {
+                                "S": "dsa:item-operation:Return"
+                            },
+                            {
+                                "S": "dsa:item-operation:Reject"
+                            }
+                        ]
+                    },
+                    "ValidatedBy": {
+                        "S": "DESIGNATED_OU"
+                    },
+                    "DesignatedOu": {
+                        "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "OrganizationalUnitLevel": {
+                        "S": "2"
+                    },
+                    "Operation": {
+                        "L": [
+                            {
+                                "S": "dsa:item-operation:Verify"
+                            },
+                            {
+                                "S": "dsa:item-operation:Return"
+                            },
+                            {
+                                "S": "dsa:item-operation:Reject"
+                            }
+                        ]
+                    },
+                    "ValidatedBy": {
+                        "S": "PARENT_OU"
+                    },
+                    "DesignatedOu": {
+                        "S": "OrganizationalUnit:ad11b1d2fe47e7a29288bdb512eefc05"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "OrganizationalUnitLevel": {
+                        "S": "3"
+                    },
+                    "Operation": {
+                        "L": [
+                            {
+                                "S": "dsa:item-operation:Verify"
+                            },
+                            {
+                                "S": "dsa:item-operation:Return"
+                            },
+                            {
+                                "S": "dsa:item-operation:Reject"
+                            }
+                        ]
+                    },
+                    "ValidatedBy": {
+                        "S": "PARENT_OU"
+                    },
+                    "DesignatedOu": {
+                        "S": "OrganizationalUnit:693a5f054f956b96749c9500203bec62"
+                    }
+                }
+            }
+        ]
+    },
+    "EntityItemId": {
+        "S": "ProcessSetting:5f8508633ddccfa47315dd52e7a2b400"
+    },
+    "TenantId": {
+        "S": "TENANT9ed17f0404544dd4977f0a404c4214a2"
+    },
+    "ProcessSettingName": {
+        "S": "Trip Request"
+    },
+    "CompositeAccessPatterns": {
+        "S": "ProcessSetting#ProcessSettingName:Trip Request"
+    },
+    "ProcessSettingLifecycle": {
+        "L": [
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Submit"
+                    },
+                    "ProcessState": {
+                        "S": "ONGOING"
+                    },
+                    "ItemDirection": {
+                        "S": "MOVE_UP"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Return"
+                    },
+                    "ProcessState": {
+                        "S": "ONGOING"
+                    },
+                    "ItemDirection": {
+                        "S": "RETURN"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Discuss"
+                    },
+                    "ProcessState": {
+                        "S": "ONGOING"
+                    },
+                    "ItemDirection": {
+                        "S": "MOVE_DOWN"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Verify"
+                    },
+                    "ProcessState": {
+                        "S": "ONGOING"
+                    },
+                    "ItemDirection": {
+                        "S": "MOVE_UP"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Reject"
+                    },
+                    "ProcessState": {
+                        "S": "ENDED"
+                    },
+                    "ItemDirection": {
+                        "S": "null"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Approve"
+                    },
+                    "ProcessState": {
+                        "S": "ENDED"
+                    },
+                    "ItemDirection": {
+                        "S": "null"
+                    }
+                }
+            },
+            {
+                "M": {
+                    "ItemOperation": {
+                        "S": "dsa:item-operation:Revoke"
+                    },
+                    "ProcessState": {
+                        "S": "ENDED"
+                    },
+                    "ItemDirection": {
+                        "S": "null"
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
+## Delete a ProcessSetting
+### HTTP Request
+`DELETE organization-svc/api/v1/process-settings/{item_id}`
+
+### Query Paramaeters
+Parameter                   | Description
+---------                   | -----------
+item_id                     | Is the entity item id of Benefit. EX: Benefit:18053c214000057310161eb13f4e67d6
+
+### HTTP Response
+> The above HTTP request, if successful, will return Json structured like this:
+
+```json
+    [
+        {
+            "ConsumedCapacity": {
+                "TableName": "DsaDev",
+                "CapacityUnits": 1
+            },
+            "@metadata": {
+                "statusCode": 200,
+                "effectiveUri": "https://dynamodb.ap-southeast-1.amazonaws.com",
+                "headers": {
+                    "server": "Server",
+                    "date": "Fri, 29 Jan 2021 03:42:05 GMT",
+                    "content-type": "application/x-amz-json-1.0",
+                    "content-length": "63",
+                    "connection": "keep-alive",
+                    "x-amzn-requestid": "K7RJCER1N6EE23VO284K9S7NPVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "x-amz-crc32": "3143598553"
+                },
+                "transferStats": {
+                    "http": [
+                        []
+                    ]
+                }
+            }
+        }
+    ]
+```
